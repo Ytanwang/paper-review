@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · AEBP1-CKAP4-CAF-T 细胞功能障碍（Nat Commun 2025）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Wang et al., Nature Communications 2025 — 肿瘤中 AEBP1 主要由 CAF 表达，自分泌结合 CKAP4 激活 AKT/PD-L1 轴驱动 CD8+ T 细胞功能障碍；成纤维细胞特异 Aebp1 缺失抑制多种同源模型肿瘤生长并与 ICB 协同；虚拟筛选得 Chem-0199。总评级 B+：鼠模型内遗传因果与 on-target 药理对照闭环，但人类证据止于相关性（发现队列 n=30、公共 scRNA×2）、PD-L1 末端缺体内遗传 rescue、化合物无亲和力/PK。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>AEBP1 drives fibroblast-mediated T cell dysfunction in tumors</h1>
+  <p class="subtitle">Wang X, Li J, Song D, Wu Y, Liu J（共同一作）, …… <strong>Ren G, Li H</strong>（通讯）. <em>Nature Communications</em>, 2025, 16:8171</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1038/s41467-025-63659-w">10.1038/s41467-025-63659-w</a> ·
+    审查深度：承重文献/审稿式精读（全流程） ·
+    总评级 <span class="badge grade-b-plus">B+</span> ·
+    <span class="sev sev-p1">P1 × 2</span> <span class="sev sev-p2">P2 × 4</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>18.1</strong>（2026 JCR，2026-06-17 发布；2025 JCR 15.7、2024 JCR 14.7）· JCR <strong>Q1</strong>（MULTIDISCIPLINARY SCIENCES，8/140）· 中科院 <strong>综合性期刊 1 区 Top</strong>（2025-03-20 升级版）· 查询于 2026-09-05（来源：科研通 ablesci.com）。期刊光环偏倚提醒：不作为证据评级依据。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>把 AEBP1 从"肿瘤细胞内在癌基因"改写为"CAF 来源免疫调控子"的机制论文——鼠模型内遗传因果与 on-target 药理对照双双闭环，但人类证据止于相关性，标题级泛化略超数据。</strong>最强资产：成纤维细胞特异 cKO 的三重对照（抗 CD8 反转 + 裸鼠无表型 + 多模型一致）与 Chem-0199 的双阴性 on-target 论证（KO 细胞无附加效应 + cKO 小鼠无附加抑瘤）。两处 P1 限制引用上限：①CAF 来源定位的人类 scRNA 基础仅 2 套公共数据集（COAD×1、TNBC×1）+ n=30 发现队列，标题"tumors"泛化自两种颅外癌（P1）；②PD-L1 作为"关键下游介导子"的因果仅由体外抗体阻断支撑，无 CAF 特异 Cd274 体内遗传验证（P1）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程。双语全文证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，49 个正文块 + 8 图 8 图注 + 8 个节级导读）。<strong>本项目负载</strong>：该文是 AEBP1-GBM 课题 state-marker 叙事与纯度敏感性分析的最强机制引证，引用将出现在 Introduction / Discussion / Module 10 纯度论证处。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（来源与功能，标题核心）</strong>：肿瘤中 AEBP1 主要由 CAF 表达，且成纤维细胞来源的 AEBP1 以 CD8<sup>+</sup> T 细胞依赖的方式促进 T 细胞功能障碍与肿瘤生长。</li>
+      <li><strong>LC2（机制）</strong>：自分泌 AEBP1 经 CAF 膜上 CKAP4 激活 PI3K/AKT，上调 CAF 的 PD-L1 表达，由此介导 T 细胞功能障碍（CAF 自身 -50% vs 肿瘤细胞旁分泌 -20%）。</li>
+      <li><strong>LC3（治疗）</strong>：遗传或药物（Chem-0199）抑制 AEBP1 与抗 CTLA-4 / 抗 PD-1 协同；Chem-0199 是经 on-target 验证的 AEBP1/CKAP4 通路抑制剂。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：AEBP1 的促瘤角色既往均在肿瘤细胞内在语境（PTEN/NF-κB/BMP4 等，含本文引用的 Sinha 2019 胶质瘤与 Ju 2024 甲状腺癌）。增量三层：细胞层——把 AEBP1 的主要来源改判为 CAF（iCAF/apCAF 亚型）；机制层——给出膜结合伙伴 CKAP4 与 AKT-PD-L1 下游；转化层——对接筛选出破坏相互作用的工具化合物。</li>
+      <li><strong>证据链位置</strong>：关联（人 bulk n=30 + TIDE + 公共 scRNA）→ 因果（鼠 cKO 遗传消融 + CD8 耗竭反转 + 裸鼠对照）→ 机制（IP-MS + 突变体 + shRNA 上位 + 药理回救，体外）→ 转化（虚拟筛选 + 体内药理 + ICB 联合）。覆盖关联→因果→机制→转化全层级，但各层的物种分布不均：因果与转化在鼠，人在关联层。</li>
+      <li><strong>研究类型</strong>：research article；人 COAD(16)/TNBC(14) 自有 bulk + 2 套公共 scRNA + TMA n=70 + 2 例空间转录组；鼠 6 种同源模型（MC38/CT26/B16-F10/4T1/EMT6/EO771）。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：摘要句 "establishes AEBP1 as a key regulator of CAF-mediated T cell dysfunction and a therapeutic target" 前半在鼠模型内成立，后半（therapeutic target）证据止于临床前工具化合物（无亲和力/PK，Discussion 自留 "further investigation is warranted"）。最可能发生证据错配的环节：①"tumors"的标题泛化 vs 两种颅外富 CAF 癌 + 鼠模型；②人类 CAF 来源定位仅 2 套公共 scRNA 数据集。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：CAF 来源 → CD8 依赖的促功能障碍作用）</span>：自有 bulk 30 例 GSVA 中位分层 → 5 基因与功能障碍相关（S005）→ TIDE 泛癌 AEBP1 最强（S005，数据库关联）→ 公共 scRNA×2 定位 hCAF（S006/F1C-D，横断面）→ 双染共定位 + AEBP1×GZMB 负相关（S006/F1E-H，r=-0.17/-0.21）→ 低 AEBP1 生存更好（S006/F1I-J，KM plotter + 自有队列，n=73/74、48/22）→ 阴性对照：体外共培养与裸鼠共植入无直接促瘤效应（S007/S2）→ 免疫健全鼠共植入生长减慢（S007/S2I-K）→ cKO 三模型抑瘤（S008/F2A-B，遗传消融）→ IFN-γ⁺/TNF-α⁺ CD8⁺↑、浸润↑（S008-009/F2C-F）→ TMA 空间邻近 + 中等负相关（S009/F2G-H，n=70，r=-0.24~-0.39）→ 抗 CD8 反转（S009/F2I）→ CyTOF 图谱偏移（S009/F2J-K）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">鼠内闭环</span> + <span class="state state-overload" style="background:#fff8e1;color:#b26a00">人层相关级</span>——遗传必要性 + CD8 依赖 + 免疫依赖三重对照干净。最薄弱环节：CAF 来源定位的人类证据基础（2 套公共 scRNA + n=30 bulk 发现队列），标题"tumors"泛化自此外推（见 ERR-03d）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：自分泌 AEBP1–CKAP4–AKT–PD-L1）</span>：shAebp1 mCAF 转录组：免疫抑制基因↓、CD274↓（S013/F4A）→ scRNA 复现（S014/F4B）→ 人间质 AEBP1×PD-L1 正相关（S014/F4C，r=0.227，n=126）→ cKO 肿瘤 CAF PD-L1↓（S014/F4D-E，体内流式）→ 体外双向：敲低↓、rhAEBP1/rmAEBP1↑（S014/F4F-I）→ KEGG：PI3K/Akt 于成纤维细胞最显著（S016/F5A-B）→ p-AKT 蛋白层双向（S016/F5C-D，WB n=2）→ 药理上位：LY294002↓PD-L1、SC79 回救 KO CAF（S016/F5E）→ IP-MS 发现 CKAP4（S017/F5F）→ 4°C 膜共定位 + shCkap4 消除表面结合（S017/F5G）→ Δ1 突变体失去结合（S017/F5H-I）→ shCKAP4 阻断重组蛋白效应 + 恢复 T 细胞毒性（S018/F5J-M）→ PD-L1 抗体阻断重演敲低表型（S014/F4J）→ 层级：CAF -50% vs 肿瘤 -20%（S015）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">体外闭环</span> + <span class="state state-overload" style="background:#fff8e1;color:#b26a00">末端体内缺口</span>——受体鉴定四件套（发现/共定位/结构域/上位）完整。最薄弱环节：PD-L1 介导的因果无体内遗传验证（无 CAF 特异 Cd274 删除或 rescue），抗体阻断仅体外药理；CKAP4 无亲和力数据（见 ERR-03c、ERR-04a）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：AEBP1 抑制 × ICB 协同 + Chem-0199）</span>：TIDE 回顾：抗 CTLA-4 黑色素瘤显著；抗 PD-1 黑色素瘤与 GBM 趋势不显著（S019/S7A，回顾性）→ cKO + 抗 CTLA-4（MC38）：抑瘤最强 + 生存延长（S019/F6A）→ cKO + 抗 PD-1（EO771）同型协同（S019/F6D-F）→ 虚拟筛选：ChemDiv/ChemBridge → Glide 对接 → co-IP 复筛 → Chem-0199（S020/F7A-C）→ 剂量依赖↓p-AKT/PD-L1（S021/F7D-E）→ on-target 阴性①：Aebp1⁻/⁻ CAF 无附加效应（S021/F7E-F，p=0.92-0.9997）→ 体内剂量依赖抑瘤（S021/F7G）→ on-target 阴性②：cKO 小鼠无附加抑瘤（S021/F7G，p=0.86-0.94）→ 排除直接抑瘤（S021/S9A-C）→ Chem-0199 + 抗 CTLA-4 协同 + T 细胞功能↑（S021/F7H-J）→ CBC/H&E 未见明显毒性（S021/S9D-E）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">药理闭环度好</span>（on-target 双阴性对照规范）——最薄弱环节：无结合亲和力（KD/SPR/ITC）、无 PK、无体内靶点占用；人层仅为 TIDE 回顾性且 GBM 队列不显著（见 ERR-04a、ERR-03a）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · CAF 来源 + CD8 依赖的促功能障碍作用（标题核心）</h3>
+    <p><strong>第一性原理层</strong></p>
+    <ul>
+      <li>核心构念可操作："T 细胞功能障碍"以 15 基因 signature 的 GSVA 评分（bulk）与 IFN-γ/TNF-α/CD8 流式（鼠）双重操作化；"CAF 来源"以公共 scRNA + 双染 + 鼠 scRNA 三重操作化。可证伪。</li>
+      <li>承重前提 ①：AEBP1 在肿瘤中的主要来源是 CAF——人类证据 = 2 套公共 scRNA + 双染（n=3）+ TMA（n=70）；鼠证据 = 自产 scRNA + IP。此前提在 COAD/TNBC 内站得住，向其他癌种（含脑肿瘤）外推无数据。</li>
+      <li>承重前提 ②：CA  F 的 AEBP1 通过免疫系统（而非直接促瘤）起作用——这是全文最硬的前提：体外与裸鼠均阴性（S007/S2A-H）+ 免疫健全鼠阳性 + 抗 CD8 反转（S009/F2I）。移除此前提则整篇坍塌，但该前提被充分验证。</li>
+      <li>承重前提 ③：GSVA 中位分层能代表体内 T 细胞功能状态——bulk 分层混合肿瘤细胞与间质组成，未做纯度/组成校正；r 值仅 -0.17~-0.21。</li>
+    </ul>
+    <p><strong>演绎构建层</strong></p>
+    <ul>
+      <li>相关升级为因果发生在哪一句：Results 2 从相关（S006）进入 cKO 遗传消融（S008）——这一步是全文最干净的一次升级；Title 级 "drives" 的承重即在此。</li>
+      <li>中介机制由引文补位处：CAF-T 细胞空间相互作用 → 功能障碍的因果链（"close spatial proximity... localized immunosuppression"，S009）由邻近性推断，无干扰实验。</li>
+      <li>正验证亮点：cKO 中 iCAF 的 Cxcl9/10↑ 与 M2 减少（CyTOF）方向一致，构成自洽的次要机制支线。</li>
+    </ul>
+    <p><strong>元认知审计层</strong></p>
+    <ul>
+      <li>未排除替代解释：cKO 表型部分可由 CAF 数量减少/增殖减弱解释（作者自证 Aebp1⁻/⁻ CAF 增殖减弱、cKO 肿瘤成纤维细胞减少，S011/F3B-C）——"每细胞免疫抑制减弱"与"CAF 变少"未解离；CD8 依赖对照澄清中介但不解离此混杂（见 ERR-05）。</li>
+      <li>幸存者/选择偏倚：自有队列小且 TNBC 生存分组不平衡（48 vs 22）；TIDE 队列选择未报告标准。</li>
+      <li>结论最可能失败的条件：在 CAF 贫乏的肿瘤（脑肿瘤、某些造血系统肿瘤）中 AEBP1 来源不是 CAF；或在 AEBP1 高表达的肿瘤细胞内在模型（如 MES-like GBM 亚型）中 CAF 操纵无效。</li>
+      <li>读者侧自查：Nat Commun + 19 作者 + 完整机制图 + "oncogene 重定位"叙事——叙事流畅度高；标题 "in tumors" 的普适措辞容易被当成跨癌种结论引用，恰是需要压住的地方。</li>
+    </ul>
+
+    <h3>LC2 · 自分泌 AEBP1–CKAP4–AKT–PD-L1</h3>
+    <p><strong>第一性原理层</strong>：CKAP4 作为"受体"的操作化 = IP 发现 + co-IP + 膜共定位 + Δ1 结构域 + shRNA 上位——功能必需性充分，但"受体"构念的常规标准（饱和结合、亲和力、竞争性配体）未测。承重前提"PD-L1 是 AEBP1 促功能障碍作用的关键介导子"：由 PD-L1 抗体阻断重演敲低表型（F4J）支撑——药理、体外、单点。</p>
+    <p><strong>演绎构建层</strong>：上位性方向正确（CKAP4 在 AEBP1 下游：shCKAP4 阻断的是重组配体的效应）；SC79 回救（F5E）是标准的 rescue 方向实验（作用于 KO 表型）。缺口：无 CAF 特异 Cd274 的体内删除/rescue；p-AKT 印迹 n=2。</p>
+    <p><strong>元认知审计层</strong>：层级量化（-50% vs -20%）诚实且重要——它承认旁分泌存在但论证主导在自分泌；替代解释（AEBP1 经其他受体/通路影响 PD-L1）未排除，但 shCKAP4 的上位性使主路径可信。结论失败条件：体内 CAF 特异 Ckap4 删除若不重现 cKO 表型，则"受体"降级为"受体之一"。</p>
+
+    <h3>LC3 · AEBP1 抑制 × ICB + Chem-0199</h3>
+    <p><strong>第一性原理层</strong>：治疗协同的构念以 tumor volume + survival 双操作化（n=5/7，两模型两药）；Chem-0199 的"on-target"以双阴性对照（KO 细胞 + cKO 小鼠均无附加效应）操作化——这是本文方法学上最规范的一环。</p>
+    <p><strong>演绎构建层</strong>：从"TIDE 回顾性相关"到"clinical insights 联合策略动机"是弱证据强用法（GBM 队列不显著仍被列出）；从对接到"disrupts the interaction"缺生化结合验证（无 KD）。</p>
+    <p><strong>元认知审计层</strong>：毒性评估止于 CBC + 五脏器 H&E 单次给药方案，无剂量探索边界；"therapeutic target" 摘要级主张与 Discussion 自留 hedge 并存——引用时应采用 Discussion 级措辞。</p>
+    <p><strong>统计实质</strong>：多数实验 n≥3、精确 p 值全标注（好）；印迹 n=2（弱）；发现队列 n=30 无组成校正；相关系数弱-中（r=0.17-0.39）与"closely"叙述不匹配；生存分析 log-rank 无多变量；无末端多重校正声明；CyTOF/流式设生物学重复（n=5 鼠）。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-03d</span><br>人类证据小样本 + 标题跨癌种外推</td>
+          <td>Fig. 1C–D（公共 scRNA×2）；Fig. 1A（n=30）；标题 "in tumors"</td>
+          <td>CAF 来源定位的人类 scRNA 基础仅 2 套公共数据（CRC_GSE146771_Smartseq2 + BRCA_GSE114727_inDrop）+ 30 例自有 bulk 发现队列 + 2 例空间转录组；标题 "AEBP1 drives fibroblast-mediated T cell dysfunction in tumors" 与摘要机制句把两种颅外癌 + 鼠模型的结论泛化到 "tumors" 整体（换证据类型——扩展人类 scRNA 覆盖——可修复，故按证据缺口计 03d 而非单纯缩半径）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03c</span><br>PD-L1 介导缺体内 rescue/必要性证明</td>
+          <td>Results 4, Fig. 4J; Discussion（"induces CD8+ T cell dysfunction by upregulates PD-L1"）</td>
+          <td>PD-L1 作为"关键下游介导子"的因果仅由体外 PD-L1 阻断抗体重演敲低表型支撑；无 CAF 特异 Cd274（或 Ckap4）体内遗传删除验证其介导地位——cKO 的抗瘤表型可能部分经 PD-L1 之外的下游（CAF 增殖/ECM/趋化）实现（补遗传正交可修复）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05</span><br>cKO 表型的 CAF 数量混杂未解离</td>
+          <td>Results 3, Fig. 3B–C; Supplementary 4G–H</td>
+          <td>作者自证 Aebp1⁻/⁻ CAF 增殖减弱、cKO 肿瘤成纤维细胞比例下降——抗瘤表型可部分来自"CAF 变少"而非"每细胞免疫抑制减弱"；CD8 耗竭与裸鼠对照澄清了免疫依赖性，但每细胞效应 vs 数量效应的贡献未解离（无 CAF 数量配平/移植等量的实验）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>结合药理缺口（无亲和力/无 PK/无靶点占用）</td>
+          <td>Results 5 &amp; 7, Fig. 5F–I, Fig. 7A–C; Methods（Docking）</td>
+          <td>CKAP4 "受体"称谓与 Chem-0199 "disrupts the interaction" 均无生化结合定量：无 SPR/ITC/KD、无竞争曲线 IC50、无 PK 与体内靶点占用；对接界面（Tyr874–Gln527）为计算预测；on-target 双阴性对照（p=0.86–0.9997）补偿了功能层面的归因，但分子层面证据链止于 co-IP</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>统计实质与叙述强度错配</td>
+          <td>Fig. 1G–H（r=-0.17/-0.21）; Fig. 4C（r=0.227）; Fig. 5C（印迹 n=2）; Methods（统计）</td>
+          <td>①核心人类相关全部弱-中（|r|=0.17–0.39）而叙述用 "closely correlated"；②bulk GSVA 中位分层未做肿瘤纯度/组成校正——CAF 来源基因的 bulk 关联天然混入间质丰度；③关键 WB 为 n=2 生物学重复（图注自认）而流式 n=3；④生存分析无多变量调整；末端验证无多重校正声明</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03a</span><br>TIDE 回顾性证据的动机级超载</td>
+          <td>Results 6, Fig. S7A（未获取，据正文转述）</td>
+          <td>抗 CTLA-4 黑色素瘤显著但抗 PD-1 黑色素瘤与胶质母细胞瘤队列"trend, not significant"（作者归因样本量）——该层级证据被用作联合治疗策略的 "clinical insights" 动机；回顾性、无多变量、GBM 队列阴性，不能支撑任何人体 ICB 获益分层主张</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：cKO 三重对照（遗传消融 + 抗 CD8 反转 + 裸鼠无表型）足以在鼠模型内支撑弱化版标题主张（"in extracranial CAF-rich tumor models"）。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>首次将 AEBP1 从肿瘤细胞内在模型重定位为 CAF 来源免疫调控子，并给出受体（CKAP4）与工具化合物；AEBP1-CAF 关联承自 Sekiguchi 2023（ACLP/OSCC），增量为来源判定 + 受体 + 药物</td></tr>
+        <tr><td>证据广度</td><td><strong>A−</strong></td><td>2 种人癌 bulk + TMA n=70 + 2 套公共 scRNA + 自产鼠 scRNA + 空间转录组 + CyTOF + 6 种鼠模型 + 遗传与药理双干预；人类 scRNA 原创数据缺失（用公共库替代）稍减分</td></tr>
+        <tr><td>因果封闭性</td><td><strong>B+</strong></td><td>鼠内遗传闭环优秀（消融 + 抗 CD8 反转 + 裸鼠对照）；机制末端（PD-L1 介导）仅体外药理，无 CAF 特异 Cd274 体内删除</td></tr>
+        <tr><td>反例排除</td><td><strong>B+</strong></td><td>系统排除直接促瘤（体外/裸鼠）、直接抑瘤（Chem-0199 对肿瘤细胞无效应）、on-target（双阴性对照）；未解离 CAF 数量混杂，未排除其他受体</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B</strong></td><td>on-target 对照设计与精确 p 值标注是亮点；印迹 n=2、bulk 无纯度校正、无亲和力数据、生存无多变量</td></tr>
+        <tr><td>外部效度</td><td><strong>B</strong></td><td>6 种鼠模型跨组织型一致是强项；人层止于相关；"tumors"泛化超出两种癌 + 鼠的支持范围；对 CAF 贫乏肿瘤（含脑肿瘤）外推无数据</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-b-plus">B+</span></strong> —— 距 A− 差三件事：CAF 特异 Cd274（或 Ckap4）的体内遗传验证、人类多队列 scRNA 复现 CAF 来源（原创数据或 ≥3 套公共库整合）、Chem-0199 的亲和力/PK。完成前两项即可升 A−。按承重文献使用时：鼠模型内的因果框架与 on-target 对照可正面引用；人类层与跨癌种外推压动词。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-03d</span> <span class="sev sev-p1">P1</span>）：根因：人类 CAF 来源定位仅 2 套公共 scRNA，标题泛化到 "tumors"。动作：①整合 TISCH2 泛癌 ≥10 套数据（含 CAF 贫乏癌种）系统量化 AEBP1 的细胞来源分布；②补 1 套自有 scRNA 或引用既有泛癌 scRNA atlas 的 AEBP1 来源分解；③标题/摘要将 "in tumors" 限定为 "in CAF-rich tumors" 或列明模型。效果：来源主张从"两套数据的示范"升级为跨癌种分布证据，标题半径与数据对齐。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-03c</span> <span class="sev sev-p1">P1</span>）：根因：PD-L1 介导地位仅体外抗体阻断。动作：①构建 CAF 特异 Cd274<sup>fl/fl</sup>×S100a4-CreERT（或 Ckap4<sup>fl/fl</sup>），看 cKO 抗瘤表型是否重现/叠加；②体内 anti-PD-L1 与 cKO 无叠加的实验（类似 Fig. 7G 的设计用于遗传轴）验证通路末端在体内的必要性。效果：LC2 从体外闭环升级为体内闭环，"key downstream mediator" 可升格为强因果动词。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-05</span> <span class="sev sev-p2">P2</span>）：动作：①报告 cKO 肿瘤内 CAF 绝对数与每细胞 PD-L1 MFI 的分解分析（现有流式已有 MFI，补数量配平或 AEBP1 剂量-效应梯度）；②以 Aebp1 剂量梯度（杂合/过表达 rescue）解离数量 vs 每细胞效应。效果：排除"CAF 变少"替代解释，功能归因纯净。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p2">P2</span>）：动作：①SPR/ITC 测 AEBP1-CKAP4 与 AEBP1-Chem-0199 的 KD/IC50；②报告 Chem-0199 的 PK（半衰期/暴露量）与体内靶点占用（如 CETSA 或 NanoBRET）；③注明对接所用 AEBP1 结构来源（实验结构或预测模型及其置信度）。效果：分子层面证据链闭合，"inhibitor" 称谓获得生化支撑。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：①bulk 关联补肿瘤纯度/组成校正（ESTIMATE/CIBERSORT 协变量或分层敏感性）；②将 "closely correlated" 改为与 r 值相称的 "inversely correlated (moderate)"; ③关键 WB 补至 n≥3；④生存分析补多变量（年龄/分期）。效果：统计叙述与数据强度对齐，可复现性信任修复。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-03a</span> <span class="sev sev-p2">P2</span>）：动作：TIDE 结果按队列分别报告显著性并降级为 "exploratory"；删除以 GBM 队列趋势支撑动机的暗示性表述（或明示为阴性探索）。效果：人层治疗主张回到其证据位置。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · CAF 来源 + CD8 依赖促功能障碍作用（标题核心）</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">AEBP1 is expressed predominantly by cancer-associated fibroblasts in human COAD and TNBC (scRNA-seq and immunofluorescence) / fibroblast-specific Aebp1 deletion suppresses growth of MC38, EO771 and B16-F10 tumors in mice in a CD8⁺ T-cell–dependent manner / AEBP1⁺ CAF abundance inversely correlates with GZMB⁺ CD8⁺ T cells in TNBC (r ≈ −0.24 to −0.39)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">CAF-derived AEBP1 drives T cell dysfunction（需限定 in mouse syngeneic models of extracranial cancers；人类层仅相关）；AEBP1-high tumors are immune-excluded（需 in COAD/TNBC cohorts；相关 + 中等效应量）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">AEBP1 drives T cell dysfunction in tumors generally（两种颅外癌 + 鼠模型不能支撑跨癌种泛化）；AEBP1 is a CAF marker in glioblastoma（未测 GBM 组织/scRNA，且脑肿瘤 CAF 贫乏）；CAF-derived AEBP1 causes poor patient survival（相关≠因果，生存分析无多变量）</span></div>
+    </div>
+
+    <h3>LC2 · 自分泌 AEBP1–CKAP4–AKT–PD-L1</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">AEBP1 engages CKAP4 on CAFs (co-IP, membrane colocalization, domain mutants) and activates AKT in vitro / AEBP1 positively regulates PD-L1 expression in CAFs (bidirectional recombinant-protein and knockdown/KO manipulations) / CKAP4 is required for AEBP1-induced AKT activation and PD-L1 expression (shRNA epistasis)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">AEBP1 drives T cell dysfunction via the CKAP4–AKT–PD-L1 axis（PD-L1 介导仅 pharmacologic blockade in vitro；体内无 CAF-Cd274 遗传验证，慎用 in vivo 语境）；CKAP4 is the receptor for AEBP1（功能性受体称谓：无亲和力、无竞争性配体，建议 a functional receptor / membrane-binding partner）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">AEBP1–CKAP4 binding affinity was demonstrated（未测 KD）；the axis mediates the antitumor effect in vivo（体内 PD-L1 介导未遗传验证）；AEBP1 binds CKAP4 with high affinity（无数据）</span></div>
+    </div>
+
+    <h3>LC3 · AEBP1 抑制 × ICB + Chem-0199</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">genetic or pharmacologic AEBP1 inhibition synergizes with anti-CTLA-4 (MC38) and anti-PD-1 (EO771) in syngeneic mouse models / Chem-0199's effects on CAFs and tumor growth are AEBP1-dependent (no added effect in Aebp1⁻/⁻ CAFs or cKO mice)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">AEBP1-high patients derive less benefit from ICB（TIDE 回顾性；抗 CTLA-4 显著、抗 PD-1 与 GBM 队列趋势不显著，需 exploratory/retrospective 限定）；Chem-0199 is an AEBP1/CKAP4-pathway inhibitor（基于 docking + co-IP + on-target 对照，无 KD/PK，建议 a docking-derived chemical probe）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">Chem-0199 is a validated drug candidate（无 PK/深度毒理/临床数据）；AEBP1 inhibition improves ICB efficacy in patients（人体未测）；targeting AEBP1 overcomes ICB resistance in glioblastoma（GBM 队列 TIDE 趋势不显著，且无 GBM 模型实验）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Wang et al. showed that in human colon adenocarcinoma and triple-negative breast cancer, AEBP1 is expressed predominantly by cancer-associated fibroblasts, and its abundance in CAFs inversely correlates with cytotoxic T-cell markers. In multiple mouse syngeneic models, fibroblast-specific deletion of Aebp1 enhanced CD8⁺ T-cell function and suppressed tumor growth in a CD8⁺ T-cell–dependent manner. In vitro, autocrine AEBP1 engaged CKAP4 on CAFs, activating AKT and upregulating PD-L1 expression preferentially in CAFs (≈50% reduction upon knockout, versus ≈20% in tumor cells), and a docking-derived compound (Chem-0199) that disrupted the AEBP1–CKAP4 interaction synergized with anti-CTLA-4 in MC38-bearing mice (Wang et al., Nat Commun 2025).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ AEBP1 drives T cell dysfunction in tumors（标题原文级泛化——引用必须限定癌种与模型）</li>
+      <li>❌ AEBP1 is a CAF-derived immunosuppressive factor in glioblastoma（全文无 GBM 组织/scRNA 功能数据，仅 TIDE 生存趋势不显著）</li>
+      <li>❌ CKAP4 is the AEBP1 receptor with demonstrated binding affinity（无亲和力数据）</li>
+      <li>❌ Chem-0199 is a therapeutic candidate for clinical development（作者自留 "further investigation is warranted"）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：state-marker 叙事 + Module 10 纯度/CNA 敏感性 + IHC 蛋白验证 + Cancers 特刊投稿」为默认目标用途；用途改变时 M 等级需重评。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>人 bulk RNA-seq HRA012427/HRA012423（COAD/TNBC 自有队列）— <strong>M3</strong>（非 GBM 数据，仅泛癌对照时可参考）｜S048</li>
+      <li>鼠 scRNA CRA019202（EO771 WT vs cKO，含 CAF 亚型与轨迹）— <strong>M3</strong>（非脑数据；其 CAF 亚型 marker 基因集可作跨组织参照）｜S048</li>
+      <li>IP-MS PXD067349（AEBP1 结合蛋白组）— <strong>M3</strong>（若在 GBM 中找 AEBP1 膜伙伴可查其候选列表）｜S048</li>
+      <li>TISCH2 公共 scRNA 定位流程（CRC_GSE146771_Smartseq2 / BRCA_GSE114727_inDrop）— <strong>M2</strong>（改造为泛癌 AEBP1 来源分解：若审稿人问"AEBP1 在 GBM 微环境里谁表达"，可用同款 TISCH2 流程查 GBM 数据集回应）｜S006; F1C-D</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>AEBP1 IHC 双克隆抗体方案</strong>（ab254973，Abcam，IHC 1:200；sc-271374，Santa Cruz，IHC 1:100——均在人/鼠肿瘤组织验证）+ 评分制（强度 0–3 × 阳性率 0–4，5×HPF400 均值，病理医师独立）— <strong>M1</strong>（直接采用为我们 GBM IHC 方案，与 Chang 2023 的 0–3000 H-score 制并列两个可选先例）｜S031–S032</li>
+      <li><strong>15 基因 T 细胞功能 signature + GSVA 中位分层</strong>（RAB27A, IL12A, XCL1, IFNG, PRF1, GZMB, CCL5, TBX21, CD8A, GZMA, IL2, PTPRC, ICOS, GZMM, GNLY）— <strong>M2</strong>（可移植为我们 GBM bulk 的 T 细胞功能障碍评分；注意其 bulk 分层无纯度校正的缺陷，我们版本须加纯度敏感性）｜S029</li>
+      <li><strong>TMA 多重 IF 空间邻近设计</strong>（AEBP1/α-SMA/CD8/GZMB/CK5-6 五标记 + Spearman 相关，n=70）— <strong>M2</strong>（我们 IHC 队列的空间分析模板；其 r 值报法诚实可学）｜S009; F2G-H</li>
+      <li><strong>on-target 双阴性对照设计</strong>（KO 细胞药物无附加 + cKO 小鼠药物无附加抑瘤）— <strong>M1</strong>（论证范式：任何"化合物 X 经靶点 Y"主张的对照教材；写审稿意见/答辩可直接引用此标准）｜S021; F7E-G</li>
+      <li><strong>自分泌 vs 旁分泌层级量化表述</strong>（-50% vs -20% 双读出）— <strong>M2</strong>（跨细胞类型效应量比较的表达范式）｜S015</li>
+    </ul>
+
+    <h3>实验资产</h3>
+    <ul>
+      <li>重组蛋白与剂量（rmAEBP1 ab225975 1 μg/ml；rhAEBP1 R&D 6425-AC 2 μg/ml）— <strong>M2</strong>（若做 GBM 细胞/巨噬细胞的 AEBP1 刺激实验可直接循此剂量）｜S028</li>
+      <li>qPCR 引物（人 PD-L1、鼠 Cd274、GAPDH 全序列）— <strong>M1</strong>｜S041</li>
+      <li>鼠品系（Aebp1 flox/flox S-CKO-17395 Cyagen；S100a4-CreERT NM-KI-200024 上海南方）— <strong>M3</strong>（脑肿瘤 CAF 贫乏，直接用途有限；血管周/间质细胞研究需换 Cre 驱动）｜S034</li>
+      <li>荧光报告关键参数：4°C 3h 膜共定位（抑制内吞）— <strong>M2</strong>（配体-膜蛋白相互作用验证的标准技巧）｜S017; F5G</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li><strong>"CAF-selective operational mode vs previous tumor cell-centric models" 的定位句式</strong>（S025，其引文含 Sinha 2019 胶质瘤）— <strong>M1</strong>（我们 Discussion 的双模式论证可直接借该对照框架：肿瘤细胞内在（PTEN 依赖）+ 间质（CKAP4 轴）并存 → state marker）｜S025</li>
+      <li>遗传必要性三联对照的论证组织（消融 → 抗 CD8 反转 → 裸鼠无表型）— <strong>M1</strong>（审稿应对与免疫机制论文的对照设计范本）｜S007–S009</li>
+      <li>七节递进 Results 组织（相关 → 对照 → 因果 → 单细胞 → 机制 → 治疗 → 药物）— <strong>M1</strong>｜全文</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>标题以 "in tumors" 泛化两种颅外癌 + 鼠模型 → 我们写 AEBP1-GBM 时癌种与模型限定必须到位（这正是我们相对本文的差异化空间）｜标题；S025</li>
+      <li>bulk 基因-T 功能相关不做肿瘤纯度/组成校正 → 我们的 Module 10 纯度敏感性分析即针对此缺口的改进点｜S005–S006</li>
+      <li>关键 WB n=2、机制末端只压体外药理阻断 → 机制结论至少配一个遗传正交或体内 rescue｜F5C; F4J</li>
+      <li>"receptor" 称谓无亲和力支撑 → 受体主张需 KD/竞争实验或改称 binding partner｜S017</li>
+      <li>以回顾性不显著队列（GBM TIDE）暗示治疗意义 → 探索性结果明示 exploratory｜S019</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1038/s41467-025-63659-w">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

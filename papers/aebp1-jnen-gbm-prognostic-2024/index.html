@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · AEBP1-GBM 预后标志物生信文（JNEN 2024）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Wang et al., J Neuropathol Exp Neurol 2024 — AEBP1 在 GBM 中高表达并与短 OS 关联（TCGA-Xena 144 例 + 6/4 自有样本验证）；高 AEBP1 组纯度更低、检查点表达更高，作者据此推测 ICI 反应更好。总评级 B：现象可靠（多团队复现），但全文止于关联层——AUC 0.65 称 good biomarker、纯度混杂自证不校正、ICI 推断无治疗数据。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Clinical significance and potential mechanism of AEBP1 in glioblastoma</h1>
+  <p class="subtitle">Wang C, Han H, Cheng F, Wang H, Wang J, Lv C, Jiang S, Peng Y, <strong>Zhao X</strong>（通讯）. <em>J Neuropathol Exp Neurol</em>, 2024, 83(12): 1020–1029</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1093/jnen/nlae091">10.1093/jnen/nlae091</a> ·
+    审查深度：承重文献/审稿式精读（全流程） ·
+    总评级 <span class="badge grade-b">B</span> ·
+    <span class="sev sev-p1">P1 × 3</span> <span class="sev sev-p2">P2 × 3</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>3.0</strong>（2024 JCR，2025 年中发布；上年 3.3）· JCR <strong>Q2</strong> · 中科院 <strong>医学大类 4 区</strong>（2025 升级版；病理学小类 3 区）· 查询于 2026-09-05（来源：科累克SCI、bioxbio）。期刊光环偏倚提醒：不因层级低放大批评、不因神经病理老牌刊抬升证据；评级只对证据。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>单基因生信范式文：现象可靠（AEBP1 在 GBM 高表达、与短 OS 关联，多团队复现），但全文止于关联层——三处 P1 决定它只能作"反面参照"引用。</strong>①AUC=0.65（时间设定未报告）即称 "good prognostic biomarker"，无多变量、无 IDH/MGMT 分层、无外部验证、生存曲线在补充材料（P1）；②高 AEBP1 组肿瘤纯度更低——作者自证却未做任何纯度校正，免疫浸润与生存关联全部携带组成混杂（P1）；③检查点基因（PD1/CTLA4/TIGIT）表达↑直接推断"高表达者可能对免疫治疗反应更好"并写入摘要，无任何 ICI 响应数据（P1）。本文的每处软肋恰好是本项目的增量模块所在。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程。双语全文证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，25 个正文块 + 7 图）。<strong>本项目负载</strong>：该文是 AEBP1-GBM 课题最近的同题竞品（JNEN 2024-12），我们的差异化论证（state marker 而非 "good prognostic marker"、纯度敏感性、IHC 蛋白队列、CNA/演化视角）需与它正面对照；预计引用于 Introduction 竞品段与 Discussion 定位段。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（预后标志物，标题核心）</strong>：AEBP1 高表达于 GBM，且其高表达与更短 OS 关联——可作为 GBM 预后标志物。</li>
+      <li><strong>LC2（免疫机制方向）</strong>：AEBP1 与 GBM 免疫浸润正相关（间质/免疫评分更高、纯度更低、检查点表达更高），AEBP1 可能部分经免疫相关机制促进展；高表达者对免疫治疗反应可能更好。</li>
+      <li><strong>LC3（泛癌推广）</strong>：AEBP1 的预后价值可推广至多种癌症。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：确认 AEBP1 为 GBM 预后相关基因并做初步免疫浸润表征。相对 Reddy 2008（最早报道）与 Liu 2021（TIMER/SCNA），增量主要是：GEPIA 交集 DEG 管线、6+4 自有样本的 RT-qPCR/WB 方向性验证、TISIDB 泛癌筛查——增量厚度有限，属单基因生信范式文的常规配置。</li>
+      <li><strong>证据链位置</strong>：全程处于描述-关联层：表达差异（144 vs 5）→ 单因素 Cox → LASSO → 单基因 ROC（AUC 0.65）→ 去卷积浸润关联 → 检查点表达比较 → 泛癌数据库筛查。无任何因果或干预证据。</li>
+      <li><strong>研究类型</strong>：research article（公共数据库生信 + 微型自有验证队列）；队列 TCGA-GBM 144 例（对照 5 例正常）+ 自有 6 肿瘤/4 癌旁。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：摘要句 "AEBP1 could serve as a prognostic marker for GBMs" 处于其证据可辩护的边缘（单队列单因素）；"patients with high expression may have a better response to immunotherapy" 明显超出关联层资格（无 ICI 数据、无响应队列）。最可能发生证据错配的环节：ESTIMATE 纯度差异（自证）与生存/浸润关联之间的混杂关系——他们观察到纯度更低却没有用它校正任何东西。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：AEBP1 = GBM 预后标志物）</span>：Xena 144 GBM vs 5 normal → DESeq2 → 3297 DEGs（S011）→ GEPIA 平行 2283 DEGs → 交集 1317（S011/F1）→ 单因素 Cox → top 10（S012，森林图在补充 S2）→ LASSO → 8 基因 signature（S012，系数在补充 S3）→ 其中 SLC43A3/PDIA4/AEBP1 高表达 P&lt;.001（S012/F2）→ AEBP1 单基因 ROC AUC=0.65（S013/F3，时间设定未报告）→ 生存关联的 KM 曲线不在正文（补充 S4，未获取）→ 自有 6+4 样本 RT-qPCR/WB 方向性验证（S018/F7）+ HPA 数据库 IHC 图
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">关联闭环弱</span>——现象（高表达+短 OS）与多团队一致，但本文自身证据链每一环都缺稳健性配置（对照 n=5、单因素、无验证队列、关键图在补充材料）。最薄弱环节：从 AUC=0.65 到 "good prognostic biomarker" 的跳跃（见 ERR-03a）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：免疫浸润 + ICI 推断）</span>：高/低 AEBP1 分组 → CIBERSORT：22 群中 3–4 群显著（Tregs、活化 CD4 记忆等）（S015/F5A）→ ssGSEA：28 群中约 8 群显著（S015/F5B）→ ESTIMATE：高 AEBP1 = 间质评分↑ + <strong>肿瘤纯度↓</strong>（S015/F5C）→ TIMER：CD4⁺ T、DC 正相关（S015/F5D）→ PD1/CTLA4/TIGIT mRNA 上调（S016/F5E）→ "可能对 ICI 反应更好"（S016，摘要级主张）
+      <br>闭环状态：<span class="state state-broken" style="background:#fdeceb;color:#c0392b">末端断裂</span>——检查点 mRNA 表达到 ICI 临床获益之间缺整类证据（响应队列、治疗数据）；且全部关联携带未校正的纯度/组成混杂（见 ERR-02、ERR-05a）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：泛癌推广）</span>：GEPIA 泛癌表达差异（S017/F6A）→ TISIDB 泛癌 OS 关联（log-rank P&lt;.05）（S017/F6B）→ TISIDB 泛癌分期关联（S017/F6C）
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">数据库筛查级</span>——无验证；且其自身图中 GBM 在 OS 与分期两项均为灰色 NS 标记，"across different cancer types" 的概括不涵盖 GBM 本身（见 ERR-05b）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · AEBP1 = GBM 预后标志物（标题核心）</h3>
+    <p><strong>第一性原理层</strong>：核心构念"预后标志物"的操作化 = 单基因 ROC（AUC 0.65，时间设定未报告）+ 未展示于正文的生存分析；未做多变量、未定义判别目标（1 年 OS？总生存？）。承重前提①：144:5 的对照足以稳定估计 DEG——5 例正常对照的方差使 DEG 清单高度抽样敏感；承重前提②：单因素关联可支撑"标志物"资格——无 IDH/MGMT/年龄/KPS 调整，而 AEBP1 表达与间质/纯度强相关（其自证），纯度本身就与 GBM 预后相关。</p>
+    <p><strong>演绎构建层</strong>：相关升级为主张发生在摘要句 "AEBP1 could serve as a prognostic marker for GBMs"——由 AUC 0.65 单点支撑。中间机制（为什么高表达者生存差）由 Discussion 引文补位（Guo 2020 NF-κB、Sinha 2019 PI3KCB）——均为他文的功能证据，本文未做任何功能实验。</p>
+    <p><strong>元认知审计层</strong>：确认偏倚——8 基因中仅挑高表达的 3 个做 ROC，选择标准（"highly expressed in GBM patients"）事后可调；幸存者偏倚——TCGA-GBM 无失访报告；最可能失败条件：任何多变量（尤其纯度或 IDH）调整后 HR 衰减——在其自身数据结构下几乎必然发生，因为纯度与其标记基因共线。读者侧自查：与我们的课题同题，警惕"竞品越弱我们越安全"的确认倾向——它的软肋恰好定义了我们必做的分析。</p>
+
+    <h3>LC2 · 免疫浸润方向 + ICI 推断</h3>
+    <p><strong>第一性原理层</strong>："免疫浸润"以四种去卷积工具操作化（一致性可）；但推断链的承重前提是"检查点表达↑ → ICI 可获益"——该前提在文献中双向（PD-L1 阳性既是预测标志也是适应性免疫抑制标志），需要治疗队列数据才能操作化，本文无。</p>
+    <p><strong>演绎构建层</strong>：从横断面表达到治疗反应的跳跃发生在 S016 的 "indicating a potentially better immune response"——一个 indicating 完成了整类证据的跨越。高 AEBP1 组 Tregs ↑（免疫抑制）与"ICI 反应更好"在方向上的张力未被讨论。</p>
+    <p><strong>元认知审计层</strong>：未排除的替代解释——高 AEBP1 组检查点↑可能仅反映巨噬细胞/间质成分更高（纯度更低）导致的组成效应；其自证纯度更低使该解释相当可信。结论失败条件：任何纯度分层后浸润差异大概率消失——这正是我们 Module 10 要正式检验的命题。</p>
+
+    <h3>LC3 · 泛癌推广</h3>
+    <p><strong>第一性原理层</strong>：TISIDB/GEPIA 为数据库级筛查，无批间校正、无验证；"broad prognostic value" 的构念未定义阈值（多少癌种显著算 broad）。</p>
+    <p><strong>演绎构建层</strong>：正文概括 "across different cancer types ... P&lt;0.05" 与其 Figure 6B/C 中 GBM 为 NS 的展示直接张力——对象被扩大。</p>
+    <p><strong>元认知审计层</strong>：多重检验——泛癌几十个癌种 × 生存/分期两终点，无 FDR 控制；显著性计数即结论（03e 风险）。</p>
+    <p><strong>统计实质</strong>：无多变量；无批校正；DEG 阈值 |log2FC|&gt;2 + p&lt;.05（无 FDR 说明）；CIBERSORT/ssGSEA 显著性条目零散（多数 ns）而叙述以"更高浸润"概括；自有验证 6 vs 4 无检验方法说明（图上 */** 未知检验类型）。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-03a</span><br>"good prognostic biomarker" 强度超载</td>
+          <td>Abstract; Results 2, Figure 3; Discussion（"important prognostic biomarker"）</td>
+          <td>AUC=0.65（弱判别；时间设定、切点、结局定义均未报告）即得 "good prognostic biomarker"；单队列、单因素、无 IDH/MGMT/年龄调整、无外部验证；支撑 OS 关联的 KM 曲线在补充材料（未获取）。缩小结论半径（weak-moderate discriminative association, unadjusted）即可修复 → 03a</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-02</span><br>检查点表达 → ICI 获益的叙事跳跃</td>
+          <td>Abstract; Results 4, Figure 5E; Discussion（"might be related with the effectiveness of immunotherapies"）</td>
+          <td>PD1/CTLA4/TIGIT mRNA 上调（横断面）直接推断"高 AEBP1 者可能对 ICI 反应更好"并写入摘要——无任何 ICI 响应数据；且与其自身 Tregs↑（免疫抑制）结果存在未讨论的方向张力。按 02/03 边界检验：换证据类型（ICI 治疗队列）才能修复，故归 ERR-02</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>纯度混杂自证不校正</td>
+          <td>Results 4, Figure 5C; 全文生存与浸润分析</td>
+          <td>作者自己报告高 AEBP1 组肿瘤纯度更低、间质评分更高——随后所有生存与免疫浸润关联均不做纯度分层/校正；AEBP1 作为间质相关基因，其"预后关联"与"浸润关联"可能与纯度共线（正是后续 Wang 2025 Nat Commun 机制预测的混杂方向）。需纯度分层敏感性分析修复</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>对照极不平衡 + 验证队列极小</td>
+          <td>Methods（Data source; Sample collection）; Figure 7</td>
+          <td>全部 DEG 分析建立在 144 GBM vs 5 normal 之上（正常对照方差极大，DEG 清单抽样敏感）；自有验证仅 6 肿瘤/4 癌旁，无临床病理信息（IDH/MGMT/年龄缺失）、无检验方法说明</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>模型与结果透明度</td>
+          <td>Results 2; Figure 2–3; Methods（拼写）</td>
+          <td>①8 基因 signature 完整名单与 LASSO 系数仅在补充材料 S3（正文列 top10 而不给 8 基因构成）；②ROC 时间设定/结局定义未报告；③生存曲线不在正文（补充 S4）；④拼写质控：ssGESA、ssAGSEA、ROC cure、TRBD2A（疑 TBRD2）、"in in cellular proliferation"</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05b</span><br>泛癌概括隐含 NS 的 GBM</td>
+          <td>Abstract（"advanced tumor staging"）; Results 5, Figure 6B–C; Discussion</td>
+          <td>正文与摘要把 OS/分期关联概括为 "across different cancer types"，但其 Figure 6B/C 中 GBM 柱为灰色 NS 标记——对 GBM（本文主题癌种）两项均不显著；且泛癌多重检验无 FDR 控制、GBM 无"分期"概念（按定义 IV 级）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：弱化版主张（"AEBP1 在 GBM 高表达、与较短 OS 单因素关联，方向经多团队复现"）在现有数据内成立。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>C+</strong></td><td>相对 Reddy 2008 / Liu 2021 增量薄（GEPIA 交集 + 6/4 自有验证 + TISIDB 筛查）；免疫浸润为四工具常规配置</td></tr>
+        <tr><td>证据广度</td><td><strong>C+</strong></td><td>两个公共数据库 + 四种去卷积 + 泛癌筛查 + 微型湿实验；无 scRNA、无蛋白队列、无 CNA、无功能实验</td></tr>
+        <tr><td>因果封闭性</td><td><strong>D+</strong></td><td>全文零因果证据；机制句全部由引文（Guo 2020/Sinha 2019）补位</td></tr>
+        <tr><td>反例排除</td><td><strong>D+</strong></td><td>未排除纯度共线、未排除组成效应、ICI 主张无替代解释讨论</td></tr>
+        <tr><td>方法稳健性</td><td><strong>C</strong></td><td>144:5 对照、单因素、无 FDR、ROC 时间设定缺失、关键图在补充材料、多处拼写错误</td></tr>
+        <tr><td>外部效度</td><td><strong>B−</strong></td><td>高表达+短 OS 的方向与 ≥3 个独立团队（Reddy 2008、Liu 2021、Yin 2025）一致——现象本身可复现是其最值钱的部分</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-b">B</span></strong> —— 现象可靠（跨团队复现的表达与生存方向），机制与因果链不完整（全文止于关联）。距 B+ 需：纯度校正后的生存稳健性、外部验证队列、任何功能证据；其价值对我们主要不在"学什么"，而在"对照什么"——它的每个缺口都是本项目增量模块的立论点。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-03a</span> <span class="sev sev-p1">P1</span>）：根因：AUC 0.65 无时间定义即称 "good biomarker"。动作：①报告 time-dependent AUC（1/3/5 年）与 C-index；②KM 曲线与 log-rank 移入正文并给中位 OS 差；③补多变量 Cox（年龄/IDH/MGMT/KPS）；④"good" 改为与 AUC 相称的措辞。效果：预后主张落到可辩护位置。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-02</span> <span class="sev sev-p1">P1</span>）：根因：检查点表达↑ → ICI 获益无治疗数据。动作：①删除摘要中的免疫治疗反应句，或将措辞降为 "checkpoint-high molecular state, whose therapy implications remain untested"；②如保留，引用任何 ICB 治疗队列（如 TIDE/IMvigor）做探索性分层并明示回顾性。效果：消除主张级断层。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p1">P1</span>）：根因：纯度混杂自证不校正。动作：按 ESTIMATE 纯度中位数分层重跑生存与浸润差异（或以纯度为协变量），报告关联是否稳健。效果：区分"AEBP1 信号"与"间质含量"两个变量——这正是本项目 Module 10 的设计。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p2">P2</span>）：动作：正常对照扩样（GTEx 脑组织补齐）；自有验证队列补临床病理信息与 ≥20 例规模。效果：DEG 与验证层稳健。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：正文完整列出 8 基因与系数；ROC 注明时间设定；修正 ssGESA/ssAGSEA/ROC cure/TRBD2A 拼写。效果：可复现性修复。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-05b</span> <span class="sev sev-p2">P2</span>）：动作：泛癌概括注明 GBM 为 NS；多重检验加 FDR；删除 GBM"分期"表述。效果：概括与图形一致。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · AEBP1 = GBM 预后标志物（标题核心）</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">AEBP1 is overexpressed in glioblastoma versus non-tumor brain tissue (TCGA-Xena/GEPIA; confirmed by RT-qPCR and Western blot in 6 tumor/4 adjacent samples) / AEBP1 expression associates with shorter overall survival in TCGA-GBM (single-cohort, univariate, unadjusted)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">AEBP1 is a prognostic marker for GBM（需限定 single-cohort univariate analysis; ROC AUC 0.65; no IDH/MGMT adjustment——引用时必须带上这些限定）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">AEBP1 is a good/accurate prognostic biomarker（AUC 0.65 + 时间设定未报告）；AEBP1 independently predicts survival（无多变量）；AEBP1 stratifies patients for clinical use（无验证队列）</span></div>
+    </div>
+
+    <h3>LC2 · 免疫浸润 + ICI 推断</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">high-AEBP1 GBM shows lower ESTIMATE-derived tumor purity and higher stromal scores / AEBP1 expression correlates with CD4⁺ T cells and dendritic cells (TIMER) / PD1, CTLA4 and TIGIT mRNA levels are higher in the high-AEBP1 group</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">AEBP1 marks a stroma-rich, checkpoint-active molecular state（associative; 未校正纯度混杂，需 in this cohort 限定）；AEBP1 may partly act through immune-related mechanisms（作者原句 may 级推测，不可升级）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">high-AEBP1 patients respond better to immunotherapy（无 ICI 数据；作者摘要原句为 speculation，引用须标注）；AEBP1 promotes immune escape / drives immune infiltration（无因果证据）；AEBP1 shapes an immunosuppressive TME（横断面去卷积不能支撑 shapes）</span></div>
+    </div>
+
+    <h3>LC3 · 泛癌推广</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">pan-cancer database screens (TISIDB) associate AEBP1 expression with shorter OS in multiple cancer types</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">AEBP1 has broad prognostic value（需限定 database-level screening, unadjusted for multiple testing）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">AEBP1 associates with advanced stage across cancers including GBM（其自身图中 GBM 为 NS；GBM 按定义无分期梯度）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Wang et al. reported that AEBP1 is overexpressed in glioblastoma versus non-tumor brain tissue (TCGA-Xena/GEPIA intersected differential-expression analysis, directionally confirmed by RT-qPCR and Western blot in six tumor and four adjacent samples), and that higher AEBP1 expression associates with shorter overall survival in TCGA-GBM in a single-cohort, univariate analysis (ROC AUC 0.65). High-AEBP1 tumors showed lower ESTIMATE-derived tumor purity, higher stromal scores and higher PD1/CTLA4/TIGIT expression; from these cross-sectional associations the authors speculated that high-AEBP1 patients may respond better to checkpoint inhibitors — an inference made without immunotherapy data (Wang et al., JNEN 2024).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ Previous studies identified AEBP1 as a robust prognostic biomarker for GBM（应写 univariate, single-cohort association）</li>
+      <li>❌ AEBP1-high patients may benefit from immunotherapy（作为事实转述——只能作为作者推测并加 speculative 标注）</li>
+      <li>❌ AEBP1 drives immune infiltration in GBM（关联≠驱动；本文无任何因果设计）</li>
+      <li>❌ Pan-cancer analyses confirm AEBP1's stage association in GBM（其图内 GBM 为 NS）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：竞品差异化 + state-marker 叙事 + Module 10 纯度/CNA + IHC 队列」为默认目标用途；用途改变时 M 等级需重评。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>无 deposited 数据集（作者按需提供）——<strong>M3</strong>｜S024</li>
+      <li>其 TCGA-GBM 144 例分析口径（Xena HTSeq + DESeq2 |log2FC|&gt;2）— <strong>M3</strong>（我们自有管线更完善，仅作引用对齐）｜S005</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li>四工具免疫浸润配置惯例（CIBERSORT 22 群 / ssGSEA 28 群 / ESTIMATE / TIMER）— <strong>M2</strong>（Methods 引用惯例对齐；我们报告自己的结果时可用其作为"既往同类分析"的基准句）｜S008; F5</li>
+      <li>竞品差异化四缺口清单（无纯度校正 / 无时间依赖判别 / 无 CNA / 蛋白验证仅 6 例 + HPA 图）— <strong>M1</strong>（我们 Discussion 对比段的直接弹药："Unlike previous bioinformatic analyses, we formally tested..."）｜全文 vs 本项目模块</li>
+      <li>其 ESTIMATE 纯度观察句式 — <strong>M1</strong>（Module 10 的先导引证："consistent with the observation that high-AEBP1 tumors show lower estimated purity [Wang 2024], we formally tested whether..."）｜S015; F5C</li>
+    </ul>
+
+    <h3>实验资产</h3>
+    <ul>
+      <li>AEBP1 RT-qPCR 引物（F/R 全序列）+ ACTB 内参引物 — <strong>M1</strong>（直接可用于我们的样本验证）｜S010</li>
+      <li>AEBP1 抗体 CQA3769（Cohesion Biosciences，WB 1:1000）— <strong>M3</strong>（第三备选；我们 IHC 采用 ab254973 / sc-271374，均为肿瘤组织 IHC 验证级）｜S010</li>
+      <li>HPA 数据库 IHC 图作为蛋白方向性佐证的用法 — <strong>M2</strong>（低成本方向性验证；不能替代自有 TMA）｜S018</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li>其引用池与我们的重合（Reddy 2008、Guo 2020、Sinha 2019、Liu 2021、Majdalawieh 2020）— <strong>M1</strong>（确认标准引用配置；Reddy 2008 值得补入我们 References）｜S025</li>
+      <li>单基因生信文的章节组织（DEG→模型→富集→浸润→泛癌→小验证）— <strong>M3</strong>（范式结构仅供参考；我们不做模型路线，无需对标）｜全文</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>AUC=0.65（时间设定不明）称 "good prognostic biomarker" → 我们的时间依赖判别表述必须给出 C-index/时间点 AUC，且 ΔC=+0.007 的弱增量要如实呈现（R2 纪律的直接反面教材）｜S013; F3</li>
+      <li>自证高 AEBP1 组纯度更低却不做任何校正 → 我们 Module 10 的纯度分层敏感性分析正是对该缺口的正面回应，Discussion 可明写｜S015; F5C</li>
+      <li>检查点 mRNA↑ → "可能对 ICI 反应更好"写入摘要 → 我们论文中一切 ICI 相关表述必须限定为推测或引有治疗数据的文献（R3 纪律）｜S016</li>
+      <li>144:5 对照做 DEG、6:4 队列做验证、关键图放补充材料 → 队列规模与透明度底线｜S005; S018</li>
+      <li>泛癌概括涵盖自身图中 NS 的癌种 → 结论半径必须与图表一致（R1 纪律相邻教训）｜S017; F6B-C</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1093/jnen/nlae091">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
