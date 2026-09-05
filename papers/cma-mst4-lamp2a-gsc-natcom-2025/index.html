@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · MST4-LAMP2A-CMA-GSC 免疫轴（Nat Commun 2025/2026）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Li et al., Nature Communications 2026 — MST4 磷酸化 LAMP2A（T40/S97/T136）增强 CMA 活性：经 TSC1/2 降解激活 mTORC1 维持 GSC 干性；经 TET3 降解沉默 cGAS-STING 促免疫逃逸；CMA 抑制 + IR + anti-PD-1 三联协同。总评级 A−：三段机制各有正交验证与 rescue mutants，缺口在 TET3→启动子甲基化的直接测量与体内 shRNA 工具单一。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Targeting chaperone-mediated autophagy inhibits properties of glioblastoma stem cells and restores anti-tumor immunity</h1>
+  <p class="subtitle">Li Y, Sheng M, Li W, Liu S（共同一作）, …… Cheng S-Y, Jiang X, Li J, <strong>Huang T</strong>（通讯）. <em>Nature Communications</em>, 2026, 17: 440</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1038/s41467-025-67119-3">10.1038/s41467-025-67119-3</a> ·
+    审查深度：承重文献/审稿式精读（全流程） ·
+    总评级 <span class="badge grade-a-minus">A−</span> ·
+    <span class="sev sev-p1">P1 × 1</span> <span class="sev sev-p2">P2 × 5</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>18.1</strong>（条目 extra 记录）· JCR <strong>Q1</strong> · 中科院 <strong>综合性期刊 1 区 Top</strong> · 查询于 2026-09-05。期刊光环偏倚提醒：不作为证据评级依据。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>三段式机制发现论文的完整形态——每段（磷酸化→底物→功能→体内）均有正交验证与 rescue/mutant 周期，免疫治疗协同设计完备。</strong>最强资产：MST4-LAMP2A 磷酸化轴的完整验证周期（质谱定位→体外激酶→pT136 自制抗体→3A/3D 突变体 rescue 周期）+ TSC1/2/TET3 双底物的全链判定（KFERQ 基序→HSC70/LAMP2A 结合→溶酶体摄取降解→基序突变体逃逸）+ 免疫健全/缺陷双模型对比 + CD8 清除反转 + PPD 三联协同 + 患者 IHC（n=83）。一处 P1："CMA 经甲基化沉默 cGAS/STING" 的中间环节——TET3→CGAS/STING 启动子甲基化的直接测量缺失（仅有 TCGA mRNA-甲基化相关性 + TET3 身份推定，无亚硫酸氢盐/RRBS 数据于该轴）（P1）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程。双语全文证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，19 个正文块 + 10 图）。<strong>本项目负载</strong>：高分文献队列 P1-2（NC 18.1/1区Top）；GSC-免疫轴与本项目免疫叙事交叉（CLIC1/OSMR 的免疫讨论、Deleo TAM 框架均为相邻节点）；其"磷酸化→底物→通路→治疗"四层组织为机制写作的模板级范例。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（磷酸化轴）</strong>：MST4 与 LAMP2A 结合并磷酸化其 T40/S97/T136，增强 LAMP2A 稳定性/多聚化/溶酶体丰度，从而提升 GSC 的 CMA 活性。</li>
+      <li><strong>LC2（mTORC1 臂）</strong>：TSC1/TSC2 为 CMA 底物（KFERQ 基序），其降解解除 mTORC1 负调控，维持 GSC 干性与致瘤性。</li>
+      <li><strong>LC3（免疫臂）</strong>：TET3 为 CMA 底物；CMA 经 TET3 降解促进 CGAS/STING 启动子甲基化沉默、削弱抗肿瘤免疫；CMA 抑制与 IR/anti-PD-1 协同。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：CMA 在癌细胞中过激活的机制不明——增量三层：激酶层（MST4-LAMP2A 磷酸化轴首次鉴定）；底物层（TSC1/2 与 TET3 两个新 CMA 底物，分别接通 mTORC1 与免疫逃逸）；治疗层（PPD 三联 + CIM777 展望）。相对既有文献（LAMP2A 在 GSC 高表达、MST4-ATG4B 巨自噬）为本团队/领域的自然延伸但增量的底物与通路均为新见。</li>
+      <li><strong>证据链位置</strong>：机制发现型研究的完整形态——发现（PA-reporter/GSC 筛选）→ 激酶鉴定（IP-MS/截短域/体外激酶/pT136 自制抗体）→ 底物判定（KFERQ 扫描/结合/摄取/降解/基序突变逃逸）→ 上位性（TSC1/2 KD 缓解 LAMP2A KD 表型；TET3 KD 缓解 cGAS-STING 激活）→ 体内（遗传 KD 双模型+免疫对照）→ 治疗（IR/anti-PD-1/PPD 三联）→ 患者 IHC（n=83）。</li>
+      <li><strong>研究类型</strong>：research article；多 GSC 系（M83/23/456/28）+ GL261/CT-2A 同源模型（裸鼠+免疫健全 C57BL/6）+ MRC-5 衰老模型 + 人 CD8 共培养 + 患者 IHC n=83。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：摘要三分主张（CMA 上调/双底物/免疫沉默）与数据匹配度整体高。最可能发生证据错配的环节：①"epigenetic silencing"（TET3→启动子甲基化的直接测量缺失）；②TCGA CMA score × 免疫浸润相关（|r|≤0.22 的弱相关被用于免疫机制叙事的入口）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：MST4-LAMP2A 磷酸化轴）</span>：PA-KFERQ 报告基：GSC CMA 高于非 GSC 系（S004/F1a）→ 溶酶体 GAPDH 结合/摄取↑ + LN 后 MEF2D/GAPDH 累积仅见于 GSC（S004/F1b-c）→ DGC 分化后 CMA↓+LAMP2A 溶酶体丰度↓（mRNA 不变）→ LAMP2A KD/KO 表型 + WT（非 4A）回表达 rescue（S004/F1f-i）→ LAMP2A 磷酸化 GSC&gt;DGC、糖基化相同（S005）→ IP-MS：MST4 为 LAMP2A 共沉淀激酶（S005/F2d-e）→ 互作域：LAMP2A N 端 1-137 + MST4 激酶域 1-279（S005）→ IR 增强 MST4-LAMP2A 互作；血清减弱（S005）→ MST4 KD/KO：p-LAMP2A↓、溶酶体 LAMP2A↓、Cath A 结合↑、700 kDa 多聚体↓（S005/F2g-l）→ 质谱定位 T40/S97/T136 → 体外激酶+单/双/三点突变梯度 + pT136 自制抗体验证（S006/F3a-c）→ 3A 丧失寡聚化/Cath A 结合降低/不能 rescue；3D 模拟恢复（S006/F3d-i）→ MRC-5 衰老模型保守性验证（S006 Supp4）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">教科书级闭环</span>——质谱→体外激酶→细胞→突变体周期→跨模型保守性。最薄弱环节：p38α MAPK 在 GSC 23 中的替代磷酸化（作者诚实报告）说明轴非唯一；MST4 自身何者调控（IR 上调 STRIPAK 解除的机制为文献推理）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：CMA→TSC1/2 降解→mTORC1→干性）</span>：GSE181556/PXD027069 再分析：LAMP2A KD → IFN/炎症↑ + PI3K-AKT-mTOR↓（S008/F5a-b）→ MST4/LAMP2A KD → p-P70S6K/p-4EBP1↓（S008/F5c）→ KFERQ 基序扫描 → TSC1/2 含基序 → HSC70/LAMP2A 结合（WT 非突变体）→ 基序突变体半衰期↑（S008/F5d-g）→ HSC70/LAMP2A KD：TSC1/2 溶酶体关联↓+表达↑（S008/F5h-i）→ 纯化底物+溶酶体体外摄取降解（S008 Supp）→ LN 升高 TSC1/2（CHX 追踪）；3-MA 无效应（S008/F5j）→ TSC1/2 KD 缓解 LAMP2A-KD 表型（S008 Supp8）→ TSC1/2 基序突变体回表达效应强于 WT（逃离内源 CMA）（S008/F5k-l）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">底物判定全链闭环</span>——基序/结合/溶酶体关联/摄取/降解/基序突变逃逸六步齐备 + 非巨自噬排除（3-MA/ATG5）。最薄弱环节：TSC2 亦经蛋白酶体降解（作者诚实讨论）——两蛋白水解途径的相对贡献未定量。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：CMA→TET3 降解→cGAS/STING 沉默→免疫逃逸→治疗协同）</span>：蛋白组 STING/IFN 通路变化（S008/F5b）→ MST4/LAMP2A KD：cGAS/STING mRNA+蛋白↑、IR 后 p-TBK1/p-STING↑（S010/F7c-d）→ TCGA：CGAS/STING mRNA 与甲基化负相关；TET2/TET3 与表达正相关（S010/F7g-h）→ TET3 过表达↑表达、TET3 KD↓表达（TET1/2 阴性）（S010/F7i-j）→ TET3 含 KFERQ 基序、与 HSC70/LAMP2A 结合（突变体破坏）、溶酶体摄取降解（LN 敏感、MG132/3-MA 不敏感）（S010/F7k-p）→ 上位性：TET3 KD 缓解 MST4/LAMP2A-KD 对 IR-cGAS-STING 的影响；PPD（解耦磷酸化与 CMA）增强 cGAS-STING 并被 TET3 KD 抑制（S011/F8a-f）→ 体内 GL261：Lamp2a KD 生存 22→38 天；Tet3/Cgas KD 促瘤、减 CD8、缩短生存（S011/F8k-m）→ CD8 清除反转 Lamp2a-KD 表型（S009/F6l-n）→ IR+anti-PD-1+CMA 抑制三联协同（S012/F9）→ 患者 IHC n=83（S013/F010）
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">高闭环 / 甲基化环节缺口</span>——TET3 底物判定与上位性完整；从 TET3→"CGAS/STING 启动子甲基化"缺直接测量（bisulfite/RRBS 于该启动子）；免疫健全+CD8 清除+两模型是免疫验证的强配置（见 ERR-02）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · MST4-LAMP2A 磷酸化轴</h3>
+    <p><strong>第一性原理层</strong>：CMA 活性以 PA-mCherry-KFERQ 报告基+GAPDH 结合摄取+MEF2D 降解三重操作化——CMA 领域标准配置；KFSDA 突变对照排除非特异。承重前提：MST4 是 GSC 中 LAMP2A 磷酸化的主要激酶——GSC 23 的 p38α 替代磷酸化（作者诚实报告）说明该前提是细胞背景依赖的；标题以 MST4 为中心但正文承认多激酶。</p>
+    <p><strong>演绎构建层</strong>：发现链：磷酸化差异（GSC vs DGC）→ IP-MS 找激酶 → 互作域 → 磷酸化位点 → 突变体周期 → 跨模型保守性——每一步的正交验证（质谱/体外激酶/自制抗体/突变体）规范完整。3D &gt; WT 的回表达差异（3D 恢复更强）提示磷酸化可能是调控阈值而非仅稳定性——该细节为精细调控的线索。</p>
+    <p><strong>元认知审计层</strong>：IR 增强 MST4 表达与互作——治疗相关但机制（何者传感 IR→MST4）未探；血清/STRIPAK 为文献推理。结论最可能失败的条件：体内 MST4 KD 的脱靶（仅 shRNA，无 CRISPR 体内平行）；或 p38α 代偿掩盖 MST4 特异性表型。</p>
+
+    <h3>LC2 · CMA→TSC1/2→mTORC1</h3>
+    <p><strong>第一性原理层</strong>：底物判定的六步链（基序/结合/溶酶体关联/摄取/降解/基序突变逃逸）为 CMA 领域的完整标准操作；基序突变体的"逃逸"设计（突变体回表达效应更强）是精妙的体内功能证据。承重前提：TSC1/2 的 CMA 降解在 GSC 中具有生理相关性——LN 堆积 + KD 缓解实验支持。</p>
+    <p><strong>演绎构建层</strong>：TSC1/2 KD 缓解 LAMP2A-KD 对 mTORC1 的影响（上位性方向正确：TSC1/2 在 CMA 下游）；ATG5 阳性对照排除了巨自噬混杂；LC3-II/I 与 p62 无变化证实 CMA 通路独立于巨自噬。</p>
+    <p><strong>元认知审计层</strong>：TSC2 的泛素-蛋白酶体途径并存——CMA 途径的独立贡献需双途径联合抑制实验（未做，作者用 plausible 讨论补偿）。结论失败条件：蛋白酶体+CMA 双抑制后 TSC2 无叠加稳定化。</p>
+
+    <h3>LC3 · CMA→TET3→cGAS/STING 沉默→免疫逃逸</h3>
+    <p><strong>第一性原理层</strong>：TET3 的 CMA 底物判定与 TSC1/2 同规格（基序/结合/摄取/降解/突变逃逸）。承重前提："TET3 丢失 → CGAS/STING 启动子甲基化升高"——操作化仅靠 TCGA 相关性（mRNA-甲基化负相关）+ TET3 身份推定；**无 TET3 KD 后 CGAS/STING 启动子甲基化的直接测量（bisulfite/RRBS）**，也无 TET3 蛋白与 CGAS/STING 启动子的 ChIP 关联。移除此前提则"经甲基化沉默"退化为"经 TET3 依赖的未知机制下调表达"——标题级主张从"表观沉默"降级。</p>
+    <p><strong>演绎构建层</strong>：上位性方向正确（TET3 在 CMA 下游：TET3 KD 缓解 CMA 抑制的 cGAS-STING 激活效应）；PPD 解耦实验（不影响磷酸化但阻断 CMA 激活）设计精巧。免疫层：nude vs C57BL/6 差异 + CD8 清除反转 + 三联协同——免疫依赖性证明完整。</p>
+    <p><strong>元认知审计层</strong>：TET3 是全局去甲基化酶——其 KD 的影响广泛（全基因组甲基化变化），CGAS/STING 上调是否为 TET3 直接靶或间接效应（干扰素应答的正反馈）未分辨；替代解释：CMA 抑制→其他表观改变→cGAS/STING 上调→TET3 无关。结论失败条件：TET3 KD 后 CGAS/STING 启动子 bisulfite 无甲基化变化（则轴断裂于 TET3→甲基化环节）。</p>
+    <p><strong>统计实质</strong>：多数实验 n≥3 且 ANOVA/log-rank/双侧检验；体内 n=3-5/组（NC 标准下偏小但一致）；GSEA 用 Kolmogorov-Smirnov/Fisher（无 BH 声明）；患者 IHC n=83 但 KM 无多变量调整；TCGA 相关性未控纯度。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-02</span><br>"经甲基化沉默"缺直接测量</td>
+          <td>Abstract（"epigenetic silencing"）; Fig. 7 标题（"through targeting TET3"）; Discussion（"CMA facilitates the hypermethylation of CGAS/STING by promoting the lysosomal degradation of TET3"）</td>
+          <td>TET3 为 CMA 底物（全链闭环）但 TET3 丢失 → CGAS/STING 启动子甲基化升高的直接测量（启动子 bisulfite/RRBS）未做——仅靠 TCGA 表达-甲基化负相关 + TET3 去甲基酶身份推定；TET3 为全局去甲基化酶，CGAS/STING 是否为其直接靶（ChIP 关联）亦未测（换证据类型可修复 → ERR-02）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>体内实验工具单一</td>
+          <td>Fig. 6f–n; Fig. 8k–m; Fig. 9（GL261/CT-2A 体内实验均用 shRNA）</td>
+          <td>体内肿瘤/生存/免疫实验全部使用 shRNA KD——无 CRISPR 平行验证、无独立 shRNA 的体内对照；shRNA 脱靶对生存结论（22→38 天级别的主张）构成未排除的替代解释</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>TCGA CMA-score 相关的纯度/组成混杂</td>
+          <td>Figure 6a（CMA score × 免疫浸润 Spearman 热图）</td>
+          <td>CMA score 为 bulk 表达加权——CD8 XCELL r=−0.14/CIBERSORT −0.13/QUANTISEQ −0.22 的弱相关可被肿瘤纯度与间质/免疫组成混杂解释；未做纯度调整/分层；该相关是免疫机制叙事的入口数据但效应量弱且混杂未讨论</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>患者 IHC n=83 无调整 KM</td>
+          <td>Figure 10c（MST4/pT136/TET3/TSC1/2 的 KM 生存）</td>
+          <td>IHC 评分切点（≥4 高/≤3 低）来源未说明；KM 分层未做多变量调整（年龄/级别/IDH/治疗均缺）；队列级别构成（胶质瘤混合级别）未报告——临床相关性主张的混杂未控制</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04c</span><br>体内样本量偏小</td>
+          <td>多数体内实验 n=3–5 只/组（Fig 1h-i n=3/4; Fig 3g-i n=3; Fig 4f-h n=5; Fig 8k n=5; Fig 9 n=5）</td>
+          <td>NC 论文的体内实验通常 n≥8–10；n=3 的肿瘤体积与生存结论的置信区间宽，部分亚组（如 Fig 3i n=3）的生存差异可能不稳定</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04d</span><br>PPD 特异性与替代工具</td>
+          <td>Discussion（"its specificity may be limited... CIM777"）</td>
+          <td>PPD 影响 HSC70-LAMP2A 以外的应激通路（作者自陈）——PPD 的三联治疗主张的药理特异性有缺口；更特异的 CIM777 已有但未用于本研究；PPD 结果为单药理学工具无遗传正交的体内平行</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：标题级主张（靶向 CMA 抑制 GSC 特性+恢复抗肿瘤免疫）的核心由 MST4-LAMP2A 验证周期+双底物判定+免疫健全模型的 CD8 依赖性支撑；"经甲基化沉默"降为"经 TET3 依赖性下调"后标题不受影响。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A</strong></td><td>MST4-LAMP2A 磷酸化轴首次鉴定；TSC1/2 与 TET3 两个新 CMA 底物分别接通 mTORC1 与免疫逃逸；首次将 CMA 接入 cGAS-STING 冷肿瘤框架</td></tr>
+        <tr><td>证据广度</td><td><strong>A</strong></td><td>多 GSC 系 + 双鼠模型（nude/C57BL/6）+ CD8 清除 + 共培养 + 双公共数据集再分析 + PPD 药理 + 患者 IHC n=83 + 蛋白组/转录组再分析 + 衰老模型跨细胞类型验证</td></tr>
+        <tr><td>因果封闭性</td><td><strong>A−</strong></td><td>磷酸化轴与底物判定闭环（质谱/体外激酶/pT136 抗体/3A-3D 周期/基序突变逃逸）；TET3→甲基化环节缺直接测量</td></tr>
+        <tr><td>反例排除</td><td><strong>A−</strong></td><td>KFSDA/4A/3A 突变体、ATG5 阳性对照、3-MA/LN/MG132 区分、CD8 清除反转、TET1/2 阴性、 nude vs C57BL/6 免疫对照——排除体系完整；未排除 TET3 全局效应与 shRNA 脱靶</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B+</strong></td><td>pT136 自制抗体的全面表征为亮点；扣分：体内 shRNA 单工具、n=3-5/组偏小、IHC 无调整、GSEA 无 BH 声明</td></tr>
+        <tr><td>外部效度</td><td><strong>B+</strong></td><td>多 GSC 系（4 株患者来源）+ 鼠同源系双模型 + 跨细胞类型（MRC-5 衰老）保守性验证；人源 PDX 缺位（作者承认）；单中心患者 IHC</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-a-minus">A−</span></strong> —— 距 A 差三件事：TET3 丢失后 CGAS/STING 启动子甲基化的直接测量（bisulfite/RRBS）、体内 CRISPR 或独立 shRNA 平行验证、IHC 队列的多变量调整与级别分层。作为承重文献使用：磷酸化轴的验证周期与底物判定全链可整体引用；"经甲基化沉默"须降为"经 TET3 依赖性下调表达（甲基化变化待直接验证）"。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-02</span> <span class="sev sev-p1">P1</span>）：根因：TET3→CGAS/STING 启动子甲基化变化的直接测量缺失。动作：①LAMP2A/MST4 KD ± TET3 rescue 后对 CGAS/STING 启动子做亚硫酸氢盐测序（bisulfite-PCR 或 RRBS panel）；②TET3 的 CGAS/STING 启动子 ChIP 关联（或 TET3 催化结构域突变体 rescue 区分酶依赖/非依赖）。效果："经甲基化沉默"获得直接证据或修正为"经 TET3 依赖的表达调控"。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p2">P2</span>）：动作：体内实验补充 CRISPR 或第二组独立 shRNA 的平行验证（至少在 GL261 颅内模型）；报告 shRNA 序列与脱靶预测。效果：体内生存主张的特异性信任。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p2">P2</span>）：动作：CMA score × 免疫浸润的相关性做肿瘤纯度调整（ESTIMATE/CPE/ABSOLUTE 分层或 CPE 协变量回归）——这正好是我们项目已经掌握的分析（可直接对接）。效果：免疫叙事的入口数据去混杂。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：IHC 队列报告级别构成；KM 补多变量（年龄/级别/IDH/治疗）；切点来源说明或用 maxstat。效果：临床相关性可信度。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-04c</span> <span class="sev sev-p2">P2</span>）：动作：关键生存实验（Fig 4h, 8l, 9h）扩至 n≥8–10/组；或合并重复实验报告统计效力。效果：NC 标准的体内样本量。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-04d</span> <span class="sev sev-p2">P2</span>）：动作：以 CIM777 替代或平行 PPD 复现关键三联结论。效果：药理特异性信任。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · MST4-LAMP2A 磷酸化轴</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">MST4 binds LAMP2A (IP-MS/co-IP; N-term 1-137 + kinase domain 1-279 required) and phosphorylates T40/S97/T136 (mass spec + in vitro kinase + pT136 antibody) / phosphomimetic LAMP2A-3D but not -3A rescues CMA activity and GSC phenotypes after MST4 KD / the phosphorylation-dependent stabilization is conserved in MRC-5 aging model</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">MST4 is the kinase that regulates LAMP2A in GSCs（需限定 in M83/456 GSCs; p38α MAPK 替代磷酸化于 GSC 23——激酶为细胞背景依赖）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">MST4 is the universal regulator of CMA in cancer stem cells（p38α 替代 + 单细胞系验证边界）；MST4-LAMP2A axis is conserved across all cancers（MRC-5 衰老模型不等于泛癌种）</span></div>
+    </div>
+
+    <h3>LC2 · CMA→TSC1/2→mTORC1</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">TSC1/2 contain KFERQ-like motifs, bind HSC70/LAMP2A (not motif mutants), and are lysosomally taken up and degraded / TSC1/2 KD mitigates the mTORC1 suppression caused by LAMP2A KD / motif-mutant TSC1/2 escape CMA and exert enhanced effects on mTORC1 and GSC phenotypes</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">CMA is the dominant degradation route for TSC2（泛素-蛋白酶体途径并存——相对贡献依细胞类型/stimuli 而定）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">CMA is the sole regulator of TSC1/2 stability；TSC1/2 degradation is exclusively CMA-dependent</span></div>
+    </div>
+
+    <h3>LC3 · CMA→TET3→cGAS/STING 沉默→免疫逃逸→治疗</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">TET3 contains KFERQ-like motifs, binds HSC70/LAMP2A (not motif mutants), and is lysosomally degraded / TET3 KD blunts the cGAS-STING activation caused by LAMP2A or MST4 KD (epistasis) / Lamp2a KD extends GL261 survival from 22 to 38 days in C57BL/6 mice / CD8α depletion reverses the tumor growth inhibition / CMA inhibition (PPD) synergizes with IR and anti-PD-1 in triple therapy / CMA score inversely correlates with CD8 infiltration in TCGA-GBM (weak, r≈−0.13 to −0.22)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">CMA suppresses cGAS-STING via restraining TET3-dependent demethylation（TET3→启动子甲基化变化的直接测量缺失——推荐 "via TET3-dependent expression regulation" 或补 bisulfite 后升级）；CMA shapes the immunosuppressive TME（需限定 via CD8-intrinsic mechanism in murine models）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">CMA promotes hypermethylation of CGAS/STING promoters（直接测量缺失）；CMA inhibition restores ICI response in GBM patients（临床未测）；TET3 directly demethylates CGAS/STING promoters（无 ChIP/结合数据）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Li et al. identified an MST4–LAMP2A phosphorylation axis that sustains chaperone-mediated autophagy (CMA) in glioblastoma stem cells: MST4 phosphorylated LAMP2A at T40, S97 and T136, enhancing its stability, homotrimerization and lysosomal abundance. Through this axis, CMA promoted GSC self-renewal and tumorigenicity by lysosomally degrading the mTORC1 negative regulators TSC1/2, and dampened anti-tumour immunity by degrading the DNA demethylase TET3, thereby constraining cGAS–STING signalling. Genetic or pharmacological inhibition of CMA (shRNA or polyphyllin D) suppressed tumorigenicity in immunocompetent GL261/CT-2A models in a CD8⁺ T-cell-dependent manner and synergized with radiotherapy and anti-PD-1 therapy; in 83 glioma specimens, MST4 and pT136-LAMP2A levels positively correlated, inversely with TET3/TSC1/2 (Li et al., Nat Commun 2026).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ CMA promotes CGAS/STING promoter hypermethylation（无直接甲基化测量）</li>
+      <li>❌ CMA inhibition restores anti-PD-1 response in GBM patients（临床未测）</li>
+      <li>❌ MST4 is the universal CMA regulator in cancer stem cells（p38α 替代激酶已自证）</li>
+      <li>❌ PPD is a specific CMA inhibitor（作者自陈特异性有限——引用时须注明工具化合物属性）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：Cancers 特刊 + 纯度/CNA + IHC + 免疫叙事」为默认目标用途；用途改变时 M 等级需重评。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>PXD060464（本研究蛋白组：LAMP2A IP-MS 等）— <strong>M2</strong>（可下载；若做 AEBP1 互作/底物筛选可参考其 IP-MS 管线）｜S018B</li>
+      <li>GSE181556 / PXD027069（Auzmendi-Iriarte LAMP2A-KD GSC 多组学）— <strong>M1</strong>（公共可下载——**直接可用于我们的 CMA × AEBP1 交叉分析**：AEBP1 是否为 CMA 底物/在 CMA 抑制后的 GSC 中是否变化，这两个公共数据集可以直接回答！）｜S008</li>
+      <li>TCGA-GBM CMA score 免疫相关 — <strong>M2</strong>（CMA score 算法可套用到我们数据；纯度混杂正是我们要修正的）｜S009; F006a</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>PA-mCherry-KFERQ 报告基 + KFSDA 阴性对照</strong>（CMA 活性定量标准工具）— <strong>M2</strong>（若检验 AEBP1 是否经 CMA 降解可直接用）｜S004</li>
+      <li><strong>KFERQ 基序扫描 + 突变体逃逸的底物判定六步法</strong> — <strong>M1</strong>（底物判定全链模板：基序扫描 → HSC70/LAMP2A 结合 → 溶酶体关联 → 体外摄取 → LN 依赖降解 → 基序突变逃逸；可照搬到 AEBP1 的 CMA 底物假说检验）｜S008; S010</li>
+      <li><strong>3A/3D 磷酸化-null/simic 突变体 rescue 周期</strong> — <strong>M1</strong>（磷酸化功能验证的标准组合：单/双/三点梯度 + 模拟/非模拟对照）｜S006</li>
+      <li><strong>nude vs 免疫健全双模型对比</strong>（差异即免疫贡献）— <strong>M1</strong>（免疫依赖性证明的设计范式：同一细胞系种两背景、差异归因免疫）｜S009; F006f-k</li>
+      <li><strong>CD8α 清除反转实验</strong>（34 vs 24.5 天）— <strong>M1</strong>（免疫依赖的药理确认标准操作）｜S009; F006l-n</li>
+      <li>CMA score（Bourdenx 算法）套用 TCGA — <strong>M1</strong>（可迁移到我们的 AEBP1 数据做 CMA × AEBP1 相关）｜S009; F006a</li>
+    </ul>
+
+    <h3>实验资产</h3>
+    <ul>
+      <li>p-LAMP2A pT136 自制抗体（免疫肽段+44 克隆筛选流程）— <strong>M3</strong>（本文自产；同类自制磷酸化抗体的流程参照）｜S006</li>
+      <li>PPD 6 mg/kg 体内 + CIM777 展望 — <strong>M3</strong>（PPD 非特异；CIM777 为更优工具）｜S016</li>
+      <li>GL261/CT-2A 免疫健全模型的 IR + anti-PD-1 + PPD 三联方案（剂量与时间线完整）— <strong>M2</strong>｜S012; F009</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li><strong>三段式机制组织</strong>（激酶-底物→降解-通路→降解-免疫→治疗协同）— <strong>M1</strong>（每段含发现→验证→rescue→体内→治疗闭环的模块化写作范本）｜全文</li>
+      <li><strong>双底物并行设计的论证力</strong>（TSC1/2 接 mTORC1 干性 + TET3 接 cGAS-STING 免疫——同一降解机制的两个输出）— <strong>M1</strong>｜S008–S011</li>
+      <li>3D &gt; WT 回表达的精细调控线索 — <strong>M2</strong>｜S006</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>"epigenetic silencing" 无 bisulfite 直接测量 → 表观机制主张必须配启动子甲基化直接测量（或降级为表达调控）——R1 纪律核心案例｜Abstract; S016</li>
+      <li>体内全部依赖 shRNA → 体内生存结论至少配 CRISPR 或独立 shRNA 平行｜Fig 6/8/9</li>
+      <li>TCGA bulk 相关不控纯度 → 我们的 Module 10 已有纯度分层方案可修正此缺口（并作为方法学增量点）｜F006a</li>
+      <li>IHC 队列无多变量 KM + 切点来源不明 → IHC 队列的统计规范底线｜F010c</li>
+      <li>n=3–5/组的体内实验 → NC 级别期刊的样本量底线应≥8｜Fig 1h-i; Fig 3g-i</li>
+      <li>PPD 特异性缺口（作者自陈）→ 工具化合物结论需特异性正交（CIM777 平行或遗传 rescue）｜S016</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1038/s41467-025-67119-3">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
