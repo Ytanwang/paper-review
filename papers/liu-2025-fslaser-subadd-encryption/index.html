@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · fs 激光减材/增材一体化仿生制造用于可见/红外加密（IJEM 2025）</title>
+<meta name="description" content="nature-paper-review 合并流程：Liu et al., Int. J. Extrem. Manuf. 2025 — 正文、图注、方法、Figure S1–S12 与 Movie S1–S4 全量取证后的逻辑审查。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">Nature paper review · merged workflow</span>
+  <h1>Femtosecond laser subtractive/additive-integrated biomimetic manufacturing for visible/infrared encryption and stimuli-responsive infrared decryption</h1>
+  <p class="subtitle">Ruijie Liu, Dongshi Zhang（通讯）, Zhuguo Li（通讯）. <em>Int. J. Extrem. Manuf.</em>, 2025, 7(4): 045009 (18 pp.)</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1088/2631-7990/adc87f">10.1088/2631-7990/adc87f</a> ·
+    审查深度：承重文献精读 + 横向对照（vs Liao 2025 同组方法学） ·
+    总评级 <span class="badge grade-b-plus">B+</span> ·
+    <span class="sev sev-p1">P1 × 3</span> <span class="sev sev-p2">P2 × 3</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：<em>Int. J. Extrem. Manuf.</em> · <a href="https://www.sciopen.com/journal/2631-8644">IF 25.1（2025 JCR）/ CiteScore 29.3</a> · <a href="https://www.iikx.com/sci/technology/23886.html">中科院 2025 年 3 月升级版：工程技术 1 区 Top（工程制造 1 区；材料综合 1 区）</a> · 查询日期 2026-08-31；指标不参与科学评级 · CC BY 4.0 · 发表 2025-05-21
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>关联层论证高质量（CC-1 量化指标显著优于同组 Liao 2025），但加密-解密与高通量外推是相对薄弱环节。</strong>CC-1（黑度稳定 + LWIR 可调）由 7 个扫描间隔的多光谱反射率 + CIE XYZ/Lab/HSL 色度坐标 + DE2000 ΔE 0.27–6.71% + LWIR 梯度 27.6→87.3%（60 个百分点）+ Kirchhoff 定律引用 + 与超表面调制能力横向对比支撑，是本文最强资产。CC-2 黑化效率 ~11.25 cm²·min⁻¹（2 数量级提升）系单点报告，无 n=? 无误差无工艺-效率曲线建模。CC-3 "本征可见-IR 双波段加密 + IR 解密" 仅视觉演示，缺 CNR/可识别率/信息熵/比特率。Discussion 末尾外推到 thermal shielding/NIR shielding/EM shielding/thermoelectric/wearable electronics/photocatalysis/solar steam/radiative cooling/sensing 等 9+ 应用领域，无任何一条给出本工作实验数据——典型 ERR-03d。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献精读 + 横向对照（vs 同组 Liao 2025） → 深度 = 全流程（生态位 + 闭环 + 三层探针 + ERR + 评级 + 动词 + 资产）。输出侧重：完整审稿意见 + 与 Liao 2025 共享素材的横向锚点。</p>
+    <p><strong>承重主张</strong>（拆掉它，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>CC-1（光学）</strong>：fs 激光"减材/增材一体化"技术在约束空间内将 W/Mo/Nb/Ta 难熔金属一步转化为黑色 WO₃₋ₓ 纳米聚集体，保持可见光黑度（Vis 平均反射率 2.1–4.4%，c-150µm 除外 10.3%）的同时 LWIR 发射率可调（83.5% uc-1µm → 87.3% c-1µm；梯度 27.6→87.3%）。</li>
+      <li><strong>CC-2（工艺）</strong>：黑化效率 ~11.25 cm²·min⁻¹，相对非约束模式提升 2 个数量级。</li>
+      <li><strong>CC-3（应用）</strong>：图案化的汉字/数字/英文字母在可见光下不可见（"本征可见-红外双波段加密"），通过样品加热/冷却或外部热/冷源（含人手）实现 IR 解密。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题</strong>：现有蝴蝶翅膀仿生多聚焦单一原型（黑色 OR 红外制冷），如何将 *Ornithoptera goliath* 黑翅 + *Rapala dioetas* IR 制冷"双原型"做组分-结构-功能一体化仿生制造？</li>
+      <li><strong>证据链位置</strong>：①关联层（"约束空间 ⟶ 高氧化率 ⟶ 高氧空位 ⟶ 高 LWIR 发射" 的相关-表征-结构对应）；②应用演示层（IR 显示/加密-解密的视觉对照演示）。机制层**部分进入**——作者提供"冲击波推离效应 [40] vs 约束空间抑制"可证伪机制（Fig.2(f)），并通过 EDS O 含量 (57–59% vs 15%) 与 ESR g=2.003/2.004 给出实验支撑（比 Liao 2025 成熟）。因果层未进入；跨尺度单尺度。</li>
+      <li><strong>增量</strong>：①"减材/增材一体化"命名（与粉末激光增材 [35] 类比，但本文非粉末激光）；②双原型一体化仿生（vs 单一原型）；③constraint-mode 工艺平台（vs unconfined-mode 集尘器方案）；④黑色 TMOs 替代炭黑的工艺素材。</li>
+      <li><strong>研究类型</strong>：工艺筛选（7 扫描间隔 × 2 模式）× 多模态表征（XRD/ESR/Raman/EDS/SEM/TEM/FIB-SAED/UV-Vis-NIR/FTIR/CIE/HSL）× IR 加密-解密演示（6 组合扫描间隔筛选 + 静态/动态 + 键盘/排版）。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：CC-1 量化匹配（A+）；CC-2 强度超载（单点无重复）；CC-3 加密-解密缺指标；Discussion 末尾 9+ 跨学科外推典型 ERR-03d。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（CC-1：黑度稳定 + LWIR 可调）</span>：7 个扫描间隔（1–150 µm）的 uc-/c- 样品 → Vis/LWIR 反射谱 + CIE XYZ/Lab/HSL 色度坐标 → Vis 平均反射率 2.1–4.4%（c-150µm 除外 10.3%）；LWIR 吸收率梯度 27.6% → 87.3% → "黑度稳定 + LWIR 可调"
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">闭环</span>——A+ 级证据：多光谱 + 量化色度坐标 + Kirchhoff 定律引用 + 与超表面调制能力横向对比。ΔE 0.27–6.71% 已量化色差；LWIR 调制范围 27.6% → 87.3%（60 个百分点）显著。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（CC-2：黑化效率 11.25 cm²·min⁻¹）</span>：7 个扫描间隔的 c-/uc- 样品 + 烧蚀面积/时间记录 → 黑化窗口：c-100 µm·s⁻¹ vs uc-1 µm·s⁻¹ → 算术平均 → 11.25 cm²·min⁻¹，2 个数量级提升
+      <br>闭环状态：<span class="state state-broken" style="background:#fdeceb;color:#c0392b">断裂/超载</span>——D 是单点报告而非多条件速率曲线；"2 个数量级"基于"c-100 vs uc-1"单工艺点对比，未做工艺-效率函数建模；未报 n=? 重复、未给误差。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（CC-3：本征加密 + IR 解密）</span>：6 组 "2023/背景" 工艺组合筛选（c-70/uc-1, uc-1/c-70, c-70/c-1, c-1/c-70, c-30/c-5, c-5/c-30）→ c-70/uc-1 选中（Figure 7）→ 室温下不可见；加热/手近场/冰水后 IR 解密（Figure 7）→ "本征可见-红外双波段加密 + 多模态解密"
+      <br>闭环状态：<span class="state state-overload">超载</span>——演示链闭合；补充 Figure S11 与 Movie S1–S4 完整展示六组合和动态响应，但 CNR、可识别率、信息熵、比特率仍缺；"本征加密"取决于探测器阈值与发射率差 [S030–S032]，未量化。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 D（Discussion 末尾跨学科外推）</span>：WO₃₋ₓ 在 c-mode 下合成 + 黑度+LWIR 可调 → 外推到 thermal shielding / NIR shielding / EM shielding / thermoelectric / wearable electronics / photocatalysis / solar steam / radiative cooling / sensing 等 9+ 领域
+      <br>闭环状态：<span class="state state-broken" style="background:#fdeceb;color:#c0392b">断裂/超载</span>——9+ 条应用推论无任何一条给出本工作实验数据；典型 ERR-03d（小样本/模型外推）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅 CC-2 承重；CC-1 因 A+ 证据等级相对稳健，CC-3 因加密-解密指标缺仅做元认知审计）</h2>
+
+    <h3>CC-2 · 黑化效率 11.25 cm²·min⁻¹</h3>
+    <p><strong>第一性原理层</strong></p>
+    <ul>
+      <li><strong>承重前提 ①</strong>：黑化效率 = 黑化窗口 × 线宽 × 扫描速度 / 工艺稳定时间。可证伪：是（Fig.1(e) 柱状图），但未给 n=? 与置信区间。构念可操作：部分。线宽 (75 µm) 与扫描速度 (200 mm·s⁻¹) 给出；工艺稳定时间未定义。</li>
+      <li><strong>承重前提 ②（关键软肋）</strong>：作者**未做"扫描速度变化"对效率的影响**——结论仅在 200 mm·s⁻¹ 一个点成立。</li>
+    </ul>
+    <p><strong>演绎构建层</strong></p>
+    <ul>
+      <li><strong>跳跃</strong>：[S040] "2 个数量级提升"是 c-100 与 uc-1 单点对比，直接升级为"约束空间 2 个数量级优于非约束"——属工艺-效率相关关系，因果论证缺。
+        <br>缺失论证：①未做"约束空间几何参数系统扫描"（△=0 vs △=300 vs △=600 vs ∞ 的速率-质量曲线）；②未做"功率-速度联合扫描"以分离"扫描速度 vs 约束"的贡献；③未报 N=3 重复与误差。</li>
+    </ul>
+    <p><strong>关键替代解释</strong>：高效率可能源于"约束空间抑制颗粒飞散"（已部分论证 Fig.2(f)）也可能源于"石英板烧蚀供氧加速反应"（[S021–S023] 与补充 Figure S9 显示盖板参与/承接沉积）。二者未去耦。</p>
+
+    <h3>CC-1/CC-3 · 跨主张的元认知审计</h3>
+    <ul>
+      <li><strong>选择偏倚复核后撤销</strong>：补充 Figure S11 实际展示了 6 组组合及失败/次优表现，因此“其余 5 组未展示”不成立；保留的问题是各组未给 CNR、识别率与重复性统计。</li>
+      <li><strong>HARKing 风险</strong>："intrinsic visible-infrared dual-band encryption" 标题词 > 实际演示深度。"intrinsic" 一词在信息安全领域有特定定义（不依赖外部密钥），作者未给出密钥空间的量化（密钥 = 工艺参数组合？还是字符本身？）。</li>
+      <li><strong>图漂亮 → 标准放松</strong>：Fig.7/8 的 IR 热像色彩对比明显，但这是 Rainbow/Ironbow 调色板的视觉效果而非定量温度差；Fig.6(h) 色差图已部分缓解该问题（ΔE 量化）。</li>
+      <li><strong>统计实质</strong>：黑化效率 11.25 cm²·min⁻¹——单点，无 n、无置信区间、无重复性验证；加密-解密质量——仅视觉，无 CNR / 可识别率 / 信息熵 / 比特率；ΔE 色差——n=? 未报，但 ΔE 量化本身已是一种进步。</li>
+      <li><strong>失败点压力测试</strong>：振动稳定性文字总结（"一致可靠解密"）无定量——6 个月/100 °C 级别测试未做（与 Liao 2025 的 6 个月 + 100 °C/h 形成对比）。</li>
+      <li><strong>跨学科外推（Discussion 末尾）</strong>：将 WO₃₋ₓ 推到 thermal shielding / NIR shielding / EM shielding / thermoelectric / wearable electronics / photocatalysis / solar steam / radiative cooling / sensing 等 9+ 领域，**没有任何一条给出本工作的实验数据**——典型 ERR-03d。</li>
+    </ul>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>主 ERR</th><th>位置</th><th>根因</th><th>严重度</th><th>最小修复补丁</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>方法学/统计</td>
+          <td>CC-2 [S040] / Fig.1(e)</td>
+          <td>黑化效率 11.25 cm²·min⁻¹ 单点；无 n=? 重复；无误差；无"扫描速度-效率"曲线。仅在 200 mm·s⁻¹ 一个点成立，不可外推到"工业级高通量"</td>
+          <td><span class="sev sev-p1">P1</span></td>
+          <td>独立制备 n≥3；报告误差，并扫描速度×间距×约束高度的效率曲面。</td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03d</span><br>小样本/模型外推</td>
+          <td>Discussion 末尾 / [S060] 周边</td>
+          <td>将 WO₃₋ₓ 推到 9+ 跨学科应用领域（thermal shielding, NIR shielding, EM shielding, thermoelectric, wearable electronics, photocatalysis, solar steam, radiative cooling, sensing），无任何一条给出本工作实验数据</td>
+          <td><span class="sev sev-p1">P1</span></td>
+          <td>删去无本工作数据的应用外推，或逐条降为有文献依据的 future direction。</td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03e</span><br>显著性冒充效应量</td>
+          <td>CC-3 [S030–S040] / Fig.S11 / Movies S1–S4</td>
+          <td>"intrinsic encryption" "stimuli-responsive" "reliable decryption" 缺可计算指标（CNR、可识别率、信息熵、比特率）。"室温不可见"取决于 IR 探测器阈值与发射率差，未量化</td>
+          <td><span class="sev sev-p1">P1</span></td>
+          <td>逐组合报告 CNR、识别率、错误率、响应/恢复时间及探测器参数。</td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03a</span><br>强度超载</td>
+          <td>Title + Abstract</td>
+          <td>"stimuli-responsive infrared decryption" 与 "intrinsic visible-IR dual-band encryption" 系概念性术语，缺量化边界</td>
+          <td><span class="sev sev-p2">P2</span></td>
+          <td>改写为“IR-detector-threshold-dependent thermal display/camouflage”。</td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05</span><br>隐含假设</td>
+          <td>CC-3 [S030–S032]</td>
+          <td>"intrinsic encryption" 暗示无密钥/不依赖外部，但实际"室温不可见"取决于 IR 探测器阈值与发射率差（Kirchhoff 定律），无密钥空间量化</td>
+          <td><span class="sev sev-p2">P2</span></td>
+          <td>定义密钥、攻击模型与探测器条件；若不做密码学评估，禁用“intrinsic encryption”。</td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03b</span><br>缺关键对照</td>
+          <td>CC-1 [S025]</td>
+          <td>仅与 metasurfaces [64] 横向对比；未与碳黑、生物原型（*O. goliath* 与 *R. dioetas* 翅膀）做 LWIR/Vis 量化对比</td>
+          <td><span class="sev sev-p2">P2</span></td>
+          <td>在相同几何/仪器下加入碳黑和两类生物原型的 Vis/LWIR 对照。</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>"减材/增材一体化"命名合理（与粉末激光增材 [35] 类比）；双原型一体化仿生（vs 单一原型）；constraint-mode 工艺平台</td></tr>
+        <tr><td>证据广度</td><td><strong>A−</strong></td><td>4 难熔金属 × 7 扫描间隔 × 2 模式 = 56 工艺点；多模态交叉：XRD/ESR/Raman/EDS/SEM/TEM/FIB-SAED/UV-Vis-NIR/FTIR</td></tr>
+        <tr><td>因果封闭性</td><td><strong>B+</strong></td><td>冲击波-约束假说 + EDS/ESR 支撑（比 Liao 2025 成熟），但"石英烧蚀供氧" vs "冲击波抑制"未去耦</td></tr>
+        <tr><td>反例排除</td><td><strong>B</strong></td><td>ΔE 量化色差（vs Liao 2025 文字断言是进步）；未与生物原型对等对比；加密-解密仅视觉</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B</strong></td><td>工艺参数列全；ΔE 量化 + 7 工艺点序列；缺 n=? 重复；缺振动/温循定量稳定性</td></tr>
+        <tr><td>量化指标</td><td><strong>A−</strong></td><td>LWIR 梯度 27.6→87.3%（60 个百分点）；ΔE 0.27–6.71%；黑化效率 11.25（无 n）</td></tr>
+        <tr><td>外部效度</td><td><strong>B</strong></td><td>4 难熔金属 + 7 扫描间隔；未与生物原型对照；Discussion 末尾 9+ 跨学科外推过度</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-b-plus">B+</span></strong> —— 黑度稳定 + LWIR 可调的关联层论证高质量（CC-1 量化指标显著优于同组 Liao 2025）；机制深度进入（冲击波-约束假说 + EDS/ESR 支撑）；但黑化效率单点（CC-2 ERR-04）+ 加密-解密缺指标（CC-3 ERR-03e）+ Discussion 末尾跨学科外推过度（ERR-03d）。引用强度上限 A-（CC-1）；CC-2/CC-3 引用强度上限 B+。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p1">P1</span>）：根因：黑化效率单点。动作：①补报 n=3 重复实验 + 标准差；②扫"扫描速度-效率"曲线（100/200/300/500 mm·s⁻¹ × 7 扫描间隔 = 28 工艺点）；③给出"约束空间几何-效率" 2D 映射。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-03d</span> <span class="sev sev-p1">P1</span>）：根因：Discussion 末尾跨学科外推过度。动作：每条应用推论需有（a）本工作实验数据 或（b）文献 [N] 显式引用支撑；删除无支撑的 9 条应用外推。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-03e</span> <span class="sev sev-p1">P1</span>）：根因：CC-3 加密-解密无可计算指标。动作：定义 CNR（背景-字符温差 / 噪声标准差）；定义可识别率（10 名观察者在 IR 图像中识别目标字符的概率）；定义比特率（每字符信息量 × 解密速度）。</li>
+      <li><strong>补丁 #4</strong>（因果封闭性补强 <span class="sev sev-p1">P1</span>）：机制去耦。补做"石英烧蚀供氧 vs 冲击波抑制"对照——使用不同透光材料（石英 vs 蓝宝石 vs 不透板）作覆盖板，控制氧气来源。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-03b</span> <span class="sev sev-p2">P2</span>）：生物原型对照。对 *O. goliath* 与 *R. dioetas* 翅膀（可购标本或文献值）测 Vis/LWIR 反射谱，做 c-W/Mo/Nb/Ta 与生物原型的对等对比。</li>
+      <li><strong>补丁 #6</strong>（量化透明度 <span class="sev sev-p2">P2</span>）：补充 Figure S11 已展示 6 组结果；下一步应为每组补报 Vis 反射率、LWIR 发射率、IR 解密 CNR、重复次数与误差，而不是只凭热像视觉排序。</li>
+      <li><strong>补丁 #7</strong>（<span class="err-tag">ERR-03a</span> <span class="sev sev-p2">P2</span>）：标题词改写。"intrinsic visible-IR dual-band encryption" 改写为 "IR-detector-threshold-dependent visible-IR dual-band camouflage"，明示依赖关系。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>CC-1 · 黑度稳定 + LWIR 可调 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">show / demonstrate / achieve tunable LWIR emission from 27.6% to 87.3% absorbance across the scan-interval window</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">modulate（工艺参数相关，非物理机制调谐）；preserve blackness（需明示 ΔE&lt;6.71% 的约束）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">design / engineer / control precisely（暗示主动控制）；match the natural prototype（未做生物原型对照）</span></div>
+    </div>
+
+    <h3>CC-2 · 黑化效率 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">show an efficiency of 11.25 cm²·min⁻¹ at 200 mm·s⁻¹ under confined mode</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">two orders of magnitude higher than unconfined mode（需注明基于单工艺点 c-100 vs uc-1 对比）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">ultrahigh efficiency / high-throughput industrial（缺稳定性/寿命/规模化数据）</span></div>
+    </div>
+
+    <h3>CC-3 · 加密-解密 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">demonstrate visually-discernible IR decryption under heating/hand stimulus across 6 scan-interval combinations</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">intrinsic（需注明"室温下 IR 探测器阈值依赖"）；stimuli-responsive</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">encryption / decryption（信息安全术语滥用，缺密钥空间量化）；high-security（无密钥强度评估）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Liu et al. demonstrated that femtosecond laser subtractive/additive-integrated hierarchical manufacturing in confined space (with a quartz cover plate) can one-step convert refractory metals (W, Mo, Nb, Ta) into black non-stoichiometric WO₃₋ₓ nano-aggregates with tunable LWIR absorbance (27.6%–87.3%, CIE DE2000 ΔE 0.27–6.71%), achieving IR-detector-threshold-dependent visible-IR camouflage and visually-discernible IR decryption upon hand/sample-heating stimuli (Liu et al., Int. J. Extrem. Manuf. 2025).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ The intrinsic visible-IR dual-band encryption has no key dependency（"intrinsic" 未量化，依赖 IR 探测器阈值）</li>
+      <li>❌ Blackening efficiency of 11.25 cm²·min⁻¹ enables industrial high-throughput manufacturing（单点，无 n=?，缺稳定性/寿命）</li>
+      <li>❌ WO₃₋ₓ aggregates enable thermal/NIR/EM shielding, thermoelectric, wearable electronics, photocatalysis, solar steam generation, radiative cooling, sensing applications（Discussion 末尾 9+ 外推，无本工作实验数据）</li>
+      <li>❌ The technique outperforms carbon black manufacturing（仅与 metasurfaces [64] 横向对比，未与碳黑对等对比）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级标注以"飞秒激光仿生制造 + 黑色非化学计量氧化物 + IR 加密显示"为目标用途。</p>
+
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>资产</th><th>M</th><th>目标用途</th><th>来源指针</th></tr></thead>
+      <tbody>
+        <tr><td>Vis/LWIR 梯度 + CIEDE2000</td><td><strong>M1</strong></td><td>复用为“保持黑度、调节 LWIR”量化证据</td><td>Fig.6; [S025]</td></tr>
+        <tr><td>约束/非约束氧化与物相链</td><td><strong>M1</strong></td><td>复用为工艺—组分—结构的多模态验证范式</td><td>Fig.2–5; [S021–S024]; Fig.S3–S10</td></tr>
+        <tr><td>六组合完整筛选</td><td><strong>M1</strong></td><td>复用为参数组合筛选设计；需另补量化终点</td><td>Fig.7; Fig.S11; [F111/C111]</td></tr>
+        <tr><td>Movie S1–S4 动态热像</td><td><strong>M2</strong></td><td>复用为动态响应演示，不作密码学安全性证据</td><td>[F201–F204]</td></tr>
+        <tr><td>11.25 cm²·min⁻¹ 黑化效率</td><td><strong>M2</strong></td><td>仅用于当前 200 mm·s⁻¹ 工艺点的工程背景</td><td>Fig.1(e); [S020]</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>c-W 黑色聚集体 Vis/LWIR 反射谱（7 个扫描间隔） — <strong>M1</strong>｜Fig.6(a)(b); [S025]</li>
+      <li>CIE XYZ/Lab/HSL 色度坐标（8 个样品）+ DE2000 ΔE 0.27–6.71% — <strong>M1</strong>（与 Liao 的白度证据形成质量差距锚点）｜Fig.6(g)(h); [S025]</li>
+      <li>ESR g 因子序列：c-1µm 2.004 / c-30µm 2.003 / uc-1µm 2.003 — <strong>M1</strong>｜Fig.2(b); [S021]</li>
+      <li>EDS O 含量：c-1–30µm 57–59%、c-70–150µm 18–21%、uc-1µm 15% — <strong>M1</strong>｜Fig.2(d); [S021]</li>
+      <li>XRD 物相：W₀.₇₅O₀.₂₅ + W₁₈O₄₉ + W — <strong>M1</strong>｜Fig.2(a); [S021]</li>
+      <li>黑化效率 ~11.25 cm²·min⁻¹（@ 200 mm·s⁻¹, c-mode） — <strong>M2</strong>（需 n=? 与重复验证）｜Fig.1(e); [S040]</li>
+      <li>6 组合扫描间隔加密-解密筛选（c-70/uc-1 等） — <strong>M2</strong>｜Fig.7; Fig.S11; [S030–S032]</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li>"减材/增材一体化"命名学范式 — <strong>M1</strong>（与粉末激光增材 [35] 类比；可借鉴做"工艺描述"而非"机制突破"）｜Title + Abstract</li>
+      <li>constrained-mode 工艺平台（石英盖板紧贴/300/600 µm/∞） — <strong>M1</strong>（与 Liao 2025 的 constrained mode + 集尘器互为方法学锚点）｜§2.2</li>
+      <li>6 组合扫描间隔加密-解密筛选设计 — <strong>M1</strong>（多变量筛选 + 选最优的实验设计范式）｜§3.5.1</li>
+      <li>静态/动态双模态解密演示设计（近场源 vs 样品加热/冷却） — <strong>M1</strong>｜§3.5.2</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li>"intrinsic visible-IR dual-band encryption" 概念术语体系 — <strong>M2</strong>（引用时需注意强度超载 + 密钥依赖）｜Abstract + §3.5</li>
+      <li>6 组合筛选的工艺流程图（c-70/uc-1 等 6 种 layout） — <strong>M1</strong> 图 7 设计范式</li>
+      <li>键盘/排版模拟高通量解密 IR 显示（英文+数字+汉字） — <strong>M2</strong>（CC BY 4.0，视觉素材可二次使用）｜Fig.8</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>单点效率数字无 n=? 重复 → n=? 必报的工程纪律｜Fig.1(e)</li>
+      <li>"intrinsic encryption" 暗示无密钥 → 必须量化密钥空间或改写为"探测器阈值依赖"|Title + Abstract</li>
+      <li>加密-解密仅视觉演示 → 必须补 CNR / 可识别率 / 信息熵 / 比特率｜Fig.7/8</li>
+      <li>Discussion 末尾 9+ 跨学科应用外推（thermal shielding, NIR shielding, EM shielding, thermoelectric, wearable electronics, photocatalysis, solar steam, radiative cooling, sensing）无任何本工作数据 → 删或显式文献引用支撑｜Discussion 末尾</li>
+      <li>6 组合虽在补充 Figure S11 全列，但仅视觉排序 → 必须补 CNR、识别率和重复性统计｜§3.5.1 + Fig.S11</li>
+      <li>未与生物原型（*O. goliath*/*R. dioetas*）做 LWIR/Vis 对比 → 必须补｜§3.4</li>
+      <li>"subtractive/additive-integrated"命名 → 合理，但属于"工艺描述"而非物理机制突破｜Title</li>
+    </ul>
+
+    <h3>横向对照锚点（vs Liao 2025 同组方法学）</h3>
+    <ul>
+      <li><strong>共享方法平台</strong>：fs 激光烧蚀 + W 金属基底 + 约束/非约束模式切换</li>
+      <li><strong>ESR 氧空位指认一致性</strong>：Liu g=2.004/2.003 ↔ Liao g=2.003 → 同组方法学在氧空位生成机制上可复现</li>
+      <li><strong>互补资产</strong>：Liu 在量化指标（ΔE + LWIR 梯度 + 黑化效率）与机制深度（冲击波-约束假说）上更强；Liao 在稳定性（6 个月+100 °C+ DSC）与 5 基底 LWIR 发射率表上更全</li>
+      <li><strong>方法学共性短板</strong>：两篇都未做 n=? 重复实验；两篇都未给加密-解密可计算指标；两篇 Discussion 末尾都有跨学科外推倾向</li>
+      <li><strong>评级对比</strong>：Liu B+ (CC-1 量化更强) > Liao B (CC-1 内核稳健但 CC-2/CC-3 量化更弱)</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Nature paper review · merged workflow · 审查日期 2026-08-31</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://github.com/Ytanwang/paper-review">GitHub</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

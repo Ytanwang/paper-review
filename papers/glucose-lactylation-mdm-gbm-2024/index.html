@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · 葡萄糖-组蛋白乳酸化-MDM 免疫抑制（Immunity 2024）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：De Leo et al., Immunity 2024 — GBM 中 MDM 经 GLUT1/糖酵解产生胞内乳酸，以 p300 依赖的组蛋白乳酸化在 Il10 启动子层面驱动 IL-10 表达，上游由肿瘤因子-PERK-ATF4 轴调控；髓系 PERK 缺失联合 4-1BB 激动剂阻断 GBM 进展。总评级 B+：同位素示踪+遗传干预+体内治疗的证据广度突出，但 Kla→IL-10 因果仅靠单一药理工具、缺 rescue，全髓删除与全身抗体干预的归属论证为排除式。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Glucose-driven histone lactylation promotes the immunosuppressive activity of monocyte-derived macrophages in glioblastoma</h1>
+  <p class="subtitle">De Leo A, Ugolini A（共同一作）, … <strong>Veglia F</strong>（通讯）. <em>Immunity</em>, 2024, 57(5): 1105–1123.e8</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1016/j.immuni.2024.04.006">10.1016/j.immuni.2024.04.006</a> ·
+    审查深度：承重文献/审稿式精读（全流程） ·
+    总评级 <span class="badge grade-b-plus">B+</span> ·
+    <span class="sev sev-p1">P1 × 3</span> <span class="sev sev-p2">P2 × 4</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>25.7</strong>（JCR 2024，2025 年发布）· 5 年 IF ≈ 32 · JCR <strong>Q1</strong>（Immunology）· 中科院分区 <strong>医学 1 区 Top / 免疫学 1 区</strong>（2025-03 升级版；中科院分区表 2026 年起停更）· CiteScore 42.1（Web 检索汇总，查询于 2026-09-04；注意 Zotero 旧记录「IF 30.6」为更早年度 IF）。期刊光环偏倚提醒：不作为证据评级依据。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>证据广度与机制深度俱佳的 TAM 代谢-表观论文；核心「葡萄糖→胞内乳酸→Kla→IL-10」链在体外系统高度闭合，但按承重文献标准引用须压三级动词。</strong>本文最强资产是同位素直证（U-¹³C₆-葡萄糖 vs ¹³C₃-乳酸头对头）+ 髓系遗传干预（Slc2a1/Eif2ak3 条件删除）+ CUT&RUN 启动子位点 + 体内治疗验证（PERK 缺失 × 4-1BB 联合 + 再攻击保护）。三处硬伤限制引用上限：①Kla→IL-10 的因果仅靠 CPI-1612 单一药理工具，无 p300/Kla 遗传或残基水平正交验证，也无 rescue（P1）；②高浓度抑制剂（GNE-140 5 mM、BMS-303141 20 mM）且共培养体系中抑制剂残留对 T 细胞的直接效应未报告对照（P1）；③「MDM 是 IL-10 主要来源」与生存获益归因 MDM 均为排除式推断——aIL-10 全身中和、aCD49d 全 VLA-4 干预、Lyz2-Cre 全髓删除均非细胞特异（P1）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（7 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程：生态位 + 论证链 + 三层探针 + ERR + 评级 + 动词 + 资产。双语全文证据包见同目录论文文件夹（<code>paper.md</code> / <code>source_map.json</code>）。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（细胞与介质）</strong>：GBM 中免疫抑制性 TAM 主要是 MDM（晚期超过 MG），其中 GLUT1⁺ 糖酵解亚群是抑制主力，且其抑制 T 细胞的功能主要由 IL-10 介导。</li>
+      <li><strong>LC2（代谢-表观机制，标题核心）</strong>：葡萄糖衍生的<strong>胞内</strong>乳酸（而非胞外/肿瘤来源乳酸）经 p300 依赖的组蛋白乳酸化（Kla）在 Il10 启动子层面促进 IL-10 表达。</li>
+      <li><strong>LC3（上游与治疗）</strong>：肿瘤来源因子经 PERK-ATF4 轴诱导 GLUT1/糖酵解/Kla；髓系 PERK 缺失延迟肿瘤生长，并与 4-1BB 激动剂联合阻断 GBM 进展、产生再攻击保护。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：GBM 免疫治疗耐药的重要部分归因于 TAM，但缺乏克服手段。增量分三层——细胞层：把免疫抑制责任从"泛 TAM"拆解到 MDM（并区分 MG）；代谢层：MDM 高糖酵解/GLUT1⁺ 亚群为葡萄糖主要免疫消费者；表观层：首次在 GBM TAM 中把组蛋白乳酸化（Zhang 2019, Nature 首创的修饰）接到 IL-10 表达与免疫抑制功能上，并补出 PERK-ATF4 上游。</li>
+      <li><strong>证据链位置</strong>：横断面描述（鼠模型+人样本的 MDM/MG 构成）→ 体外机制系统（TES-BMDM）→ 多组学关联（RNA/ATAC/代谢组）→ 同位素直证 → 药理+遗传干预（Slc2a1/Eif2ak3 条件删除）→ 体内治疗（4-1BB 联合）。覆盖描述→关联→机制→因果→转化全层级，属于机制发现型研究的完整形态。</li>
+      <li><strong>研究类型</strong>：research article；鼠模型 3 种（CT2A/SB28/GL261）+ 人 GBM 配对样本（初诊 22/复发 14）+ 人 PBMC-TES 系统。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：总体克制（Discussion 承认肿瘤细胞按单细胞计仍是葡萄糖最大消费者、缺氧与 ROS 上游未解、MG 早晚期作用不确定）。两处张力：标题「Glucose-<em>driven</em> histone lactylation <em>promotes</em>」中 driven 的直接体内证据为间接（PERK 删除后的下游读出）；「MDMs are the main mediator of the pro-tumoral effect of IL-10」为推断级表述（原文用 may）。最可能发生证据错配的环节：体外 TES 系统 → 体内肿瘤因子构成的外推（作者未鉴定 TES 中究竟哪些因子起作用）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：MDM/GLUT1⁺ → T 细胞抑制 → IL-10 介质）</span>：三模型时序 FACS——早期 MG 为主、晚期 MDM 替代（Fig. 1B–C；横断面计数）→ 共培养：MDM 抑制 T 增殖、MG 不抑制（Fig. 1D；体外功能）→ 体内干预：aCD49d 清减 MDM → 生存延长、T 细胞清除后获益消失（Fig. 1E; S1H；药物干预）→ GLUT1⁺ 亚群：糖酵解更高、抑制更强（Fig. 2F–I；分选功能）→ 髓系 Slc2a1 删除 → 抑制受损+生存延长（Fig. 2J; S3E；遗传操作）→ IL-10 依赖：aIL-10 中和近乎完全消除 MDM 抑制能力（Fig. 4G–H; S5H；rescue 方向阻断）→ 体内：aIL-10 延长生存、与 aCD49d 无叠加（Fig. 4F；药理干预）→ 人样本：MDM 高 IL-10、抑制 T 增殖（Fig. 1I, 4I–M；相关）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">基本闭环</span>——体内干预+中和实验+人样本三层都有。最薄弱环节：最后一步「MDM 是 IL-10 主要体内来源」由"无叠加效应"反推，aIL-10/aCD49d 均非 MDM 特异（见 ERR-05）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：葡萄糖 → 胞内乳酸 → Kla → IL-10）</span>：TES-BMDM 获得糖酵解+抑制表型（Fig. 3A–D；体外诱导）→ 2-DG/GNE-140 消除抑制与 IL-10（Fig. 3E–H, 4O–R；药理干预）→ 来源判别：MG 摄乳酸更强、MDM 摄葡萄糖更强；Slc2a1 删除使 MDM 胞内乳酸降约 70%（Fig. 3I–J；遗传操作）→ 排除胞外乳酸：外源乳酸/乳酸酸不诱导抑制表型；TCM（高乳酸）不诱导 Kla；上清抑制活性在 &gt;3 kDa 组分（S4I, S6B–D, S5J–O；排除实验）→ TES-BMDM 高 Kla 低 Kac；2-DG/GNE-140 降 Kla；ACLY 抑制不影响 Il10（Fig. 5A–B; S6A）→ 同位素直证：U-¹³C₆-葡萄糖向组蛋白 Kla 的 ¹³C 掺入远高于 ¹³C₃-乳酸（Fig. 5C–D; S6E；同位素+质谱，本文最硬证据）→ 位点：CUT&RUN 显示 Il10 启动子 Kla 富集（Fig. 5J–K）→ writer：CPI-1612 消除 Kla、Il10、启动子 Kla（Fig. 5L–O; S6I；药理）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">体外闭环</span> + <span class="state state-overload" style="background:#fff8e1;color:#b26a00">末端环节单一工具</span>——葡萄糖→Kla 源头判定（同位素头对头）是教科书级证据；但 Kla→Il10 的因果仅压在 CPI-1612 一个药理点上，无 p300 遗传操作、无 Kla 残基突变、无 rescue（见 ERR-02）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：肿瘤因子 → PERK-ATF4 → GLUT1/糖酵解/Kla → 治疗协同）</span>：公共 scRNA-seq：复发 GBM 糖酵解 MDM 与 ATF4/CHOP/EIF2A 相关（S7A–C；相关）→ GLUT1⁺MDM 高 pPERK/ATF4（Fig. 6A–B；相关）→ 髓系 Eif2ak3 删除：Slc2a1/GLUT1⁺ 比例/糖酵解/抑制能力全降，M2 标志不变（Fig. 6C–F; S7D；遗传操作）→ 生存延长 22 vs 18.5 天（S7G；体内）→ 位点：ATF4 结合 Slc2a1 启动子（THG 体外诱导，CUT&RUN）（Fig. 6G; S7K）→ 上游闭环：TES/THG 诱导的糖酵解、Kla、Il10 启动子 Kla 在 PERK 缺失后消失（Fig. 6K–P；遗传消除）→ 治疗：联合 a4-1BB 阻断进展+再攻击保护+效应 CD8 累积（Fig. 7A–E；体内干预）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">体内闭环度好</span>——PERK 位于通路上游由"删除后全链消失"支持。最薄弱环节：①ATF4–SLC2A1 结合位点预测原文标注 data not shown（Fig. 6G 为 THG 体外系统的结合验证）；②肿瘤因子→PERK 之间的分子（ROS？具体因子？）作者自认未解（Limitations）；③联合治疗仅 SB28 单模型。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC2 · 葡萄糖-胞内乳酸-Kla-IL-10（标题核心）</h3>
+    <p><strong>第一性原理层</strong></p>
+    <ul>
+      <li>核心构念可操作：Kla 以 pan-lactyllysine 抗体（WB/FACS/CUT&RUN）+ ¹³C 同位素掺入双重操作化，定义清晰、可证伪。</li>
+      <li>承重前提 ①：MDM 的 Kla 主要来自葡萄糖（非胞外乳酸回收）。证据最硬：U-¹³C₆-葡萄糖 vs ¹³C₃-乳酸头对头 + Slc2a1 删除降 70% 胞内乳酸 + TCM 不能诱导 Kla。此前提站得住。</li>
+      <li>承重前提 ②：<strong>Kla（而非其他 p300 底物事件）介导 Il10 上调——这是全链唯一未做正交验证的承重点</strong>。移除此前提（即 Il10 上调由 p300 的其他底物/乙酰化事件或其他通路介导，Kla 只是伴随标志），标题级主张"histone lactylation promotes…"即坍塌。CPI-1612 同时消除 Kla 与 Il10 只证明 p300/CBP 必要，未证明"乳酰化修饰本身"必要。</li>
+      <li>承重前提 ③：TES 系统能代表体内肿瘤因子。TCM 阴性结果反而强化了"非肿瘤细胞单因子"的解释，但 TES 有效成分未鉴定——机制的上游端口是黑箱（作者承认为开放问题）。</li>
+    </ul>
+    <p><strong>演绎构建层</strong></p>
+    <ul>
+      <li>相关升级为因果发生在哪一句：Results 5 收尾「glucose promotes MDMs immunosuppressive ability via Kla, which regulates expression of IL-10」——由 2-DG/GNE-140（上游）+ CPI-1612（writer）两个药理端点 + 启动子位点相关性支撑；从"同时消失"到"经 Kla 调控"是一步药理推断。</li>
+      <li>中间机制由引文补位处：p300 为 Kla writer 承自 Zhang 2019（引文 48），本文未做 p300 的遗传验证；"低线粒体代谢解释 Kac 不变"（Discussion）为未测的 may 级解释。</li>
+      <li>正验证亮点：¹³C 掺入覆盖同一组蛋白多个赖氨酸残基与 H2B 多亚型，系统性排除单残基偶然。</li>
+    </ul>
+    <p><strong>元认知审计层</strong></p>
+    <ul>
+      <li>确认偏倚风险：Kac 阴性结果被解读为"Kla 特异性"支持（而非体系检测限），ACLY 抑制剂 BMS-303141 阴性亦然——阴性对照的解读方向一致偏向主叙事。缓冲因素：Kac 在 THG 系统与 CPI-1612 处理后有正向变化记录（Fig. S6I），非完全无法检出。</li>
+      <li>未排除替代解释：CPI-1612 抑制 EP300/CBP 后 Il10 下降可经其他转录事件间接发生；GNE-140 除抑制 LDH 外影响 NADH/NAD⁺ 平衡，代谢压力本身可压低 Il10。</li>
+      <li>结论最可能失败的条件：体内 MDM 特异的 p300 或 Kla 酶（如 HAGHL/KAT2A 类乳酰转移酶新候选）删除不重现 Il10 下降；或人 GBM MDM 中 IL-10 的主要调控是别的方式（人证据仅 n=2 TES-MDM + 相关性）。</li>
+      <li>读者侧自查：Immunity + 17 作者团队 + 乳酸化热点 + 完整机制图（graphical abstract）——叙事流畅度极高，属于"机制漂亮到容易停止追问"的类型；以上前提 ② 恰是被流畅叙事最易掩盖的环节。</li>
+    </ul>
+    <p><strong>统计实质</strong>：多数实验 n≥3 且给 ANOVA/t 检验；生存曲线 log-rank（F1E n=17/25、F7）；ATAC-seq n=3；但 ATAC/RNA 整合阈值 padj&lt;0.1005 异常宽松（疑笔误）；F4L 人 TES-MDM n=2；抑制实验未报告效应量与方差齐性细节；无多重检验校正声明（转录组用 FDR，末端验证无）。</p>
+
+    <h3>LC1 · MDM/GLUT1⁺ 是主要抑制 TAM、IL-10 主要介质</h3>
+    <p><strong>第一性原理层</strong>：MG vs MDM 的构念以 CD45/CD49d（鼠）与 P2RY12/CD49d（人）流式定义，跨种可操作；"免疫抑制"以共培养 CFSE 增殖 + 体内生存双重操作化。承重前提："aCD49d 的生存获益经 MDM 减少+T 细胞依赖"——T 细胞清除消融获益（S1H）支持后半；前半依赖 aCD49d 选择性清减 MDM 这一药理学前提（引 Akkari 2020），未做 MDM 特异遗传对应。</p>
+    <p><strong>演绎构建层</strong>：抑制功能→IL-10 的归因实验（中和抗体 rescue 方向）是本文功能层的最强点（近乎完全消除）；ARG1 分支以 nor-NOHA 部分效应+人 MDM 无 ARG1 处理，鼠/人差异被诚实呈现但未深究。</p>
+    <p><strong>元认知审计层</strong>：MG「缺乏抑制活性」与作者自引的矛盾文献（其 Ref. 56–61）并存——作者在 Limitations 承认 MG 异质性与早期作用不能排除，主张半径处理得当；但正文结论句「Collectively, immunosuppressive MDMs outnumber MGs」易被读者放大为"MG 不重要"。</p>
+
+    <h3>LC3 · PERK-ATF4 上游与治疗协同</h3>
+    <p><strong>第一性原理层</strong>：承重前提"髓系 PERK 缺失的生存获益主要经 MDM"——中性粒 GLUT1 略降但抑制能力保留（S7E–F）+ 单核/MG 无抑制活性（S1D）→ 排除式论证。中性粒"体外抑制能力保留"不能排除其体内其他促瘤功能（血管、增殖支持）受 PERK 缺失影响。</p>
+    <p><strong>演绎构建层</strong>：ATF4→SLC2A1 的位点链：hg38 预测位点"data not shown"+THG 体外 CUT&RUN 验证结合+表达/摄取/抑制相关——结合的体内相关性（肿瘤 MDM 中 ATF4 是否占据该启动子）未测。CRISPRa Slc2a1 上调→Il10 升：无法区分"葡萄糖摄取增加"与"GLUT1 表达本身的信号作用"。</p>
+    <p><strong>元认知审计层</strong>：4-1BB 激动剂（urelumab/utomilumab 类）人体肝毒性/剂量限制已知，论文将其表述为"attractive strategy"而未讨论转化风险；联合实验仅 SB28（对免疫治疗最耐药的模型之一，选型合理，但缺 GL261/CT2A 复核）。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-02</span><br>因果链末端单一药理工具（缺正交验证与 rescue）</td>
+          <td>Results 5, Fig. 5L–O; Discussion（p.1117）</td>
+          <td>Kla→Il10 的因果仅由 CPI-1612（EP300/CBP 抑制剂）单点支撑：p300 底物谱极广，Il10 下降可能经其他底物事件间接发生；无 p300 髓系条件敲除、无 Kla 残基/供体层面的正交操作，无 GNE-140 后乳酰化供体 rescue。「经 Kla 调控」与「经 p300 调控」未解耦（换证据类型可修复 → ERR-02）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>抑制剂剂量/残留混杂</td>
+          <td>Methods（p.e4）; Fig. 3E–H, 4O–R</td>
+          <td>GNE-140 5 mM、BMS-303141 20 mM（远超常规 μM 级工作浓度，疑 μM/M 单位在文本层丢失或本身过量），THG 0.5 mM 同疑；共培养前未报告洗涤步骤与「抑制剂+T cells alone」对照，抑制表型削弱可能部分来自残留药物对 T 细胞的直接毒性；未报告平行细胞活力数据</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05</span><br>全身干预的细胞归属排除式推断</td>
+          <td>Results 4, Fig. 4F; Results 1–2, 6（aCD49d/Slc2a1/Eif2ak3 系统）</td>
+          <td>「MDMs 可能是 IL-10 促瘤效应的主要介质」由 aIL-10+aCD49d 无叠加反推，但 aIL-10 中和所有来源 IL-10、aCD49d 影响所有 VLA-4⁺ 细胞迁移；Slc2a1/Eif2ak3 为 Lyz2-Cre 全髓删除，「获益归因 MDM」靠中性粒抑制能力保留+单核/MG 无活性的排除链，未做 MDM/中性粒分别的 Il10 或靶基因条件删除</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-01</span><br>亚群构念的二分化操作化</td>
+          <td>Results 2, Fig. 2E–I; Fig. 5G–I</td>
+          <td>GLUT1⁺/GLUT1⁻ 与 2-NDGB^high/lo 按 FACS 门控二分，连续分布被当作两群真实亚型使用；无混合模型/聚类验证二峰性，门控阈值敏感性未报告。「GLUT1⁺ 亚群是关键贡献者」依赖该构念真实性</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03d</span><br>人类证据小样本/横断面</td>
+          <td>Fig. 4L（n=2）; Fig. 1F–I; Fig. 4J–N</td>
+          <td>人 TES-MDM IL-10 实验 n=2（作者已诚实标注）；人 MDM/MG 比较与 TCGA 生存为横断面/回顾性关联，无前瞻队列或蛋白水平验证重复；不能支持任何人体的因果或预后独立性声明</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-02</span><br>位点证据链断点（data not shown）</td>
+          <td>Results 6, p.1117–1118</td>
+          <td>ATF4 与 SLC2A1 的结合位点预测原文标「data not shown」；Fig. 6G 的结合验证在 THG 体外系统完成，肿瘤 MDM 内源状态下 ATF4 是否占据 Slc2a1 启动子未测——体内上游链条在此处有一环未闭合</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>阈值异常与文本不一致</td>
+          <td>Fig. 4B 图注; 全文; PDF 元数据</td>
+          <td>①ATAC/RNA 整合阈值「padj &lt; 0.1005」异常宽松（疑 0.05/0.1005 笔误）；②试剂名 2-NBDG/2-NDGB 混用；③「Ly2zCre⁺」「Scl2a1」「Ei2ak3」「tendence」多处拼写错误；④Methods 同位素段句子截断（"for 48 treated with 30%TES…"）；⑤PDF 元数据页码 1105–1131 与实际 1105–1123.e8 不符。反映校对质控问题</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：即使末端工具存疑，"葡萄糖-乳酸-Kla 与 IL-10 强关联 + p300 必要"的弱化版主张仍成立。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>首次把组蛋白乳酸化接入 GBM TAM/MDM 免疫抑制并补出 PERK-ATF4 上游；Kla 修饰本身承自 Zhang 2019，增量为细胞类型（MG/MDM 拆分）+ 疾病语境 + 上游通路</td></tr>
+        <tr><td>证据广度</td><td><strong>A</strong></td><td>3 种鼠模型 + 人配对样本 + RNA/ATAC/代谢组 + 同位素质谱 + Seahorse + CUT&RUN + 遗传与药理双重干预 + 体内治疗与再攻击</td></tr>
+        <tr><td>因果封闭性</td><td><strong>B+</strong></td><td>上游（PERK）遗传闭环好；末端（Kla→Il10）靠单一药理点，缺 p300/Kla 正交验证与 rescue</td></tr>
+        <tr><td>反例排除</td><td><strong>B+</strong></td><td>系统排除胞外乳酸（TCM/3 kDa/外源乳酸）、ARG1、分泌乳酸直接效应、M2 极化（PERK 不影响 M2 标志）；未排除 p300 其他底物、中性粒残余贡献、缺氧支路（后两者作者部分承认）</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B</strong></td><td>同位素流程扎实（FAIMS+MaxQuant lactyllysine+IRON）；但抑制剂浓度异常、padj 0.1005、n=2 人类实验、多处拼写不一致</td></tr>
+        <tr><td>外部效度</td><td><strong>B</strong></td><td>三鼠模型+人样本跨种一致性是加分项；联合治疗仅 SB28 单模型；4-1BB 转化风险未讨论；人证据横断面</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-b-plus">B+</span></strong> —— 距 A− 差三件事：Kla→Il10 的正交遗传验证或 rescue、抑制剂浓度/残留对照澄清、MDM 特异的体内归属（Il10 或 PERK 的 MDM 条件删除）。完成任意两项即可升 A−；全部完成且人样本蛋白水平复现，可议 A。按承重文献使用时：机制框架可信，末端因果压动词引用。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-02</span> <span class="sev sev-p1">P1</span>）：根因：CPI-1612 同时压 p300 全部底物事件，Kla 与 Il10 的因果未解耦。动作：①髓系 Eif2ak3 系统中叠加 EP300（或 CBP）条件敲除/LysM-Cre，看 Il10 是否同降（遗传正交）；②GNE-140 处理后加细胞可透过乳酰供体（如 N-乳酰甘氨酸 / 乳酰-CoA 递送）做 rescue，看 Il10 与抑制功能是否恢复；③CUT&RUN 扩展到已注释的 Il10 增强子区域。效果：Kla→Il10 从"药理伴随"升级为"残基/酶级因果"，主链末端闭环。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p1">P1</span>）：根因：GNE-140/BMS-303141/THG 工作浓度异常且共培养残留效应未控制。动作：①核对并改正浓度单位（GNE-140 常规 μM 级），给出剂量-效应曲线与 IC50 对齐文献；②共培养前洗涤+换培养基，并加「2-DG/GNE-140 + T cells alone」对照与 MDM 活力（Annexin V/PI）平行读出。效果：排除"T 细胞被残留药物压增殖"的混杂，抑制功能归因于 MDM 代谢状态本身。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-05</span> <span class="sev sev-p1">P1</span>）：根因：aIL-10/aCD49d/全髓 Cre 均非 MDM 特异，归属靠排除。动作：①Il10^fl/fl × Lyz2-Cre（髓系 IL-10 删除）或 Cx3cr1-CreER 定点切除，验证生存表型重现；②IL-10 报告小鼠（Il10-GFP）+ 胞内染色定位体内 IL-10 主要来源细胞；③有条件时用 CD169-Cre 或 Ccr2-Cre 分离 MDM vs 常驻库普弗样/MG 贡献。效果：「MDM 是主要介质」从推断变为细胞水平因果。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-01</span> <span class="sev sev-p2">P2</span>）：动作：对 GLUT1/2-NBDG 流式数据补混合模型（如 flow mixture model）验证二峰性；报告门控阈值 ±10% 时亚群比例与功能结论的稳健性。效果：亚群构念从二分操作升级为分布证据。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-03d</span> <span class="sev sev-p2">P2</span>）：动作：人 TES-MDM IL-10 扩至 ≥10 例（配对 TES 设计已有，边际成本低）；TCGA 生存结论补多因素 Cox（年龄/IDH/KPS/MGMT 可得协变量）。效果：人类证据从"机制一致性示意"升级为可引用的队列证据。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-02</span> <span class="sev sev-p2">P2</span>）：动作：补 ATF4–SLC2A1 结合的预测表与肿瘤 MDM 内源 CUT&RUN/ChIP-qPCR（或至少引用既有 ATF4 ChIP-seq 公共数据重叠）；正文删除"data not shown"表述。效果：上游位点链闭合。</li>
+      <li><strong>补丁 #7</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p2">P2</span>）：动作：统一 2-NBDG 拼写、修正 Ly2zCre/Scl2a1/Ei2ak3/tendence、补全同位素方法截断句、说明 padj 0.1005 的来源或更正。效果：可复现性信任修复。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · MDM/GLUT1⁺ 是主要抑制 TAM、IL-10 主要介质</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">MDMs outnumber MGs in late/recurrent GBM (mouse models & human cohorts) / MDMs, but not MGs, suppress T-cell proliferation ex vivo / GLUT1⁺ MDMs display potent suppressive activity / IL-10 neutralization abrogates MDM-mediated suppression (in vitro)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">MDMs are the main mediators of IL-10's pro-tumoral effect（需 may + based on non-additivity of aIL-10 with aCD49d in SB28 mice）；GLUT1 supports MDM suppressive ability（需 in myeloid cells，因全髓删除）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">MDMs drive immunosuppression in GBM patients（人体无因果数据）；MGs are not immunosuppressive（作者自引矛盾文献）；GLUT1⁺ MDMs are the dominant glucose consumers in tumors（原文限定 among immune cells，且作者自认肿瘤细胞 per-cell 最多）</span></div>
+    </div>
+
+    <h3>LC2 · 葡萄糖-乳酸-Kla-IL-10（标题核心）</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">glucose-derived intracellular lactate is the major labeled precursor of histone Kla in this system (¹³C tracing) / histone Kla marks are enriched at the Il10 promoter / glycolysis or lactate production is required for IL-10 expression (pharmacologic, in TES-BMDMs)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">histone lactylation promotes/drives IL-10 expression（需限定 pharmacologic evidence with EP300/CBP inhibitor; in vitro；因无遗传正交，慎用 drives）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">histone lactylation is necessary and sufficient for IL-10（sufficiency 未测）；Kla mediates immunosuppression in GBM patients（人体未测）；tumor-derived lactate lactylates MDM histones（原文相反：TCM 不能诱导 Kla）</span></div>
+    </div>
+
+    <h3>LC3 · PERK-ATF4 上游与治疗协同</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">myeloid PERK is required for GLUT1 expression, glycolysis, and histone Kla in GBM-infiltrating myeloid cells (SB28/CT2A/GL261) / myeloid Eif2ak3 deletion delays tumor growth / myeloid PERK deletion cooperates with 4-1BB agonism to block GBM progression in SB28 mice</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">PERK-ATF4 drives the glucose-lactylation-IL-10 axis in vivo（体内末端读出为删除后的下游相关变化；建议 promote/sustain）；ATF4 directly activates SLC2A1 in tumor MDMs（结合验证在 THG 体外系统）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">PERK inhibition blocks GBM progression（实际是髓系基因删除+4-1BB，且为鼠模型；药物抑制未做体内治疗实验）；PERK targeting is a validated immunotherapy strategy for GBM patients（讨论级展望）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>De Leo et al. showed that in mouse glioblastoma models, tumor-infiltrating monocyte-derived macrophages — which outnumber microglia at late tumor stages and express high levels of the glucose transporter GLUT1 — suppress T-cell activity largely through IL-10, whose expression requires glycolysis-derived intracellular lactate and is associated with p300-dependent histone lactylation at the Il10 promoter. Upstream, tumor-derived factors engaged the PERK–ATF4 axis, and myeloid deletion of Eif2ak3 (encoding PERK) reduced histone lactylation, increased intratumoral CD8⁺ T cells, delayed tumor growth, and cooperated with 4-1BB agonism in the SB28 model (De Leo et al., Immunity 2024).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ Glucose-driven histone lactylation is both necessary and sufficient for IL-10 production in TAMs（仅药理必要性，无充分性/残基证据）</li>
+      <li>❌ PERK inhibitors block glioblastoma progression（无药物体内治疗数据；是髓系条件基因删除）</li>
+      <li>❌ MDMs are the dominant source of immunosuppressive IL-10 in GBM patients（人证据为表达相关 + n=2 TES-MDM）</li>
+      <li>❌ Microglia are dispensable for GBM immunosuppression（作者自引 MG 功能矛盾文献，Limitations 明示不能排除）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「GBM/TAM 代谢-免疫方向的机制与生信课题（含后续自分选样本功能验证）」为默认目标用途；用途改变时 M 等级需重评。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>GSE260701（bulk RNA-seq：MDM vs MG；MDM vs 单核细胞，鼠）— <strong>M1</strong>（可整批下载，直接做糖酵解/缺氧/IL-10 程序的再分析与引证）｜Key Resources Table; GEO</li>
+      <li>GSE260700（ATAC-seq：MDM vs MG，SB28，n=3）— <strong>M2</strong>（可直接获取，但再分析需重建 peak 管线；其 MACS2 参数可照搬）｜GEO</li>
+      <li>Brain Immune Atlas（Pombo Antunes 2021 scRNA-seq，人 GBM 初诊/复发）— <strong>M1</strong>（公开数据库，MDM/MG/糖酵解/ATF4 评分流程文中已给 Seurat 参数）｜Methods: Analysis of scRNA-seq</li>
+      <li>TCGA GBM PanCanAtlas 168 例分析口径（CD68/CD163/IL-10 相关+KM 中位截断）— <strong>M1</strong>（标准公共数据；生存结论引用时注意其单变量性质）｜Methods: TCGA</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>¹³C 同位素-Kla 组学流程</strong>（无糖培养基 + U-¹³C₆-葡萄糖/¹³C₃-乳酸 + anti-lactyllysine IP + Orbitrap FAIMS + MaxQuant lactyllysine 可变修饰 + IRON 归一化）— <strong>M2</strong>（完整可照搬，但需核对其浓度单位问题并自建 FDR 阈值）｜Methods: Isotope tracing（p.e5）</li>
+      <li><strong>CUT&RUN-qPCR 检测启动子区 Kla</strong>（10 万细胞/反应，panLac PTM-1401RM，CST 试剂盒）— <strong>M2</strong>（实验室自优化，需先在己方体系复现 Il10 启动子信号；比 ChIP 省细胞，适合分选稀群）｜Methods: CUT&RUN; Fig. 5J–K, 6P</li>
+      <li><strong>2-NBDG 流式摄取 + GLUT1/2-NBDG<sup>high</sup> 双轴分群</strong> — <strong>M1</strong>（标准流式，可即用于自己样本的 MDM 代谢分群）｜Methods: Glucose uptake; Fig. 2D–G</li>
+      <li><strong>鼠/人 MG vs MDM 流式门控</strong>（鼠 F4/80/CD11b/CD45/LY6C/LY6G/CD49d；人 CD14/CCR2/CD16/CD49d/P2RY12）— <strong>M1</strong>（跨种 MDM/MG 拆分的高价值面板，含全部抗体货号）｜Fig. 1A, F; Key Resources Table</li>
+      <li><strong>TES-BMDM 抑制表型体外模型</strong>（30% TES × 48 h + CFSE 共培养 1:5）— <strong>M2</strong>（快速生成抑制性髓系的成熟系统；引用时须保留其"外植上清≠体内因子"边界）｜Methods: BMDM, TES, Suppression assay</li>
+      <li><strong>pHrhodo 乳酸摄取实验</strong> — <strong>M3</strong>（乳酸直接酸化培养基（pH≈6.7），嗜乳/嗜酸差异与染料 pH 响应混杂，仅作参考）｜Methods: pHrodo assay; Fig. 3I</li>
+      <li><strong>体内治疗组合范式</strong>（aCD49d 清减 MDM / aIL-10 中和 / 髓系 Eif2ak3⁻/⁻ × a4-1BB 3H3 50 μg/kg d10/12/14 + 再攻击设计）— <strong>M2</strong>（方案与对照设计完整可移植到自己的 GBM 模型；4-1BB 剂量需按模型滴定）｜Methods: Orthotopic injection; Fig. 7</li>
+    </ul>
+
+    <h3>实验资产</h3>
+    <ul>
+      <li>关键抗体/试剂货号（anti-L-lactyllysine PTM-1401RM/IP 珠 PTM-1404；CPI-1612 HY-136285；GNE-140 HY-100742A；AZD3965 HY-12750；nor-NOHA HY-112885B；U-¹³C₆-glucose CLM-1396）— <strong>M1</strong>｜Key Resources Table</li>
+      <li>小鼠品系（Slc2a1^fl/fl JAX 031871；Lyz2-Cre JAX 004781；Eif2ak3^fl/fl×Lyz2-Cre 由 P. Rodriguez 惠赠）— <strong>M2</strong>（前两者可直接订购；Eif2ak3 系需 MTA）｜Key Resources Table</li>
+      <li>细胞系来源（CT-2A-Luc Sigma SCC195；GL261 NCI 0509730；SB28 由 H. Okada 惠赠）— <strong>M1</strong>｜Key Resources Table</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li>「细胞起源拆分 → 代谢表型 → 表观机制 → 上游通路 → 治疗协同」七节递进式 Results 组织 — <strong>M1</strong>（TAM 代谢论文的论证骨架范本）｜全文</li>
+      <li>「同位素头对头比较」的来源归因表达范式（"incorporation was much higher from X than Y"）— <strong>M1</strong>（可迁移到任何代谢物来源辨析写作）｜S031</li>
+      <li>图形摘要单图讲清"通路四层"（肿瘤因子→代谢→表观→功能→治疗）— <strong>M1</strong>｜p.1106</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>机制链末端只压一个药理抑制剂（p300/CPI-1612）即写「via histone lactylation」→ 自己的机制结论至少要一个遗传或残基水平正交证据｜Results 5</li>
+      <li>高浓度抑制剂（5–20 mM 级）不做残留洗涤/溶剂+靶细胞对照 → 任何共培养药理实验的对照教材反面案例｜Methods; Fig. 3E–H</li>
+      <li>全髓 Cre 的细胞归属排除式论证（"中性粒功能保留所以获益来自 MDM"）→ 归因主张应匹配删除特异性｜Results 6</li>
+      <li>关键整合阈值异常（padj 0.1005）与"data not shown"承载承重位点 → 数据规范底线｜Fig. 4B; Results 6</li>
+      <li>n=2 的人类实验放在正文主图（F4L）→ 人类验证要么做够 n，要么移补充材料并显式降级｜Fig. 4L</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-04</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1016/j.immuni.2024.04.006">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

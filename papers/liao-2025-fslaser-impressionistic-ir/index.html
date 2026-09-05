@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · fs 激光仿生制造白色 WO₃ 气凝胶用于印象派 IR 伪装显示（IJEM 2026）</title>
+<meta name="description" content="nature-paper-review 合并流程：Liao et al., Int. J. Extrem. Manuf. 2026 — 正文、图注、方法及 Figure S1–S16/Table S1–S3 全量取证后的逻辑审查。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">Nature paper review · merged workflow</span>
+  <h1>Bionic femtosecond laser manufacturing for impressionistic camouflage infrared display</h1>
+  <p class="subtitle">Jianing Liao, Zhuguo Li（通讯）, Dongshi Zhang（通讯）. <em>Int. J. Extrem. Manuf.</em>, 2026, 8(1): 015010 (26 pp.)</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1088/2631-7990/ae1209">10.1088/2631-7990/ae1209</a> ·
+    审查深度：承重文献精读 + 正文/方法/补充材料全量取证 + 横向对照（vs Liu 2025） ·
+    总评级 <span class="badge grade-b">B</span> ·
+    <span class="sev sev-p1">P1 × 3</span> <span class="sev sev-p2">P2 × 3</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：<em>Int. J. Extrem. Manuf.</em> · <a href="https://www.sciopen.com/journal/2631-8644">IF 25.1（2025 JCR）/ CiteScore 29.3</a> · <a href="https://www.iikx.com/sci/technology/23886.html">中科院 2025 年 3 月升级版：工程技术 1 区 Top（工程制造 1 区；材料综合 1 区）</a> · 查询日期 2026-08-31；指标不参与科学评级 · CC BY 4.0 · online 2025-11-06 / 卷期引用年 2026
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>材料工艺-光学演示层的可信创新；机制论证与量化指标薄弱，标题级主张被适度外推。</strong>CC-1（fs 激光一步合成白色 WO₃（Pc）亚稳相，扫描速度-相比例火山曲线峰 56.8 wt%@25 mm·s⁻¹）由 XRD Rietveld + Raman 指纹 + ESR/XPS 多模态交叉支撑，是本文最强资产；但作者自己承认「氧空位与亚稳相无直接相关」（[S014]，refs [39,57]），机制因果悬空未做去耦。CC-2「白度优于 <em>Cyphochilus insulanus</em> 天然原型」在补充 Figure S11 给出跨波段均值，但仍无 L*a*b* 色度坐标。CC-3「印象派 IR 显示 + 加密-解密」仅视觉演示，缺 CNR/可识别率/信息熵/比特率。§2.5「5 种基底均适用」属跨基底普适性超载（仅 LWIR 发射率一项走完跨基底对比，其余 4 基底未走完整应用链）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献精读 + 横向对照（vs 同组 Liu 2025） → 深度 = 全流程（生态位 + 闭环 + 三层探针 + ERR + 评级 + 动词 + 资产）。输出侧重：完整审稿意见 + 与 Liu 2025 共享素材的横向锚点。</p>
+    <p><strong>承重主张</strong>（拆掉它，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>CC-1（工艺-相结构）</strong>：fs 激光一步合成白色 WO₃（Pc）亚稳相，其质量百分比可在工艺窗口内调谐——9 个扫描速度点（5–300 mm·s⁻¹）下 WO₃（Pc）wt% 呈非单调火山曲线，峰 56.8 wt% @ 25 mm·s⁻¹。</li>
+      <li><strong>CC-2（光学）</strong>：白色 WO₃ 气凝胶的可见白度与 VIS/NIR 选择性优于 *Cyphochilus insulanus* 天然原型，LWIR 发射率相当（SiO₂ 气凝胶 99.6%；WO₃ 95.4%）。</li>
+      <li><strong>CC-3（应用）</strong>：白色 WO₃ 气凝胶 + 彩色背景 → 印象派 IR 显示；反相图案化 + 人手/加热 → 选择性加密-解密；6 个月稳定 + 100 °C/h。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题</strong>：白色 *Cyphochilus insulanus* 甲虫兼具环境伪装显示与辐射制冷功能——如何用 fs 激光一步合成兼具白色高反射 + LWIR 高发射的仿生材料？</li>
+      <li><strong>证据链位置</strong>：①关联层（"亚稳相 ⟷ 白色气凝胶" 的相关-表征-结构对应）；②应用演示层（IR 显示/加密-解密的视觉对照演示）。机制层未进入；因果层未进入；跨尺度单尺度（同一 fs 激光实验台）。</li>
+      <li><strong>增量</strong>：将 WO₃ 体系的亚稳相工程（ε-WO₃ / Pc 空间群，过去仅 DAC/FSP 能合成 [42–45]）引入 fs 激光一步合成 + 原位沉积路径；并将其拓展至 5 种基底（WO₃/SiO₂/ZrO₂/Al₂O₃/TiO₂）。</li>
+      <li><strong>研究类型</strong>：材料工艺筛选（8 扫描速度点）+ 多模态表征（XRD/Raman/ESR/XPS/SEM/TEM/FIB）+ 多基底普适性 + IR 热像加密-解密演示 + 6 个月稳定性。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：CC-1 工艺-相结构大体匹配；CC-2 由补充 Figure S11 的跨波段均值部分闭合，但缺独立重复、误差与色度学指标；CC-3 加密-解密仅视觉对照，无可计算指标；§2.5 跨基底普适性超载。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（CC-1：WO₃（Pc）亚稳相工艺-相比例调谐）</span>：黄色 γ-WO₃（P2₁/n）原始样品（800 °C 退火）→ fs 激光在不同 υ 下烧蚀（5–300 mm·s⁻¹）→ XRD Rietveld 给出 WO₃（Pc）wt%；Raman/ESR/XPS 共同支持氧空位存在 → 亚稳相比例可由 υ 调谐（峰 56.8 wt%@25 mm·s⁻¹，非单调火山曲线）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">闭环</span>——A→B→C→D 链完整，多模态交叉确认。软肋：D 的"可调谐"被定性为"非单调火山曲线"，无物理模型支撑（仅扫描速度序列趋势描述）；机制层承认氧空位与晶相无直接相关 [S014]，未做去耦。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（CC-2：白度优于天然原型）</span>：PTFE 99% 反射率参考 → 800 °C+5 W-50 mm·s⁻¹ 样品的 UV-NIR/MIR 反射谱 → 计算 LWIR 8–13 µm 发射率（99.6% SiO₂；95.4% WO₃）→ "比 *C. insulanus* 天然原型白度更高、VIS/NIR 选择性更高、LWIR 相当"
+      <br>闭环状态：<span class="state state-overload">部分闭合/超载</span>——补充 Figure S11 给出样品与甲虫的 Vis/solar/LWIR/MIR 平均吸光度（例如 50 mm·s⁻¹ 样品 Vis 21.6%、LWIR 95.4%；甲虫 Vis 42.0%、LWIR 95.9%），因此“更白且 LWIR 相当”不是纯文字断言；但缺独立重复、误差、L*a*b*/CIEDE2000 和积分算法说明。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（CC-3：印象派 IR + 加密-解密）</span>：白色 WO₃ 气凝胶 LWIR 高发射 → 加热时与彩色背景产生显著温差 → IR 相机观察「模糊」画面（印象派）→ 反相图案化 + 人手/加热 → 「加密-解密」切换
+      <br>闭环状态：<span class="state state-overload">超载</span>——演示完整（多级图案化图示 + IR 热像 + 人手近场实验 + 6 个月稳定性），但"加密/解密"是视觉定性结论，无 CNR（对比噪声比）/ 可识别率 / 信息熵 / 比特率等量化指标。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 D（§2.5 跨基底普适性）</span>：WO₃（Pc）亚稳相合成链 → 拓展至 SiO₂、ZrO₂、Al₂O₃、TiO₂ → 全部给出 LWIR 发射率（95.4–99.6%） → "5 种基底均适用"
+      <br>闭环状态：<span class="state state-overload">超载</span>——WO₃ 走完全链（亚稳相调谐 → 印象派 IR 显示 → 加密-解密）；其余 4 种基底仅展示"基底合成 + 星夜反相图（仅 Ti 板）"，未在 SiO₂/ZrO₂/Al₂O₃ 上做相结构-亚稳相-选择性的对等表征，跨基底可推广性属标题级超载。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅 CC-1 承重；CC-2/CC-3 因量化指标薄弱仅做元认知审计）</h2>
+
+    <h3>CC-1 · fs 激光一步合成 WO₃（Pc）亚稳相</h3>
+    <p><strong>第一性原理层</strong></p>
+    <ul>
+      <li><strong>承重前提 ①</strong>：fs 激光烧蚀的非平衡态淬火速率（~10¹⁴ K·s⁻¹）足以稳定 WO₃（Pc）亚稳相。可证伪：是。XRD 给出不同 υ 下 WO₃（Pc）wt% 变化，差异非零且 >3 倍（3.8%@250 mm·s⁻¹ vs 56.8%@25 mm·s⁻¹），可证伪。构念可操作：是。WO₃（Pc）= 空间群 Pc，PDF 87-2404；WO₃（P2₁/n）= 空间群 P2₁/n，PDF 83-0950；Raman 指标峰 141/178/201/267/302/371/641/675 cm⁻¹ 明确。</li>
+      <li><strong>承重前提 ②（本文最大软肋）</strong>：作者自己承认（[S014]）"WO₃ 相不随退火温度变化（300–450 °C 空气退火）"（ref [39]），且"真空热处理引入氧空位亦未影响单斜相"（ref [57]）——即氧空位与晶相无直接相关。这与本文"fs 激光烧蚀能调控亚稳相比例"之间存在机制空缺：作者没有给出"非平衡态淬火"vs"氧空位"vs"局部退火温度梯度"三者的因果区分。</li>
+    </ul>
+    <p><strong>演绎构建层</strong></p>
+    <ul>
+      <li><strong>跳跃 1</strong>：[S012] "亚稳相质量百分比可被工艺调谐"是相关-工艺关系，直接升级为因果主张（"fs 激光的工艺窗口决定亚稳相形成"）。缺失论证：作者虽在补充 Figure S10 增加功率—速度矩阵，但仍未做脉宽/重复频率/焦点位置的析因实验。</li>
+      <li><strong>跳跃 2</strong>：未做"非 fs 激光（ns/ps/μs）对照"——若 ns 激光也能产生 WO₃（Pc）亚稳相，则"fs 激光独特性"主张被推翻。[S016] 所列毫秒激光后处理与掺杂路线来自文献讨论，并非本文对照。</li>
+    </ul>
+    <p><strong>元认知审计层</strong></p>
+    <ul>
+      <li><strong>替代解释未排除</strong>：①局部退火温度梯度（800 °C 预退火 → fs 激光局部加热 → 高温相淬火为低温相）。未测温-时间瞬态场。②WO₃（W⁶⁺→W⁵⁺）的氧空位效应与亚稳相独立调控，则"亚稳相=白度高"的归因可被弱化为"氧空位=白度高"。③粉末吸附的水分/碳氢污染对 Raman 675 cm⁻¹ 峰的潜在贡献。</li>
+      <li><strong>选择偏倚</strong>：作者只展示"我们做到了"的样品（800 °C+5 W-50 mm·s⁻¹）；未展示失败窗口（如过高功率下的剥离、过低速度下的熔池等）。</li>
+      <li><strong>HARKing 风险</strong>：标题词 "impressionistic camouflage" 偏艺术化（西方艺术史特定术语，莫奈/雷诺阿的笔触-光色），本文宽泛化为"加热时画面变模糊"，存在术语过度挪用。</li>
+      <li><strong>统计实质</strong>：火山曲线趋势——9 个扫描速度点 → 无置信区间、无拟合、无残差分析、无 n=? 报；"优于天然原型"未给色度坐标；"加密-解密"未给 CNR/可识别率。</li>
+    </ul>
+
+    <h3>CC-2/CC-3 · 跨主张的元认知审计</h3>
+    <ul>
+      <li><strong>图漂亮 → 标准放松</strong>：图 6/7 的 IR 热像色彩饱和度高、对比明显；这是 Rainbow1 / Ironbow 调色板的视觉效果，而非定量温度差。</li>
+      <li><strong>稳定性测试局限</strong>：6 个月 + 100 °C/h，仅一个温区；未在 UV 暴露、湿度循环、震动下做系统测试。</li>
+      <li><strong>术语强度超载</strong>："impressionistic camouflage" "selectively stimuli-responsive decryption" 暗示加密/解密工程级强度，但缺可计算指标。</li>
+    </ul>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>主 ERR</th><th>位置</th><th>根因</th><th>严重度</th><th>最小修复补丁</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-03a</span><br>强度超载</td>
+          <td>CC-2 [S021] / Fig.S11</td>
+          <td>Figure S11 给出跨波段平均吸光度，足以支持方向性比较；但未给独立重复、误差、L*a*b*/CIEDE2000 或光谱积分算法。Table S2 的文献横比测试条件不统一</td>
+          <td><span class="sev sev-p2">P2</span></td>
+          <td>补 L*a*b*/CIEDE2000、完整反射谱交点和同几何天然原型对照。</td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03e</span><br>显著性冒充效应量</td>
+          <td>CC-2 [S021] / CC-3 [S022][S023]</td>
+          <td>"impressionistic" "higher visibility" "selectively stimuli-responsive" 等定性词缺可计算指标（CNR、可识别率、信息熵、比特率）。加密/解密边界条件/对比度未量化（仅视觉对比）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+          <td>逐刺激条件报告温差、CNR、盲法识别率、错误率和时间响应。</td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>方法学/统计</td>
+          <td>CC-1 [S012][S014]</td>
+          <td>9 个扫描速度点的火山曲线无置信区间、无拟合、无重复实验（n=?未报）；氧空位与亚稳相无直接相关但作者未做去耦实验</td>
+          <td><span class="sev sev-p1">P1</span></td>
+          <td>独立制备 n≥3，给误差/拟合，并以气氛或缺陷工程去耦氧空位与相比例。</td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05-A</span><br>跨域适用性假设</td>
+          <td>§2.5 [S024] / Fig.10</td>
+          <td>标题级 "5 种基底均适用"——WO₃ 走完全链、其余 4 种仅展示"基底合成 + 星夜图"，跨基底可推广性属标题级超载</td>
+          <td><span class="sev sev-p1">P1</span></td>
+          <td>其余 4 基底复现相结构—光学—显示全链，或将主张降为“可制备高发射氧化物”。</td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03d</span><br>小样本/模型外推</td>
+          <td>CC-1 [S012]</td>
+          <td>仅一个基底温度（800 °C）+ 一个激光功率（5 W 为主）+ 一个扫描间隔（3 µm）；外推"工艺窗口可调"过宽</td>
+          <td><span class="sev sev-p2">P2</span></td>
+          <td>补温度/功率/线间距析因矩阵；在此之前限定为当前参数窗内相关。</td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05-B</span><br>决定因素未排除</td>
+          <td>[S014]</td>
+          <td>作者承认氧空位-亚稳相独立，但未排除"亚稳相=白色高 LWIR" 的真实决定因素可能是氧空位/形态/孔隙率，而非相结构</td>
+          <td><span class="sev sev-p2">P2</span></td>
+          <td>相比例、孔隙率、厚度和氧空位正交控制，并用多变量模型分解贡献。</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>将 WO₃（Pc）亚稳相工程引入 fs 激光一步合成 + 原位沉积路径，并跨 5 种基底拓展；ε-WO₃ 过去仅 DAC/FSP [42–45] 能合成</td></tr>
+        <tr><td>证据广度</td><td><strong>A−</strong></td><td>多模态交叉：XRD Rietveld + Raman 指纹 + ESR + XPS + SEM/TEM/FIB-SAED + N₂ 吸脱附 + DSC</td></tr>
+        <tr><td>工艺可重复性</td><td><strong>A−</strong></td><td>参数列全（800 °C 退火 + 5 W + 5–300 mm·s⁻¹ + 3 µm 扫描间隔）；命名约定明确；但 n=? 未报</td></tr>
+        <tr><td>机制深度</td><td><strong>C</strong></td><td>氧空位-亚稳相独立但未做去耦（作者自认）；WO₃（Pc）的"白色"机制未排除孔隙率/形态效应；无脉宽对照（fs 独特性主张悬空）</td></tr>
+        <tr><td>量化指标</td><td><strong>C+</strong></td><td>LWIR 发射率 5 基底有量化；CC-2/CC-3 缺色度坐标 + CNR + 可识别率</td></tr>
+        <tr><td>应用演示</td><td><strong>B+</strong></td><td>IR 热像 + 多级图案化 + 6 个月稳定性 + 100 °C/h；视觉素材完整</td></tr>
+        <tr><td>写作/术语纪律</td><td><strong>B</strong></td><td>"impressionistic camouflage" 标题词偏艺术化，与方法学严密性不匹配</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-b">B</span></strong> —— 材料工艺与视觉演示可信（CC-1 内核稳健 + 多模态交叉）；机制论证（ERR-05 氧空位-亚稳相独立未去耦）与量化指标（CC-2 缺色度坐标 + CC-3 缺 CNR/可识别率）薄弱；跨基底普适性超载（ERR-05）。引用强度上限 B+。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-03a</span> <span class="sev sev-p2">P2</span>）：根因：CC-2 已有 Figure S11 均值但缺色度学与不确定性。动作：对白色 WO₃、SiO₂ 和 *C. insulanus* 在同一几何下做独立重复，报告误差、L*a*b*/CIEDE2000 与光谱积分算法。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-03e</span> <span class="sev sev-p1">P1</span>）：根因：CC-3 "加密-解密" 无可计算指标。动作：定义 CNR（背景-字符温差 / 噪声标准差）；定义可识别率（人/算法在 IR 图像中识别目标字符的概率）；定义比特率（每字符信息量 × 解密速度）。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p1">P1</span>）：根因：火山曲线统计。动作：①补报 n=3 重复实验 + 标准差；②给出拟合模型（多项式 or Gaussian）；③增补一个非 fs 激光对照（ns 激光在同参数下能否产生 WO₃（Pc））。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-05</span> <span class="sev sev-p1">P1</span>）：根因：跨基底普适性超载。动作：在 SiO₂/ZrO₂/Al₂O₃/TiO₂ 上做 XRD（找亚稳相）+ Raman（指认）+ LWIR 发射率；如不存在亚稳相，则 §2.5 的"广谱普适性"需重新表述为"基底合成普适 + 仅 WO₃ 展现亚稳相-加密演示链"。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p2">P2</span>）：机制去耦。在 800 °C+5 W-50 mm·s⁻¹ 工艺窗口内做"功率-速度解耦"——固定 υ 变功率、变 υ 固定功率——将"工艺变量 → 亚稳相 wt%" 的二维曲面画出，区分非平衡淬火与局部退火温度梯度的相对贡献。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-05</span> <span class="sev sev-p2">P2</span>）：术语改写。"impressionistic camouflage" 改写为 "radiative-cooling-blurred IR display" 或 "halo-blurred IR display"，避免艺术史术语滥用。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>CC-1 · WO₃（Pc）亚稳相工艺-相结构 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">demonstrate / show / screen / modulate WO₃ (Pc) phase fraction across the fs laser scan-speed window (peak 56.8 wt% @ 25 mm·s⁻¹)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">tune（工艺参数相关性，不是物理机制调谐）；achieve peak mass percentage of 56.8 wt%</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">control / engineer / design / synthesize on demand（机制因果层面）；phase selection（暗示主动选择）</span></div>
+    </div>
+
+    <h3>CC-2 · 白度与原型对照 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">show a comparable LWIR emittance to / exhibit a higher VIS reflectance than the natural prototype</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">appear brighter / exceed the natural prototype in whiteness（视觉断言，无色度坐标）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">surpass / outperform / superior to（强度超载）；selectivity（未给选择性定量定义）</span></div>
+    </div>
+
+    <h3>CC-3 · 印象派 IR 显示与加密-解密 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">demonstrate visual blur in IR thermography / show IR contrast reversal upon hand/sample-heating stimuli</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">camouflage / stimuli-responsive（如未给对比度/响应时间常数）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">encryption / decryption（信息安全术语滥用，缺可计算指标）；impressionistic（艺术史术语）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Liao et al. demonstrated that femtosecond laser ablation of yellow γ-WO₃ (P2₁/n) plates can one-step synthesize white WO₃ aerogels containing the metastable ε-WO₃ (Pc) phase, with the phase fraction tunable across the scan-speed window (peak 56.8 wt% @ 25 mm·s⁻¹). The aerogels exhibit LWIR emissivity of 95.4% for WO₃ and 99.6% for SiO₂, and can be in-situ deposited during artistic fs-laser patterning to produce blurred "impressionistic" IR thermography (Liao et al., Int. J. Extrem. Manuf. 2026).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ fs laser uniquely enables synthesis of metastable WO₃（无脉宽对照，不可外推到 fs 独特性）</li>
+      <li>❌ The bionic WO₃ aerogel outperforms the natural *Cyphochilus* prototype in whiteness（缺色度坐标量化）</li>
+      <li>❌ White WO₃ aerogel enables selective stimuli-responsive encryption-decryption（缺 CNR/可识别率）</li>
+      <li>❌ Five different oxide substrates (WO₃/SiO₂/ZrO₂/Al₂O₃/TiO₂) all support impressionistic IR display（跨基底普适性超载）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级标注以"飞秒激光仿生制造 + 白色辐射制冷材料"为目标用途。</p>
+
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>资产</th><th>M</th><th>目标用途</th><th>来源指针</th></tr></thead>
+      <tbody>
+        <tr><td>WO₃ 双相比例工艺窗</td><td><strong>M1</strong></td><td>复用为“工艺参数—相比例”数据图或方法学对照</td><td>Fig.2(b)(c); [S012]; Fig.S6/S10</td></tr>
+        <tr><td>天然原型—仿生样跨波段均值</td><td><strong>M1</strong></td><td>复用为白色辐射制冷材料的跨波段对照</td><td>Fig.S11; [F111/C111]</td></tr>
+        <tr><td>五氧化物 LWIR 发射率</td><td><strong>M1</strong></td><td>复用为材料普适性筛选表，不用于严格排名</td><td>Fig.10; Table S3; [S024][T103]</td></tr>
+        <tr><td>反相“星夜”扫描/清洗流程</td><td><strong>M1</strong></td><td>复用为多步图案化实验设计</td><td>Fig.S16; [F116/C116]</td></tr>
+        <tr><td>IR 刺激显示热像</td><td><strong>M2</strong></td><td>仅作概念演示或背景图，不作加密强度证据</td><td>Fig.6/7; [S022][S023]</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>WO₃（P2₁/n → Pc）亚稳相工艺-相比例火山曲线 — <strong>M1</strong>（可直接复用数据）｜Fig.2(b)(c); [S012]</li>
+      <li>LWIR 8–13 µm 发射率（5 种氧化物，95.4–99.6%） — <strong>M1</strong>｜Fig.5; Table S2; [S021]</li>
+      <li>Raman 指纹峰位表（Pc 141/178/201/267/302/371/641/675 cm⁻¹；P2₁/n 132/182/271/325/714/806 cm⁻¹） — <strong>M1</strong>｜Fig.2(d); [S012]</li>
+      <li>800 °C+5 W-50 mm·s⁻¹ 样品的局部温度峰值（85.5→135.2 °C 随 υ 降低递增） — <strong>M1</strong>｜Fig.4(a); [S020]</li>
+      <li>6 个月储存 + 100 °C/h 稳定性测试 — <strong>M1</strong>（与 Liu 2025 文字总结形成素材互补）｜Fig.8</li>
+      <li>DSC 25→900 °C in Ar/air（800+5 W-50 mm·s⁻¹ 样品） — <strong>M2</strong>（可复用做物相演化对照）｜Fig.9</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li>fs 激光烧蚀 W 板单次+连续扫描图案化参数模板（5 W, 50/250/100 mm·s⁻¹） — <strong>M1</strong>｜§4.3; Fig.1(c)</li>
+      <li>"constrained mode" + 集尘器切换的非约束/约束对比设计 — <strong>M1</strong>（与 Liu 2025 的"confined vs unconfined"互为方法学锚点）｜Fig.1(b)</li>
+      <li>9 种"星夜"反相图案化图样（视觉素材，可复用做 IR 显示科普） — <strong>M2</strong>（CC BY 4.0，可二次使用需注明）｜Fig.7、Fig.11</li>
+      <li>"800 °C + 5 W-50 mm·s⁻¹" 命名约定 — <strong>M1</strong>（命名学范式，可借鉴）｜§4.1</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li>"impressionistic IR display"概念术语体系（5 个氧化物基底 + 6 个月稳定 + 人手/加热触发） — <strong>M2</strong>（术语范式，引用时需注意强度超载风险）｜Abstract + §3</li>
+      <li>图 1(a) "Nature vs. Bionic" 三栏对比（生物原型 + 仿生样品 + 工艺示意） — <strong>M1</strong> 图 1 设计范式</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>9 个扫描速度点火山曲线无置信区间、无拟合、无重复实验 → n=? 必报的工程纪律｜Fig.2(c)</li>
+      <li>"白度优于天然原型"未给色度坐标 → CC-2 量化指标薄弱是横向对照中与 Liu 2025 的最大差距｜Fig.5</li>
+      <li>加密-解密仅视觉演示 → 必须补 CNR / 可识别率｜Fig.7</li>
+      <li>"impressionistic camouflage" 艺术史术语 → 改写为可量化的物理描述｜Title + Abstract</li>
+      <li>5 种基底普适性超载 → 必须做对等相结构与亚稳相表征｜§2.5 / Fig.10</li>
+      <li>"fs 激光独特性"主张 → 必须做脉宽对照（ns/ps/μs）｜[S016]</li>
+    </ul>
+
+    <h3>横向对照锚点（vs Liu 2025 同组方法学）</h3>
+    <ul>
+      <li><strong>共享方法平台</strong>：fs 激光烧蚀 + W 金属基底 + 约束/非约束模式切换</li>
+      <li><strong>ESR 氧空位指认一致性</strong>：Liao g=2.003 ↔ Liu g=2.004/2.003 → 同组方法学在氧空位生成机制上可复现</li>
+      <li><strong>互补资产</strong>：Liao 在稳定性（6 个月+100 °C+ DSC）与 5 基底 LWIR 发射率上更全；Liu 在量化指标（CIE DE2000 ΔE 0.27–6.71%、LWIR 梯度 27.6→87.3%）与机制深度（冲击波-约束假说）上更强</li>
+      <li><strong>方法学共性短板</strong>：两篇都未做 n=? 重复实验；两篇都未给加密-解密可计算指标；两篇 Discussion 末尾都有跨学科外推倾向</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Nature paper review · merged workflow · 审查日期 2026-08-31</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://github.com/Ytanwang/paper-review">GitHub</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

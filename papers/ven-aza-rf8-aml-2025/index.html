@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · VEN/AZA 疗效预测 RF8 模型（Cell Rep. Med. 2025）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Jin et al., Cell Rep. Med. 2025 — RF8 八基因随机森林模型预测 VEN/AZA 疗效。总评级 B+：方法学框架可借鉴，需修复嵌套 CV、缺临床基线、批次校正。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Precision prediction of venetoclax-azacitidine treatment efficacy in acute myeloid leukemia via integrative drug screening and machine learning</h1>
+  <p class="subtitle">Jin P, Wang D, Shen J, … <strong>Wang K</strong>（通讯）. <em>Cell Reports Medicine</em>, 2025, 6, 102461</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1016/j.xcrm.2025.102461">10.1016/j.xcrm.2025.102461</a> ·
+    审查深度：借鉴实验/分析设计（生态位+探针+资产） ·
+    总评级 <span class="badge grade-b-plus">B+</span> ·
+    <span class="sev sev-p1">P1 × 5</span> <span class="sev sev-p2">P2 × 2</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>14.0</strong>（2025 JIF，2026-06 发布）· 中科院分区 <strong>医学 1 区 Top</strong>（细胞生物学）· CiteScore 15.9 · 接受率 32%（LetPub，查询于 2026-07-27）
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>方法学框架可借鉴，但三个方法学缺陷需在自己的工作中修复。</strong>RF8 的转录组+ML 预测范式（10 种算法基准 → Boruta 选特征 → 多队列验证）是可直接移植的方法资产；但 Boruta 全集选特征后再 70/30 分割 = 嵌套 CV 缺失（信息泄露），缺临床基线模型增量价值比较，且跨队列 TPM 未做批次校正。此外，仅 2/8 基因有功能验证——RF8 是一个预测模型，不是机制研究。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（7 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：借鉴实验/分析设计 → 深度 = 生态位 + 三层探针 + 资产回收，侧重方法稳健性与可复现性。</p>
+    <p><strong>承重主张</strong>（拆掉它，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（RF8 预测模型）</strong>：RF8 八基因转录组随机森林模型可准确预测 VEN/AZA 疗效，性能优于现有突变分层工具（ELN2022/2024, Döhner et al., DiNardo et al., Gangat et al.）。</li>
+      <li><strong>LC2（PINK1/BCL2L1 功能）</strong>：BCL2L1 和 PINK1 是 VEN/AZA 敏感性的功能性调控因子，其敲低可增敏 AML 细胞。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题</strong>：能否用转录组+药敏数据构建 ML 模型，比现有突变分层更准确地预测 VEN/AZA 疗效？</li>
+      <li><strong>证据链位置</strong>：关联发现 → 功能验证 → 工具开发。本质是基于转录组的预测模型开发，<strong>不是</strong>机制发现型研究。</li>
+      <li><strong>增量</strong>：描述层 = VEN/AZA 敏感性/耐药的转录组全景（FPMTB 1,626 DEGs + clinical 1,116 DEGs）+ 8 基因 RF 模型；机制层 = PINK1 作为 VEN/AZA 敏感性的新调控因子（CRISPR 验证）。<strong>真正增量在 ML 预测工具，而非生物学机制</strong>——PINK1→OXPHOS→耐药的全部机制链由引文（Li et al. 2023）建立，本文从未直接测量 OXPHOS。</li>
+      <li><strong>研究类型</strong>：回顾性队列 + 体外药敏 + 体外 CRISPR 功能验证 + ML 建模。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：大体匹配，但存在三处错配（见 ERR 清单）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（RF8 预测模型）</span>：FPMTB 体外药敏 → 1,626 DEGs（相关）→ 临床 RNA-seq → 1,116 DEGs（多队列复现）→ 取交集 84 基因 → CRISPR 验证 PINK1/BCL2L1（遗传操作，仅 2/84）→ 10 种 ML 500×5-fold CV → Boruta 8 特征 RF8（模型选择，⚠ 全集选特征后分割 = 信息泄露）→ 内部 + 3 外部队列验证（n=388）→ vs ELN2022/2024 等比较（⚠ 缺临床基线模型）
+      <br>闭环状态：<span class="state state-overload">超载</span>——整体链基本闭合，但 Boruta 嵌套 CV 缺失 + 缺临床基线对照削弱了「RF8 真正优于现有工具」的论证。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（PINK1 机制）</span>：DEGs → PINK1 在耐药患者上调（相关）→ CRISPR 筛选 KO 增敏（遗传操作）→ shRNA KD 降低活力/增加凋亡（遗传操作，仅 MOLM13 一株）→ GSEA 标记 signature 变化（相关）→ <strong>跳至</strong>「PINK1-mediated mitophagy → OXPHOS → VEN resistance」
+      <br>闭环状态：<span class="state state-broken">断裂</span>——PINK1 KD→细胞终点（viability/apoptosis）是闭环的；但 PINK1→OXPHOS→耐药机制链完全由引文补位，本研究从未直接测量线粒体功能。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · RF8 可准确预测 VEN/AZA 疗效</h3>
+    <p><strong>第一性原理层</strong></p>
+    <ul>
+      <li>承重前提 ①：训练集 n=77（70% of 110）足以代表 AML 转录组空间 → 存疑。单中心、8 特征/77 样本 = ~10:1 比，虽 RF 对此不敏感，但 110 例 AML 覆盖的突变谱远小于真实人群。</li>
+      <li>承重前提 ②：8 个基因 TPM 独立于批次/平台 → 存疑。RJAML 1/2、FPMTB、BeatAML 在不同平台/医院测序，未做 ComBat 等批次校正就直接建模。</li>
+    </ul>
+    <p><strong>演绎构建层</strong></p>
+    <ul>
+      <li>跳跃 1：Boruta 选 8 基因 → 70/30 训练/测试。定位 Methods：「the Boruta feature selection algorithm identified eight critical transcriptomic features … using a 70% training subsample」。若 Boruta 在全集上运行后再分割，测试集信息已进入特征选择——CV 不再是真正的外样本评估。</li>
+      <li>跳跃 2：「RF8 distills the downstream effects of genetic alterations」。仅验证了 4 种突变（TP53/DNMT3A/IDH2/CEBPA），仅通路重叠频率（相关），非因果。其余 6 基因的机制来自引文。</li>
+    </ul>
+    <p><strong>元认知审计层</strong></p>
+    <ul>
+      <li>选择偏倚：训练集为单中心（瑞金医院）。ECLA 多中心队列（n=65, 10 中心）存在但未用于主文 RF8 验证。</li>
+      <li>替代解释：RF8 高预测性能是否仅反映细胞组成差异（纯度/单核比例）？CIBERSORTx 反卷积做了，但未将细胞比例作为协变量纳入模型。</li>
+      <li>读者侧自查：Cell Reports Medicine 是 Cell 子刊（1 区 Top）→ 期刊光环。需警惕把「编辑筛过的流畅叙事」等同于「方法论无懈可击」。</li>
+    </ul>
+    <p><strong>统计实质</strong>：500×5-fold CV 是严格的，但 Boruta 信息泄露使其不再是真正的「外样本」。未报告训练/测试 AUC 差评估过拟合。C-index 比较用了 bootstrap CI（1,000 次）——方法正确。Cox PH 假设是否检验未说明。</p>
+
+    <h3>LC2 · PINK1/BCL2L1 是 VEN/AZA 敏感性调控因子</h3>
+    <p><strong>第一性原理层</strong>：MOLM13 细胞的 CRISPR 结果可推广至患者 → 可证伪但未跨细胞系验证。PINK1 仅 MOLM13 一株。</p>
+    <p><strong>演绎构建层</strong></p>
+    <ul>
+      <li>跳跃：PINK1 KD 增敏 → 「PINK1-mediated mitophagy promotes OXPHOS shift → VEN resistance」。定位 Discussion。整个机制链由 Li et al. 2023（Cancer Res）补位。</li>
+    </ul>
+    <p><strong>元认知审计层</strong></p>
+    <ul>
+      <li>无 PINK1 过表达反向实验 → 缺「充分性」证明。</li>
+      <li>未排除 shRNA 脱靶效应（无第二条 shRNA / rescue）。</li>
+    </ul>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>嵌套 CV 缺失 / 信息泄露</td>
+          <td>Results §3, Methods</td>
+          <td>Boruta 特征选择在全部 110 例数据上运行，然后 70/30 分训练/测试。测试信息已泄露进特征选择，500-fold CV 不再是真正「外样本」评估</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03b</span><br>缺关键基线对照</td>
+          <td>Fig.6C-D, Results §5</td>
+          <td>RF8 与 ELN2022/2024 等突变模型比较，但未与「年龄+ELN 风险+WBC」的简单临床模型比较增量价值。无法区分 RF8 的预测力来自转录组还是仅反映了已知临床协变量</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>跨队列批次未建模</td>
+          <td>Methods, 数据整合</td>
+          <td>RJAML 1/2、FPMTB、BeatAML 为不同平台/医院。RF8 直接用 TPM 预测，未做 ComBat 等批次校正。CIBERSORTx S-mode 仅用于反卷积，不保护 RF8</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03d</span><br>小样本训练</td>
+          <td>Results §3</td>
+          <td>训练集 n=77（70% of 110），8 个特征。样本/特征比仅 ~10:1。虽然 RF 对此比值不敏感，但 110 例单中心覆盖的 AML 突变谱远小于真实人群</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05</span><br>选择偏倚</td>
+          <td>Cohort design</td>
+          <td>训练集单中心（瑞金医院）。ECLA 多中心队列（n=65, 10 中心）未用于主文 RF8 验证——可能 cherry-pick 了最有利的验证结果</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-02</span><br>机制链断裂 / 引文补位</td>
+          <td>Discussion, PINK1 段</td>
+          <td>"PINK1-mediated mitophagy promotes OXPHOS … implicated in venetoclax resistance" → 引文代测。本研究未直接测量 OXPHOS、线粒体膜电位、mitophagy 标志物</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03a</span><br>主张强度超载</td>
+          <td>Abstract, Discussion</td>
+          <td>"RF8 distills the downstream effects of genetic alterations" → 仅验证 4 种突变，仅关联分析（通路重叠频率），非因果验证</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>B</strong></td><td>药敏+转录组+ML 整合用于 VEN/AZA 预测是增量创新，非范式突破</td></tr>
+        <tr><td>证据广度</td><td><strong>A−</strong></td><td>4 队列（n=498）、多组学（RNA-seq+靶向测序+CRISPR+药敏）、多方法</td></tr>
+        <tr><td>因果封闭性</td><td><strong>B−</strong></td><td>仅 2/8 基因有功能验证；无 rescue；OXPHOS 机制未经直接测量</td></tr>
+        <tr><td>反例排除</td><td><strong>B</strong></td><td>未与临床基线模型比较；ECLA 外部队列未用于主验证</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B+</strong></td><td>500-fold CV 严格，但嵌套 CV 缺失、批次未建模、小训练集</td></tr>
+        <tr><td>外部效度</td><td><strong>B+</strong></td><td>多队列验证，但训练集单中心、无前瞻性验证</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-b-plus">B+</span></strong> —— 高质量工作，证据广度好（多队列、多组学、CRISPR 功能验证），但预测模型存在三个方法学缺陷（嵌套 CV 缺失、缺临床基线、批次），且标题级主张与数据边界存在局部超载。整体仍为可借鉴的优秀方法学论文。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p1">P1</span>）：根因：Boruta 特征选择使用全集数据，后续划分失去外样本属性。动作：将 Boruta 嵌入 5-fold 外层 CV 循环内（在每折训练集上独立运行 Boruta），仅用训练集确定特征，测试集仅做预测。效果：AUC 可能下降 2-5%，但获得无偏的外样本性能估计，可发表。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-03b</span> <span class="sev sev-p1">P1</span>）：根因：未排除「RF8 只反映年龄+ELN 已知信息」。动作：构建 base 模型（年龄 + ELN2022 风险组）和 base+RF8 模型，报告 ΔC-index 和 likelihood ratio test。效果：若 RF8 的 ΔC-index 显著 >0，增量价值得证。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p1">P1</span>）：根因：TPM 受平台/批次效应影响。动作：对 RF8 模型 8 个基因在训练集与每个外部队列之间做 ComBat 或 limma::removeBatchEffect。效果：排除「RF8 区分力来自批次差异」的替代解释。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-03d</span> <span class="sev sev-p1">P1</span>）：根因：训练集 77 例、单中心。动作：将 ECLA 多中心队列（n=65）纳入训练集或至少作为额外验证集在主文中展示。效果：增强外部效度论证。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-05</span> <span class="sev sev-p1">P1</span>）：根因：单中心训练可能导致偏倚。动作：补充所有队列的患者基线特征表（年龄、ELN 风险、WBC、BM blast%）并在主文中展示验证队列特征与训练集的 comparability。效果：让读者自行判断验证集是否代表真实人群。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-02</span> <span class="sev sev-p2">P2</span>）：根因：PINK1→OXPHOS 引文补位。动作：将 Discussion 中 "PINK1-mediated mitophagy promotes OXPHOS shift" 改为 "PINK1 has been reported to regulate mitophagy and OXPHOS (Li et al. 2023), mechanisms previously implicated in venetoclax resistance, warranting further investigation in the VEN/AZA context"。效果：安全引用，不假装自己测量了。</li>
+      <li><strong>补丁 #7</strong>（<span class="err-tag">ERR-03a</span> <span class="sev sev-p2">P2</span>）：动作：将 "RF8 distills the downstream effects of genetic alterations" 改为 "RF8 captures transcriptomic patterns correlated with specific mutational landscapes"。效果：准确描述本研究的分析实际做了的事。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · RF8 预测模型 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">associate with / predict / classify / stratify (in this cohort) / correlate with</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">improve prediction over（需 may + in these retrospective cohorts）；inform treatment decisions（需注 "retrospective"）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">determine VEN/AZA response / drive clinical outcomes / guide therapy（前瞻性证据缺如）</span></div>
+    </div>
+
+    <h3>LC2 · PINK1 功能 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">modulate (drug sensitivity in vitro) / associate with (resistance phenotype)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">contribute to (VEN/AZA resistance, may involve mitochondrial function)</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">mediate resistance / drive OXPHOS shift（未直接测量）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Jin et al. demonstrated that integrating transcriptomic features with machine learning can predict VEN/AZA response in AML, with their RF8 model achieving robust cross-cohort performance (AUC=0.83, n=498). Their approach illustrates the feasibility of transcriptome-guided treatment stratification and provides a transferable ML benchmarking + Boruta feature selection workflow.</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ Jin et al. showed RF8 determines VEN/AZA treatment response and outperforms existing clinical tools（横断面预测 ≠ 因果决定；缺临床基线增量比较）</li>
+      <li>❌ PINK1 mediates venetoclax resistance through OXPHOS reprogramming（机制未经直接测量）</li>
+      <li>❌ RF8 is a clinically validated tool for guiding VEN/AZA therapy（回顾性 = 临床关联，非前瞻性验证）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级标注以「胶质瘤 bulk 转录组 + ML 预测模型开发」为目标用途。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>GEO GSE289786（原发 AML RNA-seq）— <strong>M3</strong>（不同癌种，仅作跨癌种方法参考）｜NCBI GEO</li>
+      <li>GEO GSE289785（AML 细胞系 RNA-seq）— <strong>M3</strong></li>
+      <li>FPMTB（Zenodo 7274740）— <strong>M3</strong></li>
+      <li>BeatAML — <strong>M3</strong></li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>10 种 ML 算法 500×5-fold CV 基准工作流（mlr3 R 包）</strong> — <strong>M1</strong> 可直接复用（替换数据即可跑）｜Results §3, Methods, GitHub: aza_ven_aml</li>
+      <li><strong>Boruta 特征选择 + RF 分类器组合</strong> — <strong>M2</strong> 需修复嵌套 CV（将 Boruta 嵌入 CV 外层循环）｜Fig.3A, Methods</li>
+      <li><strong>Youden's J 截断值优化</strong> — <strong>M1</strong> 直接复用｜Fig.3C, Methods</li>
+      <li><strong>Bootstrap 单调反应概率曲线（1,000 次重采样）</strong> — <strong>M1</strong> 可视化范式｜Fig.6A, Methods</li>
+      <li><strong>Brier score + C-index 多模型水平排序比较</strong> — <strong>M1</strong> 基准方法｜Fig.6C-D</li>
+      <li><strong>CIBERSORTx S-mode 反卷积</strong> — <strong>M2</strong> 需替换 GBM 参考矩阵｜Methods</li>
+      <li><strong>GO 通路重叠频率分析（突变-通路-转录组桥接）</strong> — <strong>M2</strong> 可改造用于突变-gene signature 通路收敛分析｜Fig.5F</li>
+    </ul>
+
+    <h3>代码资产</h3>
+    <ul>
+      <li><strong>完整分析代码（R/Python）</strong> — <strong>M1</strong> ML 流程可直接参考｜<a href="https://github.com/aubioinfo/aza_ven_aml">github.com/aubioinfo/aza_ven_aml</a></li>
+      <li><strong>分析 notebooks（图生成代码）</strong> — <strong>M2</strong> Rmd 模板可改造｜<a href="https://aubioinfo.github.io/aza_ven_respred/">aubioinfo.github.io/aza_ven_respred/</a></li>
+      <li><strong>Shiny App 交互预测工具</strong> — <strong>M2</strong> App 骨架可复用｜<a href="https://aubioinfo.shinyapps.io/aza_ven_aml/">aubioinfo.shinyapps.io/aza_ven_aml/</a></li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li>五阶段结果叙事结构（发现→关联→建模→验证→临床）— <strong>M1</strong> 论证组织范式</li>
+      <li>Fig.6A 单调概率曲线 + 双截断值分层 — <strong>M1</strong> 可视化范式</li>
+      <li>Fig.6C-D Brier/C-index 多模型比较 — <strong>M1</strong></li>
+      <li>STAR Methods Key Resources Table — <strong>M1</strong> 投稿格式</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>Boruta 全集选特征后再 70/30 分割 → 违反嵌套 CV，产生乐观偏倚｜Results §3</li>
+      <li>跳过临床基线模型增量价值比较 → 无法区分「转录组的预测力」vs「年龄/ELN 已知信息」｜Fig.6C-D</li>
+      <li>跨队列不做批次校正直接建模 → 平台效应可能被误认为生物学信号｜Methods</li>
+      <li>Discussion 中引文补位代替直接测量 → PINK1→OXPHOS 链实际只测了细胞终点｜Discussion</li>
+      <li>训练集仅 110 例单中心 → ECLA 多中心队列（n=65）在手但未用于主文验证</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-07-27</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://github.com/Ytanwang/paper-review">GitHub</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · 角质形成细胞→皮肤鳞癌遗传演化（Nat Commun 2025）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Tandukar et al., Nat Commun 2025 — 单细胞基因分型揭示角质形成细胞低突变负荷与致病突变 mutator 表型，配对 AK-SCC 系统发育揭示 TP53/NOTCH/TERT/CDKN2A 早于 ARID2/MAPK，毗邻病灶常克隆无关。总评级 B+：多源证据汇聚的观察性演化研究，质控与数据公开优秀；但 mutator 表型的因果表述超载、替代解释未排除。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Genetic evolution of keratinocytes to cutaneous squamous cell carcinoma</h1>
+  <p class="subtitle">Bishal Tandukar*, Delahny Deivendran*（共同一作）, … <strong>A. Hunter Shain</strong>（通讯）. <em>Nature Communications</em>, 2025, 16(1): 10663</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1038/s41467-025-65687-y">10.1038/s41467-025-65687-y</a> ·
+    审查深度：全流程（审稿式批判 + 借鉴分析设计） ·
+    总评级 <span class="badge grade-b-plus">B+</span> ·
+    <span class="sev sev-p1">P1 × 2</span> <span class="sev sev-p2">P2 × 5</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>15.7</strong>（实时 18.06，2026-05 计算） · 中科院分区 <strong>综合性期刊 小类 1 区 / Top</strong>（2025-03 升级版） · CiteScore 24.3 · h-index 248 · 纯 Gold OA（99.94%） · 年发文 ~12160 · 平均审稿约 1 月（LetPub journalid=8411，查询于 2026-08-25）
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>多源证据汇聚、方法自省和数据公开均为上乘的观察性演化研究；时序模型（trunk/branch + 跨队列频率对换 + IHC 正交）是其最强资产，但 mutator 表型一处因果动词超载、替代解释未排除。</strong>单细胞基因分型质控链（克隆扩增 + DNA/RNA 双验证 + 单倍型连锁去伪，脱扣率 0.06%）与「毗邻病变常克隆无关（6/16）」的临床级警示是高价值产出。两个 P1 集中在 mutator 表型主张：①「pathogenic mutations <em>break</em> these adaptive mechanisms, <em>inducing</em> a mutator phenotype」是观察性相关套因果动词（适应机制构念未操作化、未直接测量修复/凋亡）；②累积分裂（SBS1/5 时钟样签名本身支持）、局部 UV 剂量斑块、克隆时程等替代解释未排除。无功能实验属人类正常皮肤研究的天花板而非缺陷，但其决定动词天花板为 associate/delineate 级。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（7 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：审稿式批判（承重文献级）+ 借鉴分析设计 → 全流程，侧重时序推断的稳健性与可复用范式。</p>
+    <p><strong>承重主张</strong>（拆掉它，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（时序模型）</strong>：驱动突变以可重复的先后顺序被选择——TP53/NOTCH1/2 更早（正常皮肤已见），CDKN2A/TERT promoter 参与 AK 形成，ARID2（SWI/SNF）与 RTK-RAS-MAPK 激活界定向鳞癌的转变。</li>
+      <li><strong>LC2（mutator 表型）</strong>：TP53/NOTCH1 突变对肿瘤进展的主要贡献是诱导突变子表型（突变率升高）而非直接扩增优势——证据：>3.5 mut/Mb 的角质形成细胞全部携带致病突变；致病克隆不大于非致病克隆。</li>
+      <li><strong>LC3（临床病理警示）</strong>：毗邻皮肤病灶常克隆无关（16 例中 6 例独立起源 + 4 例单一群体），组织学边界不是肿瘤范围与克隆关系的可靠度量。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题</strong>：角质形成细胞→cSCC 转变的关键遗传事件及其选择顺序是什么？正常皮肤角质形成细胞的突变景观本底如何？</li>
+      <li><strong>证据链位置</strong>：现象描述（单细胞突变景观）+ 时序推断（配对系统发育 + 频率对换）+ 空间描述（转录层）。处于「描述 + 演化时序推断」层，<strong>非机制干预层</strong>——全文无 KO/rescue/药物干预，机制解释（mutator、SWI/SNF 免疫逃逸）均为讨论级。</li>
+      <li><strong>增量</strong>：①首个正常人皮肤角质形成细胞单细胞级突变景观（对比同活检黑色素细胞/成纤维细胞）；②配对 AK-SCC 的系统发育时序（此前 AK 测序研究的克隆架构混乱正因此被解析）；③空间转录组叠加克隆定位；④「毗邻≠同源」的碰撞瘤证据。注意单细胞基因分型工作流为自家前作（Tang 2020 Nature，黑色素细胞），本文是范式迁移+新问题。</li>
+      <li><strong>研究类型</strong>：观察性多组学（单细胞 + 配对深测序 + 空间转录组 + 2 套公共数据再分析 + 体外 UV 辅助实验）——有资格下「时序/关联」强度结论，无资格下「因果机制」结论。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：标题「Genetic evolution」名副其实（系统发育时序有直接支撑）。两处错配：摘要「<em>break</em> these adaptive mechanisms, <em>inducing</em> a mutator phenotype」与讨论「contribution … may <em>primarily stem from</em> the mutator phenotypes」——相关数据 + 未操作化构念套因果动词（ERR-02 主标）；「stereotypical order」的 8 例全称半径（ERR-03d）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（时序模型，LC1）</span>：单细胞景观（137/131/23 细胞，相关）→ 高负荷与致病突变强绑定（相关，n=26 vs 111）→ AK-SCC 配对深测序（380X，系统发育）→ MAF 散点三分簇定 trunk/branch（推断，5 例自有 + 3 例 Kim 公共）→ p53/p-MAPK IHC 正交验证（局部正交）→ 跨队列频率对换（Martincorena 正常皮肤 vs Chang&amp;Shain SCC，相关佐证）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">时序闭环（多源汇聚）</span>——树定位、频率对换、IHC、外部再分析四路证据指向同一顺序；软肋：真演化病例仅 8 例，每通路常 2–5 例支撑，且 Kim 子集用降级方法（小 panel 散点人工分类）。</div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（mutator 表型，LC2）</span>：TP53 错义（显性负，文献机制）+ 高负荷共存（观察相关）→ >3.5 mut/Mb 全携带致病突变（相关）→ 体外 UV 实验：存活角质形成细胞突变反而多于黑色素细胞（与清除假说相反，作者归因 2D 急性模型局限）→ 致病克隆面积不大于非致病克隆（null 观察，无正式检验）→「主要贡献是 mutator 表型」（归纳）
+      <br>闭环状态：<span class="state state-overload">因果端超载</span>——「相关共存」证据扎实，但「break 适应机制→induce mutator」的因果方向未经干预或直接测量（修复效率/凋亡率/突变累积速率均未测）；替代解释（累积分裂、UV 斑块剂量、克隆时程）未排除（见探针）。</div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（空间与免疫，辅链）</span>：Visium + STmut 拷贝数定位肿瘤 spot（空间+遗传双锚定）→ TSK 干细胞样签名限于浸润前沿（空间相关）→ 检查点配体（肿瘤侧）/检查点（淋巴细胞侧）前沿共定位（转录层空间相关）→ 免疫编辑平衡-打破模型（讨论级推测）
+      <br>闭环状态：<span class="state state-closed" style="background:#fff8e1;color:#b28704">观察闭环 / 解释超载</span>——空间共定位本身扎实（5 例重复）；「immune evasion <em>driven by</em> SWI/SNF mutations」为讨论级假说，作者已用「it is unclear whether」自我限定。</div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · 驱动突变时序模型</h3>
+    <p><strong>第一性原理层</strong></p>
+    <ul>
+      <li>承重前提 ①：MAF 散点三分簇能可靠区分共享/私有突变。可证伪，但判定规则含主观步骤：克隆性 >50% cutoff、多峰直方图人工识别峰间断裂、逐样本精修（作者透明声明，但无 automated/双盲交叉验证，无 cutoff 敏感性分析）。</li>
+      <li>承重前提 ②：克隆性估计的嵌套假设（突变杂合、完全克隆、交叉污染频率加倍、性染色体 100% 肿瘤来源）成立时 trunk/branch 才准。任一假设在个别样本偏移即移动突变在树上的位置——尤其 4 例「单一群体」与 6 例「无关」的边界情形。</li>
+      <li>承重前提 ③：8 例（5+3）对「stereotypical order」有代表性。p53/NOTCH 在 trunk 属强信号（跨队列频率对换独立佐证），但 ARID2/MAPK 的「转变界定位」依赖更少的分支事件。</li>
+    </ul>
+    <p><strong>演绎构建层</strong></p>
+    <ul>
+      <li>跳跃 1：8 例 → 全称「stereotypical order」（缩小半径即可修复：in these eight bona fide AK-to-SCC pairs + cross-cohort convergence）。</li>
+      <li>跳跃 2：FAT1「observed in individual keratinocytes of normal epidermis」——基于极少数细胞（n 未明示），被纳入早期事件叙事时证据密度远低于 TP53/NOTCH1。</li>
+      <li>无跳跃处：Fig. 4c 频率对换与 Fig. 4b trunk/branch 的相互独立性处理得当（不同队列、不同方法），这是时序论证的组织亮点。</li>
+    </ul>
+    <p><strong>元认知审计层</strong></p>
+    <ul>
+      <li>偏倚自查充分：克隆扩增偏倚（有限稀释 vs FACS、bulk 对比、患者匹配微活检）反复正面讨论，是该领域少见的方法自省。</li>
+      <li>样本边界：15 供体（14 欧洲血统 + 1 混血），血统比较不可行（作者声明）；空间层仅 5 例且全部高分化 SCC（作者声明）；AK 分支突变不判定（保守选择，作者声明）。</li>
+      <li>读者侧自查：Nat Commun + 演化叙事 + 完美自省姿态易诱发「高质量=结论可靠」的光环。需清醒：其质控强度在<strong>突变判定层</strong>，而<strong>时序归纳层</strong>的 n 很小——两层的可靠度不同，引用时须分层表述。</li>
+    </ul>
+    <p><strong>统计实质</strong>：单细胞为独立单位的 Wilcoxon/Poisson 处理得当；CI 用 Poisson 精确法；克隆面积比较（Fig. 2b）无正式检验报告（n=20 vs 14 克隆，检验力存疑——「no larger」的 null 结论恰恰最需要检验力声明）；克隆面积估计假设细胞在活检内均匀分布，方差未量化。</p>
+
+    <h3>LC2 · mutator 表型主张</h3>
+    <p><strong>第一性原理层</strong>：「适应机制（adaptive mechanisms）」构念全文未操作化——既未测核酸切除修复效率、也未测 UV 后凋亡率/清除动力学，甚至未引用具体候选机制。承重前提（存在可被 break 的机制）未被直接检验。</p>
+    <p><strong>演绎构建层</strong>：相关→因果升级点定位：摘要「certain pathogenic mutations break these adaptive mechanisms, <em>inducing</em> a mutator phenotype」——此处将「致病突变与高负荷共现」升级为「破坏→诱导」因果链，而支撑证据仅为横断面共现 + 机制文献旁证（TP53 显性负、NOTCH1→干/祖状态）。讨论段「may primarily stem from」的 may 是正确姿态，摘要未保留。</p>
+    <p><strong>元认知审计层</strong>：替代解释未排除——①累积分裂次数：SBS1/SBS5（时钟样、与累积有丝分裂相关）在角质形成细胞占比更高，本身支持「分裂历史更长」解释高负荷；NOTCH1→干/祖状态→更多分裂（作者自己引用 Okuyama 2008）与 mutator 互补而非互斥；②局部 UV 剂量斑块：高负荷细胞可能来自局部高曝露微区；③克隆时程差异。体外 UV 实验（存活角质形成细胞突变多于黑色素细胞）未能裁决体内模式，作者诚实报告并归因于 2D 急性模型局限——处理得当，但意味着关键裁决实验缺失。</p>
+
+    <h3>LC3 · 毗邻≠同源</h3>
+    <p><strong>第一性原理层</strong>：克隆关系判定（共享突变有无）直接、可证伪、n=16+外部数据，无构念问题。<strong>演绎构建层</strong>：4 例「单一群体」的两种解读（AK=SCC 延伸 vs 单群跨越两态）作者并列呈现，未择优——恰当。<strong>元认知层</strong>：该主张是本文对临床实践最有冲击力的输出，且证据直接支撑；唯一注意点是 380X 深测序+panel 设计（538 基因）对「无共享突变」的判定依赖 panel 覆盖——panel 外突变不可见（对「无关」判定的影响弱于对「演变」判定，因为演变判定靠阳性共享）。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-02</span><br>观察数据套因果动词</td>
+          <td>Abstract; Discussion</td>
+          <td>「pathogenic mutations <em>break</em> these adaptive mechanisms, <em>inducing</em> a mutator phenotype」与「contribution … may primarily stem from the mutator phenotypes」：横断面单细胞共现数据先天产不出「破坏→诱导」因果链；「适应机制」构念未操作化，修复效率/凋亡率/突变累积速率均未直接测量，因果方向仅由机制文献旁证</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05</span><br>mutator 替代解释未排除</td>
+          <td>Results 1; Discussion</td>
+          <td>高突变负荷与致病突变的共现至少有三条竞争解释未排除：累积分裂次数（SBS1/5 时钟样签名占比高本身支持）、局部 UV 剂量斑块异质性、克隆时程差异。体内裁决实验缺失（体外 UV 实验结果与体内模式相反且被归因于模型局限）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03d</span><br>时序全称半径</td>
+          <td>Results 2; Fig. 4b; Discussion</td>
+          <td>「driver mutations undergo selection in a <em>stereotypical order</em>」由 8 例真演化对归纳（5 自有 + 3 Kim）；每通路支撑常为 2–5 例；FAT1 的早期事件定位基于正常表皮极少数细胞；ARID2/MAPK 的转变界定位依赖最少的分支事件</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>人工判读无敏感性分析</td>
+          <td>Methods: Phylogenetic tree construction</td>
+          <td>trunk/branch 判定依赖克隆性 &gt;50% cutoff + MAF 多峰直方图人工识别峰间断裂 + 逐样本精修；无自动化/双盲交叉验证，无 cutoff 敏感性分析；克隆性估计嵌套假设（杂合、完全克隆、污染加倍）未做扰动检验</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03d</span><br>空间层样本半径</td>
+          <td>Results 3; Fig. 5</td>
+          <td>空间结论基于 5 例（BB05/09/12/13/16）且全部为组织病理学高分化 SCC；TSK「exclusive to the invasive front」与检查点共定位的表述半径限于该分化谱（作者已声明局限）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>null 结果无检验力声明</td>
+          <td>Results 1; Fig. 2b</td>
+          <td>「致病克隆不大于非致病克隆」是支撑 LC2 的关键 null 观察，但未报告正式统计检验与检验力（20 vs 14 克隆）；克隆面积估计假设活检内细胞均匀分布，方差未量化、无敏感性分析——「无差异」可能是 n 不足</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>计数链缝隙（透明度）</td>
+          <td>Results 2 vs Fig. S9</td>
+          <td>样本流转 20 取材 → 16 测序 → 6 无关 + 4 单一群体 + 5 真演化 = 15 例明示分类；第 16 例归类未在正文明示（应含于图 S9 全景）。另：Data availability 中「HTAN portal anticipated for Spring of 2025」为写作期遗留过时预期，未随 2025-11 在线更新</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>正常人皮肤角质形成细胞单细胞突变景观为领域首次；配对 AK-SCC 时序 + 空间层 + 碰撞瘤证据多维度增量；工作流为自家前作（Tang 2020）迁移</td></tr>
+        <tr><td>证据广度</td><td><strong>A−</strong></td><td>单细胞三类型对比 + 患者匹配 bulk 对比 + 16 例配对深测序 + IHC 正交 + 5 例空间转录组 + 2 套公共数据再分析 + 体外 UV；无动物/功能层（人类正常皮肤研究的天然天花板）</td></tr>
+        <tr><td>因果封闭性</td><td><strong>B</strong></td><td>无任何干预实验；时序为系统发育推断而非实验验证；mutator 表型未直接测量；「碰撞瘤」与「时序」两主张在观察范式内已做到接近上限</td></tr>
+        <tr><td>反例排除</td><td><strong>B</strong></td><td>方法偏倚自查充分（克隆扩增偏倚、bulk 差异、交叉污染逐项处理）；但 mutator 的三条替代解释未排除，裁决实验缺失</td></tr>
+        <tr><td>方法稳健性</td><td><strong>A</strong></td><td>突变判定质控链顶级：DNA/RNA 双验证 + 单倍型连锁去伪 + 克隆性 MAF 基准 + 脱扣率 0.06%；数据（dbGaP/cBioPortal/figshare/Source Data）与代码（GitHub MIT）全公开；扣分：人工判读步骤与克隆面积方差</td></tr>
+        <tr><td>外部效度</td><td><strong>B+</strong></td><td>15 供体（14 欧洲血统）血统单一（作者声明）；空间层 5 例高分化 SCC；皮肤特异，跨癌种仅为概念层迁移</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-b-plus">B+</span></strong> —— 高质量工作、证据广、质控与数据公开上乘，符合 B+ 定义「证据广，但标题级/摘要级结论略超数据边界」：其超载不在主标题（演化时序有多源支撑），而在摘要 mutator 因果动词（inducing/break）与「stereotypical order」全称半径。与同为 B+ 的 HSPA5（机制链闭环但 ER 应激 P1）互补：本文是<strong>观察性研究的诚信上限样本</strong>——多数主张半径克制、局限逐项自曝，仅两处因果表述越界。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-02</span> <span class="sev sev-p1">P1</span>）：根因：观察性共现 + 未操作化构念。动作：①摘要改为「keratinocytes with TP53 or NOTCH1 mutations <em>exhibited</em> substantially higher burdens, <em>consistent with</em> a mutator phenotype」；②「break these adaptive mechanisms」删除或改为「are associated with the loss of mutation-burden homeostasis」；③若保留 mutator 机制语言，补直接测量（UV 后修复动力学或突变累积速率的克隆对比）。效果：动词与证据层级对齐，标题级主张不受损。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-05</span> <span class="sev sev-p1">P1</span>）：根因：三条替代解释未排除。动作：①按 SBS1/5 比例/分裂标记对高负荷细胞分层，检验「累积分裂」解释；②按取材部位日照史/局部弹性组织变性分级分层检验 UV 斑块解释；③讨论段将三条竞争解释与 mutator 并列并说明裁决实验设计。效果：「primarily stem from」降级为「may partly reflect」，主张半径回到数据内。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-03d</span> <span class="sev sev-p2">P2</span>）：动作：「stereotypical order」限定为「in the eight bona fide AK-to-SCC pairs analyzed (five in-house, three from Kim et al.), with cross-cohort convergence」；FAT1 早期定位标注 n。效果：全称半径收窄，跨队列佐证的定位更准确。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p2">P2</span>）：动作：对 MAF cutoff ±10% 做敏感性分析并报告 trunk/branch 判定翻转率；第二观察者盲法复判 8 例。效果：主观判读步骤获得稳健性边界。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-03d</span> <span class="sev sev-p2">P2</span>）：动作：空间层结论统一加「in this well-differentiated cohort」；招募中/低分化病例扩展。效果：TSK/检查点结论的外推半径与样本谱对齐。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p2">P2</span>）：动作：克隆大小比较补正式检验 + 效应量 + CI + 检验力声明；面积估计做均匀分布假设的敏感性分析。效果：null 观察获得解释资格（LC2 的一根支柱加固）。</li>
+      <li><strong>补丁 #7</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p2">P2</span>）：动作：正文补明第 16 例归类；Data availability 更新 HTAN portal 状态句。效果：计数链闭合，透明度无死角。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · 时序模型 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">delineate the transition to cSCC / mutations resided on the trunks (branches) of phylogenetic trees / undergo selection in a stereotypical order（须注 in 8 bona fide pairs + cross-cohort convergence）/ are often not clonally related</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">occur early/late during progression（需加 inferred from phylogenetic placement）；drive the transition（讨论中用于 ARID2/MAPK 时需 consistent with / may）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">prove the sequential order / causally determine the transition（观察性系统发育不得作因果证明）</span></div>
+    </div>
+
+    <h3>LC2 · mutator 表型 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">keratinocytes with TP53/NOTCH1 mutations exhibit markedly higher mutation burdens / are associated with a mutator-like phenotype</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">induce a mutator phenotype（需 may + based on cross-sectional single-cell data）；prime keratinocytes for transformation（需 may）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">break adaptive mechanisms（构念未操作化）；contribute primarily through mutator phenotypes（替代解释未排除）；TP53 mutations increase mutation rates in keratinocytes（体内未直接测速率）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Single-cell mutational profiling of clinically normal human skin showed that keratinocytes harboring pathogenic TP53 or NOTCH1 mutations carried markedly higher mutation burdens, and paired sequencing of actinic keratoses and adjacent cutaneous squamous cell carcinomas placed TP53/NOTCH/TERT/CDKN2A alterations on phylogenetic trunks while SWI/SNF (ARID2) and RTK-RAS-MAPK alterations clustered at the transition to invasive carcinoma; notably, adjacent lesions were frequently clonally unrelated (Tandukar et al., Nat Commun 2025).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ Pathogenic mutations break UV-adaptation mechanisms and induce a mutator phenotype in keratinocytes（观察性共现，机制未测）</li>
+      <li>❌ Driver mutations act in a universal stereotypical order in cSCC（8 例归纳）</li>
+      <li>❌ SWI/SNF disruption drives immune evasion at the AK-SCC transition（本文明言 unclear，仅为新近观点）</li>
+      <li>❌ Adjacent precancerous lesions can be disregarded as independent tumors（反向过度引申：4/16 为单一群体，正确表述是「cannot be assumed either way」）</li>
+    </ul>
+
+    <h3>对本项目（AEBP1 稿件）的引用定位</h3>
+    <p>与本项目靶点无交集（皮肤鳞癌 vs GBM），引用定位为<strong>方法论与认识论背景</strong>，两个高价值用途：①「相邻/横断面 ≠ 演化关系」——本文 6/16 碰撞瘤证据是支撑本项目 R1 纪律（横断面数据不得推演演化时序）的最佳外部例证，可在 Discussion 局限段引用；②「配对系统发育 + 频率对换」是时序论证的标准组织范式，本项目在 GLASS/CCF（模块 12 NO_GO）不可得条件下的时序表述天花板可对照本文自我校准。本文的因果动词（inducing/break）只描述其自身观察，且其中 inducing 属其自身超载，引用时绕开。</p>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级标注以「GBM bulk 转录组 + AEBP1 恶性状态轴（生信为主）」为目标用途。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>dbGaP phs001979 / phs003683 / phs003282（单细胞 + 配对 + 空间原始数据）— <strong>M3</strong>（受控访问，且皮肤域，本项目不申请）｜Data availability</li>
+      <li>cBioPortal normal_skin_keratinocytes_2024（逐细胞突变）— <strong>M3</strong>｜Data availability</li>
+      <li>figshare project 199837（逐细胞改变概要 + 拷贝数 .cnr/.cns）— <strong>M3</strong>｜Data availability</li>
+      <li>Kim 2022 JID 补充表 S3 / Martincorena 2015 补充表 2（公共再分析源）— <strong>M3</strong>（方法论上「公共配对数据再分析」的模式是 M2，数据本身 M3）｜Methods</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>MAF 散点三分簇（配对区域克隆关系可视化）</strong> — <strong>M1</strong>（论证组织范式：任何「配对样本克隆关系」分析的首选图式；本项目复发配对解读或审稿回应可直接套用其坐标定义）｜Fig. 3b, c</li>
+      <li><strong>trunk/branch 分层 + 跨队列频率对换双证据结构</strong> — <strong>M1</strong>（时序主张的标准组织方式：内部系统发育 + 外部频率镜像，两路独立证据互相锚定）｜Fig. 4b + 4c</li>
+      <li><strong>「单细胞突变判定质控三件套」</strong>（DNA/RNA 双验证 + 单倍型连锁 + 克隆性 MAF 基准）— <strong>M2</strong>（评估任何单细胞突变文献的质量标尺；本项目不做单细胞测序，作为审稿/引用过滤器）｜Methods</li>
+      <li><strong>STmut 空间拷贝数定位</strong> — <strong>M3</strong>（GBM 若进空间转录组阶段可重评 M2）｜Methods; github.com/ShainLab/STmut</li>
+      <li><strong>患者匹配单细胞-bulk 微活检对照设计</strong> — <strong>M2</strong>（「方法学位点对照」范式，对任何新工作流的自我校验可迁移）｜Fig. S6; Methods</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li>Fig. 5 三列空间版式（H&E → spot 注释 → 基因表达叠加 + 前沿放大插图）— <strong>M1</strong>（本项目 Fig.5 免疫微环境图组与 mIHC 展示版式参考；注意其为转录层，本项目呈现蛋白层时需标注层级差异）</li>
+      <li>Fig. 6 四段式总结图（细胞响应差异 → 克隆混杂 → 时序 → 免疫）— <strong>M1</strong>（「总结图 = 论证链压缩」范式）</li>
+      <li>局限自曝的写作姿态（克隆扩增偏倚、血统单一、高分化 only、体外模型局限逐项正面讨论）— <strong>M1</strong>（审稿人视角的高分写法，本项目 Discussion 局限段对照）</li>
+      <li>摘要因果动词反面例证（inducing/break on observational data）— <strong>M1</strong>（R3 纪律的跨领域教材，佐证本项目「mark/associate」动词天花板的普遍性）</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>观察性数据在摘要用 break/inducing 因果动词、讨论用「primarily stem from」——即便方法自省如本文也会在收尾处越界｜Abstract; Discussion</li>
+      <li>8 例归纳即写「stereotypical order」全称，不注半径｜Results 2; Fig. 4</li>
+      <li>关键 null 观察（克隆大小无差异）不报检验与检验力——null 结论比阳性结论更需要检验力声明｜Fig. 2b</li>
+      <li>人工判读步骤（直方图分峰）无敏感性分析、无第二观察者——主观环节缺稳健性边界｜Methods</li>
+      <li>Data availability 保留写作期过时时间线（Spring 2025 vs 实际 2025-11 在线）——交付前一致性检查教材｜Data availability</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-08-25</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://github.com/Ytanwang/paper-review">GitHub</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

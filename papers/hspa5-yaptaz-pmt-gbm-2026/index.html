@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · HSPA5 稳定 YAP/TAZ 诱导 GBM PMT（Cell Death Dis. 2026）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Gui et al., Cell Death Dis. 2026 — HSPA5 经 SBD–WW 互作破坏 YAP/TAZ–β-TrCP 结合、独立于 Hippo 稳定 YAP/TAZ 并驱动 GBM PMT。总评级 B+：机制链闭环优秀，但 ER 应激替代解释未排除、临床证据单变量、数据未公开。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>HSPA5 promotes YAP/TAZ stability independently of the Hippo pathway and induces proneural-to-mesenchymal transition in glioblastoma</h1>
+  <p class="subtitle">Gui S, Yu W, Song Z（共同一作）, … <strong>Cheng Z</strong>（通讯）. <em>Cell Death &amp; Disease</em>, 2026, 17(1): 208</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1038/s41419-026-08428-3">10.1038/s41419-026-08428-3</a> ·
+    审查深度：借鉴实验/分析设计（生态位+探针+资产） ·
+    总评级 <span class="badge grade-b-plus">B+</span> ·
+    <span class="sev sev-p1">P1 × 2</span> <span class="sev sev-p2">P2 × 5</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>12.2</strong> · 中科院分区 <strong>生物学 1 区</strong>（细胞生物学）· CiteScore 17.6 · h-index 85 · OA 期刊 · 审稿周期约 2 月（LetPub，查询于 2026-08-20）
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>机制链闭环程度优秀的高质量机制论文，方法学范式可直接借鉴；但引用时须注意两个边界。</strong>双向遗传操作 + 体内外双向 rescue + β-TrCP 上位性 + 多方法互作验证（质谱/Co-IP/GST/PLA/对接/结构域定位）使「HSPA5 经 SBD–WW 互作竞争性稳定 YAP/TAZ」的机制链高度闭合，是本文最强资产。但：①HSPA5（BiP）敲低必然扰动内质网稳态，YAP/TAZ 下降可能是全局蛋白稳态紊乱的次级效应——全文无 ER 应激标志物对照（P1 替代解释）；②临床部分仅单变量中位数分层生存 + 2 对配对样本，不支持任何独立预后声明。此外 RNA-seq/质谱数据未公开、全文 6 处内部不一致。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（7 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：借鉴实验/分析设计 → 深度 = 生态位 + 三层探针 + 资产回收，侧重方法稳健性与可复现性。</p>
+    <p><strong>承重主张</strong>（拆掉它，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（机制）</strong>：HSPA5 经 SBD 域直接结合 YAP/TAZ 的 WW 域，破坏其与 E3 连接酶 β-TrCP 的互作，从而抑制 YAP/TAZ 泛素-蛋白酶体降解、稳定 YAP/TAZ——且该过程独立于经典 Hippo 通路。</li>
+      <li><strong>LC2（功能）</strong>：HSPA5 通过稳定 YAP/TAZ 驱动 GBM 前神经-间质转化（PMT）（体内外双向验证）；MES 标志物 CD44/c-MET 是 YAP/TAZ–TEAD1 的直接转录靶点。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题</strong>：HSPA5 是公认的胶质瘤不良预后标志物，但其机制功能不明——它如何驱动 GBM 的 PMT？</li>
+      <li><strong>证据链位置</strong>：关联发现（TCGA+鼓楼队列）→ 功能验证（原代细胞双向遗传操作）→ 分子机制（互作/泛素化/结构域）→ 体内因果（颅内移植瘤双向 rescue）→ 临床关联。是典型<strong>机制发现型</strong>研究，链条完整。</li>
+      <li><strong>增量</strong>：机制层 = HSPA5 作为 YAP/TAZ 的新型翻译后稳定因子（Hippo 非依赖、竞争性阻断 β-TrCP）。注意该范式有直接先例：Ji 2018（Actin like-6A 稳定 YAP/TAZ，Cell Death Dis）、Yuan 2023（HERC3 独立于连接酶活性稳定 YAP/TAZ，EMBO J）——「新型 YAP/TAZ 稳定因子」是拥挤赛道，本文增量在 HSPA5 伴侣身份 + PMT 语境 + SBD–WW 结构基础。</li>
+      <li><strong>研究类型</strong>：数据库关联 + 原代细胞功能 + 生化机制 + 动物模型 + 临床样本关联。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：机制部分大体匹配且证据充分；两处错配——「drives PMT by activating the YAP/TAZ pathway」暗示通路排他性（rescue 只建立必要性）；「independently of the Hippo pathway」的证据分辨率仅覆盖 MST/LATS–S127/S89 轴（见 ERR 清单）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（HSPA5 → YAP/TAZ 稳定机制）</span>：TCGA+鼓楼差异分析 → HSPA5 在 MES 最高且预后差（相关）→ 原代 PN/MES 细胞双向操作（遗传操作）→ RNA-seq/KEGG 锁定 Hippo → 荧光素酶/qPCR 验证转录活性（遗传操作）→ YAP-5SA/TAZ-4SA 回复敲低、shYAP/TAZ 逆转过表达（rescue）→ mRNA 不变 + MG132 部分回复 + CHX 半衰期 + 内源泛素化双向（机制）→ p-YAP/p-TAZ 不变 + MST/LATS 敲低后效应仍在（排除法，Hippo 非依赖）→ 质谱 + Co-IP + GST + PLA + 对接 + SBD↔WW 结构域定位（多方法互作）→ β-TrCP 竞争互作 + β-TrCP 敲低上位性回复（竞争/上位性）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">闭环</span>——从关联到分子互作的机制链高度完整，双向 rescue + 上位性 + 结构域定位俱全。唯一软肋：ER 应激全局替代解释未排除（见探针）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（体内 + 临床）</span>：颅内移植瘤 KD 抑瘤 + YAP-5SA/TAZ-4SA 回复；OE 促瘤 + shYAP/TAZ 逆转（体内双向 rescue，n=8/组，含生存曲线）→ 移植瘤 IHC 标志物一致（体内）→ 配对原发（PN）-复发（MES）样本 IHC 仅 2 对（相关，样本极小）→ 50 例队列 Spearman 相关 + 亚型差异 + 单变量中位数分层生存（相关）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">体内闭环</span> + <span class="state state-overload">临床端超载</span>——体内双向 rescue 是硬证据；但临床端全部为单变量关联，「HSPA5/YAP/TAZ 高表达 = 差预后」未经任何多因素校正。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · HSPA5 独立于 Hippo 稳定 YAP/TAZ</h3>
+    <p><strong>第一性原理层</strong></p>
+    <ul>
+      <li>承重前提 ①：HSPA5 对 YAP/TAZ 的作用是<strong>直接</strong>的（而非经其他 client 蛋白或 ER 应激间接）。支持证据：纯化蛋白 GST pull-down + 分子对接 + 结构域定位——较充分；但未报告结合亲和力（KD），体外竞争实验（纯化 β-TrCP/HSPA5 剂量竞争结合 YAP）缺失，竞争结论全部来自细胞内实验。</li>
+      <li>承重前提 ②：HSPA5 敲低的表型是特异性的。<strong>这是全文最大软肋</strong>——HSPA5 即 BiP，是内质网核心伴侣，其敲低通常触发 UPR/ER 应激，可导致全局蛋白稳态紊乱。全文未展示敲低后 ER 应激标志物（CHOP/XBP1/ATF4），也未用非 client 蛋白做稳定性对照。YAP/TAZ 下降可能是全局 client 失稳的次级效应而非特异机制。</li>
+      <li>承重前提 ③：「Hippo 非依赖」的可证伪边界。实际检验的只有 S127/S89 两个 LATS 位点 + MST/LATS 敲低；YAP 的其他调控位点（S381/S384-CK1 等）与非经典 Hippo 组分未测。主张半径 &gt; 证据分辨率。</li>
+    </ul>
+    <p><strong>演绎构建层</strong></p>
+    <ul>
+      <li>跳跃 1（轻微）：MG132 仅「部分」恢复 HSPA5 敲低导致的 YAP/TAZ 下降（Fig. 4H, I）——提示存在蛋白酶体非依赖成分或抑制不完全，作者未讨论该缺口，直接得出「HSPA5 经抑制蛋白酶体降解稳定 YAP/TAZ」的全称结论。</li>
+      <li>跳跃 2（常规）：质谱 59 个互作候选 → 仅验证 YAP/TAZ。机制论文聚焦单候选属常规，但其余 58 个候选零验证，存在选择空间。</li>
+      <li>KEGG「影响 Hippo 通路」→ 锁定 YAP/TAZ 的收窄有直接验证（荧光素酶/qPCR/WB）支撑，属正常假设生成，不构成跳跃。</li>
+    </ul>
+    <p><strong>元认知审计层</strong></p>
+    <ul>
+      <li>替代解释：除 ER 应激外，Fig. 2M/N 显示 p-STAT3 随 HSPA5 双向变化——STAT3 是已知 PMT 主调控因子，HSPA5 的 PMT 效应可能有 STAT3 平行贡献；rescue 实验确立 YAP/TAZ 的必要性，但不排除平行通路。</li>
+      <li>模型局限：原代细胞仅 4 株（2 PN + 2 MES），亚型身份靠 CD44/SOX2 FACS 分选 + 标志物 WB 界定，未见这 4 株的转录组级亚型验证；裸鼠颅内移植模型无免疫系统，而 PMT 与微环境（尤其巨噬细胞）密切交互。</li>
+      <li>读者侧自查：本文是 Nature 系期刊、图面干净、机制故事完整漂亮（伴侣阻断 E3 连接酶），且与 GBM 课题高度同域——需警惕「叙事完整性」光环。机制链闭合度高是事实，但 ER 应激替代解释这种教科书级对照的缺失，恰恰容易被流畅叙事掩盖。</li>
+    </ul>
+    <p><strong>统计实质</strong>：体外 ≥3 生物学重复 + t 检验，无多重检验问题；体内 n=8/组合理；但 TCGA 155 例与鼓楼 50 例生存分析均为单基因中位数分层 log-rank，无多因素 Cox、无年龄/亚型/治疗校正——临床主张的统计强度远低于机制主张。</p>
+
+    <h3>LC2 · HSPA5 经 YAP/TAZ 驱动 PMT；CD44/c-MET 为直接靶点</h3>
+    <p><strong>第一性原理层</strong>：PMT 构念以 PN/MES 标志物面板（OLIG2/SOX2 ↔ CD44/c-MET/C/EBPβ/N-cadherin）操作化，定义清晰；但 4 株原代细胞能否代表 GBM 亚型谱系 → 样本量不足以支撑普遍性，结论半径限于所用模型。</p>
+    <p><strong>演绎构建层</strong>：CD44/c-MET 直接转录调控子链证据完整：公共 ChIP-seq（Cistrome）+ JASPAR 基序 + ChIP-qPCR 结合验证 + 双荧光素酶 + Region 1 突变消除激活——结合与功能必要性双证，该子主张支撑良好。未排除其他 TEAD 成员贡献（仅以 TEAD1 表达最高为由聚焦）。</p>
+    <p><strong>元认知审计层</strong>：「drives PMT by activating the YAP/TAZ pathway」的排他性暗示见 ERR-03a；体内 rescue 用不可磷酸化突变体（YAP-5SA/TAZ-4SA）属组成性激活工具，其效应强度可能超过生理水平，解读时注意。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-05</span><br>替代解释未排除 / ER 应激</td>
+          <td>Results 4–5, Discussion</td>
+          <td>HSPA5（BiP）敲低通常触发 UPR/ER 应激与全局蛋白稳态紊乱。全文无敲低后 ER 应激标志物（CHOP/XBP1/ATF4）检测，无非 client 蛋白稳定性对照。YAP/TAZ 下降可能是全局 client 失稳的次级效应，而非 HSPA5–YAP/TAZ 特异机制</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>临床统计未校正</td>
+          <td>Results 7, Fig. 7</td>
+          <td>TCGA 155 例 + 鼓楼 50 例生存分析均为单基因中位数分层 log-rank，无多因素 Cox（年龄/亚型/治疗）；配对原发-复发样本仅 2 对。「HSPA5/YAP/TAZ 高表达 = 差预后」仅为单变量关联</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03a</span><br>通路排他性超载</td>
+          <td>Abstract, Results, Conclusions</td>
+          <td>「HSPA5 drives PMT by activating the YAP/TAZ pathway」暗示主要/唯一通路。但 p-STAT3 随 HSPA5 双向变化（Fig. 2M, N），Discussion 自认 STAT3/NF-κB/C/EBPβ crosstalk。rescue 确立 YAP/TAZ 必要性，未确立排他性</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03a</span><br>「Hippo 非依赖」半径超载</td>
+          <td>标题, Results 4</td>
+          <td>排除法证据仅覆盖 MST/LATS 与 S127/S89 位点；YAP 其他调控位点（S381/S384-CK1 等）与非经典 Hippo 组分未测。准确表述应为「独立于 MST/LATS 介导的 S127/S89 磷酸化轴」</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>MG132 部分回复未讨论</td>
+          <td>Fig. 4H–I, Results 4</td>
+          <td>MG132 仅「部分」恢复 HSPA5 敲低导致的 YAP/TAZ 下降，提示蛋白酶体非依赖成分或抑制不完全，作者未讨论该缺口即下全称机制结论</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>内部不一致 ×6</td>
+          <td>全文</td>
+          <td>①Methods 称 Pearson vs Fig. 2L/7B–C 图注称 Spearman；②CHX 浓度 Methods 50 vs 图注 20 μg/mL；③Fig. 5O/P 图注均写 TAZ（O 应为 YAP）；④Fig. 7 图注「t test (D–F)」误覆盖生存曲线 E 与示意图 F；⑤Discussion 中 NBD 写作 NDB；⑥「Tables S6 and 7」编号格式。反映质控问题，影响可复现性信任</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04</span><br>数据未公开</td>
+          <td>Data Availability</td>
+          <td>RNA-seq 与质谱互作组数据未存入 GEO/PRIDE 等公开库，仅「向通讯作者合理请求获取」，阻碍独立再分析（低于 Nature 系期刊数据可用性惯例）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>B</strong></td><td>「新型 YAP/TAZ 稳定因子」范式有先例（Ji 2018, Yuan 2023）；增量在 HSPA5 伴侣身份 + 竞争性阻断 β-TrCP 的结构基础 + PMT 语境</td></tr>
+        <tr><td>证据广度</td><td><strong>A−</strong></td><td>2 公开数据集 + 50 例自有队列 + 4 原代细胞系 + 多细胞系 + 颅内动物模型 + 配对临床样本；MS/Co-IP/GST/PLA/对接/ChIP/荧光素酶多方法</td></tr>
+        <tr><td>因果封闭性</td><td><strong>A−</strong></td><td>双向遗传操作 + 体内外双向 rescue + β-TrCP 上位性 + 结构域定位；扣分点：ER 应激对照缺失</td></tr>
+        <tr><td>反例排除</td><td><strong>B−</strong></td><td>ER 应激替代解释未排除；Hippo 非依赖仅测 2 个磷酸化位点；临床端单变量</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B</strong></td><td>方法标准且全面，但 6 处内部不一致 + 数据未公开</td></tr>
+        <tr><td>外部效度</td><td><strong>B</strong></td><td>原代细胞仅 4 株（每亚型 2 株）；裸鼠模型无免疫系统；临床部分仅关联</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-b-plus">B+</span></strong> —— 机制链闭环程度是本文最强资产（双向 rescue + 上位性 + 多方法互作验证俱全），证据广度好；但一个 P1 级替代解释（ER 应激全局效应未排除）+ 临床端单变量 + 数据未公开 + 多处内部不一致，使其不能按「机制无懈可击」引用。借鉴其实验设计范式、警惕其对照缺口。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-05</span> <span class="sev sev-p1">P1</span>）：根因：HSPA5 敲低 → UPR → 全局蛋白稳态紊乱，可解释 YAP/TAZ 下降。动作：①WB 检测 shHSPA5 后 CHOP/XBP1s/ATF4；②用低剂量 tunicamycin/thapsigargin 诱导 ER 应激对照，看 YAP/TAZ 是否同等下降；③选 2–3 个非 client 蛋白做稳定性对照；④若 UPR 激活，用 UPR 抑制剂（如 4μ8C）分离 HSPA5 直接效应。效果：排除全局替代解释后，「直接稳定」结论才真正成立。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p1">P1</span>）：根因：临床生存主张无多因素校正。动作：TCGA 155 例 + 鼓楼 50 例做年龄/亚型（PN/CL/MES）/治疗信息可用的多因素 Cox，报告 HSPA5 的独立 HR 与 CI；配对样本扩至 ≥10 对并定量（H-score）。效果：「独立预后因素」主张方可成立，否则限于「单变量关联」。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-03a</span> <span class="sev sev-p2">P2</span>）：动作：将「drives PMT by activating the YAP/TAZ pathway」改为「promotes PMT in a YAP/TAZ-dependent manner, with potential parallel contributions from other PMT regulators (e.g., STAT3)」。效果：准确反映 rescue 证据的边界（必要性 ≠ 排他性）。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-03a</span> <span class="sev sev-p2">P2</span>）：动作：标题/正文「independently of the Hippo pathway」限定为「independently of MST/LATS-mediated YAP/TAZ (S127/S89) phosphorylation」，或补测 S381/S384 位点。效果：主张半径与证据分辨率对齐。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p2">P2</span>）：动作：讨论 MG132 部分回复的两种解释（抑制不完全 / 蛋白酶体非依赖降解成分），补 MG132 剂量梯度或溶酶体抑制剂（BafA1/CQ）对照区分降解途径。效果：机制结论更严谨。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-04</span> <span class="sev sev-p2">P2</span>）：动作：修正 6 处内部不一致（统计方法统一、CHX 浓度统一、图注笔误、NBD 拼写、表编号）；RNA-seq/MS 数据存入 GEO/PRIDE 并在 Data Availability 给出 accession。效果：恢复可复现性信任。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · HSPA5 稳定 YAP/TAZ 机制 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">stabilize YAP/TAZ (in GBM cells and xenografts) / disrupt the YAP/TAZ–β-TrCP interaction / reduce YAP/TAZ ubiquitination / promote YAP/TAZ nuclear accumulation</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">act independently of the Hippo pathway（需限定 to MST/LATS-mediated S127/S89 phosphorylation）；drive PMT（需 may + through stabilizing YAP/TAZ）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">HSPA5 is the master/sole regulator of PMT（排他性未确立）；HSPA5 inhibition will reverse MES therapy resistance in patients（无干预证据，仅讨论级展望）</span></div>
+    </div>
+
+    <h3>LC2 · 临床/标志物层面 —— 三级动词清单</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">associate with the MES subtype / correlate with YAP/TAZ expression / mark poor prognosis (in these cohorts, univariate)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">predict poor prognosis（需注 univariate median-dichotomy, no multivariable adjustment）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">HSPA5 is an independent prognostic factor（无多因素分析）；clinically validated therapeutic target（无临床干预数据）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Gui et al. reported that the endoplasmic reticulum chaperone HSPA5 directly binds YAP/TAZ via its substrate-binding domain and disrupts their association with the E3 ubiquitin ligase β-TrCP, thereby stabilizing YAP/TAZ independently of canonical MST/LATS signaling and promoting proneural-to-mesenchymal transition in GBM cell and xenograft models (Gui et al., Cell Death Dis. 2026).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ HSPA5 is the master regulator of PMT in GBM（排他性未确立；STAT3 等平行通路未排除）</li>
+      <li>❌ High HSPA5 expression is an independent poor prognostic factor in GBM（仅单变量分析）</li>
+      <li>❌ HSPA5 stabilizes YAP/TAZ through a fully Hippo-independent mechanism（证据仅覆盖 MST/LATS–S127/S89 轴）</li>
+      <li>❌ Inhibiting HSPA5 reverses mesenchymal therapy resistance in GBM patients（讨论级假设，无任何干预证据）</li>
+    </ul>
+
+    <h3>对本项目（AEBP1 稿件）的引用定位</h3>
+    <p>本文与本项目同域（GBM / MES 亚型 / PMT），但靶点无直接交集（HSPA5–YAP/TAZ vs AEBP1）。引用定位为<strong>平行机制背景</strong>：支撑「MES 状态/PMT 是 GBM 恶性进展的关键过程」与「YAP/TAZ 是 PMT 的核心效应器」两类背景陈述。注意本项目 R1/R3 纪律：引用本文的因果动词（stabilize/promote）只描述本文自己的实验证据，不得迁移为 AEBP1 的任何机制声明。</p>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级标注以「GBM bulk 转录组 + AEBP1 恶性状态轴（生信为主）」为目标用途。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>TCGA-GBM（175 → 155 例；PN44/CL57/MES49）— <strong>M1</strong>（与本项目同源；本项目已有 TCGA 数据，可对照其亚型划分）｜Methods: Data acquisition</li>
+      <li>鼓楼 GBM 50 例队列（RNA-seq + 临床 + 配对样本）— <strong>M3</strong>（非公开，需向通讯作者请求）｜Methods</li>
+      <li>MSigDB Verhaak GBM MES/PN 基因集 — <strong>M1</strong>（可直接用于本项目亚型签名评分）｜Methods: RNA-seq</li>
+      <li>Cistrome ChIP-seq / JASPAR / HitPredict — <strong>M2</strong>（若需分析 AEBP1 下游转录调控/互作组可复用该流程）｜Results 3b/5</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>ssGSEA 亚型评分 + limma DEG 筛选范式</strong> — <strong>M2</strong>（其阈值 |log2FC|≥0.5 &amp; P&lt;0.05 宽于本项目 FDR 标准，借鉴时需收紧）｜Methods: RNA-seq</li>
+      <li><strong>双向遗传操作 + 双向 rescue 设计模板</strong>（KD 表型 + 组成性活性突变体回复；OE 表型 + 敲低逆转）— <strong>M3</strong>（本项目为生信，但可作为评估文献机制证据强度的标尺，也可写入 IHC 后功能讨论的证据分级）｜Results 3, 6</li>
+      <li><strong>蛋白稳定性三联实验</strong>（CHX 半衰期 + MG132 回复 + 内源泛素化 IP）— <strong>M3</strong>｜Fig. 4</li>
+      <li><strong>结构域缺失突变体互作定位</strong>（SBD↔WW 双向截短 Co-IP）— <strong>M3</strong>｜Fig. 5J–N</li>
+      <li><strong>「排除法」论证范式</strong>（磷酸化位点不变 + 上游激酶敲低后效应仍在 → 通路非依赖）— <strong>M1</strong>（论证组织范式，写作可借鉴；注意其分辨率边界）｜Fig. 4D–F</li>
+      <li><strong>配对原发-复发样本 IHC 设计</strong> — <strong>M2</strong>（若本项目 IHC 阶段含配对/复发样本，此设计可参照；注意其仅 2 对的样本量教训）｜Fig. 7A</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li>七段式 Results 叙事结构（表达模式 → 功能 → 机制 → 机制深化 → 体内 → 临床）— <strong>M1</strong> 机制论文论证组织范式</li>
+      <li>Fig. 1 标准开场（家族 heatmap → 表达差异 → IHC → 生存 → GSEA）— <strong>M1</strong> 图 1 设计范式</li>
+      <li>机制模式图（Fig. 7F：互作-竞争-稳定-表型四要素）— <strong>M1</strong></li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>伴侣蛋白机制研究不排除 ER 应激/全局蛋白稳态替代解释（无 CHOP/XBP1 对照）→ 任何 chaperone/proteostasis 相关声明的教科书级对照缺口｜Results 4–5</li>
+      <li>单变量中位数分层生存分析不做多因素校正 → 本项目已有分层 Cox（IDH×MGMT strata），标准高于本文，引用其预后声明时注意降级｜Fig. 1H, 7G–I</li>
+      <li>6 处内部不一致（统计方法/药物浓度/图注笔误/拼写/表编号）→ 交付前一致性检查的质控教材｜全文</li>
+      <li>RNA-seq/MS 数据不公开（仅 on request）→ 本项目 Data Availability 声明应避免此模式｜Data Availability</li>
+      <li>原代细胞每亚型仅 2 株且亚型身份无转录组级验证 → 模型外推半径受限｜Methods: Primary GBM cell</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-08-20</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://github.com/Ytanwang/paper-review">GitHub</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
