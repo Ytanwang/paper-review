@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · ENPP1/ATM 双重耗竭+放免协同（STTT 2025）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Ruiz et al., Signal Transduction and Targeted Therapy 2025 — CTC-in 获得 ENPP1⁺ 放射抗性签名；ENPP1 阻断经 HR 削弱 DDR 并增敏 IR；ENPP1i/ATMi+IR 三联经 STING-TBK1 激活 CD8⁺ 为主的抗肿瘤免疫（记忆+abscopal+LF 消除）；人源 scRNA 部分保守 ENPP1⁺ 生态位。总评级 A−：功能三角验证与免疫健全模型扎实，P1 在体内药效证据全部基于 ENPP1-OE 超生理模型。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Dual ENPP1/ATM depletion blunts DNA damage repair boosting radioimmune efficacy to abrogate triple-negative breast cancer</h1>
+  <p class="subtitle">Ruiz-Fernández de Córdoba B, Valencia K（共同一作）, …… <strong>Martínez-Monge R</strong>, <strong>Lecanda F</strong>（共同监督/通讯）等 21 人. <em>Signal Transduction and Targeted Therapy</em>, 2025, 10: 185</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1038/s41392-025-02271-2">10.1038/s41392-025-02271-2</a> ·
+    审查深度：审稿式精读（全流程；Methods 未逐段双化） ·
+    总评级 <span class="badge grade-a-minus">A−</span> ·
+    <span class="sev sev-p1">P1 × 1</span> <span class="sev sev-p2">P2 × 5</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>81.2</strong>（条目 extra 记录）· JCR <strong>Q1</strong> · 中科院 <strong>医学 1 区 Top</strong> · 查询于 2026-09-05。期刊光环偏倚提醒：IF 81.2 为全库最高，不作为证据评级依据（队列纪律）。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>机制-药理-体内-转化四段式放免协同论文的扎实样本：ENPP1 的功能三角验证（沉默/OE/抑制剂）收敛于 HR 削弱，免疫健全双鼠模型完成 LF 消除+免疫记忆+abscopal+清体层级全套，阴性对照体系（MCF10A、ENPP1 阴性亲本、RAD51i 阳性对照、STAT5a/ERN1/TIMELESS 排除）是同类论文少见的高配置。</strong>一处 P1：全部体内药效证据来自 ENPP1-OE（超生理表达）肿瘤——ENPP1 阴性亲本对 ENPP1i 不敏感（作者自陈），而临床转化主张指向内源性 ENPP1⁺ 患者，内源性 ENPP1-high 状态的体内治疗验证缺位。人源证据止步于 scRNA 相关性再分析（"部分保守"表述诚实）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：审稿式精读 → 全流程。双语证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，12 个正文块 + 6 图；Methods 未逐段双化）。<strong>本项目负载</strong>：高分文献队列 P2-3（STTT 81.2 / 医学 1 区 Top），精读焦点 = cGAS-STING 通路叙事（与 Bakhoum 谱系相邻）+ ENPP1⁺ signature 的临床关联部分。系统为 TNBC 非 GBM——结论不直接入稿，负载在三处方法可迁移：①CTC-in"选择压力→状态表型"建模逻辑（与 state-marker 叙事同构）；②跨物种签名部分保守的验证流程（鼠签名→人 scRNA 重分析+基因相关）；③清体依赖性层级+免疫记忆/abscopal 的免疫叙事标准配置。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（ENPP1⁺ 放抗表型）</strong>：RTB 着床的 CTC（CTC-in）获得 ENPP1⁺ 转录签名（干性/辐射应答 GO 类）并表现放射抗性；ENPP1 为该表型的功能性必需基因（沉默其他签名基因 STAT5a/ERN1/TIMELESS 无一致效应）。</li>
+      <li><strong>LC2（ENPP1→DDR/HR）</strong>：ENPP1 阻断（药理 AVA-NP-695 或遗传沉默）经削弱同源重组（HR）致 DSB 修复受损（TLR/comet/γH2AX 三重读出），从而增敏电离辐射。</li>
+      <li><strong>LC3（三联体内疗效+免疫机制）</strong>：FD-IR + ENPP1i/ATMi 三联经 STING-TBK1 激活（cGAMP 水解阻断 + DDR 阻断双来源）诱导 CD8⁺ T 细胞为主的抗肿瘤免疫——消除局部复发、减少自发转移、诱导 abscopal 效应与持久免疫记忆；人源 scRNA 显示部分保守的 ENPP1⁺ 免疫抑制生态位。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：ENPP1 已知角色为胞外 cGAMP 水解（STING 拮抗）+ 促转移/ICB 抗性（同组 ref 12：TNBC RFS 与 LF 模型）——本文增量在第三条臂：<strong>ENPP1 作为基因组完整性/DDR 的细胞内在调控者</strong>（HR 削弱），把 ENPP1 定位为 genome integrity ↔ immunosuppression 的连接点；药理层给出 ENPP1i×DDRi（ATMi 最强）协同与三联治疗策略。</li>
+      <li><strong>证据链位置</strong>：发现（CTC-in 签名）→ 功能（放射抗性三角验证）→ 机制（HR/DDR 读出）→ 药理（11-DDRi 筛）→ 体内（生长/LF/转移/abscopal/记忆/清体/毒性）→ 人源（scRNA 再分析）——wet-lab 主导的完整纵队，人源端为相关性。</li>
+      <li><strong>研究类型</strong>：research article；免疫健全小鼠模型（ANV5-FVB/N、4T1-BALB/c）+ ex vivo CTC 衍生系 + 人细胞系体外（MDA-MB-231/MCF-7/MCF10A 对照）+ 公共 scRNA 再分析（Bassez 31 例）。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：摘要主张与数据匹配度高，且自我定位 proof-of-principle；最可能发生证据错配的环节：①"position ENPP1...for treating patients with TNBC"的转化口径 vs 体内证据全部来自 OE 模型（见 ERR-03b）；②"ENPP1⁺ signature...identified in TNBC patients"的保守性口径（定性 UMAP 叠加，见 ERR-03c）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：CTC-in → ENPP1⁺ 签名 → 放射抗性）</span>：人 CTC ENPP1（GSE41245 阳性、其他数据集阴性——作者归因混杂）（S003/F1 前置）→ CTC-in 模型：CTC-out-GFP ex vivo 扩增 → 心室内接种于瘤床切除鼠 → RTB 早期着床分离（ANV5 源 700/803；4T1 源 1589/1592）（S003/F1a）→ RNA-seq 两模型 B&gt;5 共同差异：Stemness/Radiation response/Tissue remodeling/炎症调控 GO（S003/F1b-c）→ 上调 ENPP1/TIMELESS/STAT5a/ERN1；7 衍生系 RT-qPCR 验证（S003/F1d）→ 克隆形成：CTC-in 放抗 &gt; 亲本（D50/RER）（S004/F2a）→ 基因消融辨析：仅 shENPP1 降低放抗，STAT5a/ERN1/TIMELESS 无一致效应（S004/F2a）→ OE 充分性：ENPP1 OE 赋予亲本放抗 + AVA-NP-695 逆转（S004/F2b）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">表型-基因闭环</span>——签名发现→验证→必需性（沉默）→充分性（OE）→药理可逆（i）四步齐备。最薄弱环节：CTC-in 的 ex vivo 扩增/选择混杂未排除；签名其余基因被排除出放抗表型（ parsimony 亮点）但 ENPP1 如何在着床微环境被上调仍是黑箱（作者自陈）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：ENPP1 阻断 → HR 削弱 → IR 增敏）</span>：IR 后 γH2AX 持续（shENPP1 两系；OE+ENPP1i 3 h 即现）（S004/F2e-f）→ PARP1 全局水平轻降（蛋白非转录）（S004/F2e）→ H₂O₂ 氧化应激模型：OE PARylation 降低、ENPP1i 后恢复加快；核 p-ATM 动力学两系方向相反（ANV5-OE 持续 vs 4T1-OE 低平）（S004/Supp F2h-i）→ TLR 报告：ENPP1i 显著降 HR 事件（RAD51i 阳性对照；MDA-MB-231 复现；细胞周期分布不能解释）（S004/F2g）→ 11-DDRi 靶向筛：ATMi 协同最强（CI≈0），RAD51i 无协同（S005/F3a）→ ENPP1i 浓度梯度降 ATMi/PARPi IC50（S005/F3b）→ comet 尾矩：IR 24 h 回基线、+ENPP1i 阻断修复；ATMi+ENPP1i 叠加（S005/F3c）→ γH2AX 焦点 ENPP1i↑ 而 ATMi↓（ATM 磷酸化 H2AX 的读出机制解释）；RAD51 48 h 下调 → NHEJ 代偿（S005/F3d-e）
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">功能闭环 / 机制层开放</span>——"ENPP1 阻断→HR↓→IR 增敏"由三种扰动模态（shRNA/OE/i）+三重读出（TLR/comet/γH2AX）交叉支撑；但 ENPP1（胞外酶）如何调控核内 PARylation/ATM 动力学仅有相关性观察+文献推理（PARG 类比），DDR 臂与 cGAMP/STING 臂的交互未解（见 ERR-02a）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：三联 → STING → 免疫 → 记忆/abscopal + 人源转化）</span>：OE-ANV5 原位（n=8/组）：三联 5 只 CR；停药 2 月 rechallenge 持久排斥（n=5）（S006/F4a-b）→ OE-4T1 复现（剂量依赖；ATMi 15 mg/kg 近完全消除）（S006/F4c; Supp F4b-c）→ 自发肺转移：表面+结节↓（S006/F4d）→ 毒性：血象/生化/器官无重大异常（S006/F4f-g）→ LF 模型（n=15/组）：双联↑LF-free survival；三联完全消除 LF（切缘无组间差异）（S006/F4h-i）→ abscopal（n=8/组）：对侧瘤 21 天显著缩小（S006/F4j-k）→ p-TBK1 3-48 h 持续；CCL5/CXCL10↑（S007/F5a-b）→ 流式：PMN-MDSC↓/M1↑/NK↑/CD8⁺Teff↑/DC↑（S007/F5c）→ 多光谱 IF：M1&gt;M2、CD4/CD8 浸润瘤芯（S007/F5d）→ 清体层级（n=6/组）：CD8⁺ 清除 0/6 治愈（最强依赖）、CD4⁺ 2/6、STINGi 4/6、NK 1/6 vs triple 6/6（S007/F5e-f）→ 人源：Bassez 31 例 scRNA——ENPP1⁺ 瘤细胞/CAF（myCAF）/髓系；DDIT3/CRY1/SLC7A11 强叠加；ENPP1×CD3ε/CD8A 负相关；CRY1 R=0.73（S008/F6）
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">体内链高闭环（OE 模型内）/ 人源端相关性</span>——生长/转移/LF/abscopal/记忆/清体/毒性七件套在同一体内平台完成是强配置；但该平台全部为 ENPP1-OE 超生理肿瘤（ERR-03b）；清体 cure 计数受 ceiling 限制（ERR-04a）；人源"保守性"为定性叠加+少数基因相关（ERR-03c）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · CTC-in ENPP1⁺ 放抗表型</h3>
+    <p><strong>第一性原理层</strong>：模型操作化为"RTB 着床选择 + ex vivo 扩增"——捕获的是着床压力下的状态表型。承重前提：CTC-in 的签名与放抗反映体内着床选择而非体外扩增/选择伪影——未做直接检验（如体内单细胞追踪或无扩增对照）；作者以"两独立模型一致 + 7 衍生系验证"缓解。人 CTC 数据集间不一致（GSE41245 阳性 vs 其他阴性）被诚实报告并归因于未选择患者的混杂——该矛盾削弱"人 CTC 天然 ENPP1⁺"的外推。</p>
+    <p><strong>演绎构建层</strong>：签名→表型的基因消融辨析是本文最干净的一步：四个候选签名基因逐一沉默，仅 ENPP1 有效——排除了"签名整体效应"的替代解释，把表型收敛到单基因（parsimony）。OE 充分性 + 抑制剂可逆性补全充分-必要-可药理三面。</p>
+    <p><strong>元认知审计层</strong>：ENPP1 上游（着床微环境何者诱导 ENPP1）为开放黑箱——作者以氧化应激/炎症应答假说讨论但不影响本链结论（表型-基因关系已闭合）。结论失败条件：无扩增的体内谱系追踪显示 CTC-in 签名为培养伪影。</p>
+
+    <h3>LC2 · ENPP1 阻断 → HR 削弱 → IR 增敏</h3>
+    <p><strong>第一性原理层</strong>：HR 削弱以 TLR 报告系统直接定量（RAD51i 阳性对照 + 细胞周期混杂排除），comet/γH2AX 为正交读出——功能层面闭合。承重前提：ENPP1（膜外酶）的活动与核内 DDR 装备（PARylation/ATM）之间存在因果连接——证据为相关性（PARylation 恢复动力学、p-ATM 动力学）且两细胞系 p-ATM 方向相反；dePARylation 假说借 PARG 类比（ref 26-30），无 ENPP1-PAR 直接作用或底物证据。该前提断裂时，"经 HR 削弱"降级为"表型上伴随 HR 削弱"——但增敏结论（药理-遗传收敛）不受影响。</p>
+    <p><strong>演绎构建层</strong>：DDR 臂与 STING 臂被作为平行输出处理（HR 削弱≠cGAMP 通路），但二者的交互未测：cGAS 沉默增敏（与 shENPP1 表型一致）却同时被解读为"cGAMP 不直接参与抗性"——若 STING 阻断（C-176）能 rescue TLR 中的 HR 降幅，则两臂不独立；该解耦实验缺位。ATMi 组 γH2AX 焦点降低的读出机制（ATM 磷酸化 H2AX）解释诚实且必要。</p>
+    <p><strong>元认知审计层</strong>：AVA-NP-695 的脱靶在体内未用遗传平行排除（shENPP1 仅有体外数据）；体外药理-遗传一致是正证据。结论失败条件：ENPP1-KD 体内模型对三联无增敏（则药理表型为脱靶）；或 STING blockade 完全 rescue HR（则 HR 效应为 cGAMP 下游）。</p>
+
+    <h3>LC3 · 三联 → STING → 免疫 → 记忆/abscopal</h3>
+    <p><strong>第一性原理层</strong>：免疫机制链的操作化规格完整：信号读出（p-TBK1/CCL5/CXCL10）→ 浸润表型（流式+多光谱 IF）→ 依赖性（四路清体）→ 记忆（rechallenge）→ 远端（abscopal）。承重前提：疗效结论可从 ENPP1-OE 肿瘤外推到内源性 ENPP1⁺ 肿瘤——OE 为超生理表达且 ENPP1 阴性亲本对 ENPP1i 完全不敏感（作者自陈），内源性 ENPP1-high 模型（如 MDA-MB-231 移植瘤）的体内三联未测；该前提是本链最大的边界。</p>
+    <p><strong>演绎构建层</strong>：清体层级方向正确（CD8⁺ 最强依赖：0/6 治愈、9× 体积；NK 最弱）且与 p-TBK1/CD8 浸润数据一致；STINGi 的 4/6 治愈支持 STING 部分依赖。LF 模型报告切缘/瘤体积组间无差异——排除了手术混杂，设计到位。</p>
+    <p><strong>元认知审计层</strong>：cure 计数 n=6/组的 ceiling 效应（作者自陈）使 STING/CD4 依赖的定量等级不可靠——只有 CD8⁺ 依赖（0/6 vs 6/6）是统计上稳的；"STING-TBK1 介导免疫"的标题级表述部分依赖未达显著的比较。结论失败条件：扩大 n 后 STINGi/CD4 组与 triple 无差异（则免疫为 CD8 单因素）。</p>
+    <p><strong>统计实质</strong>：克隆形成 extra sum-of-squares F 检验 + 3 生物重复；体内 n=8-15/组（生长/LF）、n=6/组（清体）；KW+Dunn/Mann-Whitney 规范声明；γH2AX 焦点 n&gt;100 细胞×3 实验；人源相关未做纯度/组成校正（scRNA 语境下为细胞水平相关，混杂较小但 UMAP 叠加无定量指标）；无正式多重比较校正声明（各图 post-hoc 已注明）。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-03b</span><br>体内药效证据全部基于 ENPP1-OE 超生理模型</td>
+          <td>Figure 4 全部体内实验（OE-ANV5 / OE-4T1）；Discussion（"position ENPP1 as...offering promising translational opportunities for treating...patients with TNBC"）; Supp F2e（ENPP1 阴性亲本对 ENPP1i 不敏感——作者自陈）</td>
+          <td>生长延迟/CR/记忆/LF 消除/abscopal/转移/清体七类体内证据全部来自 ENPP1 强制过表达肿瘤；内源性 ENPP1-high 状态（临床人群的实际目标）的体内三联验证缺失（MDA-MB-231 仅体外）；作者以"避免其他签名基因混杂"辩护 OE 选择——合理但使转化主张的体内支撑限于超生理表达场景（补内源性模型可修复 → ERR-03）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-02a</span><br>ENPP1→HR 机制缺环 + DDR/STING 两臂交互未测</td>
+          <td>Discussion（"the impaired functional damage repair could be partially explained by changes affecting...ENPP1-elicited dePARylation"）; Supp F2h-i（PARylation/p-ATM 相关性观察，两系 p-ATM 方向相反）</td>
+          <td>ENPP1 为膜外酶，其阻断如何导致核内 PARylation 失衡/HR 削弱无直接分子证据（无 ENPP1-PAR 底物实验、无定点突变解耦水解活性）——dePARylation 为 PARG 类比假说；且 cGAS 沉默增敏与"cGAMP 不直接参与抗性"的解释存在张力，STING 阻断是否 rescue TLR 的 HR 降幅未测（两臂独立性未验证）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>清体实验统计效力（ceiling 效应）</td>
+          <td>Figure 5e-f（n=6/组；triple 6/6、STINGi 4/6、CD4⁺ 2/6、NK 1/6、CD8⁺ 0/6 治愈；STINGi/CD4 组 vs triple 未达显著）</td>
+          <td>免疫依赖的定量层级（STING/CD4 部分依赖 vs CD8 主依赖）建立在 n=6 的治愈计数上，多数组间比较因治愈数 ceiling 未达显著（作者自陈归因）——仅 CD8⁺ 依赖（0/6 vs 6/6）统计稳固；"STING-TBK1 介导"的机制表述部分依赖未达显著的比较</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03c</span><br>跨物种签名"保守"为定性论证</td>
+          <td>Figure 6b-c（UMAP 叠加 + 基因相关）；Discussion（"partially conserved cross-species signature"）</td>
+          <td>鼠 CTC-in 签名在人 scRNA 的"保守性"由 UMAP 目测叠加（部分基因仅 tangential）+ 少数基因相关（CRY1 R=0.73、DDIT3 R=0.65）支撑——无定量守恒度量（如签名评分跨物种相关）、无独立人队列验证、无本文内生存关联（RFS 引自前期 ref 12）；"conserved"表述与证据强度需对齐</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>CTC-in 建模的扩增/选择混杂 + 人 CTC 数据不一致</td>
+          <td>Figure 1a（ex vivo 扩增流程）；Results 1（GSE41245 阳性、"not consistent with others"——作者归因混杂）</td>
+          <td>CTC-out 经 ex vivo 扩增后再接种、CTC-in 分离后再扩增——培养选择对 ENPP1⁺ 签名的贡献未排除（无免培养谱系追踪平行）；人 CTC ENPP1 证据在数据集间相互矛盾，"ENPP1⁺ CTC"的临床基线不稳；两者共同弱化"CTC 天然获得 ENPP1⁺ 表型"的生物学基线</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>体内药效依赖单一 ENPP1 工具化合物（含 COI 上下文）</td>
+          <td>Methods（"AVA-NP-695 was generously provided by Avammune Therapeutics Inc."）；体内实验（ENPP1i 各剂量均 AVA-NP-695）；Declarations（"no competing interests"）</td>
+          <td>体内增敏/免疫/LF/abscopal 全部由单一抑制剂实现，无第二种 ENPP1 抑制剂或体内 ENPP1-KD 平行——脱靶贡献未在体内正交排除（体外有 shENPP1 一致性为正证据）；工具由企业赠予且作者声明无竞争利益——材料来源已致谢，但引用剂量/疗效时应注明单工具体属性</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：标题级主张（双重耗竭削弱 DDR、增强放免疗效）的功能层（HR 削弱三重读出）与体内层（免疫健全模型的 LF/记忆/abscopal）均已闭合；P1 收敛后（"在 ENPP1-OE 模型中"限定）标题不受影响。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>ENPP1 第三功能臂（DDR/HR）+ genome integrity↔免疫抑制连接点定位为新；ENPP1-cGAMP-STING 与放免框架为既有文献（ref 12-15）延伸</td></tr>
+        <tr><td>证据广度</td><td><strong>A−</strong></td><td>两免疫健全鼠模型 + CTC-in 系 + OE 平台 + LF/abscopal/记忆/清体/毒性七件套 + 11-DDRi 筛 + 人 scRNA 再分析；缺 PDX/人源化与内源性表达体内模型</td></tr>
+        <tr><td>因果封闭性</td><td><strong>B+</strong></td><td>表型层三角验证（沉默/OE/i）收敛于 HR（TLR 正交定量）封闭；机制层（膜外酶→核内 PARylation）为假说级；两臂交互未测</td></tr>
+        <tr><td>反例排除</td><td><strong>A−</strong></td><td>MCF10A/ENPP1 阴性亲本双阴性对照、STAT5a/ERN1/TIMELESS 签名基因排除、RAD51i 阳性对照、切缘/瘤体积手术混杂排除、细胞周期混杂排除、血象生化毒性——排除体系为同类论文高配；未排除：体内脱靶、培养伪影</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B+</strong></td><td>统计规范（F 检验/KW+Dunn/n=8-15 组/3 重复）达标；扣分：清体 n=6 ceiling、单工具体内、无代码/无正式 Limitations 节</td></tr>
+        <tr><td>外部效度</td><td><strong>B</strong></td><td>体内全部 ENPP1-OE 超生理；人源端止步相关性再分析（部分保守表述诚实）；TNBC 特定结论不可跨癌种外推</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-a-minus">A−</span></strong> —— 距 A 差三件事：内源性 ENPP1-high 肿瘤的体内三联验证（PDX 或 ENPP1-high 同源系）、ENPP1→HR 的分子解耦（水解活性突变体/STING-rescue 交叉）、清体层级扩样至显著。作为承重文献使用：ENPP1 阻断增敏 IR 的功能结论与免疫机制框架可整体引用；所有疗效表述须带"ENPP1-OE 模型"限定。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-03b</span> <span class="sev sev-p1">P1</span>）：根因：体内疗效主张与内源性表达场景错配。动作：①MDA-MB-231（内源性 ENPP1-high）移植瘤三联实验；或②CTC-in 衍生系原位回植的治疗实验；或③报告 4T1-ENPP1 敲入/天然高变株。效果：转化主张与模型系统对齐。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-02a</span> <span class="sev sev-p2">P2</span>）：动作：①水解活性死亡突变体（催化位点）OE rescue/模拟实验解耦 ENPP1 酶活性与放抗；②TLR ± STINGi（C-176）测定 HR 降幅是否被 STING 阻断回补（两臂独立性检验）。效果：机制表述从假说升级或收敛为"功能上经 HR"。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p2">P2</span>）：动作：清体实验扩样（n≥10/组）或改用带删失的生存分析报告免疫依赖层级。效果：STING/CD4 依赖的定量等级可判定。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-03c</span> <span class="sev sev-p2">P2</span>）：动作：构造跨物种签名评分（鼠签名基因→人同源基因集 ssGSEA），报告跨队列/亚型的分布与独立 TNBC 队列生存关联。效果："部分保守"获得定量支撑。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p2">P2</span>）：动作：免培养 CTC 谱系追踪（barcoding 直接分离 RTB 着床细胞）验证签名非培养伪影；人 CTC 多数据集系统性 meta 报告 ENPP1 一致性。效果：模型生物学基线稳固。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：体内加第二条 ENPP1 工具（别构抑制剂或抗体）或 ENPP1-KD 细胞回植实验平行验证。效果：排除体内脱靶。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · CTC-in ENPP1⁺ 放抗表型</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">circulating tumor cells engrafting in the post-resection tumor bed (CTC-in) acquired an ENPP1⁺ transcriptional signature (stemness and radiation-response GO categories) and displayed radioresistance in clonogenic assays / ENPP1 silencing — but not silencing of STAT5a, ERN1 or TIMELESS — reduced radioresistance / ENPP1 overexpression sufficed to confer radioresistance on parental cells, reversible by the ENPP1 inhibitor AVA-NP-695</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">human CTCs are ENPP1⁺（数据集间不一致，仅 GSE41245 阳性——须限定 in one dataset）；the signature reflects in-vivo engraftment selection（ex vivo 扩增混杂未排除）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">ENPP1 is a universal radioresistance driver（两鼠系 + 有限人细胞系）；the full ENPP1⁺ signature mediates radioresistance（其他签名基因已逐一排除）</span></div>
+    </div>
+
+    <h3>LC2 · ENPP1 阻断 → HR 削弱 → IR 增敏</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">ENPP1 blockade (pharmacological or shRNA) impaired homologous recombination in traffic-light-reporter assays, sustained γH2AX and increased comet tail moments after irradiation / ENPP1i lowered the IC50 of ATMi and PARPi post-IR, with ATM inhibition showing the strongest synergy (CI≈0) / RAD51 downregulation at 48 h indicated compensatory NHEJ reliance</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">ENPP1 inhibition impairs DDR via altered PARylation/dePARylation（机制为相关性+PARG 类比假说——用 proposed/partially explained 限定）；via preventing cGAMP hydrolysis（此为 STING 臂，勿与 HR 臂混接）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">ENPP1 directly hydrolyzes nuclear PAR chains（无底物/突变证据）；ENPP1 inhibition creates a clinically validated BRCAness/Hrd phenotype（概念类比，无临床验证）；cGAMP accumulation causes HR impairment（两臂交互未测）</span></div>
+    </div>
+
+    <h3>LC3 · 三联 → STING → 免疫 → 记忆/abscopal</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">in immunocompetent ENPP1-OE models, fractionated IR plus dual ENPP1/ATM inhibition produced complete remissions with durable rejection on 2-month rechallenge, reduced spontaneous lung metastases, eradicated local failure when added post-resection, and suppressed contralateral (unirradiated) tumors consistent with an abscopal effect / antitumor immunity was markedly CD8⁺ T-cell dependent (0/6 cures after CD8 depletion) and accompanied by sustained p-TBK1, CCL5/CXCL10 induction, PMN-MDSC reduction and M1/CD8⁺ infiltration / human single-cell data showed ENPP1⁺ tumor-cell and CAF subsets with inverse correlation to CD3ε/CD8A</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">STING-dependent antitumor immunity（STINGi 4/6 vs triple 6/6 未达显著——部分依赖/趋势级）；the cross-species signature is conserved（作者自用 partially——定性叠加，勿升为 conserved）；疗效主张一律加 in ENPP1-overexpressing models 限定</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">dual ENPP1/ATM inhibition abrogates TNBC in patients（无临床验证）；ENPP1⁺ patients will respond to the triple regimen（转化推断无内源性模型支撑）；durable immune memory in humans（鼠模型 2 月 rechallenge 外推）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Ruiz et al. showed that circulating tumor cells engrafting in the post-resection tumor bed acquire an ENPP1⁺ transcriptional signature with enhanced radioresistance, and that ENPP1 blockade — genetic or pharmacological (AVA-NP-695) — impaired homologous-recombination-mediated DNA damage repair, sustaining γH2AX and comet tail moments after irradiation. In a targeted screen of 11 DDR inhibitors, ATM inhibition showed the strongest synergy with ENPP1 blockade; in immunocompetent ENPP1-overexpressing mammary tumor models, fractionated radiotherapy combined with dual ENPP1/ATM inhibition activated STING-TBK1 signalling, produced CD8⁺ T-cell-dependent complete remissions with memory on rechallenge, reduced spontaneous metastases, eradicated local failure and induced abscopal tumour control. Human single-cell datasets showed ENPP1⁺ tumour and CAF subsets inversely correlated with T-cell markers, supporting a partially conserved link between ENPP1, genome integrity and immunosuppression (Ruiz et al., Signal Transduct Target Ther 2025).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ ENPP1 inhibition pharmacologically mimics HR deficiency in the clinic（概念类比未验证）</li>
+      <li>❌ triple therapy eradicates tumors / local recurrence in patients（仅 ENPP1-OE 鼠模型）</li>
+      <li>❌ ENPP1⁺ signature is prognostic（本文未做 RFS——须回引 ref 12）</li>
+      <li>❌ ENPP1 mediates DDR through cGAMP/STING（两臂交互未测；机制归 PARylation 假说）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：Cancers 特刊 + 纯度/CNA + IHC + 免疫叙事」为默认目标用途；用途改变时 M 等级需重评。本文为 TNBC 系统——结论不直接入稿，负载在方法可迁移与叙事接口。</p>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>跨物种签名部分保守验证流程</strong>（鼠表型签名 → 人 scRNA 重分析 UMAP 叠加 + 基因相关 + 免疫浸润相关，"partially conserved"表述）— <strong>M1</strong>（<strong>直接迁移到 AEBP1</strong>：鼠模型/体外获得的 AEBP1 关联签名 → 人 GBM scRNA/TCGA 验证流程与措辞模板；其 ERR-03c 教训提醒我们加定量签名评分）｜S008; F6</li>
+      <li><strong>清体依赖性层级设计</strong>（CD8/CD4/NK/STING 平行清除 + 治愈计数 + 体积倍数双读出）— <strong>M1</strong>（免疫叙事的机制确认标准配置——与我们的 CD8/免疫浸润叙事对口；n=6 ceiling 是反例教训）｜S007; F5e-f</li>
+      <li><strong>签名基因逐一消融的 parsimony 辨析</strong>（候选签名基因逐个沉默，仅必需者留存）— <strong>M1</strong>（把"签名相关"收敛为"单基因必需"的干净做法——AEBP1 与共表达基因的因果辨析可照搬）｜S004; F2a</li>
+      <li><strong>双重阴性对照配置</strong>（非转化细胞 MCF10A + 靶标阴性亲本）— <strong>M2</strong>（体外药理实验的对照底线）｜S004; Supp F2d-e</li>
+      <li>TLR（traffic light reporter）HR/NHEJ 定量 — <strong>M3</strong>（若 AEBP1 走 DDR 关联路线可用；默认不启用）｜S004; F2g</li>
+    </ul>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>GSE277249（CTC-in vs parental RNA-seq）— <strong>M3</strong>（ENPP1/干性/DDR 基因集可提取，但系统为 TNBC）｜S011</li>
+      <li>Bassez et al. 人乳腺癌 scRNA（ref 22，31 例，公共）— <strong>M2</strong>（ENPP1⁺ 生态位分析模板；同类"marker⁺ 生态位 × 免疫浸润负相关"分析与 AEBP1⁺ 生态位分析同构）｜S008; F6</li>
+    </ul>
+
+    <h3>叙事接口（STING/免疫臂）</h3>
+    <ul>
+      <li><strong>cGAS-STING 通路叙事的完整引用节点</strong>（cGAMP 水解→STING 拮抗→免疫逃逸 + STING 激活→CD8 募集）— <strong>M2</strong>（Bakhoum 谱系的 TNBC 端实证；GBM 免疫逃逸叙事中 STING/ENPP1 轴的引用支撑）｜Abstract; S005; S007</li>
+      <li><strong>"genome integrity ↔ immunosuppression 连接点"的双臂叙事结构</strong>（细胞内在 DDR 臂 + 非细胞自主免疫臂汇于单 marker）— <strong>M2</strong>（结构模板：AEBP1 的状态标记叙事可借用"单 marker 汇两臂"的组织法）｜Discussion</li>
+      <li>"marker⁺ 细胞/生态位与 CD8 浸润负相关"的呈现范式（UMAP 叠加 + 相关散点 + dot plot）— <strong>M2</strong>｜S008; F6</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>体内疗效全用靶标超生理 OE 模型 → 转化主张必须配内源性表达水平的模型验证（ERR-03b 活案例）｜F4 全部</li>
+      <li>机制假说（dePARylation）与功能证据混写 → 假说用 proposed/partially explained 显式降级（本文 Discussion 做到了，引用侧勿升级）｜Discussion</li>
+      <li>清体 cure 计数 n=6 + ceiling → 免疫依赖层级结论留统计余量或用删失模型｜F5e-f</li>
+      <li>跨物种"conserved"无定量守恒度量 → 签名保守性主张配定量评分（其 partially 限定是对的，仍不足）｜F6b</li>
+      <li>STTT 体例无正式 Limitations 节 + 无代码声明 → 我们稿件自设 Limitations 与分析代码可用性（R 系纪律对照）｜全文</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1038/s41392-025-02271-2">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
