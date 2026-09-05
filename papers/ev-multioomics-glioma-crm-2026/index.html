@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · 血浆 sEV 多组学+多光谱胶质瘤液体活检（Cell Rep Med 2026）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Robinson et al., Cell Reports Medicine 2026 — 1 mL 血浆 sEV 五模态（NTA/microBCA/ATR-FTIR/Raman/蛋白组/miRNA-seq）× 三队列 × 四算法的诊断建模：训练 AUC 0.931–0.971，外部验证 40%–100% 波动，蛋白组管线在纵向队列 100%（n=11）。总评级 A−：多队列诚实范本（外部验证波动直接写进摘要 + 代码公开），缺口在外部验证样本量/独立性与平台置换混杂。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Combined multi-omics and multi-spectral profiling of plasma extracellular vesicles reveals liquid biopsy biomarkers for glioma diagnosis</h1>
+  <p class="subtitle">Robinson SD, …… <strong>Giamas G</strong>（通讯/Lead Contact）等 36 人. <em>Cell Reports Medicine</em>, 2026, 7(5): 102744</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1016/j.xcrm.2026.102744">10.1016/j.xcrm.2026.102744</a> ·
+    审查深度：审稿式精读（全流程；Methods 未逐段双化） ·
+    总评级 <span class="badge grade-a-minus">A−</span> ·
+    <span class="sev sev-p1">P1 × 1</span> <span class="sev sev-p2">P2 × 5</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>14.0</strong>（条目 extra 记录）· JCR <strong>Q1</strong> · 中科院 <strong>医学 1 区 Top</strong> · 查询于 2026-09-05。期刊光环偏倚提醒：不作为证据评级依据。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>液体活检方法学论文的"多队列诚实范本"——五模态 × 三队列 × 四算法的完整架构 + class shuffling 阴性对照 + 过拟合检查 + 代码公开（GitHub GliomaML），最难得的是把 40%–100% 的外部验证波动直接写进摘要而非藏在补充材料。</strong>最强资产：四种模态采用不同迁移策略（原始光谱 9 特征 vs concordant-only 蛋白 vs z-score miRNA）的成败对比，构成"什么能跨队列迁移"的天然消融实验。一处 P1：摘要级"100% accuracy"的外部验证建立在 6 名患者的 11 个非独立样本上（95% CI ≈ 72%–100%，患者级聚类后更宽），且蛋白平台的两个"外部"队列分属 SomaScan / 质谱两个平台——验证强度被摘要口吻放大（P1）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：审稿式精读 → 全流程。双语证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，14 个正文块 + 7 图；Methods 未逐段双化）。<strong>本项目负载</strong>：高分文献队列 T2-2（CRM IF 14.0 / 医学 1 区 Top），定向选读目标 = <strong>方法可迁移性</strong>——其"多队列训练 → 内部 CV → class shuffling → 外部验证分层报告"的架构直接对标我们 Cancers 特刊稿件（TCGA 训练 + 独立队列外部验证）的计算分析设计；其"sEV 仅少数直接来源于肿瘤细胞"的自陈限制与 AEBP1 state-marker 叙事同构（循环信号反映肿瘤-宿主生态状态而非纯肿瘤固有属性）。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（多模态区分）</strong>：1 mL 血浆 sEV 的多组学 + 多光谱特征（蛋白浓度 / 粒径 / ATR-FTIR / Raman / 蛋白组 / miRNA）在三独立队列中一致区分胶质瘤患者与对照。</li>
+      <li><strong>LC2（ML 外部验证）</strong>：训练队列 ML 模型（AUC 0.931–0.971；内部验证准确率 85%–95%）经外部验证确认诊断潜力——外部验证准确率 40%–100%（模态依赖），蛋白组与多模态签名在纵向队列 100%。</li>
+      <li><strong>LC3（亚型探索）</strong>：探索性分析提示 sEV 特征可区分 IDHwt GBM vs IDHmut 胶质瘤、胶质瘤 vs 非胶质脑瘤（proof of principle，未建分类器）。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：血脑屏障使胶质瘤 ctDNA 液体活检信号稀薄，sEV 货物丰富但来源混杂、pre-analytical 变异大——增量三层：模态组合层（NTA/microBCA/双光谱/蛋白组/miRNA 五模态 + 三队列 + 四算法的完整配置在胶质瘤液体活检中属最全面之一）；设计层（用"不同 pre-analytical 历史"的独立队列做外部验证——把混杂变量转化为设计要素）；方法层（concordant-only + z-score 的跨平台迁移策略及其消融对比）。</li>
+      <li><strong>证据链位置</strong>：诊断标记物开发的"发现→训练→外部验证→纵向探索"完整四级——三队列共 206 样本 / 159 人（Training 104：100K Genome Project；Validation 49：Dunedin 脑瘤 13 + 非胶质脑瘤 16 + 心脏病对照 20；Longitudinal 53 样本 / 6 患者）。</li>
+      <li><strong>研究类型</strong>：research article（诊断 biomarker + ML 建模）；多中心（英/丹/新西兰/加/中 18 机构）；样本类型为生物样本库回顾性血浆。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：摘要三分主张（多队列验证的高准确率诊断 / 40%–100% 波动的诚实报告 / 亚型探索定位）与数据匹配度高——波动的诚实报告与代码公开是该文伦理质量的标志。最可能发生证据错配的环节：①"100% accuracy"的验证强度（样本量/独立性，见 ERR-04a）；②"multimodal signature"的最终特征实为蛋白-only（见 ERR-03a）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：多模态 sEV 特征区分胶质瘤 vs 对照）</span>：三队列设计（S003）→ sEV 物理特征：蛋白浓度↑（368 vs 311 μg/mL, p=0.01）、&gt;80 nm 颗粒↑（1.20 vs 0.85×10¹¹/mL, p=0.0024）、粒径↑（S004/F1）→ ATR-FTIR 光谱差异 + PLS 模型 AUC 0.987（训练 n=99）+ 纵向预测概率轨迹（术前→治疗中↓→复发↑；个体轨迹 n=4/3 不一致）（S005/F3）→ Raman（n=25/25）PCA 分离（S005/F3F-G）→ 蛋白组漏斗：887→305 DAPs→78 候选→跨平台 83 concordant→45 三队列一致→22 高度一致→top4 单蛋白 AUC 0.787–0.861（S006/F4）→ miRNA 漏斗：152→77 DE→65/131 跨平台一致→20 三队列一致→top4 AUC 0.783–0.859（S007/F5）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">关联闭环（诊断类论文标准）</span>——三队列一致 + 通路合理性（补体/凝固、TGF-β、整合素、FoxO/PI3K-AKT）+ 心脏病对照缓解系统性炎症混杂 + 非胶质脑瘤对照反向模式（RELN/THBS1/SVEP1）锚定胶质瘤特异性。最薄弱环节：sEV 细胞来源（肿瘤/TME/外周）与 corona 贡献未定（作者自陈）——限制生物学解释而非诊断效用。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：ML 训练 → 外部验证）</span>：特征选择管线（RFE/XGBoost 重要性；代码公开 GliomaML）→ 5-fold CV ensemble + 内部验证准确率 85%–95%（S008/F6A/C/E/G）→ class shuffling 阴性对照（AUC≈0.5）+ 过拟合检查（Figure S6A–D）→ 外部验证分层报告：ATR-FTIR（XGBoost 9 特征，训练 AUC 0.966）纵向 n=5 准确率 <strong>40%</strong>（批间/pre-analytical 差异，作者归因）｜蛋白（XGBoost 9 特征，0.971）验证 61%（n=33）/ 纵向 <strong>100%</strong>（n=11）｜miRNA（kNN 10 特征，0.931）验证 83%（n=6，灵敏度 100%）/ 纵向 64%（灵敏度 100%）｜多模态（RF，训练 0.971）纵向 <strong>100%</strong>（n=11）/ 验证子集 50%（n=4）（S008/F6B/D/F/H）
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">架构闭环 / 验证样本薄弱</span>——训练→CV→shuffle→过拟合→外部验证的流程规范完整；但"100%"建立在 6 患者的 11 个非独立样本上（ERR-04a），且蛋白模态的两个外部队列分属 SomaScan / 质谱平台（ERR-04b）。最有价值的方法学资产：四种模态迁移策略的成败对比构成天然消融——原始光谱 9 特征（未跨队列归一化）40% 失败 vs concordant-only 蛋白 + z-score miRNA 的 PCA 无批间效应。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：IDH 亚型与非胶质瘤区分——探索性）</span>：NTA 特征不区分 IDH 亚型（S009/F7A-B）→ IDHwt vs IDHmut：125/119 DAPs（交集 85）+ 86/77 DEMs（交集 68）（S009/F7C-F）→ 胶质瘤 vs 非胶质脑瘤（脑膜瘤/脑转移/淋巴瘤）：14/83 concordant 蛋白反向模式 + RELN/THBS1/SVEP1 反向 → "信号属胶质瘤而非泛脑瘤"论证（S009; S010）→ ML 分类器未建（统计效力不足，作者自陈）（S011）
+      <br>闭环状态：<span class="state state-open" style="background:#f3e5f5;color:#6a1b9a">假设生成</span>——探索性定位诚实（正文明确标注 exploratory、Limitations 重申效力不足），无分类器即无过度主张；这是该文表述纪律的正面样本。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · 多模态 sEV 特征区分胶质瘤</h3>
+    <p><strong>第一性原理层</strong>：诊断主张的操作化依赖"sEV 分离（SEC）+ 多模态表征"能捕获胶质瘤相关信号。承重前提：测得的特征归因于胶质瘤状态而非 pre-analytical/平台差异——心脏病对照组（缓解系统性炎症混杂）与非胶质脑瘤对照组（反向模式锚定胶质瘤特异性）是针对该前提的两组正交对照，设计到位；但三队列的采集/处理协议差异（作者列为优势的"different pre-analytical histories"）同时是 ERR-04c 的根源——同一设计要素在关联链是去混杂资产，在迁移链是风险源。</p>
+    <p><strong>演绎构建层</strong>：多队列一致性采用"concordant-only"策略（蛋白 83/140、miRNA 65/131——跨平台一致性约 50%–60%）而非全特征强推，是诚实且聪明的折中；通路层面（血管相关通路富集于 discordant 信号）为不一致提供了生物学解释框架。漏斗式呈现（887→22 蛋白；152→20 miRNA）透明可复核。</p>
+    <p><strong>元认知审计层</strong>：结论最可能失败的条件：新中心未标准化 pre-analytical 流程（ATR-FTIR 纵向 40% 已示范）或平台更换（蛋白 61% vs 100% 的平台差异已示范）——即该签名的可重复性边界恰好是论文自己的外部验证数据所圈定的。</p>
+
+    <h3>LC2 · ML 训练 → 外部验证</h3>
+    <p><strong>第一性原理层</strong>：ML 管线的负控制规范完整（class shuffling AUC≈0.5、过拟合检查 Figure S6、5-fold ensemble 曲线）——同类论文中少见的全配置。承重前提：外部验证样本独立且与训练同分布——纵向队列 5 个 GBM 样本至多来自 5 名独立患者（n=11 混入 6 个对照），样本内相关性使有效 n 更小；验证子集 n=4（多模态）已低于任何有意义的二分类评估下限。</p>
+    <p><strong>演绎构建层</strong>：模态间迁移策略的消融结构（见主链 B）是本文最高价值输出：它把"哪类特征能跨队列迁移"从推测变成实测——光谱原始特征 &lt; 跨平台一致蛋白 ≈ z-score miRNA。该发现可迁移到任何多数据集 biomarker 建模（含我们的 TCGA/CGGA 表达签名迁移）。</p>
+    <p><strong>元认知审计层</strong>：n=11 全对的 Clopper-Pearson 95% CI ≈ [72%, 100%]——"100% accuracy"的点估计不携带其不确定性；若按患者级聚类（≤5 独立病例），有效置信区间更宽。摘要以"100%"收尾而未附 n/CI，是验证强度被放大的机制（作者在 Limitations 自陈 underpowered，但摘要口吻未对齐）。</p>
+
+    <h3>LC3 · IDH 亚型与非胶质瘤区分（探索）</h3>
+    <p><strong>第一性原理层</strong>：探索主张的前提是 DAP/DEM 交集差异可外推为亚型可分性——n=33 vs 20 与 n=13 vs 16 的样本量不足以支撑（作者自陈）；反向模式蛋白（RELN/THBS1/SVEP1）的论证逻辑（差异属胶质瘤而非泛脑瘤）是对照组设计的正确用法。</p>
+    <p><strong>演绎构建层</strong>：无分类器、无 ROC——作者没有把探索性数据推到预测性结论，正文/Limitations 双重标注 exploratory；NTA 特征"不区分"的阴性结果也如实呈现。</p>
+    <p><strong>元认知审计层</strong>：DAP/DEM 计数比较未做多重比较校正声明（蛋白/miRNA 漏斗的训练队列内有 adj p，亚型比较的交集分析层面无）；若后续引用，只可引"差异特征存在"，不可引"可区分/可分类"。</p>
+
+    <p><strong>统计实质</strong>：训练队列统计完整（Welch t / ANOVA / adjusted p）；外部队列无假设检验（作者自陈 underpowered）；"100% accuracy"无 CI 报告；miRNA 跨平台一致性 65/131（≈50%）为训练-验证口径、20/59 为三队列口径——引用时须注明口径。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>外部验证的样本量与样本独立性</td>
+          <td>Abstract（"external validation across independent cohorts confirms the signature's diagnostic potential, with 100% accuracy"）; Figure 6B/D/F/H 混淆矩阵（纵向 n=5–11；验证子集 n=4–33）</td>
+          <td>摘要级"100% accuracy"（蛋白 + 多模态签名）建立在 6 名患者的 11 个纵向样本上——样本非独立（同患者多时点）、95% CI ≈ 72%–100%、患者级聚类后更宽；多模态验证子集仅 n=4（2+2）、miRNA 验证 n=6；作者在 Limitations 自陈 underpowered 但摘要口吻未对齐——验证强度与样本现实错配（补统计口径可修复 → ERR-04）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>平台置换混杂"外部验证"</td>
+          <td>Discussion（"likely attributable to the different proteomic platforms employed: longitudinal cohort…SomaScan…whereas Validation cohort samples utilized mass spectrometry"）; 蛋白验证 61% vs 纵向 100%</td>
+          <td>蛋白模态的两个外部队列分属 SomaScan（CV≈5%）与靶标 MS 两平台，miRNA 跨 Illumina/NanoString/DNBSeq 三平台（共检一致性 65/131≈50%）——"外部验证准确率差异"部分是平台产物而非队列生物学；作者诚实归因但未做平台内平行验证剥离该混杂</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04c</span><br>ATR-FTIR pre-analytical 脆弱性（含商业 COI 上下文）</td>
+          <td>Figure 6B（纵向 n=5 准确率 40%）; Discussion（"unable to minimize the impact of any differences in the pre-analytical processing steps"）; Author contributions（Dxcover Ltd. 员工为共同作者）</td>
+          <td>光谱模态外部验证崩溃至 40%——9 特征原始光谱签名对 pre-analytical 差异无免疫力（作者归因并诚实报告）；ATR-FTIR 平台为 Dxcover 商业平台且公司员工署名——平台推广叙事与失败结果并存时，COI 上下文应纳入引用判断</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03a</span><br>"multimodal signature"最终特征实为蛋白-only</td>
+          <td>Abstract（"proteomic and multimodal signatures"）; Figure S5G（"10-feature protein-only signature"）</td>
+          <td>多模态模型在蛋白+miRNA 合并数据上训练，但特征选择最终收敛为 10 个蛋白特征——摘要的"两签名"（proteomic 与 multimodal）在特征层面高度重叠，其"独立验证"实为同一特征集的两次评估；表述层过载（限定语可修复 → ERR-03）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>sEV 细胞来源与 corona 贡献未定</td>
+          <td>Limitations（"the original cellular source of the sEVs remains unclear…only a minority…directly released from the glioma tumor cells…the relative contribution of sEV cargo compared to the sEV corona…remains unclear"）</td>
+          <td>仅少数 sEV 直接来源于肿瘤细胞（余为 TME/外周血细胞），corona 与 cargo 的相对贡献未测——诊断效用不受影响（"tumor education"概念），但"循环 sEV 反映肿瘤固有生物学"的任何引申都被此限制约束；作者自陈完整，引用侧需对齐</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03e</span><br>AUC 口径不一致</td>
+          <td>Abstract（"areas under the curve [AUCs] 0.931–0.971"）vs Discussion（"AUC: 0.957–0.971"）</td>
+          <td>四个 headline ML 模型训练 AUC 为 0.966/0.971/0.931/0.971（摘要口径自洽）；讨论段的 0.957 下限与任何 headline 模型不符（疑为 CV ensemble 或其他口径）且未注明——同文两处 AUC 范围不一致，引用时需以摘要口径为准并复核原始表</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：标题级主张（多模态 sEV 特征揭示胶质瘤诊断液体活检标志物）由三队列一致的关联证据 + 训练 AUC 0.931–0.971 + 完整 ML 负控制支撑；"100% accuracy"收敛为"纵向队列小样本（n=11，CI≈72%–100%）全对"后标题不受影响。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>五模态×三队列×四算法的完整组合在胶质瘤液体活检属最全面配置之一；单项技术皆非首创，增量在组合架构与"以 pre-analytical 异质性为设计要素"的验证观</td></tr>
+        <tr><td>证据广度</td><td><strong>A−</strong></td><td>206 样本/159 人、18 机构、跨 3 蛋白平台与 3 miRNA 平台、纵向治疗轨迹采样；缺前瞻队列与 PDX/介入验证</td></tr>
+        <tr><td>验证设计封闭性</td><td><strong>A−</strong></td><td>训练→5-fold CV→class shuffling→过拟合检查→外部验证分层报告的四级架构完整且代码公开；缺口在外部样本量/独立性（ERR-04a）与平台置换（ERR-04b）</td></tr>
+        <tr><td>反例排除</td><td><strong>B+</strong></td><td>心脏病对照 + 非胶质脑瘤对照 + class shuffling + 过拟合检查——对照体系完整；未做 corona 剥离/来源溯源对照（ERR-05a）</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B+</strong></td><td>concordant-only + z-score 迁移策略与模态消融对比为亮点；扣分：光谱签名 pre-analytical 脆弱、"100%"无 CI、外部队列无统计检验、AUC 口径不一致</td></tr>
+        <tr><td>外部效度</td><td><strong>B</strong></td><td>外部验证准确率 40%–100% 大幅波动（作者诚实报告）；纵向样本非独立；签名可重复性边界恰好由自证数据圈定——诚实但受限</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-a-minus">A−</span></strong> —— 距 A 差三件事：外部验证的独立扩样（多中心前瞻、患者级独立性 ≥50/组并报 CI）、pre-analytical SOP 的建立与跨中心光谱归一化（ATR-FTIR 40% 的教训转化为方案）、"100%"主张与 n/CI/独立性声明的配套呈现。作为方法学承重文献使用：多队列架构、迁移策略消融与 ML 负控制配置可整体引用；"100% accuracy"须附 n=11 与 CI 限定。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p1">P1</span>）：根因：外部验证样本量小且非独立、"100%"无不确定性配套。动作：①多中心前瞻验证（患者级独立性 ≥50/组）；②报告 Clopper-Pearson CI 与患者级聚类校正（bootstrap by patient 或混合效应）；③纵向验证使用每患者单一时间点或混合模型。效果：验证强度与样本现实对齐。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：跨队列固定分析平台（全 SomaScan 或全 MS）；或平台内训练 + 平台间分层报告迁移性能。效果：剥离平台混杂的迁移度量。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-04c</span> <span class="sev sev-p2">P2</span>）：动作：pre-analytical SOP（采集管/禁食/离心/冻融）+ 光谱仪校准记录公开；跨中心光谱 harmonization（如 ComBat for spectra）敏感性分析。效果：光谱签名迁移成功率可测可控。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-03a</span> <span class="sev sev-p2">P2</span>）：动作：把 "multimodal signature" 限定为 "multimodal-trained, protein-dominant signature"，或报告强制纳入 miRNA 特征的变体性能。效果：签名独立性问题消解。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p2">P2</span>）：动作：单囊泡表型分选或肿瘤特异 marker 溯源定量 sEV 来源比例；corona 剥离对照比较 cargo vs corona 信号贡献。效果：生物学解释边界量化。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-03e</span> <span class="sev sev-p2">P2</span>）：动作：统一摘要/讨论的 AUC 口径（headline 模型 vs CV ensemble）并注明。效果：内部数字一致性。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · 多模态 sEV 特征区分胶质瘤</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">plasma sEV profiling distinguishes glioma patients from controls across three independent cohorts (n=206 samples/159 individuals; training AUC 0.931–0.971; internal validation accuracy 85%–95%) / sEV protein concentration, particle size and &gt;80 nm particle count are elevated in glioma (p≤0.01) / concordant proteins map to complement-coagulation, TGF-β and integrin pathways; discordant signals enrich vascular processes / cardiac-disease controls mitigate systemic-inflammation confounding</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">sEV signatures reflect glioma biology（须限定 at the diagnostic-association level; 仅少数 sEV 直接来源于肿瘤细胞，corona 贡献未测——生物学归因受限）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">sEV biomarkers are tumor-derived / sEV cargo mirrors intrinsic tumor biology（来源未定，作者自陈）；sEV profiling replaces tissue diagnosis（未做前瞻/介入验证）</span></div>
+    </div>
+
+    <h3>LC2 · ML 训练 → 外部验证</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">nine-protein and ten-feature signatures achieved perfect classification in the longitudinal cohort (n=11; 95% CI ≈72%–100%) / external validation accuracy ranged from 40% to 100% depending on modality / transfer strategy mattered: concordant-only protein features and z-scored miRNA showed no clear batch effects on PCA, whereas the 9-feature raw spectral signature collapsed to 40% in the longitudinal cohort / full pipeline (feature selection + training parameters) is publicly available (GitHub GliomaML)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">external validation confirms diagnostic potential（须附 40%–100% 波动与 n=4–33/11 的样本现实）；multimodal signature（最终特征为 protein-only——限定 "multimodal-trained"）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">100% accuracy validates clinical utility（n=11 非独立样本 + 无前瞻）；the signature is externally validated at 100%（缺 CI/独立性限定即构成过载）；multi-omics outperforms proteomics-only（无头对头统计比较，作者自己提出 proteomics-only 可能已足够）</span></div>
+    </div>
+
+    <h3>LC3 · IDH 亚型与非胶质瘤区分（探索）</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">exploratory analyses identified distinct sEV protein/miRNA patterns between IDHwt glioblastoma (n=33) and IDHmut glioma (n=20), and between glioma (n=13) and non-glioma brain tumors (n=16) / reversed abundance patterns of RELN, THBS1 and SVEP1 anchor the signals to glioma rather than brain tumors in general (proof of principle)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">sEV profiling may distinguish IDH subtypes（仅限 hypothesis-generating; 无分类器、效力不足——作者自陈）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">sEV profiling can classify IDH subtype / detect glioma vs metastases（无分类器、未验证）；multi-omics enables non-invasive molecular subtyping of glioma（效力声明过载）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Robinson et al. combined nanoparticle tracking, ATR-FTIR/Raman spectroscopy, proteomics and microRNA sequencing of small extracellular vesicles isolated from 1 mL of plasma across three independent cohorts (206 samples from 159 individuals). Training-cohort machine-learning models reached AUCs of 0.931–0.971 with 85%–95% internal-validation accuracy; external performance ranged from 40% to 100% across modalities — the nine-protein and multimodal-trained signatures classified all longitudinal-cohort samples correctly (n=11, 95% CI ≈72%–100%), whereas the raw spectral signature dropped to 40%, illustrating that cross-cohort transfer depended on concordant-feature selection and z-score normalization. The full pipeline is publicly available (Robinson et al., Cell Rep Med 2026).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ externally validated with 100% accuracy（不带 n=11/CI/独立性限定）</li>
+      <li>❌ sEV signatures reflect intrinsic glioma biology（来源/corona 未定——作者自陈）</li>
+      <li>❌ liquid biopsy ready for clinical deployment（无前瞻验证；作者明言标准化先行）</li>
+      <li>❌ multimodal and proteomic signatures provide independent confirmation（特征层重叠）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：Cancers 特刊 + 纯度/CNA + IHC + 免疫叙事」为默认目标用途；用途改变时 M 等级需重评。</p>
+
+    <h3>方法资产（本文的核心负载：方法可迁移性）</h3>
+    <ul>
+      <li><strong>多队列训练/外部验证架构</strong>（训练 → 5-fold CV → class shuffling → 过拟合检查 → 外部验证分层报告）— <strong>M1</strong>（<strong>直接迁移到我们 Cancers 特刊稿件</strong>：AEBP1 state-marker 签名的 TCGA 训练 + CGGA/Gravendeel 外部验证可照搬此四级架构与分层报告格式）｜S003; S008</li>
+      <li><strong>concordant-only + z-score 跨平台迁移策略</strong> — <strong>M1</strong>（跨数据集/平台签名迁移的标准操作：先取跨队列一致变化特征、再 z-score 归一后迁移；可直接用于 AEBP1 在 RNA-seq 与 array 平台间的签名搬运）｜S006; S007; S008</li>
+      <li><strong>迁移策略的模态消融设计</strong>（原始特征 vs concordant-only vs z-score 的成败对比 + PCA 批间可视化）— <strong>M1</strong>（把"什么能跨队列迁移"变成实测消融——我们的稿件可复刻为"哪些 AEBP1 关联特征能跨 TCGA/CGGA 平台迁移"的对应实验）｜S008</li>
+      <li><strong>ML 负控制配置</strong>（class shuffling AUC≈0.5 + 过拟合检查 + ensemble 曲线）— <strong>M2</strong>（审稿人常问项的预置应答；GliomaML 代码可参考实现）｜Methods; Figure S6</li>
+      <li>外部验证小样本的 CI 配套呈现（Clopper-Pearson）— <strong>M1</strong>（负面教材：摘要"100%"不带 CI 即为本评审的 P1——我们的稿件所有准确率主张必须配 n/CI）｜S008</li>
+    </ul>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>GitHub GliomaML（特征选择管线 + 训练参数全公开）— <strong>M3</strong>（参考其管线结构写我们自己的 ML 附录；直接复用价值低——数据模态不同）｜S012</li>
+      <li>三队列 sEV 多组学 summary statistics（Supplementary Tables S1–S15）— <strong>M3</strong>（胶质瘤液体活检对照组设计的参照：心脏病对照 + 非胶质脑瘤对照的选法）｜全文</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li><strong>"把波动写进摘要"的诚实范式</strong>（"external validation accuracy: 40%–100%"直接进 abstract）— <strong>M1</strong>（与我们的 R 系纪律同向：外部验证波动、CI、样本独立性进正文而非补充材料）｜Abstract</li>
+      <li><strong>局限段的来源归因写法</strong>（"only a minority of sEVs are directly released from the glioma tumor cells"）— <strong>M1</strong>（<strong>state-marker 叙事的直接同构论据</strong>：循环信号反映肿瘤-宿主生态而非纯肿瘤固有——可引出"我们称 AEBP1 为 state marker 而非肿瘤固有标记"的方法论辩护）｜S011</li>
+      <li>探索性分析的双重标注纪律（正文 exploratory + Limitations 效力自陈 + 不建分类器）— <strong>M2</strong>｜S009; S011</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>小样本非独立样本上的"100%"主张 → 准确率主张必须配 n/CI/患者级独立性声明（ERR-04a 即为本清单的活案例）｜Abstract; F006D/F006H</li>
+      <li>平台置换下的"外部验证" → 迁移验证须固定平台或明示平台差异并做平台内平行｜Discussion</li>
+      <li>商业平台署名作者与平台性能叙事并存 → 引用商业平台论文时核查 COI 上下文｜Author contributions</li>
+      <li>摘要与讨论的 AUC 口径漂移 → 同一数字全文一处口径｜Abstract vs Discussion</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1016/j.xcrm.2026.102744">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
