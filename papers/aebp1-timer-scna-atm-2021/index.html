@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · AEBP1-TIMER-SCNA 生信文（Ann Transl Med 2021）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Liu et al., Ann Transl Med 2021 — AEBP1 在 GBM 中高表达（Oncomine 5 队列 FC 2.6–10.0），CGGA 多变量 Cox 调整后 HR=1.12；TIMER 显示 AEBP1 与 DC/CD4 浸润弱正相关，AEBP1 拷贝数类别与部分细胞浸润相关。总评级 B：多库现象可靠且含临床协变量调整，但正文与 Table 1 方向矛盾、CNA 主张为网页工具级因果化表述。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>AEBP1 as a potential immune-related prognostic biomarker in glioblastoma: a bioinformatic analyses</h1>
+  <p class="subtitle">Liu M, Yu Y, Zhang Z（共同一作）, …… <strong>Shang H, Li J</strong>（通讯）. <em>Ann Transl Med</em>, 2021, 9(22): 1657</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.21037/atm-21-5183">10.21037/atm-21-5183</a> ·
+    审查深度：承重文献/审稿式精读（全流程） ·
+    总评级 <span class="badge grade-b">B</span> ·
+    <span class="sev sev-p1">P1 × 2</span> <span class="sev sev-p2">P2 × 4</span>
+  </p>
+  <p class="meta-line">
+    期刊现状：<strong>已于 2023-03-20 被 SCIE 剔除</strong>（科研通）· 最后 IF <strong>3.616</strong>（2022 JCR, Q3），此后无新 IF · 中科院分区 <strong>未收录</strong>（2023-12/2025-03 升级版）· 仍被 PubMed/PMC/Scopus 收录 · 查询于 2026-09-05。期刊光环提醒：venue 已无 IF，但本文是 AEBP1-GBM 文献链（Wang 2024 等引用）中 CNA×免疫主张的源头节点，证据评级只对数据。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>现象可靠、调整最全的早期生信文，但核心卖点（CNA×免疫）是网页工具级证据，且存在正文与统计表方向相反的硬伤。</strong>最强资产：Oncomine 5 个独立微阵列队列方向一致（FC 2.6–10.0）+ CGGA 多变量 Cox（年龄/样本类型/IDH/化疗调整后 HR=1.12, 95%CI 1.04–1.21）——这是 AEBP1-GBM 文献链中最早的临床协变量调整。两处 P1：①正文写"AEBP1 与 CD8⁺ T 细胞和纯度<em>负</em>相关"，而其 Table 1 与 Figure 11A 的偏相关<strong>全部为正</strong>（Purity +0.13, CD8 +0.10）——方向性矛盾直接动摇免疫叙事，且与 JNEN 2024 的 ESTIMATE 结果方向相反（P1）；②TIMER SCNA 横断面关联被因果化为"诱导作用"并拼接出"CNA→浸润→生存"链，无 CNA 分层生存分析（P1）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程。双语全文证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，23 个正文块 + 11 图 + 3 表）。<strong>本项目负载</strong>：该文是 AEBP1×拷贝数×免疫主张的源头文献（唯一先行者），我们 Module 10 的位点级 CNA 分析必须与它正面对话；预计引用于 Introduction 与 Module 10 的 Discussion。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（独立预后标志物）</strong>：AEBP1 在 GBM 中高表达（多队列），且经临床协变量调整后仍独立关联较短 OS（CGGA 多变量 HR=1.12）。</li>
+      <li><strong>LC2（免疫浸润关联）</strong>：AEBP1 表达与 GBM 免疫浸润水平相关（TIMER 偏相关），并独立关联 OS（多因素含 6 群免疫细胞与纯度）。</li>
+      <li><strong>LC3（CNA×免疫，其独有卖点）</strong>：AEBP1 拷贝数改变影响 GBM 免疫浸润水平，进而与患者生存结局相关。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：首次把 AEBP1 的预后主张放到多数据库框架（Oncomine 5 队列 + GEPIA + TCGA/GTEx + CGGA），并首次触及 AEBP1×拷贝数×免疫三角——该三角此后被 Wang 2024、Wang 2025 等接力，是本项目 Module 10 的直接前身。增量在 2021 年语境下成立，但分析停留在网页工具级。</li>
+      <li><strong>证据链位置</strong>：全程描述-关联层：表达（多队列）→ 单因素/多因素 Cox（CGGA 有临床协变量调整；TIMER 有免疫细胞+纯度调整）→ 偏相关（TIMER Gene 模块，纯度调整）→ SCNA 横断面关联（无调整）。无任何因果证据。</li>
+      <li><strong>研究类型</strong>：research article（多数据库生信，REMARK 清单声明）；TCGA 160 GBM + 5 癌旁、GTEx 1,152 正常脑、CGGA 290 例（组成不明）、TIMER 网页模块。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>："independent predictable marker"（措辞错）与 "AEBP1 is a potential therapeutic target" 超出关联层资格；作者在局限里诚实承认"仅公共数据库、缺体内外证据"。最可能发生证据错配的环节：SCNA 模块的横断面箱图 → "affect immune infiltration... and thus the survival outcomes" 的因果拼接。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：多队列表达 + 独立预后）</span>：Oncomine 5 队列上调（FC 2.579–10.017，P≤0.005）+ cancer-vs-cancer 5/6 研究 GBM 最高（S011/F2-F4）→ GEPIA：GBM 上调而 LGG 不上调 + OS HR=2.1（log-rank P=3.9e-5，n=81/81）（S013/F6）→ TCGA：低 AEBP1 生存更长（P&lt;0.001）（S014/F8E）→ CGGA 290 例：OS P=0.03 + 5 年 ROC AUC=0.707 + 单因素 HR=1.12（1.04–1.19）→ <strong>多变量（sample_type/IDH/chemo/radio）HR=1.12（1.04–1.21），P&lt;0.01</strong>（S016/F10K-L）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">关联层闭环较好</span>——多队列方向一致 + 有临床协变量调整，是 AEBP1-GBM 文献链中调整最全的预后分析。最薄弱环节：CGGA 队列级别构成不明（含 1p19q/IDH 分层疑似混合胶质瘤），HR=1.12 的效应量小（连续变量每 log2 TPM）且无 GBM 特异亚组分析（见 ERR-04b）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：表达 × 免疫浸润 × 生存）</span>：GSEA 免疫通路富集（S015/F9）→ TIMER Gene 模块偏相关：DC +0.27、CD4⁺ +0.20、Purity +0.13、CD8⁺ +0.10、B +0.10（全弱正），Macrophage/Neutrophil ns（S017/F11A/T1）→ Survival 模块：单因素 DC 与 AEBP1 显著（T2）→ 多因素（年龄+6 群细胞+纯度+种族+性别）：Age HR 1.03、DC HR 1.60、AEBP1 HR 1.11 独立，Purity HR 1.10（P=0.78）（T3）
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">方向性存在硬伤</span>——正文"与 CD8⁺ 和纯度负相关"与 Table 1/Figure 11A（全为正）直接矛盾；且弱偏相关（0.10–0.27）与"密切相关"的叙述不匹配（见 ERR-04a、ERR-05a）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：CNA × 免疫浸润 → 生存）</span>：TIMER SCNA 模块：AEBP1 拷贝数四类（臂级缺失/二倍体/臂级增益/高扩增）与 Macrophage（***）、B/CD8⁺/DC（**）浸润水平相关，CD4⁺/Neutrophil 无标注（S017/F11C）→ 正文拼接："CNA 改变与浸润水平密切相关并预测预后"（S017）→ Discussion "inducible role of copy number alteration"（S020）→ 摘要 "might affect immune infiltration... and thus the survival outcomes"（S001）
+      <br>闭环状态：<span class="state state-broken" style="background:#fdeceb;color:#c0392b">断裂</span>——三段式拼接中"CNA→生存"无直接证据（无 CNA 分层生存分析）；CNA 类别与 AEBP1 表达的剂量关系未展示；AEBP1 位点 CNV 与 7 号染色体臂级增益（GBM 核心病变 +7/−10）的耦合未讨论（见 ERR-02）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · 独立预后标志物</h3>
+    <p><strong>第一性原理层</strong>："独立预后"以多变量 Cox 操作化（CGGA：sample_type/IDH/chemo/radio 调整；TIMER：年龄+免疫细胞+纯度调整）——在同期单基因生信文中配置最好。承重前提：CGGA 290 例能代表 GBM——队列含 1p19q/IDH 分层变量，疑似混合级别胶质瘤，全称 "GBM patients" 未验证；MGMT 未入模型。</p>
+    <p><strong>演绎构建层</strong>：相关升级为"独立"发生在 CGGA 多变量 Cox（F10L）——这一步是真实的统计升级（非仅叙述）；但 HR=1.12（连续变量）的效应量与 GEPIA HR=2.1（二分）的表观差异来自切点选择，正文未讨论两种参数化的可比性。</p>
+    <p><strong>元认知审计层</strong>：多重终点（GEPIA/TCGA/CGGA 各自 KM+ROC）无校正声明，但方向全部一致，假阳性解释需要系统性偏倚（更可能是真实关联）；数据库"独立性"被夸大（TCGA 与 GEPIA 重叠）。结论最可能失败的条件：GBM 特异（IDH-wt 限定）亚组中 HR 衰减——混合级别队列中 AEBP1 与级别/IDH 相关（其自证 P&lt;0.001），级别混杂正是最需排除的替代解释。</p>
+
+    <h3>LC2 · 表达 × 免疫浸润 × 生存</h3>
+    <p><strong>第一性原理层</strong>：TIMER Gene 模块的偏相关是纯度调整后的残差相关——构念操作化合格；但正文方向与表格相反，说明作者对自家统计量的理解存在缺陷，"AEBP1-免疫"叙事的方向在该文中不可靠。承重前提："AEBP1-浸润关联独立于纯度"——多因素 Cox 中 Purity HR=1.10（P=0.78）而 AEBP1 HR=1.11（P=0.02），这一步实际上支持"AEBP1 不是纯度的代理"，是全文最被忽视的正结果。</p>
+    <p><strong>演绎构建层</strong>：浸润-生存的因果方向未讨论（DC 浸润高=预后差，可能是"免疫-cell 载量=高级别"的混杂）；正文只挑 DC/AEBP1 强调，CD8（P=0.105）/B（P=0.805）等阴性未进入摘要级叙述。</p>
+    <p><strong>元认知审计层</strong>：弱偏相关（0.10–0.27）被叙述为正相关网络——效应量-叙述错配；跨文献方向矛盾（vs JNEN 2024 ESTIMATE、vs Wang 2025 CAF 来源机制）未在讨论中正视（当时文献较少，可理解，但引用本文时必须带此上下文）。</p>
+
+    <h3>LC3 · CNA × 免疫浸润 → 生存</h3>
+    <p><strong>第一性原理层</strong>：SCNA 模块把拷贝数分四类（臂级缺失/二倍体/臂级增益/高扩增）比较浸润水平——横断面关联；"影响/诱导"的因果构念没有可操作的定义（无剂量-效应拟合、无分层生存、无纯度调整）。承重前提："AEBP1 位点 CNV 是独立信号"——7 号染色体臂级增益是 GBM 核心病变（几乎普遍），臂级类别与全染色体基因负载共线，未与臂级背景解耦。</p>
+    <p><strong>演绎构建层</strong>：从箱图差异到"affect"发生在 S017；从"影响浸润"到"thus the survival outcomes"发生在摘要——两段横断面关联的纯拼接。CNV 四类与 AEBP1 表达本身的关系（增益是否真抬高表达）未展示，链条的第一环就缺失。</p>
+    <p><strong>元认知审计层</strong>：网页工具输出的可复现性依赖 TIMER 版本（未记录日期/版本）；多重比较（4 CNV 类别 × 6 细胞 = 24 个箱图比较）仅报 **/*** 无 FDR。结论最可能失败的条件：以 GISTIC 局部水平（focal）或绝对拷贝数重做后关联消失——这正是我们 Module 10 的 local-dosage 设计动机。</p>
+    <p><strong>统计实质</strong>：多队列方向一致性好；但 DEG 对照构成含糊（癌旁 5 例 vs GTEx）、SCNA 24 重比较无校正、ROC"risk score"无公式、CGGA 计数 289/290 矛盾、无批间校正声明。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>正文与统计表方向相反</td>
+          <td>Results 7 正文（"negatively correlated with CD8+ T cells and purity"）vs Table 1 / Figure 11A</td>
+          <td>Table 1 偏相关 Purity +0.13（P=0.01）、CD8⁺ +0.10（P=0.05），Figure 11A 七项偏相关全为正——正文方向描述与自家统计量矛盾，动摇整个 AEBP1-免疫浸润叙事的方向；且与 JNEN 2024（ESTIMATE：高 AEBP1=低纯度）方向相反，跨文献方向不一致未被正视</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-02</span><br>CNA 关联的因果化拼接</td>
+          <td>Abstract（"might affect... and thus the survival outcomes"）; Results 7（"predicts the prognosis"）; Discussion（"inducible role"、"key driver oncogene"）</td>
+          <td>SCNA 横断面箱图 → "影响浸润" → 拼接浸润-生存关联 → "预测预后"：CNA 分层生存分析缺失、CNV 与 AEBP1 表达的剂量关系未展示、7 号臂级背景共线未解耦按 02/03 边界检验：需换证据类型（分层生存或功能实验）才能修复，故归 ERR-02</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>CGGA 队列不透明 + 计数矛盾</td>
+          <td>Methods（289）vs Results/Figure 10B（290）; 全文 "GBM patients"</td>
+          <td>389 下载 → 排除 100 → 289（Methods）与 290（Results）不一致，排除标准未说明；队列带 1p19q/IDH 分层变量疑似混合级别胶质瘤却全称 GBM，CGGA 数据集版本（seq/array）未注明——HR=1.12 的对象总体无法精确界定</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04c</span><br>数据源模糊与"独立数据库"计数夸大</td>
+          <td>Methods（TCGA+GTEx; DEG）; Abstract（"4 independent databases"）</td>
+          <td>①DEG 对照构成含糊（TCGA 5 例癌旁 vs GTEx 1,152 正常，1,923 DEGs "from the GTEx and TCGA data"）；②"4 independent databases"中 GTEx 无生存数据、GEPIA=TCGA+GTEx 与 TCGA 重叠，独立验证实际约 2 个数据源族 + Oncomine + CGGA；③摘要 "independent predictable marker" 措辞错误；④摘要 GSEA 通路清单与正文 Results GSEA 清单不一致（protein export/prion disease vs apoptosis/antigen processing 等）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04d</span><br>化疗优于放疗的朴素比较</td>
+          <td>Discussion（"therapeutic superiority of chemotherapy to radiotherapy"）; 结论</td>
+          <td>由单因素 HR（化疗 0.47 vs 放疗 0.58）直接比较得出治疗优劣——两系数来自同一模型的平行行而非头对头比较，且治疗指征（初发/复发、IDH 状态）与耐受性混杂完全未讨论；进入结论句</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>选择性生存叙述</td>
+          <td>Abstract; Results 7 vs Figure 11B / Table 2</td>
+          <td>免疫浸润生存曲线 7 项中仅 AEBP1（0.004）与 DC（0.002）显著，CD8⁺ 0.105、B 0.805 等阴性；摘要级"免疫浸润影响生存"的概括未区分，与"密切"措辞共同放大弱效应（偏相关 0.10–0.27）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：多队列表达 + 调整后 Cox 的弱化版预后主张成立；CNA 主张降为"探索性横断面观察"后亦成立。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>B−</strong></td><td>首次多数据库框架化 AEBP1-GBM 预后 + 首次触及 CNA×免疫三角——是后续全部同题文献（Wang 2024/2025、Yin 2025）与本项目 Module 10 的直接前身</td></tr>
+        <tr><td>证据广度</td><td><strong>B</strong></td><td>5 个独立微阵列队列 + GEPIA/TCGA/GTEx + CGGA 临床验证 + TIMER 三模块；缺 scRNA、蛋白验证与自有队列</td></tr>
+        <tr><td>因果封闭性</td><td><strong>D+</strong></td><td>全文零因果；CNA 链三段拼接；"key driver oncogene" 无功能数据</td></tr>
+        <tr><td>反例排除</td><td><strong>C</strong></td><td>多因素 Cox 调整（临床协变量 + 免疫细胞 + 纯度）是亮点；但级别混杂（混合胶质瘤）、7 号臂级背景、化疗-放疗指征混杂均未排除</td></tr>
+        <tr><td>方法稳健性</td><td><strong>C</strong></td><td>正文-表格方向矛盾、计数矛盾、SCNA 24 重比较无校正、"risk score"无公式、TIMER 版本未记录</td></tr>
+        <tr><td>外部效度</td><td><strong>B−</strong></td><td>表达与生存方向跨 ≥8 个队列一致（含后续文献复现）；队列构成不明与方向矛盾削弱可迁移性</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-b">B</span></strong> —— 与 JNEN 2024 同级但质地互补：本文调整配置更全（多变量 Cox、偏相关、多队列）、CNA 视角独家；代价是正文-统计表方向矛盾与网页工具级深度。按承重文献使用：多队列表达与调整后 HR 可正面引用；CNA 主张只能作"先行观察"引用并标注网页工具级；方向引用以 Table 1 为准而非正文叙述。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p1">P1</span>）：根因：正文方向描述与 Table 1/Figure 11A 相反。动作：①核对偏相关符号并改正正文方向句（或解释未调整与调整后方向的差异——散点在低纯度处更密但残差相关为正，值得作为"纯度混杂改变方向"的范例正式讨论）；②与 ESTIMATE 类全纯度估计的结果并列呈现。效果：方向叙事恢复内部一致，且"调整改变方向"本身成为有价值的组成效应证据。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-02</span> <span class="sev sev-p1">P1</span>）：根因：CNA-浸润-生存三段拼接无直接环节。动作：①按 CNV 类别做分层 KM/Cox（CNA→生存的直接证据）；②展示 CNV 类别 × AEBP1 表达箱图（链条第一环）；③以 GISTIC focal 或绝对拷贝数替代四分类，并与 7 号臂背景解耦（如协变量调整）；④删除 "inducible role"/"key driver oncogene"。效果：CNA 主张从拼接升级为可检验的独立环节——本项目 Module 10 的 local-dosage 设计即按此标准超越。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：注明 CGGA 数据集版本与级别构成；统一 289/290；补充排除标准；按 IDH-wt GBM 亚组重跑 Cox。效果：HR 的对象总体可界定。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-04c</span> <span class="sev sev-p2">P2</span>）：动作：明确 DEG 对照构成；"4 independent databases"改为按数据源族如实计数；修正 "predictable"；统一摘要与正文的 GSEA 清单。效果：可复现性与措辞精确性修复。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-04d</span> <span class="sev sev-p2">P2</span>）：动作：删除或降级"化疗优于放疗"（改为"化疗与放疗在本队列均与生存改善相关（调整后 HR 0.46/0.71），两者优劣需头对头设计"）。效果：消除无依据的治疗学结论。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p2">P2</span>）：动作：摘要与正文如实并列全部 7 个浸润-生存 log-rank P 值；"密切"改为与 ρ=0.10–0.27 相称的"weak positive correlations"。效果：效应量-叙述对齐。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · 独立预后标志物</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">AEBP1 is overexpressed in glioblastoma across five independent microarray cohorts (fold changes 2.6–10.0) and in TCGA/CGGA / higher AEBP1 expression associates with shorter OS in GEPIA (HR 2.1, log-rank P=3.9e-5) and TCGA (P&lt;0.001) / in CGGA, AEBP1 remains associated with OS after adjustment for sample type, IDH status and treatment (adjusted HR 1.12, 95% CI 1.04–1.21)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">AEBP1 is an independent prognostic marker（需限定 CGGA cohort of unclear grade composition; continuous per-log2TPM HR; MGMT not included）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">AEBP1 is a "predictable" marker（原文措辞错误）；validated across 4 independent databases（TCGA/GEPIA 重叠、GTEx 无生存）；AEBP1 is a key driver oncogene of GBM（无功能数据）</span></div>
+    </div>
+
+    <h3>LC2 · 表达 × 免疫浸润 × 生存</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">in TIMER partial-correlation analysis (purity-adjusted), AEBP1 correlates weakly and positively with dendritic-cell (ρ=0.27) and CD4⁺ T-cell (ρ=0.20) infiltration / in a multivariate Cox model including six immune-cell fractions and purity, AEBP1 (HR 1.11) and dendritic-cell infiltration (HR 1.60) remain associated with OS</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">AEBP1 marks an immune-infiltrated molecular state（associative; ρ=0.10–0.27 弱；方向引用必须以 Table 1 为准）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">AEBP1 is negatively correlated with CD8⁺ T cells and purity（正文原句，与其 Table 1 矛盾——不得转述）；AEBP1 drives/promotes immune infiltration（无因果设计）</span></div>
+    </div>
+
+    <h3>LC3 · CNA × 免疫浸润 → 生存</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">in the TIMER SCNA module, AEBP1 copy-number categories (arm-level deletion / diploid / arm-level gain / high amplification) were associated with differential infiltration levels of macrophages, B cells, CD8⁺ T cells and dendritic cells in TCGA-GBM (web-tool cross-sectional analysis)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">AEBP1 copy-number alteration may affect immune infiltration（作者原句 may 级；需限定 web-tool、未做纯度分层与局灶/臂级分解；引用时应作为先行的探索性观察）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">AEBP1 CNA drives/induces immune infiltration（无因果设计）；AEBP1 CNA predicts prognosis via immune infiltration（CNA 分层生存缺失，纯拼接）；the inducible role of CNA（因果动词无证据）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Liu et al. showed that AEBP1 is overexpressed in glioblastoma across five independent microarray cohorts (fold changes 2.6–10.0) and that higher AEBP1 expression associates with shorter overall survival in GEPIA, TCGA and CGGA; in the CGGA cohort, the association persisted after adjustment for sample type, IDH status and treatment (adjusted HR 1.12, 95% CI 1.04–1.21). Using the TIMER platform, they further reported weak positive partial correlations between AEBP1 expression and dendritic-cell (ρ=0.27) and CD4⁺ T-cell (ρ=0.20) infiltration, and differential immune-infiltration levels across AEBP1 copy-number categories — an early, exploratory observation linking AEBP1 copy-number state to the immune microenvironment that preceded formal locus-level analyses (Liu et al., Ann Transl Med 2021).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ AEBP1 CNA affects immune infiltration and thus survival（摘要原句是拼接——引用必须降为 exploratory observation）</li>
+      <li>❌ AEBP1 is negatively correlated with CD8⁺ T cells and tumor purity（正文原句与 Table 1 矛盾）</li>
+      <li>❌ Validated in 4 independent databases（GEPIA=TCGA+GTEx；GTEx 无生存）</li>
+      <li>❌ Chemotherapy is superior to radiotherapy for GBM（单因素 HR 直接比较，混杂未排除）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：Module 10 位点级 CNA + 纯度敏感性 + Introduction/Discussion 竞品对话」为默认目标用途；用途改变时 M 等级需重评。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>CGGA 290 例分析口径（多变量：sample_type/IDH/chemo/radio）— <strong>M2</strong>（我们 IDH×MGMT 分层合理性的先行引用；其队列构成问题正是我们要写明的改进点）｜S016; F010L</li>
+      <li>Oncomine 5 队列 FC/P 值清单（Bredel 5.117、Liang 5.070、Lee 4.504、Rickman 2.579、Sun 10.017）— <strong>M1</strong>（Introduction"多队列一致上调"的现成数字）｜S011; F003</li>
+      <li>DEG 完整清单 xlsx（1,923 基因）— <strong>M3</strong>（AME CDN 链接，未下载）｜S014</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>TIMER 三模块结果 = Module 10 的直接前身与对照基线</strong>（偏相关 DC 0.27/CD4 0.20/Purity 0.13；SCNA 四分类箱图）— <strong>M1</strong>（我们 Discussion 的对标句："previous web-tool-level analysis reported differential infiltration across AEBP1 CNV categories [Liu 2021]; we formally tested locus-level dosage with purity stratification and focal/arm decomposition"）｜S017; F011; T001–T003</li>
+      <li><strong>方向矛盾的实例价值</strong>（正文负相关 vs Table 1 全正）— <strong>M1</strong>（Module 10 Discussion 的组成效应范例："the direction of bulk AEBP1–purity associations varies across studies and adjustment strategies, motivating formal purity-stratified modeling"）｜S017 vs T001; 与 JNEN 2024 互参</li>
+      <li>CIBERSORT/ESTIMATE/TIMER/GEPIA 方法引用惯例 — <strong>M2</strong>｜S005–S009</li>
+    </ul>
+
+    <h3>实验资产</h3>
+    <ul>
+      <li>无湿实验——本文不含实验资产。</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li>研究流程图（F1：表达→DEG/生存并行→GSEA→CGGA 验证→临床→免疫）— <strong>M2</strong>（多数据库生信文的标准骨架；我们不复制路线但引用其结构作为"既往范式"）｜F001</li>
+      <li>其引用链中的两篇早期功能文献 — <strong>M1</strong>：Ladha 2012, Mol Cancer Res（AEBP1 转录因子靶点与胶质瘤细胞生存）与 Cheng 2020, Pathol Res Pract（AEBP1 敲低抑制胶质瘤增殖/侵袭）——**均不在我们库中，建议补入 References**｜S023</li>
+      <li>REMARK 报告清单声明句式 — <strong>M3</strong>｜S004</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>正文方向句与自家统计表相反（"negatively correlated" vs 偏相关全正）→ 任何方向性结论必须逐表核对符号｜S017 vs T001</li>
+      <li>横断面箱图写 "inducible role"/"affects"→ CNA/表达-表型关联一律用 associative 动词（R3 纪律）｜S020; S017</li>
+      <li>三段关联拼接成"CNA→浸润→生存"→ 链条中缺的环节（分层生存）必须明示为未测｜Abstract; S017</li>
+      <li>"4 independent databases"（重叠源计数夸大）与 289/290 计数矛盾 → 数据源与样本数的精确性底线｜Abstract; S008/S016</li>
+      <li>单因素 HR 直接比较得出"化疗优于放疗"→ 治疗学结论需头对头设计｜S019; S021</li>
+      <li>摘要 GSEA 通路清单与正文不一致 → 摘要与正文数字/清单一致性检查｜S001 vs S015</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.21037/atm-21-5183">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
