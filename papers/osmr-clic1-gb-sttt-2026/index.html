@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · OSMR-CLIC1 双向串话 GB 机制（STTT 2026）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Mansourabadi et al., STTT 2026 — MaMTH-HTS 绘制 OSMR 互作组，反向筛选+五重正交验证确立 CLIC1 为 OSMR/EGFRvIII 复合物的必需介导子；全细胞膜片钳确立 tmCLIC1 氯电流与 OSMR 的双向串话；tmCLIC1omab 单抗（IC50 0.184 μM，KO 细胞 on-target 对照）皮下抑瘤；颅内 CRISPR PDX 延长生存。总评级 A−：机制链在其主张范围内高度闭合，缺口在 CRISPR 对照设计、患者数据无调整与数据未公开。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>An oncostatin M receptor and chloride intracellular channel 1 crosstalk drives key oncogenic pathways in glioblastoma</h1>
+  <p class="subtitle">Mansourabadi AH, Qu D, Cianci F（共同一作）, …… <strong>Stagljar I✉, Mazzanti M✉, Jahani-Asl A✉</strong>（共同通讯）. <em>Sig Transduct Target Ther</em>, 2026, 11: 194</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1038/s41392-026-02723-3">10.1038/s41392-026-02723-3</a> ·
+    审查深度：承重文献/审稿式精读（全流程） ·
+    总评级 <span class="badge grade-a-minus">A−</span> ·
+    <span class="sev sev-p1">P1 × 1</span> <span class="sev sev-p2">P2 × 4</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>81.2</strong>（条目记录；全库最高）· JCR <strong>Q1</strong> · 中科院 <strong>医学 1 区 Top</strong>（生化与分子生物学/细胞生物学 1 区）· 查询于 2026-09-05。<strong>期刊光环特别警告</strong>：81.2 的 IF 为全库之最，极易造成"顶刊即正确"的审稿麻痹——本审查显示其机制链确实闭合度高，但对照设计与数据公开仍有真实缺口，评级基于证据本身。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>教科书级的机制发现论文：无偏筛选 → 五重正交互作验证 → 双向功能（遗传+药理+电生理）→ 体内 PDX，证据链在其主张范围内闭合度为已审查文献中最高。</strong>最强资产：MaMTH-HTS 无偏互作组（±EGFRvIII 双 bait 设计 + "常客"排除体系）→ 4 株患者来源 BTSC 反向筛选 → CLIC1 五重验证（定位/共定位/PLA/co-IP/天然凝胶 ~720 kDa）+ AlphaFold-Multimer + 1–58 aa sufficiency + tmCLIC1omab（含 CLIC1-KO 细胞无效应的 on-target 对照，IC50 0.184 μM）。一处 P1：体内最关键主张（颅内生存延长）由 CRISPR 系 vs 亲本支撑——无 no-cut/Cas9-only 对照、删除系无 rescue（rescue 仅做于 siRNA-KD 系）、BTSC147 仅 n=3/组（P1）。细胞因子受体×代谢型离子通道的串话框架为 GB 膜互作组研究开辟新层。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（5 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程。双语全文证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，23 个正文块 + 7 图）。<strong>本项目负载</strong>：高分文献队列头号条目（STTT 81.2，GBM 主题）；OSM-OSMR-STAT3 轴与本项目免疫/干性叙事的交叉节点（CLIC1 的 TME/免疫讨论直接接 Deleo/TAM 框架）；其"筛选→验证→双向功能→抗体"论证链是机制写作的模板。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（互作组与临床相关性）</strong>：MaMTH-HTS 绘制 OSMR 互作组（±EGFRvIII），CLIC1 为背景无关的共有互作子；CLIC1/OSMR 在 4 个公共数据集一致上调且双高表达者生存更短。</li>
+      <li><strong>LC2（复合物必需性）</strong>：CLIC1 与 OSMR、EGFRvIII 内源性结合（~720 kDa 复合物），且为 OSMR/EGFRvIII 复合物形成所必需（删除即解离）。</li>
+      <li><strong>LC3（双向功能与治疗）</strong>：tmCLIC1 氯电流维持 EGFRvIII/STAT3 磷酸化与 BTSC 干性，OSMR 反向维持 tmCLIC1 电流；遗传删除延长颅内 PDX 生存，tmCLIC1omab 抑制皮下肿瘤生长。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：OSMR 的多面功能（EGFRvIII 共受体/呼吸/干性/免疫）机制不明——"同一受体如何依遗传背景行使不同功能"。增量：首个 OSMR 跨膜互作组 + 发现细胞因子受体与代谢型离子通道（CLIC1）的双向串话层 + 靶向膜构象 CLIC1 的治疗抗体。</li>
+      <li><strong>证据链位置</strong>：无偏筛选（HEK293T）→ 临床相关（4 公共数据集）→ 功能（4 株 BTSC 的遗传+药理+电生理）→ 体内（皮下 omab + 颅内 CRISPR）。机制链完整，但人类组织层面的复合物验证薄（公共数据集表达 + 补充 IF）。</li>
+      <li><strong>研究类型</strong>：research article（机制发现）；4 株患者来源 BTSC + SCID 鼠皮下/颅内模型 + 公共数据集 TCGA/Rembrandt/Gravendeel/Kamoun/LeeY。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>："essential for fueling its malignant growth"（摘要末句）在其模型系统内成立；"promising therapeutic avenue"（小肽阻断互作）为展望（无小肽数据）。最可能发生证据错配的环节：CRISPR 表型（无 Cas9 对照）与 omab 表型（有 on-target 对照）的特异性证据强度不对等——两者结论被等权叙述。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：互作组 → CLIC1 → 临床相关）</span>：MaMTH-HTS ±EGFRvIII 双 bait → 334 候选（204/160/30 共有，含"常客"排除与 9 诱饵对照体系）（S004/F1）→ 30 共有互作子 → 4 株 BTSC siRNA 反向筛选 → 12 基因 >50% 活力下降（S005）→ 附加筛选标准 → CLIC1（S005）→ 4 公共数据集：CLIC1/OSMR 上调（Kamoun OSMR 除外）+ CLIC1 随亚型进展递增（S006/F2a-d）→ 双高表达者生存最短（S006/F2e-h）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">筛选层闭环</span>——无偏筛选+功能反向筛选+临床方向一致的组合规范。最薄弱环节："附加筛选标准"的主观选择环节与临床分析的无调整口径（见 ERR-05a、ERR-04b）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：CLIC1-OSMR/EGFRvIII 复合物）</span>：质膜定位（非透膜 IF）→ CLIC1-OSMR 共定位 → PLA 原位互作（EGFRvIII⁺ 更强）→ CRISPR 后 PLA 阴性对照 → 内源性 co-IP（OSMR IP→CLIC1 WB）→ CLIC1-EGFRvIII 共定位+PLA → CLIC1 删除破坏 OSMR/EGFRvIII 近邻（S008-S009/F4/F5a-e）→ AlphaFold-Multimer 四聚体模型（CLIC1 二聚体 ECD+OSMR ECD+EGFRvIII ECD）（S009/F5f）→ 截短体 CLIC1(1–58) sufficiency co-IP（S009/F5g-h）→ 天然凝胶 ~720 kDa 复合物（S009/F5i）→ 脂筏部分参与（MβCD）→ STAT3 不调控 Clic1 表达（上游排除）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">五重正交闭环</span>——发现/定位/近邻/生化/结构五层递进。最薄弱环节：PLA 证明近邻而非直接结合；截短体 co-IP 无亲和力定量；AlphaFold 模型为预测（见 s3 分析）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：双向功能 + 体内 + 治疗抗体）</span>：功能必要性：siRNA KD（4 株 BTSC）→ 活力/球体/ELDA/EdU 全线下降（S007/F3）→ CRISPR m/b（2 株 EGFRvIII⁺）→ 同表型（S007/F3m-p）→ 电生理：CRISPR 电流↓ + shOSMR 电流↓（双向第二方向）（S010/F6d-k）→ omab：阻断电流（IC50 0.184 μM）+ KO 细胞无效应（on-target）+ 皮下抑瘤 + p-EGFR/p-STAT3↓（EGFRvIII⁺ 特异，BTSC30 无效应）（S010/F6l-y）→ 颅内 PDX：CRISPR 延长生存（BTSC73 P<0.0001 n≥5；BTSC147 P=0.0078 n=3）+ p-EGFR 降低（S011/F7）→ KD 回表达 rescue STAT3 磷酸化（Supp 10b）→ EV：CRISPR → EV 内 EGFRvIII↓（水平传播）（S010/F6a-c）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">高度闭合</span>——遗传+药理+电生理三重干预，omab 含 KO 阴性对照。最薄弱环节：体内生存主张的 CRISPR 对照完整性（无 Cas9 对照/删除系无 rescue；BTSC147 n=3）——见 ERR-04a。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · 互作组 → CLIC1 → 临床相关</h3>
+    <p><strong>第一性原理层</strong>：MaMTH-HTS 检测的是膜蛋白近邻互作（诱饵-猎物接近驱动 GAL4 报告）——构念清晰、"常客"排除体系（9 个独立诱饵的重复命中）是领域规范操作。承重前提①：HEK293T 中的互作能在 BTSC 中复现——他们用 PLA/co-IP 正交验证了 top 候选（闭环）。承重前提②："附加筛选标准"（既定 BTSC/GB 角色 + hallmark 影响）从 12 hits 到 CLIC1 的选择可复现——标准部分未量化。</p>
+    <p><strong>演绎构建层</strong>：从"12 hits"到"CLIC1 top"是编辑性选择（CLIC1 已有 GB 文献先例 + 干性富集）——合理但非算法化；临床层"双高分层预测生存"未做 Cox 调整（年龄/级别/治疗均未调整），切点未报告。</p>
+    <p><strong>元认知审计层</strong>：CLIC1 已有 GB 预后文献（refs 38-40）——筛选与先例的"巧合"可能反映的是选择偏好（挑了已知重要的）；正面看这也降低了假发现概率。结论最可能失败的条件：其余 11 个 hits 中有更强者未被深入；或 CLIC1 的预后价值在多变量调整后消失（未检验）。</p>
+
+    <h3>LC2 · CLIC1-OSMR/EGFRvIII 复合物</h3>
+    <p><strong>第一性原理层</strong>："CLIC1 为复合物必需"的操作化 = CLIC1 删除后 OSMR-EGFRvIII PLA 信号消失 + CLIC1 与两者分别互作 + 三元复合物生化证据。注意构念边界：PLA 近邻（≤40 nm）不区分直接结合与同一复合物内的间接关联；"required for the complex" 的两种解释（CLIC1 作为结构桥 vs CLIC1 维持膜区室化）未分辨。</p>
+    <p><strong>演绎构建层</strong>：结构域 sufficiency（1–58 aa 截短体 co-IP）是关键的正向证据；AlphaFold-Multimer 模型为预测（置信度未报告 per-chain pLDDT）；天然凝胶 ~720 kDa 提供天然条件下的复合物存在证据。中间机制缺口：CLIC1 如何"维持" OSMR-EGFRvIII 近邻（离子电流依赖？支架依赖？）未测——IAA94 处理后的 PLA 未报告。</p>
+    <p><strong>元认知审计层</strong>：复合物在 ~720 kDa 的解释有多义性（膜微区/脂筏聚集亦可产生共迁移）；MβCD 实验暗示脂筏参与——脂筏聚集本身可制造 PLA/co-IP 阳性。结论最可能失败的条件：CLIC1 点突变（电流缺陷但结合正常，或反之）实验缺失——"通道功能"与"支架功能"在该复合物中未解耦。</p>
+
+    <h3>LC3 · 双向功能 + 体内 + 治疗抗体</h3>
+    <p><strong>第一性原理层</strong>："双向"操作化：方向①CLIC1→EGFRvIII/STAT3 磷酸化（CRISPR+omab 双干预）；方向②OSMR→tmCLIC1 电流（shOSMR+膜片钳）。两方向均有独立读出——双向主张成立。承重前提：omab 的特异性——KO 细胞无效应（Fig 6m）+ IAA94 表型复制 + 内吞证据 + QVELF 基序独特性——on-target 论证在抗体研究中属高水准。CRISPR 遗传主张的对照缺口（无 Cas9 对照、无删除系 rescue）由药理+KD-rescue 部分三角补偿，但颅内生存实验本身无 on-target 对照。</p>
+    <p><strong>演绎构建层</strong>：从"离子电流↓+磷酸化↓"到"氯电流维持 RTK/STAT3 信号"的机制链中间步骤（电流如何影响磷酸化？膜电位？脂筏结构？内吞？）完全未测——因果链接子缺失（作者未过度主张具体机制，但"indispensable for sustaining"的表述暗示直接支撑）。</p>
+    <p><strong>元认知审计层</strong>：发表偏倚方向——STTT 级别的完整机制故事存在"阴性数据不呈现"的结构性风险（12 hits 中其余 11 个未深入、CLIC1 未做的实验清单长）；SCID 鼠免疫缺陷背景使其 TME 结论（免疫监视讨论）天然外推受限（作者已注明 future work）。结论最可能失败的条件：①Cas9-only 对照出现部分表型（脱靶/代偿）；②免疫健全模型中 omab 无效（TME 依赖）；③人脑膜瘤/低级别中 CLIC1 电流不存在（BTSC 特异性）。</p>
+    <p><strong>统计实质</strong>：n=3 常态（印迹/PLA/共培养），体内 n≥5（BTSC73）/n=3（BTSC147）/n=8（omab 皮下）；精确 p 值全标注（好）；无多重比较校正声明；无效应量 CI；ELDA 用专法统计（好）；生存 log-rank（好）。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>体内关键主张的对照完整性缺口</td>
+          <td>Figure 7（颅内 PDX 生存）; Methods（CRISPR 构建段）</td>
+          <td>颅内生存延长（标题级"essential for fueling malignant growth"的体内支柱）由 CLIC1 CRISPR vs 亲本 BTSC 支撑：①无 no-cut/Cas9-only 对照（作者诚实声明未获无切割克隆）；②删除系无回表达 rescue（rescue 仅做于 siRNA-KD 系）；③BTSC147 仅 n=3/组。omab 皮下实验有 KO on-target 对照但颅内未做药理——遗传消融表型的脱靶/Cas9 毒性空间未在关键实验中排除（omab+IAA94+KD-rescue 的三角补偿使主张方向可信，但最关键实验的对照不完整）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>患者数据分层无多变量</td>
+          <td>Figure 2e–h（CLIC1/OSMR 双高生存分层）; Results 2</td>
+          <td>"CLIC1/OSMR 双高表达是重要生存预测因子"仅有 KM 分层：无 Cox 调整 HR（年龄/级别/治疗未调整）、切点方法未报告；表达数据集（含 Kamoun）与生存数据集（含 LeeY）组合不一致；双高与单高的独立性未检验</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>筛选系统的异源性与候选选择的主观环节</td>
+          <td>Results 1–2（MaMTH in HEK293T; "additional screening criteria"）</td>
+          <td>①MaMTH-HTS 在 HEK293T 非肿瘤系统执行——膜蛋白互作的细胞类型依赖性由后续 BTSC 验证部分补偿，但候选列表可能漏掉 BTSC 特异互作；②从 12 hits 到 CLIC1 的"附加筛选标准"（既定角色+hallmark 影响）未量化/未列明流程，选择可复现性依赖作者判断</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04c</span><br>筛选数据与代码未公开</td>
+          <td>Data Availability（"All relevant data... contained within the manuscript and the provided Supplementary file"）</td>
+          <td>MaMTH-HTS 原始筛选读数、334 候选的完整评分、自研 R 分析管线均无公共 deposit——互作组图谱（本文最大数据资产）不可独立复算；对"high-confidence"阈值的审计只能依赖引用其方法学先例</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-02a</span><br>"mediates packaging" 的措辞超载</td>
+          <td>Abstract; Results 6（"a role for CLIC1 in mediating the horizontal propagation"）; Discussion（"CLIC1-mediated packaging is a key mechanism"）</td>
+          <td>CLIC1 删除 → EV 中 EGFRvIII 减少为相关性观察；"介导包装"的分子过程（CLIC1 如何 physically 影响分选）未解析，替代解释（删除后 EGFRvIII 总量/膜定位变化导致的间接效应）未完全排除（细胞裂解液中 EGFRvIII 是否同步减少需查补充）；因果动词超出当前证据半径</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：omab 的 on-target 对照（KO 细胞无效应）+ IAA94 表型复制 + KD-rescue 使核心机制主张在药理端自洽；遗传端的对照缺口为 P1 而非 P0。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A</strong></td><td>首个 OSMR 跨膜互作组；首次确立细胞因子受体×代谢型离子通道的双向串话层；tmCLIC1omab 为新型靶向工具抗体</td></tr>
+        <tr><td>证据广度</td><td><strong>A</strong></td><td>MaMTH-HTS + 4 株患者来源 BTSC + 反向筛选 + 五重互作验证 + 电生理 + 皮下/颅内双模型 + CyTOF 级别的 omab 表征 + 公共数据集</td></tr>
+        <tr><td>因果封闭性</td><td><strong>A−</strong></td><td>遗传（CRISPR）+药理（omab/IAA94）双干预+电生理直接读出+KD-rescue；缺口：CRISPR 系无 rescue/Cas9 对照、电流→磷酸化的中间步骤未测</td></tr>
+        <tr><td>反例排除</td><td><strong>A−</strong></td><td>omab on-target 双阴性对照（KO 细胞无效应+cKO 小鼠无附加）为抗体研究高水准；EGFRvIII⁻ BTSC30 无效应的特异性对照；未排除：电流-磷酸化的替代通路、HEK293T 筛选漏检</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B+</strong></td><td>精确 p 值全标注、ELDA 专法、无切割克隆缺失诚实声明；扣分：代码/筛选数据未公开、n=3 常态、无多重校正声明</td></tr>
+        <tr><td>外部效度</td><td><strong>B+</strong></td><td>4 株 BTSC + 多模型跨 EGFRvIII 状态一致；人组织复合物验证薄（补充 IF）；SCID 免疫缺陷背景限制 TME 外推（作者自知）</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-a-minus">A−</span></strong> —— 距 A 差三件事：CRISPR 系的 rescue 或 Cas9-only 对照、omab 的颅内治疗实验、筛选数据/代码公开。作为承重文献使用：机制框架与 on-target 论证范式可整体引用；"CLIC1/OSMR 双高预后"引用时注明为无调整的公共数据分层。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p1">P1</span>）：根因：颅内生存主张由 CRISPR vs 亲本支撑，无 Cas9 对照/删除系 rescue。动作：①CLIC1⁻ 脱靶检查（AMEC/-guide-seq 或多克隆比较）；②删除系中重表达 sgRNA 抗性 CLIC1 做 rescue（颅内生存是否恢复）；③omab 的颅内治疗实验（血脑屏障递送方案如对流增强输注）。效果：体内主张获得 on-target 与 rescue 双保险。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：对 4 数据集做 Cox 多变量（年龄/级别/治疗调整）+ 切点敏感性分析，报告双高分层的调整 HR。效果：临床分层主张升级为可引用的调整后证据。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p2">P2</span>）：动作：①公布 12 hits 的完整反向筛选数据与"附加筛选标准"评分表；②在至少一株非 EGFRvIII BTSC 中对第二候选（如 CLEC2B/DCN）做平行验证，证明选择非循环论证。效果：筛选→候选的可复现性与无偏性。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-04c</span> <span class="sev sev-p2">P2</span>）：动作：MaMTH 原始读数与 R 管线存入 Zenodo/GitHub（DOI）。效果：互作组可复算。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-02a</span> <span class="sev sev-p2">P2</span>）：动作：①报告 CLIC1 删除后细胞裂解液 EGFRvIII 总量（区分"包装减少"vs"总表达减少"）；②补 EV 定量的分选标志物规范化表述；③将 "mediates packaging" 降为 "is required for normal EGFRvIII EV enrichment"。效果：EV 主张与数据对齐。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · 互作组 → CLIC1 → 临床相关</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">MaMTH-HTS mapped 334 high-confidence OSMR candidate interactors in the absence (n=204) and presence (n=160) of EGFRvIII, with 30 shared / CLIC1 and OSMR are upregulated in GB across TCGA, Rembrandt and Gravendeel datasets / CLIC1 shows progressive upregulation across proneural-classical-mesenchymal subtypes / patients with high CLIC1 and OSMR expression show shorter survival in four public datasets (KM stratification, unadjusted)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">CLIC1/OSMR co-expression is a survival predictor（需限定 unadjusted KM stratification of public datasets; no multivariable HR reported）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">CLIC1 is an independent prognostic marker（无多变量）；the interactome is comprehensive（HEK293T 系统的覆盖边界未知）</span></div>
+    </div>
+
+    <h3>LC2 · CLIC1-OSMR/EGFRvIII 复合物</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">CLIC1 associates endogenously with OSMR and EGFRvIII in patient-derived BTSCs (PLA, co-IP, colocalization) / genetic deletion of CLIC1 disrupts OSMR–EGFRvIII proximity (PLA) / the CLIC1 extracellular domain (residues 1–58) is sufficient for complex formation in co-IP assays / CLIC1, OSMR and EGFRvIII co-migrate in a ~720 kDa native complex</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">CLIC1 bridges OSMR and EGFRvIII（复合物内支架 vs 直接结合未分辨；PLA 为近邻证据）——引用时用 "required for the complex" 而非 "directly binds both"</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">CLIC1 directly binds OSMR/EGFRvIII with defined affinity（无 KD 测定）；the CLIC1 ion-channel function is required for complex formation（通道-支架未解耦）</span></div>
+    </div>
+
+    <h3>LC3 · 双向功能 + 体内 + 治疗抗体</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">genetic deletion of CLIC1 impairs BTSC self-renewal (ELDA), proliferation (EdU) and viability across four patient-derived BTSCs / CLIC1 deletion attenuates EGFRvIII-Y1068 and STAT3-Y705 phosphorylation and prolongs survival in intracranial BTSC73 xenografts (log-rank P&lt;0.0001) / OSMR knockdown attenuates tmCLIC1-mediated chloride currents / tmCLIC1omab suppresses flank xenograft growth with on-target evidence (no effect in CLIC1-KO cells; IC50 0.184 μM) / CLIC1-deficient EVs show reduced EGFRvIII content</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">the OSMR–tmCLIC1 crosstalk is essential for fueling malignant growth（作者摘要原句；需限定 in patient-derived BTSC xenografts in immunodeficient mice）；tmCLIC1omab is a promising therapeutic（皮下模型+颅内未测药理）；CLIC1 mediates EGFRvIII EV packaging（相关性——需限定 packaging reduced upon deletion）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">tmCLIC1omab benefits GB patients（无颅内治疗/临床试验）；CLIC1 regulates immune surveillance in GB（讨论级展望）；chloride flux directly sustains RTK phosphorylation（中间步骤未测）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Mansourabadi et al. systematically mapped the OSMR membrane interactome using mammalian membrane two-hybrid high-throughput screening (MaMTH-HTS) in the presence and absence of EGFRvIII, identifying the metamorphic chloride channel CLIC1 as a shared high-confidence interactor that is required for the OSMR/EGFRvIII complex. In patient-derived brain tumour stem cells, CLIC1 associated endogenously with OSMR and EGFRvIII (proximity ligation, co-immunoprecipitation and a ~720 kDa native complex), and its extracellular domain (residues 1–58) was sufficient for complex formation in structural modelling and truncation assays. Whole-cell patch-clamp recordings established a tmCLIC1-mediated chloride current that was attenuated by CLIC1 deletion and by OSMR knockdown, indicating bidirectional control; pharmacological blockade with a targeting monoclonal antibody (tmCLIC1omab; on-target-validated in CLIC1-null cells) suppressed EGFRvIII-Y1068 and STAT3-Y705 phosphorylation in EGFRvIII-positive BTSCs, reduced subcutaneous xenograft growth, and genetic deletion of CLIC1 prolonged survival in intracranial xenografts (Mansourabadi et al., STTT 2026).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ CLIC1 directly binds OSMR and EGFRvIII（直接结合未定量——近邻+复合物证据）</li>
+      <li>❌ tmCLIC1omab treats glioblastoma（颅内治疗未做；皮下异种移植+SCID）</li>
+      <li>❌ CLIC1/OSMR independently predict GB patient survival（无多变量）</li>
+      <li>❌ The OSMR–CLIC1 axis modulates anti-tumour immunity（讨论级 future work）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：免疫/干性叙事 + 机制论文写作模板 + Cancers 特刊」为默认目标用途；用途改变时 M 等级需重评。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>MaMTH-HTS OSMR 互作组（334 候选 + GO/pathDIP 注释）— <strong>M3</strong>（原始数据未公开；Supp Table 1 列表可向作者索取——若做 AEBP1 互作组对照可参考其候选谱系）｜S004</li>
+      <li>4 株患者来源 BTSC（Samuel Weiss 系）— <strong>M3</strong>（MTA 依赖）｜S017</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>"无偏筛选 → BTSC 反向筛选 → 正交验证 → 双干预 → 治疗工具"的五段式论证骨架</strong> — <strong>M1</strong>（机制论文的完整论证组织范本；每段的对照设计可逐段对标）｜全文</li>
+      <li><strong>omab 的 on-target 双对照设计</strong>（KO 细胞药物无效应 + 体内耐受性 + 内吞证据）— <strong>M1</strong>（抗体/抑制剂研究的对照标准，与 Wang 2025 的 Chem-0199 on-target 双阴性对照同级）｜S020; F006m</li>
+      <li><strong>PLA + CRISPR 阴性对照的互作验证组合</strong>（PLA 信号在删除系消失 = 互作特异性的内置对照）— <strong>M1</strong>（互作验证设计：任何 PLA 实验都应配删除/敲低阴性对照）｜S008; F004m-p</li>
+      <li><strong>天然凝胶电泳证明内源性复合物</strong>（非变性条件保留 ~720 kDa 复合物）— <strong>M2</strong>（复合物存在的正交证据层）｜S009; F005i</li>
+      <li><strong>ELDA 极限稀释 + EdU 组合的干性定量</strong> — <strong>M1</strong>（BTSC/GSC 干性评估的标准组合，含统计法）｜S007; F003</li>
+      <li>AlphaFold-Multimer 胞外域复合物预测 + 截短体验证 — <strong>M2</strong>（结构预测必须配截短体/突变体验证的反面教材不适用——本文做了验证，可学）｜S009; F005f-h</li>
+    </ul>
+
+    <h3>实验资产</h3>
+    <ul>
+      <li>抗体组合：H3K27M 无关；AEBP1 无关——但 CLIC1 ab190631 类比提示 HPA/Abcam 双源策略 — <strong>M3</strong>｜S007</li>
+      <li>tmCLIC1omab（License 11665M）+ IAA94（100 μM 工作浓度）+ SC79 类比工具箱 — <strong>M3</strong>（CLIC1 非本项目靶点，但"膜构象选择性抗体"思路可迁移到 AEBP1 膜形式研究）｜S020</li>
+      <li>颅内 PDX 参数（3×10^5 细胞、右侧纹状体坐标、IVIS 每周、终末期标准）— <strong>M2</strong>（若项目延伸到体内验证可直接照搬坐标与终点定义）｜S020</li>
+      <li>EV 差速离心 + ZetaView NTA 表征流程 — <strong>M2</strong>｜S021</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li><strong>机制链五段式标题结构</strong>（interactome → common interactor → complex → bidirectional function → therapeutic antibody）— <strong>M1</strong>｜全文</li>
+      <li><strong>"数据级/解释级"措辞分层的又一范例</strong>：摘要 "essential for fueling its malignant growth"（模型限定内成立）与 "promising therapeutic avenue"（展望级）并存——R1 纪律的正面素材｜S001; S015</li>
+      <li>图形摘要/机制总图的绘制风格（Fig 8 类机制图：受体-通道-信号-功能四层）— <strong>M2</strong>｜F006</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>CRISPR 主实验无 no-cut/Cas9-only 对照（作者诚实但审稿人本应要求）→ 遗传消融必须配同轮对照或 rescue｜S017; F007</li>
+      <li>关键体内实验组间 n 不均（BTSC147 n=3）→ 体内样本量底线｜F007</li>
+      <li>数据/代码 "within the manuscript" 式的可用性声明 → 筛选类数据必须 deposit｜S023</li>
+      <li>12 hits → 1 候选的选择标准不量化 → 筛选到候选的决策树应可复现｜S005</li>
+      <li>"mediates packaging" 类机制动词配相关性数据 → 机制动词与证据类型对齐（R3 纪律）｜S010; S014</li>
+      <li>PLA 近邻证据不区分直接结合/复合内关联 → 互作结论的表述精度（"required for the complex" 优于 "directly binds"）｜S008–S009</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1038/s41392-026-02723-3">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
