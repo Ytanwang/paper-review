@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · USP34-Pin1-Ubc9-SUMO1 轴与 GSC（Nat Commun 2024）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Zhu et al., Nature Communications 2024 — USP34 去泛素化 Pin1 K117 稳定其蛋白；Plk1-S65 磷酸化促进结合；Pin1 异构化 CDK1-pS71-Ubc9 选择性增强 Ubc9~SUMO1 硫酯形成 → SUMO1-hypersumoylation 维持 GSC；sulfopin+RO3306 联合抑制原位 GBM。总评级 A−：四层 PTM 串接的位点级闭环+epistasis rescue 为机制写作范本，缺口在体内严谨性自陈（未随机化/未设盲）、USP34 酶活性归因与临床层。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Stabilization of Pin1 by USP34 promotes Ubc9 isomerization and protein sumoylation in glioma stem cells</h1>
+  <p class="subtitle">Zhu Q, Liang P（共同一作）, …… Zhang A, <strong>Bian X-w</strong>（卞修武）, <strong>Zhou W</strong>（周文超，通讯）等 17 人. <em>Nature Communications</em>, 2024, 15: 40</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1038/s41467-023-44349-x">10.1038/s41467-023-44349-x</a> ·
+    审查深度：审稿式精读（全流程；Methods 未逐段双化） ·
+    总评级 <span class="badge grade-a-minus">A−</span> ·
+    <span class="sev sev-p2">P2 × 6</span> <span class="sev sev-p1" style="opacity:0.45">P0/P1 = 0</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>18.1</strong>（条目 extra 记录）· JCR <strong>Q1</strong> · 中科院 <strong>综合性期刊 1 区 Top</strong> · 查询于 2026-09-05。期刊光环偏倚提醒：不作为证据评级依据。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>蛋白互作/PTM 机制论文的位点级闭环范本——四层修饰（Plk1 磷酸化 → USP34 去泛素化 → Pin1 异构化 → SUMO1 类泛素化）逐层串接，每层都有位点级突变体（K117A/S65A/S71A）+ 正交读出（IP-MS/co-IP/显色肽异构化测定/DTT 敏感硫酯）+ 上位性 rescue（泛素化缺陷 Pin1-K117A 在上游 KD 下回补下游表型），SUMO1 vs SUMO2/3 的选择性平行对照贯穿全文。</strong>缺口全在 P2 层：Methods 自陈未随机化/未设盲/样本量未预设；USP34 的去泛素化酶活性归因无 catalytic-dead rescue；Plk1→S65 的位点证据间接（S65A 仅在 293T 重构）；临床层仅 n=5 IF 共定位、无队列生存验证。同组前期（ref 4 Neuro Oncol 2020）已确立 Pin1→SUMO1-GSC 基座，本文补齐上游与下游分子机制——新颖性集中在机制层而非表型层。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：审稿式精读 → 全流程。双语证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，13 个正文块 + 8 图）。<strong>本项目负载</strong>：高分文献队列 P3（NC 18.1 / 1 区 Top）；用户 remark = 蛋白互作——<strong>与 AEBP1-GBM 项目同系统（GSC 机制）</strong>，负载在三处：①IP-MS → DUB 上游酶发现 + 泛素化位点定位 + epistasis rescue 的完整蛋白互作范式（可直接迁移到 AEBP1 互作/调控因子研究）；②四层 PTM 串接的机制写作模板；③GSC 干性/SUMO1 修饰叙事接口（Cancers 特刊稿件的 GBM 机制背景引用池）。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（上游：USP34→Pin1 稳定）</strong>：USP34 为 GSC 中 Pin1 的结合 DUB，去除 K117 位点多聚泛素链稳定 Pin1；Plk1-pS65 磷酸化促进 Pin1-USP34 结合。</li>
+      <li><strong>LC2（功能：USP34→GSC/GBM）</strong>：USP34 优先表达于 GSC（人 GBM 内与 SOX2/OLIG2 共定位），维持 GSC 干性并支撑颅内肿瘤生长。</li>
+      <li><strong>LC3（下游：Pin1→Ubc9 异构化→SUMO1）</strong>：Pin1 异构化 CDK1-pS71-Ubc9，选择性增强 Ubc9~SUMO1 硫酯形成（不影响 SUMO2/3），经 USP34-Pin1 轴导致 GSC 全局 SUMO1-hypersumoylation。</li>
+      <li><strong>LC4（转化）</strong>：Pin1 PPIase 抑制剂 sulfopin + CDK1 抑制剂 RO3306 联合最有效抑制 GSC 类泛素化与原位 GBM 生长。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：Pin1 蛋白稳定性调控（哪个 DUB 去其泛素链）为领域空白；Pin1→SUMO1-hypersumoylation→GSC 已由同组前期确立（ref 4, Neuro Oncol 2020）——本文增量双向延伸：上游首次鉴定 USP34（含 Plk1-pS65 结合开关与 K117 去泛素化位点），下游首次把 PPIase 活性直接接到唯一 SUMO E2（Ubc9-pS71 异构化→硫酯选择性），把"全局类泛素化"落到一个单点酶控开关上。</li>
+      <li><strong>证据链位置</strong>：机制发现型研究的位点级完整形态——发现（IP-MS 找 DUB）→ 位点（4KA→单点→rescue）→ 开关（S65 磷酸化）→ 功能（干性+体内）→ 下游底物（Ubc9 异构化+硫酯读出）→ 上游识别（CDK1-pS71）→ 治疗（双抑制剂联合）→ 人源 IF（共定位）。</li>
+      <li><strong>研究类型</strong>：research article；GSC/NSTC 配对系（T387/T4121/H2S/T3832，Jeremy Rich 赠；CD15⁺/CD133⁺ MACS）+ 人 GBM 冻切 IF（6 例标本、n=5 生物学重复）+ 裸鼠颅内异种移植 + 293T 重构系统。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：摘要主张（USP34 稳定 Pin1 / Ubc9 异构化 / SUMO1-hypersumoylation / 联合用药）与数据匹配度高——位点级证据密度为同类论文高配。最可能发生证据错配的环节：①"Plk1-mediated phosphorylation of Pin1 facilitates its binding to USP34"（S65 特异性证据间接，见 ERR-04c）；②联合治疗的临床含义（RO3306 溶解性缺陷未临床，作者自陈）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：USP34 去泛素化 K117 稳定 Pin1；Plk1-pS65 开关）</span>：MG132 于 NSTC 恢复 Pin1 而于 GSC 影响小 → GSC 中 Pin1 poly-Ub 本底低（S003/F1a-b）→ Pin1 IP-MS：USP34 丰度第一（50 unique peptides）→ co-IP 验证（GSC 内源）（S003/F1c-d）→ 人 GBM IF：USP34⁺ 瘤细胞多 Pin1⁺（n=5）（S003/F1e-f）→ shUSP34：Pin1 蛋白↓（mRNA 不变）+ poly-Ub↑（S003/F1g-h）→ 位点定位：GeneCards 4 候选 → 4KA 无泛素化 → 单点仅 K117A 降泛素化 → shUSP34 下 WT↓ 而 K117A 稳定（S003/F1i-l）→ GSC p-Ser 强 + Plk1 高表达 → SBE13：Pin1↓/p-Ser↓（MG132 存在下仍降）/结合↓/poly-Ub↑（S004/F2a-f）→ S65A（293T 重构 + shPin1-3'UTR）：USP34 亲和↓ + poly-Ub↑（S004/F2g-h）
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">高闭环 / S65 位点间接</span>——DUB 身份（IP-MS+co-IP+功能）与去泛素化位点（K117 单点+rescue 逻辑）为位点级闭环；缺 USP34 catalytic-dead rescue（酶活性归因，ERR-04b）；S65 特异性依赖 p-Ser 泛抗体 + SBE13 + 293T 重构（ERR-04c）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：USP34 → GSC 维持 → 体内生长）</span>：USP34 蛋白 GSC&gt;NSTC（S005/F3a）→ 人 GBM 冻切：USP34⁺ 与 SOX2⁺/OLIG2⁺ 高共定位（n=5）（S005/F3b-c）→ shUSP34：tumorsphere 数量/尺寸↓ + 活力↓（S005/F3d-h）→ 颅内异种移植（T4121+luc）：BLI 生长延迟（d7/15/30）+ 生存延长（shNT n=5 / #1 n=7 / #2 n=6；P=0.0018）（S005/F3i-j）→ Ki67↓ + cleaved caspase-3↑（n=5 瘤/组）（S005/F3k-l）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">功能闭环（双 shRNA 一致 + 体内双读出）</span>——最薄弱环节：无 USP34 rescue 体内平行；未随机化/未设盲/样本量未预设（Methods 自陈，ERR-04a）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3+LC4：Pin1 → Ubc9 异构化 → SUMO1 选择性硫酯 → GSC；联合治疗）</span>：shUSP34 → 全局 SUMO1-sumoylation↓（SUMO2/3 不变）+ 移植瘤 IF 复现（S006/F4a-c）→ 人 GBM：&gt;80% SUMO1⁺ 瘤细胞 USP34⁺ vs &lt;50% SUMO2/3⁺（S006/F4d-e）→ epistasis：Pin1-K117A（上游 KD 下稳定）回补 SUMO1-sumoylation（S006/F4f）→ Ubc9 唯一 S71-P72 基序 + co-IP 结合（S007/F5a-b）→ 体外显色肽测定：Pin1 异构化 pS71 肽（非磷酸化阴性）（S007/F5c）→ Pin1 KD 不变 Ubc9 丰度（异构非稳定）（Supp F4e）→ 硫酯读出：Ubc9~SUMO1 ~37 kDa、DTT/β-ME 敏感（S007/F5d-e）→ Pin1 KD：Ubc9~SUMO1↓ 而 Ubc9~SUMO2/3 不变；OE 反之（S007/F5f-h）→ S71A：硫酯弱且不被 OE 增强；GSC 内 Ubc9 KD 回补 WT 恢复/S71A 不能（S007/F5i-j）→ CDK1 高表达 → RO3306 消除 Ubc9 p-Ser（同 S71A）→ Ubc9-Pin1 结合↓；S71A 亲和↓ 且 RO3306 无叠加 → RO3306 降 SUMO1- 不降 SUMO2/3（S008/F6a-g）→ sulfopin+RO3306：体外几乎清除 GSC + SUMO1 联合降幅最强（S009/F7a-b）→ 原位 GBM（n=7/组，两药各 20 mg/kg IP 隔日）：联合 BLI 最低 + 生存最长 + 瘤内 SUMO1↓ 最强 + 凋亡↑/Ki67↓/OLIG2⁺↓（S009/F7c-f; Supp F5）→ 正常脑 GFAP⁺/NeuN⁺ 无形态强度变化 + 脑 MS 分布（S009; Supp F6）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">下游机制闭环</span>——底物身份（结合+异构化）→ 位点（S71A）→ 功能读出（硫酯选择性）→ 上游识别（CDK1-pS71，文献已知接增量）→ epistasis（K117A）→ 治疗转译，六段齐备；SUMO1/SUMO2/3 平行对照贯穿。最薄弱环节：异构化→SUMO1 亲和的结构基础开放（ERR-05a）；体内严谨性（ERR-04a）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · USP34→Pin1 稳定（K117；Plk1-pS65）</h3>
+    <p><strong>第一性原理层</strong>：DUB 身份经 IP-MS（50 肽段）+ 内源 co-IP + 双 shRNA 功能三方确认；泛素化位点经 4KA→单点→"不可泛素化突变体绕过上游"的 rescue 逻辑定位于 K117——该 rescue 设计同时是位点必要性与上游因果的双证。承重前提：USP34 经其<b>去泛素化酶活性</b>（而非支架功能）稳定 Pin1——无 catalytic-dead（Cys→Ala）rescue 排除支架替代解释；shUSP34 表型与 K117A 逻辑链强烈暗示但未锁定酶活性。</p>
+    <p><strong>演绎构建层</strong>：Plk1→S65→结合的链由 SBE13（抑制→p-Ser↓/结合↓）+ S65A（亲和↓/poly-Ub↑）双向支撑；但 p-Ser 为泛抗体读出（非 S65 特异），S65A 证据在 293T 重构系统（非 GSC 内源），SBE13 的 Plk1 脱靶谱未在本文排除——链的方向一致但位点身份在 GSC 内源环境未被直接测量。</p>
+    <p><strong>元认知审计层</strong>：IP-MS"丰度排名第一"受大分子量/高丰度蛋白偏倚——但 co-IP+功能验证已补足。结论失败条件：catalytic-dead USP34 rescue 仍稳定 Pin1（则支架模型成立，"deubiquitinase"表述需限定）；或 GSC 内 pS65 特异抗体/质谱显示 S65 非主要磷酸化位点。</p>
+
+    <h3>LC2 · USP34→GSC 维持与体内生长</h3>
+    <p><strong>第一性原理层</strong>：GSC 特异性表达（配对 WB + 人组织 IF 共定位双证据）→ 功能必需（双 shRNA 球形成/活力）→ 体内（BLI 生长 + KM 生存 + Ki67/凋亡 IHC）三层标准配置。承重前提：shUSP34 的体外表型脱靶可控（双 shRNA 一致为正证据）且体内表型由 Pin1 轴介导（本文未做体内 Pin1/K117A rescue 归因——表型归 Pin1 下游为合理外推而非直接证明）。</p>
+    <p><strong>演绎构建层</strong>：体内读出正交（影像学+生存+病理）；n=5-7/组一致性可接受；P=0.0018 为明确报告。</p>
+    <p><strong>元认知审计层</strong>：未随机化/未设盲/样本量未预设（Methods 自陈）——对生存终点（可测量、客观）偏倚风险中等，但对 BLI 生长曲线的组间解释留有操作空间。结论失败条件：USP34-WT（非 catalytic-dead）体内 rescue 不逆转 shUSP34 表型。</p>
+
+    <h3>LC3 · Pin1→Ubc9 异构化→SUMO1 选择性硫酯</h3>
+    <p><strong>第一性原理层</strong>：底物判定的完整六步（结合→异构化活性→位点突变→功能读出→回补→上游识别开关）齐备；硫酯读出（~37 kDa 结合物 + DTT/β-ME 敏感性）为类泛素化领域的直接化学证据，优于间接下游 readout。承重前提：异构化（构象变化）经"增强 Ubc9 对 SUMO1 亲和"产生全局效应——"亲和增强"未直接测量（无 SPR/ITC），由硫酯形成量代理；cis/trans→硫酯的中间步骤为结构层开放（ERR-05a）。</p>
+    <p><strong>演绎构建层</strong>：SUMO1 vs SUMO2/3 的平行对照贯穿每个实验（blot/IF/硫酯/回补）——选择性主张的证据密度高；Ubc9-S71A 既不能结合 Pin1 也不能恢复 SUMO1-sumoylation，位点-功能一致；Pin1 KD 不变 Ubc9 丰度排除了稳定性混淆。</p>
+    <p><strong>元认知审计层</strong>：CDK1-pS71 为文献已知（ref 38）——本文诚实引用并把增量限定在 Pin1 识别层，无主张重叠。体外异构化为肽段水平（全长 Ubc9 的异构化未直接测）——由 S71A 细胞内全套表型补偿。结论失败条件：全长 Ubc9 体外异构化或 NMR 显示 S71 磷酸化不改变 cis/trans 平衡。</p>
+    <p><strong>统计实质</strong>：blot 实验≥3 生物重复；IF n=5 生物学重复（人组织）+ n=5 瘤/组（移植瘤）；体内生存 shNT n=5/#1 n=7/#2 n=6（P=0.0018）、治疗实验 n=7/组；球形成 n=3；统计方法各图注明（t 检验/ANOVA/log-rank）；<b>未随机化、未设盲、样本量未预设（Methods 自陈）</b>。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>体内严谨性三缺（随机化/设盲/样本量预设）</td>
+          <td>Methods（"No specific method was used to pre-determine sample size. The experiments were not randomized... not blinded"）; Figure 3i-j（生存 n=5-7/组）; Figure 7（治疗 n=7/组）</td>
+          <td>体内药效与生存结论（本文的治疗转译层）建立在未随机化、未设盲、样本量未预设的实验上——作者自陈诚实但构成 NC 层严谨性缺口；生存终点客观性较好（偏倚风险中等），BLI 生长曲线组间比较的操作空间更大</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>USP34 去泛素化酶活性归因未验证</td>
+          <td>Figure 1g-l（shUSP34 表型链）; Abstract（"Pin1 is deubiquitinated and stabilized by USP34"）</td>
+          <td>无 catalytic-dead（Cys→Ala）USP34 的 rescue/占位实验——"经 DUB 活性去泛素化"与"经支架效应募集其他 DUB"未解耦；K117A rescue 锁定了泛素化位点但未锁定 USP34 的酶促身份；体内亦无 USP34-WT 回补平行</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04c</span><br>Plk1→S65 位点证据间接</td>
+          <td>Figure 2a-h（p-Ser 泛抗体 + SBE13 + S65A@293T）; Abstract（"Plk1-mediated phosphorylation of Pin1 [S65] facilitates its binding to USP34"）</td>
+          <td>S65 磷酸化身份在 GSC 内源环境未直接测量（无 pS65 特异抗体/质谱定位）；S65A 亲和实验在 293T 重构系统完成（非 GSC）；SBE13 的激酶脱靶谱未排除——Plk1 直接磷酸化 S65 沿用文献（ref 22），本文证据为后果级（结合变化）而非位点级</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03a</span><br>临床转化层证据薄</td>
+          <td>Figure 1e-f / 3b-c / 4d-e（人 GBM IF 共定位，n=5）; Discussion（"RO3306 has not been applied in clinical trial"；"USP34 inhibitors, although not available so far"）</td>
+          <td>临床关联止步于少量标本 IF 共定位（n=5）——无 TCGA/CGGA 队列生存/表达验证（USP34/Pin1/Ubc9 与预后）；治疗层两工具均未临床就绪（RO3306 溶解性缺陷 + USP34 无抑制剂，作者自陈）；"multiple drug targets"的转化口径与工具现实间有距离</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>异构化→SUMO1 亲和的结构基础开放</td>
+          <td>Figure 5c-i（硫酯读出为亲和代理）; Discussion（无结构机制讨论）</td>
+          <td>"异构化增强 Ubc9 对 SUMO1 的亲和"未直接测量（无 SPR/ITC/结合常数），由硫酯形成量代理；体外异构化为合成肽段水平（全长 Ubc9 未测）；pS71 顺反转变如何选择性偏向 SUMO1（非 SUMO2/3）结合无结构解释——功能链闭合而"how"开放</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03d</span><br>GSC/NSTC 二元模型的谱系边界</td>
+          <td>Methods（CD15⁺/CD133⁺ MACS 分选；NSTC 经 FBS 7-10 天诱导分化；T387/T4121/H2S/T3832 为 PDX 衍生赠系）</td>
+          <td>GSC vs NSTC 的二元对比（全文表达与功能差异的基线）建立在分选标记二元化 + 体外分化诱导上——瘤内状态连续性与培养适应未讨论（培养基 12 h 对齐控制了体系偏倚但非身份偏倚）；4 株系均为同一来源谱系（Rich 实验室），独立患者来源原代 GSC 缺位</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0/P1：标题级主张（USP34 稳定 Pin1 → Ubc9 异构化 → 类泛素化）的每个链条均有位点级突变体 + 正交读出 + rescue 的三重支撑；P2 全部为归因/边界层缺口（酶活性身份、S65 位点直接性、结构机制、模型边界），不触及链条方向。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>USP34-Pin1 DUB 首次鉴定 + Pin1 直接异构化唯一 SUMO E2 为新机制层；Pin1→SUMO1-GSC 表型基座为同组前期（ref 4）——增量在分子机制而非表型发现</td></tr>
+        <tr><td>证据广度</td><td><strong>A−</strong></td><td>4 GSC 系配对 + 293T 重构 + 人 GBM IF + 颅内移植 + 双抑制剂治疗 + IP-MS/体外酶学/硫酯化学读出；缺独立患者原代 GSC 与临床队列验证</td></tr>
+        <tr><td>因果封闭性</td><td><strong>A−</strong></td><td>四层 PTM 链每层有位点突变体 + 正交读出 + epistasis rescue（K117A）；缺口：USP34 酶活性身份、S65 位点直接性、异构化→亲和的结构层</td></tr>
+        <tr><td>反例排除</td><td><strong>A−</strong></td><td>非磷酸化肽阴性对照、Ubc9 丰度不变排除、SUMO2/3 全程平行阴性、S65A/S71A 双位点失能、4KA/单点梯度、DTT/β-ME 化学验证——排除体系完整；缺 catalytic-dead 与随机化对照</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B+</strong></td><td>生化层规范（≥3 重复、位点梯度、化学敏感验证、培养基对齐控制）；扣分：未随机化/未设盲/样本量未预设（自陈）、blot 定量为代表性图、无 preregistration</td></tr>
+        <tr><td>外部效度</td><td><strong>B</strong></td><td>人组织证据为 IF 共定位（n=5）；无队列生存验证；GSC 系同源（Rich 谱系）；治疗工具未临床（作者自陈）；机制保守性仅在 GSC 内验证（其他癌症 Pin1-high 语境为外推）</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-a-minus">A−</span></strong> —— 距 A 差三件事：catalytic-dead USP34 rescue（酶活性身份锁定）、GSC 内源 pS65 直接测量（位点身份）、独立患者队列的 USP34/Pin1 生存验证（临床层）。作为承重文献使用：USP34-Pin1-Ubc9-SUMO1 机制链与全部位点级证据可整体引用；"USP34 通过其去泛素化酶活性"须限定（rescue 缺失）；联合治疗的临床含义须带工具未临床限定。</p>
+
+    <h3>修复补丁（P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p2">P2</span>）：动作：关键生存/药效实验随机分组 + 结局设盲 + 预设样本量（或按 NC 标准报告 blinding statement）。效果：体内层严谨性达标。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：catalytic-dead USP34（Cys 活性位点突变）rescue 实验——若不能稳定 Pin1 则酶活性归因锁定；体内加 USP34-WT 回补平行。效果："deubiquitinase"表述从表型升为酶学证据。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-04c</span> <span class="sev sev-p2">P2</span>）：动作：GSC 内 pS65 特异抗体/质谱定量 + S65E 磷酸模拟突变体 rescue + Plk1 体外激酶实验（Pin1 底物直接验证）。效果：S65 开关从后果级升为位点级。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-03a</span> <span class="sev sev-p2">P2</span>）：动作：TCGA/CGGA 队列 USP34/Pin1/Ubc9 表达-生存分析 + 独立 GBM 队列 IHC 验证共定位。效果：临床相关层从共定位升级为预后证据。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p2">P2</span>）：动作：全长 Ubc9 体外异构化（NMR 或 FRET）+ SUMO1/SUMO2/3 结合常数直接测量（SPR/ITC）。效果："how"层结构机制闭合。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-03d</span> <span class="sev sev-p2">P2</span>）：动作：独立患者原代 GSC（非 Rich 系）验证核心表达差异；或 scRNA 数据集内验证 USP34⁺ 与干性态共定位。效果：模型谱系边界外扩。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · USP34→Pin1 稳定</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">USP34 interacts with Pin1 in GSCs (IP-MS, 50 unique peptides; endogenous co-IP) and its disruption elevates Pin1 poly-ubiquitination while reducing Pin1 protein (mRNA unchanged) / ubiquitination maps primarily to K117 (4KA and single-mutant gradient; ubiquitination-deficient Pin1-K117A remains stable upon USP34 depletion) / Plk1 inhibition (SBE13) reduces Pin1 serine phosphorylation and weakens Pin1-USP34 binding; the S65A mutant shows reduced USP34 affinity in reconstituted 293T cells</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">USP34 deubiquitinates Pin1 via its enzymatic activity（无 catalytic-dead rescue——限定 "USP34 is required for Pin1 deubiquitination"；酶学身份待锁）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">USP34 is an oncogene / USP34 inhibitors treat GBM（无抑制剂、无药理验证）；Plk1 directly phosphorylates S65 in GSCs（本文未直接证明——援引 ref 22 并注明）</span></div>
+    </div>
+
+    <h3>LC3 · Pin1→Ubc9 异构化→SUMO1 选择性硫酯</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">Pin1 binds and isomerizes the phosphorylated S71-Pro motif of Ubc9 (in vitro chromogenic peptide assay; pS71-specific) / Pin1 selectively promotes Ubc9~SUMO1 thioester formation (~37 kDa DTT/β-ME-sensitive conjugate) without affecting Ubc9~SUMO2/3 / Ubc9-S71A fails to restore SUMO1 sumoylation upon Ubc9 knockdown / CDK1 phosphorylates S71 (RO3306 abolishes p-Ser) and enables Pin1 binding, consistent with prior knowledge (ref 38)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">isomerization increases Ubc9 affinity for SUMO1（亲和未直接测量——限定 "enhances Ubc9~SUMO1 conjugate formation"）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">CDK1-Ubc9 S71 phosphorylation is a novel discovery（ref 38 已知）；Pin1 globally drives sumoylation across SUMO paralogues（SUMO2/3 阴性一致）</span></div>
+    </div>
+
+    <h3>LC2+LC4 · GSC 维持与联合治疗</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">USP34 is preferentially expressed in GSCs (paired GSC/NSTC immunoblots; SOX2/OLIG2 co-localization in human GBM sections) and its knockdown impairs tumorsphere formation, delays orthotopic xenograft growth and extends survival (P=0.0018) / combined sulfopin plus RO3306 most effectively suppressed SUMO1-modified sumoylation and intracranial GBM growth (n=7/group; 20 mg/kg each, i.p., every other day) with no perceptible morphological effect on normal GFAP⁺/NeuN⁺ cells</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">combined therapy is clinically actionable（RO3306 未临床 + USP34 无抑制剂——作者自陈，限定 pre-clinical proof of concept）；GSC specificity generalizes beyond Rich-lineage models（4 系同源）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">USP34/Pin1/Ubc9 expression predicts GBM patient survival（本文未做队列生存分析）；sulfopin+RO3306 is a viable clinical regimen（工具未临床）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Zhu et al. identified USP34 as a Pin1-interacting deubiquitinase required for Pin1 protein stability in glioma stem cells: USP34 depletion elevated Pin1 poly-ubiquitination at K117 and reduced Pin1 protein, while Plk1-mediated phosphorylation promoted Pin1-USP34 binding. Stabilized Pin1 bound and isomerized the phosphorylated S71-Pro motif of Ubc9 — the sole SUMO E2 enzyme — selectively enhancing Ubc9~SUMO1 thioester formation and thereby global SUMO1-modified hypersumoylation that supports GSC maintenance; a ubiquitination-deficient Pin1-K117A mutant rescued SUMO1 sumoylation upon USP34 depletion (epistasis). Combined inhibition of Pin1 (sulfopin) and CDK1 (RO3306) most effectively suppressed SUMO1 sumoylation and orthotopic GBM growth in pre-clinical models (Zhu et al., Nat Commun 2024).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ USP34 inhibitors are therapeutic candidates（无抑制剂存在——作者自陈）</li>
+      <li>❌ USP34/Pin1 表达预后价值（本文无队列生存数据）</li>
+      <li>❌ USP34 的 DUB 活性经 catalytic-dead 验证（未做——引用时限定"required for"）</li>
+      <li>❌ Pin1-Ubc9 轴为泛癌机制（仅 GSC 内验证）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：Cancers 特刊 + 纯度/CNA + IHC + 免疫叙事」为默认目标用途；用途改变时 M 等级需重评。本文与项目同系统（GSC），结论可入 GBM 机制背景引用。</p>
+
+    <h3>方法资产（蛋白互作/PTM 范式——用户 remark 的直接负载）</h3>
+    <ul>
+      <li><strong>IP-MS → 上游调控酶发现管线</strong>（靶蛋白 IP → LC-MS/MS → 候选排名 → 内源 co-IP → 功能 shRNA）— <strong>M1</strong>（<strong>直接迁移到 AEBP1</strong>：AEBP1 互作/调控因子发现的同构管线；其"丰度排名偏倚"教训提醒我们辅以 SAINT/CRAPome 过滤）｜S003; F1c</li>
+      <li><strong>泛素化位点定位组合</strong>（数据库候选 → 多点突变 → 单点梯度 → 不可泛素化突变体）— <strong>M1</strong>（位点级归因标准操作；若 AEBP1 走蛋白稳定性调控路线可直接照搬）｜S003; F1i-l</li>
+      <li><strong>上游 KD + 泛素化缺陷突变体（K117A）rescue 的 epistasis 设计</strong>（shUSP34 下 K117A 回补下游表型）— <strong>M1</strong>（上游-位点-下游三段归因的最干净模板；我们稿件中任何调控轴均可复用此逻辑）｜S006; F4f</li>
+      <li><strong>硫酯连接的化学读出</strong>（~37 kDa 结合物 + DTT/β-ME 敏感性消解）— <strong>M2</strong>（PTM 连接验证的巧妙直接证据——优于纯下游 readout）｜S007; F5d-e</li>
+      <li><strong>SUMO1 vs SUMO2/3 全程平行选择性对照</strong>— <strong>M2</strong>（选择性主张的证据密度标准）｜F4-F7 全程</li>
+      <li>GSC/NSTC 培养基对齐控制（收获前 12 h 培养基切换）— <strong>M2</strong>（培养体系偏倚控制的细节意识——值得学）｜Methods</li>
+      <li>体外异构化显色肽测定 + 联合抑制策略（PPIase + priming kinase）— <strong>M3</strong>（PTM 酶学专用；默认不启用）｜S007; S009</li>
+    </ul>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>PXD041043（Pin1 IP-MS 蛋白组）— <strong>M3</strong>（GSC Pin1 互作组清单可作 AEBP1 交叉查询）｜S012</li>
+      <li>GSC T387/T4121/H2S/T3832（Rich 系，文献可得）— <strong>M3</strong>（如需 GSC 功能验证的系来源参照）｜Methods</li>
+    </ul>
+
+    <h3>叙事接口（GBM 机制背景引用池）</h3>
+    <ul>
+      <li><strong>四层 PTM 串接写作模板</strong>（磷酸化→去泛素化→异构化→类泛素化，层层位点突变体衔接）— <strong>M1</strong>（机制段落组织的范本级样例——我们稿件的机制讨论节可参照其"每层一位点一 rescue"的密度）｜F8 总结图</li>
+      <li><strong>"唯一酶单点操控全局修饰"的定位叙事</strong>（Ubc9 = 唯一 SUMO E2 → 单点异构化撬动全局 hypersumoylation）— <strong>M2</strong>（与 AEBP1 state-marker 的"单 marker 锚定状态"叙事同构——单点杠杆的写作策略）｜S007</li>
+      <li>GSC 干性维持的 SUMO1 依赖（ref 4 + 本文）— <strong>M2</strong>（Cancers 特刊稿件 GBM 干性/治疗抵抗背景的引用节点）｜S006</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>未随机化/未设盲/样本量未预设（Methods 自陈）→ 我们的体内外验证报告必须写明随机化与盲法（对照其诚实但缺失）｜Methods</li>
+      <li>USP34 酶学身份缺 catalytic-dead → DUB/E3 归因必须有酶死突变 rescue｜F1</li>
+      <li>S65 位点证据止于 293T 重构 → 磷酸化位点主张须在内源系统直接测量（pS65 抗体/质谱）｜F2g-h</li>
+      <li>临床层止步 n=5 IF 共定位 → marker 临床主张须配队列生存验证（正是我们 TCGA 建模的增量空间）｜F1e; F4d</li>
+      <li>GSC 系同源（Rich 谱系单一来源）→ 功能核心结论加独立患者来源系平行｜Methods</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1038/s41467-023-44349-x">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
