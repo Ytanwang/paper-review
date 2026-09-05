@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · H3 改变胶质瘤甲基化四亚型与 IDH/H3 克隆分区（Neuro-Oncology 2026）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Fu et al., Neuro-Oncology 2026 — 375 例 H3 改变胶质瘤队列，49 例 EPIC 甲基化 DBSCAN 分型得四亚型（DKFZ 交叉验证），新亚型 IDH/H3_comut（超甲基化、NPC-like、HR=0.149）；单细胞 SNV+mIHC 揭示 IDH1 与 H3F3A 突变细胞同瘤空间分区共存。总评级 A−：分型框架强，但'合作性演化'主张缺谱系时序证据、克隆证据骨架 n=2。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>DNA methylation profiling reveals a novel subtype harboring IDH mutation in H3-altered gliomas</h1>
+  <p class="subtitle">Fu M, Feng Y（共同一作）, …… Verhaak R, <strong>Mao Y, Hua W</strong>（共同通讯）. <em>Neuro-Oncology</em>, 2026, 28(6): 1502–1516</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1093/neuonc/noag054">10.1093/neuonc/noag054</a> ·
+    审查深度：承重文献/审稿式精读（全流程） ·
+    总评级 <span class="badge grade-a-minus">A−</span> ·
+    <span class="sev sev-p1">P1 × 2</span> <span class="sev sev-p2">P2 × 4</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>13.1</strong>（条目记录，2025 JCR 口径）· JCR <strong>Q1</strong> · 中科院 <strong>医学 1 区 Top</strong>（临床神经病学/肿瘤学 1 区）· 查询于 2026-09-05。期刊光环偏倚提醒：不作为证据评级依据。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>本库唯一的克隆演化方法学对标文献——甲基化分型框架扎实、多组学正交验证完整，但"合作性演化"这一最抢眼的主张超出了其证据骨架。</strong>最强资产：375 例临床注解队列 + 轮廓系数优化的 DBSCAN 分型（与 DKFZ 分类完全一致）+ 三层正交验证（甲基化/ChIP-seq/IHC）+ 从"分区共存"到"空间 mIHC 原位验证"的完整证据链。两处 P1：①从"IDH1 与 H3F3A 突变细胞空间分区共存"（有数据）跃迁到"cooperative evolution / synthetic viability / bifurcated paradigm"（无谱系时序、无功能互作、无系统发育重建，2-HG <50 μm 扩散限值为文献移植论据）——注意其摘要用 suggesting 限定而 Discussion 未加限定，这一"数据级/解释级措辞分层"本身就是 R1 纪律的现成教学案例（P1）；②克隆分隔与轨迹证据的骨架极小：单细胞靶向 SNV 仅 2 例 comut 肿瘤、WES 仅 3 例（且 Methyl27 的 IDH/H3 VAF 几乎相等 0.226/0.202，与"互斥分区"叙事存在未讨论的张力）、GBM_G34 亚型仅 n=4（P1）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程。双语全文证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，32 个正文块 + 6 图）。<strong>本项目负载</strong>：Cancers 特刊「克隆演化计算分析」投稿的唯一直接同构方法学模板——其"分区共存 vs 合作演化"的措辞分层是本项目 R1 纪律的现成参照；预计引用于 Introduction（演化框架）与 Discussion（克隆架构叙事）。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（甲基化四亚型，标题核心之一）</strong>：H3 改变胶质瘤经甲基化无监督分型稳定解析为四个亚型，映射 DKFZ 类别并携带生存差异。</li>
+      <li><strong>LC2（新亚型 IDH/H3_comut）</strong>：IDH 与 H3 共发突变定义一个独立亚型——全基因组高甲基化、G-CIMP-high、NPC-like 富集、经临床协变量调整的生存获益（HR=0.149）。</li>
+      <li><strong>LC3（克隆分区共存，特刊对标核心）</strong>：同一 comut 肿瘤内 IDH1-R132H 与 H3F3A-K27M 突变细胞空间分区化共存，作者据此提出合作性而非互斥的演化范式。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：WHO CNS5 把 DMG-K27 与 DHG-G34 合并为"H3 改变胶质瘤"的简化分类留下三个空白（分级悖论/无法归类的表观实体/未与 DKFZ 对标）。增量三层：分型层——迄今最大 H3 队列（375 例）的甲基化四分型；机制层——"甲基化→组蛋白修饰"层级轴（cNMF+ChIP+IHC 三层验证）；演化层——挑战 IDH-H3 互斥教条，给出单细胞分辨的空间分区证据。</li>
+      <li><strong>证据链位置</strong>：横断面分型（多队列）+ 机制描述（多组学关联）+ 克隆架构（单细胞 SNV+mIHC 空间）。覆盖描述→机制→演化叙事，但演化层止于快照（无时序/系统发育）。</li>
+      <li><strong>研究类型</strong>：research article（clinical investigation）；华山 375 例临床注解队列 + EPIC 49 + scRNA 12（128,284 细胞）+ ChIP-seq 4 + WES 3 + TCGA/CGGA 交叉。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：摘要三分主张（四亚型/新亚型/分区共存→合作演化）中前两项与数据匹配良好；第三项的摘要措辞（suggesting cooperative）尚可，Discussion 的 "establishes a bifurcated paradigm"、"synthetic viability" 超出证据。最可能发生证据错配的环节：从空间共存到"合作性演化"——共存可以在无相互作用下发生（奠基者效应/区域取样）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：甲基化四亚型）</span>：375 例临床注解（S014）→ 49 例 EPIC（SWAN 归一化）→ DBSCAN eps×minPts 网格 → 轮廓系数 0.725 @ k=4（S010/S015）→ 四亚型 t-SNE 空间吻合（S015/F1D）→ DKFZ 12 例 TCGA 交叉完全一致（S015）→ 解剖分布分化（S016/F1E-F）→ 生存分化：comut 未达中位 vs RTK 13 个月（log-rank P=.001；成对 P=.001/.011/.065ns）（S016/F1G）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">闭环良好</span>——无监督分型+外部分类器对标+大样本生存。最薄弱环节：G34 亚型 n=4；轮廓系数在 2D t-SNE 空间计算（度量口径）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：IDH/H3_comut 新亚型）</span>：全基因组高甲基化（S017/F2A）→ G-CIMP-high 10/11（S017/F2B）→ 亚型特异 DMR（神经发育 TF 高甲基化）（S017/F2C）→ cNMF meta 模块 + ChIP-seq 层级（S018/F3A-B）→ IHC 确认（S018/F3C-D）→ scRNA：NPC-like 富集 + 少突浸润 + 细胞周期程序受抑 + 突触成熟（S019-021/F4C-I）→ 臂级 CNV：Chr4+/21-（S021/F4J）→ KM（comut 未达中位）+ 多变量 Cox HR=0.149 [0.035-0.631]（S022/F5A-B）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">多层正交闭环</span>——甲基化/转录组状态/蛋白 IHC/CNV 四层一致。最薄弱环节：Cox 未纳入年龄与切除程度两大经典混杂（见 ERR-04b）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：IDH-H3 克隆分区共存 → 合作演化）</span>：共现率 5.6%（华山 21/375）/0.3%（TCGA 3/1122）/2.1%（CGGA 5/236）（S023/F5C）→ scModule 单细胞基因型判定（S024；bulk DEG 模块→AddModuleScore，验证数据集未指明）→ 单细胞靶向 SNV（2 例 comut）：IDH1 与 H3F3A 互斥细胞分区，IDH1+ATRX 共发为内参（S024/F5D）→ Monocle2 双轨迹：H3=增殖（MKI67/TOP2A）、IDH=突触成熟（CACNA2D1/ARHGAP32）（S025/F5E-F）→ WES VAF 3 例（Methyl21 0.217/0.447；Methyl22 0.175/0.655；Methyl27 0.226/0.202 近相等）（S025/F5G）→ mIHC 原位空间分区（S025/F5I）→ 摘要 "suggesting cooperative rather than exclusive evolution"；Discussion "establishes a bifurcated paradigm / synthetic viability"（S029）
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">共存闭环 / 演化超载</span>——"分区化共存"证据链完整（四重正交：表达模块/SNV/拟时序/空间蛋白）；但从共存到"合作性演化"缺三件事：谱系时序（谁先谁后）、系统发育重建（CNV-based phylogeny）、克隆间功能互作实验；2-HG <50 μm 扩散限值为文献论据而非本文数据（见 ERR-02、ERR-03d、ERR-04c）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · 甲基化四亚型（标题核心）</h3>
+    <p><strong>第一性原理层</strong>：分型构念以无监督聚类+外部分类器（DKFZ）双操作化——避免自说自话；可证伪（新队列可复检）。承重前提：49 例能代表 375 例的甲基化空间——选样标准（新鲜组织可及性+质量）可能引入偏倚，comut 在 49 例中占 22.4% vs 全队列 5.6%（有意富集稀有亚型合理但未明示）。</p>
+    <p><strong>演绎构建层</strong>：生存差异（亚型间 P=.001）是分型临床意义的支柱；注意这是整队列 KM 而非 Cox 校正的亚型间比较（LC2 的 Cox 只做了 IDH 状态）。DMG_K27M vs comut 的 P=.065 被如实标为趋势。</p>
+    <p><strong>元认知审计层</strong>：DBSCAN 参数网格+轮廓系数最大化是数据驱动的优点，但轮廓系数在 2D t-SNE 空间计算——t-SNE 的局部结构会放大簇分离，最优 k=4 的稳健性需在原始空间复核；G34 n=4 的一切亚型级结论（剪接体高甲基化、H3K27ac 最高、PARP 合成致死推理）都是 4 例支撑。</p>
+
+    <h3>LC2 · IDH/H3_comut 新亚型</h3>
+    <p><strong>第一性原理层</strong>：亚型独立性由四层正交证据支撑（甲基化/G-CIMP、细胞状态、CNV、生存）——结构完整。承重前提：生存获益归因于"IDH 突变本身"——多变量 Cox 调整了性别/化疗/TTF/H3K27me3/H3 类型，但未调整年龄与切除程度；IDH-comut 病例可能更年轻或可全切率更高（HR=0.149 效应量大，混杂难以完全解释，但严谨性缺口真实）。</p>
+    <p><strong>演绎构建层</strong>：comut 的"矛盾性药物敏感"（高甲基化→去甲基化药物敏感）为文献移植推理（ref 19 Wu 2024 Science）；本文无药物数据。</p>
+    <p><strong>元认知审计层</strong>：IDH 突变在 H3-altered 背景下可能标记"较低级别的生物学起点"（其自引 ref 11：H3 突变可见于 LGG）——即 comut 的良好预后可能是"突变获得早于恶性转化"的表现而非 IDH 的保护作用；替代解释未讨论。结论失败条件：加入年龄/切除程度后 HR 衰减；或独立 comut 队列复现失败（TCGA 仅 3 例可用）。</p>
+
+    <h3>LC3 · IDH-H3 克隆分区共存 → 合作演化</h3>
+    <p><strong>第一性原理层</strong>："分区共存"的操作化四重正交（表达模块打分/单细胞 SNV/拟时序/mIHC 空间蛋白）——操作化完整；但"合作演化"（cooperative evolution）的操作化定义缺失——合作需要展示克隆间相互作用或适应度互补，本文只有空间隔开+轨迹不同。承重前提："空间分隔=各自独立演化且相互有利"——空间分隔同样符合"区域取样异质"或"时间先后叠加"的中性解释。</p>
+    <p><strong>演绎构建层</strong>：相关升级为演化范式发生在 Discussion："Our data establishes a bifurcated paradigm"——从快照共存到演化范式需要：①克隆时序（谁先获得突变：.single-cell SNV 可测但未报告时序分析）；②系统发育（CNV 共享分析缺失——尽管 scRNA 有 inferCNV 类信息）；③功能互作（共培养/条件培养基）。三者皆无。2-HG 扩散半径 <50 μm 为引用论据（用于论证"IDH 克隆的 2-HG 影响不到 H3 克隆"），方向上其实支持"分区"而非"合作"——用于支持合作的逻辑链条（IDH 克隆稳定前体池 → H3 克隆解锁增殖 → 物理分隔 permits synthetic viability）是嵌合不同机制的叙事组装。</p>
+    <p><strong>元认知审计层</strong>：确认偏倚风险——"挑战互斥教条"的高显示度叙事（Novel subtype + paradigm shift）可能压低了对替代解释（取样异质）的审查强度；正面因素：作者在摘要用 "suggesting" 限定、mIHC 共存验证诚实。结论最可能失败的条件：对更多 comut 肿瘤（n=2 → n≥10）做单细胞 SNV + CNV 系统发育，若克隆结构显示混合而非分区，或时序显示 H3 获得早于 IDH（同一细胞谱系先后事件），"合作演化"叙事即需重构。读者侧自查：本篇是本项目特刊方法的同构模板——学其证据链组织的同时，必须把其演化主张的证据缺口当作自己稿件的对照标准（我们的克隆演化措辞必须停在数据能支撑的层级）。</p>
+    <p><strong>统计实质</strong>：KM/log-rank/Cox 齐备；成对比较全报（好）；单细胞 SNV n=2、WES n=3、ChIP/IHC n=4 亚型；SCNA/scModule 多重比较无校正声明；代码不公开（可复现性缺口）。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-02</span><br>从分区共存到"合作演化"的范式跃迁</td>
+          <td>Abstract（"suggesting cooperative rather than exclusive evolution"）; Discussion（"establishes a bifurcated paradigm"、"synthetic viability"、"Darwinian ecosystem"）</td>
+          <td>空间分区共存 + 轨迹分歧 ≠ 合作性演化：无克隆时序分析、无 CNV 系统发育重建、无克隆间功能互作证据；2-HG 扩散限值（&lt;50 μm）为文献移植论据；摘要 suggesting 限定与 Discussion 未限定的 "establishes" 之间主张强度不一致（换证据类型——系统发育/功能互作——才能修复 → ERR-02）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03d</span><br>克隆证据骨架小样本</td>
+          <td>Figure 5D（单细胞 SNV n=2 comut 肿瘤）; Figure 5G（WES n=3）; GBM_G34 亚型 n=4</td>
+          <td>"mutually exclusive cellular partitioning" 的单细胞分辨率证据来自 2 例 comut 肿瘤；WES VAF 3 例（其一 Methyl27 IDV/H3 VAF 几乎相等 0.226/0.202，与分区叙事张力未讨论）；GBM_G34 亚型的全部特征性结论（剪接体高甲基化、H3K27ac 最高、PARP 合成致死推理）由 4 例支撑</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>scModule 验证不透明 + 代码未公开</td>
+          <td>Methods（scModule）; S031（Data Availability）</td>
+          <td>自研算法 scModule 的阈值验证称"using known genotype-annotated datasets"但未指明数据集、阈值选择流程与假阳性率；全部分析代码 "available upon request" 无公开仓库——分型+基因型判定两大计算支柱的可复现性依赖作者响应</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>Cox 缺年龄与切除程度</td>
+          <td>Figure 5B（多变量 Cox：Gender/Radio/Chemo/TTF/H3K27me3/IDH/H3F3A）</td>
+          <td>IDH 生存获益（HR=0.149）的混杂控制未纳入年龄（comut 可能更年轻，其自述队列中位 36 岁双峰分布）与切除程度（26.9% 全切）两大经典预后因子；效应量大（近 7 倍）故方向大概率稳健，但严谨性缺口真实</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>选样富集偏倚未明示</td>
+          <td>Results 1（49 "representative samples"）; comut 占比 22.4% vs 5.6%</td>
+          <td>49/375 的选样标准仅"新鲜组织可及性与质量"，comut 在甲基化子样本中的占比为全队列 4 倍——稀有亚型的 deliberate enrichment 合理但未说明；亚型频率、G-CIMP 分布等外推需以此为条件</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04c</span><br>聚类质量度量的空间口径</td>
+          <td>Methods（DNA Methylation Profiling and Subtype Classification）</td>
+          <td>DBSCAN 聚类于全基因组 β 值空间，但轮廓系数在 2D t-SNE 空间用欧氏距离计算——t-SNE 的局部结构放大簇分离，最优 k=4 的稳健性评估与聚类输入空间不一致；未提供原始空间稳定性检验（如 bootstrap consensus）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：标题级主张（甲基化揭示含 IDH 突变的新亚型）由分型+验证+生存三层独立支撑；"合作演化"仅是摘要末句的解释级主张，降为"分区化共存"后标题不受影响。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>迄今最大 H3 改变队列（375 例）+ 首个系统性甲基化四分型 + 首次单细胞分辨的 IDH-H3 空间分区证据；IDH-H3 共现在 CGGA 先例（ref 17）基础上扩展</td></tr>
+        <tr><td>证据广度</td><td><strong>A</strong></td><td>EPIC 49 + scRNA 12（128,284 细胞）+ ChIP 4 + WES 3 + mIHC + TCGA/CGGA 交叉 + 三层正交验证（甲基化/染色质/蛋白）</td></tr>
+        <tr><td>因果封闭性</td><td><strong>B</strong></td><td>分型主张闭环好；"合作演化"主张缺时序/系统发育/功能互作三要素——演化因果不封闭</td></tr>
+        <tr><td>反例排除</td><td><strong>B</strong></td><td>排除倍性负荷差异（copykat）、校验 DKFZ 一致性；未排除年龄/切除混杂、取样异质的共存解释</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B</strong></td><td>DBSCAN 网格+多队列交叉是亮点；silhouette 空间口径、scModule 验证不透明、代码未公开</td></tr>
+        <tr><td>外部效度</td><td><strong>B+</strong></td><td>TCGA/CGGA 交叉验证方向一致；但 comut 频率跨队列差异近 20 倍（5.6%/0.3%/2.1%）未讨论；单中心队列（华山）</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-a-minus">A−</span></strong> —— 主机制（甲基化分型+多组学正交）强且外部验证完整，距 A 差三件事：克隆演化主张的系统发育/时序证据、comut 亚组年龄与切除程度调整后的生存稳健性、代码公开与 scModule 验证细节。本项目按承重文献使用：分型框架与证据链组织正面引用；"合作演化"引到 "compartmentalized coexistence" 层级并标注作者的解释跃迁。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-02</span> <span class="sev sev-p1">P1</span>）：根因：共存→合作演化缺时序/系统发育/互作。动作：①对 scRNA 推断 CNV 做系统发育重建（如 inferCNV+SCITE 类），确定 IDH 与 H3 突变的获得顺序；②报告 21 例 comut 的突变时序统计（IDH-first vs H3-first vs 同步）；③ Discussion 将 "establishes a bifurcated paradigm / synthetic viability" 降为与摘要一致的 suggesting 级。效果：演化主张获得时序骨架，主张强度与证据对齐。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-03d</span> <span class="sev sev-p1">P1</span>）：根因：单细胞 SNV n=2、WES n=3、G34 n=4。动作：①单细胞 SNV 扩至全部 21 例 comut（靶 panel 成本可控）；②G34 亚型结论降级为探索性或合并样本复现；③VAF 分析按瘤报告并讨论 Methyl27 的等 VAF 情形（同细胞共存 vs 拷贝数校正混淆）。效果：演化与亚型主张的样本骨架恢复。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p2">P2</span>）：动作：公开代码仓库（GitHub/Zenodo DOI）；Methods 补 scModule 验证数据集身份、阈值确定流程与错误率。效果：两大计算支柱可复现。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：Cox 补年龄（连续+分段）与切除程度敏感性分析，报告 HR 稳健性。效果：IDH 获益主张免疫混杂质疑。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p2">P2</span>）：动作：Methods 明示 49 例选样标准与亚型富集策略，亚型频率外推加权重或加脚注。效果：消除代表性歧义。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-04c</span> <span class="sev sev-p2">P2</span>）：动作：在原始 β 空间重算轮廓系数/bootstrapping 稳定性，或在 t-SNE 空间陈述口径限制。效果：k=4 的稳健性评估口径一致。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · 甲基化四亚型</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">H3-altered gliomas resolve into four DNA methylation-defined subtypes (silhouette-optimized DBSCAN; n = 49) that map onto DKFZ methylation classes / the four subtypes show distinct anatomical distributions and overall survival (log-rank P = .001)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">GBM_G34 as a robust subtype（n = 4，需限定 exploratory）；DMG_K27M survival difference（P = .065 trend only）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">methylation taxonomy "revolutionizes clinical management"（无前瞻验证）；the four subtypes are prognostic markers independent of clinical covariates（亚型间生存未做 Cox 调整比较）</span></div>
+    </div>
+
+    <h3>LC2 · IDH/H3_comut 新亚型</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">the IDH/H3_comut subtype is characterized by global hypermethylation, G-CIMP-high status, NPC-like cell-state enrichment and improved survival (log-rank; adjusted HR 0.149, 95% CI 0.035–0.631, adjusted for gender/radio/chemo/TTF/H3K27me3/H3 type)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">IDH mutation confers survival benefit in H3-altered gliomas（需限定 retrospective, n = 20 IDH-mut, age/extent-of-resection not adjusted）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">IDH inhibitors should be deprioritized in IDH/H3_comut cases（Discussion 级推理，无临床/功能数据）；comut tumors are sensitive to decitabine（无药物实验）</span></div>
+    </div>
+
+    <h3>LC3 · IDH-H3 克隆分区共存 → 合作演化</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">within IDH/H3-comutant tumors, IDH1-R132H and H3F3A-K27M cells occupy spatially distinct compartments (single-cell targeted SNV sequencing and multiplex IHC; 2 tumors characterized at single-cell resolution) / the two mutant populations follow divergent pseudotime trajectories (proliferative vs synaptic maturation)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">IDH-H3 co-occurrence challenges mutual exclusivity（需限定 5.6% of a single-center cohort, 0.3% TCGA, 2.1% CGGA）；the two clones may evolve cooperatively（需保留作者原限定 suggesting / may，且注明无时序证据）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">IDH and H3 clones evolve cooperatively / synthetic viability is established（无时序/系统发育/功能互作证据）；2-HG signaling between clones is ruled out（扩散限值是文献推算非本文数据）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Fu et al. performed genome-wide methylation profiling on 49 H3-altered gliomas drawn from a 375-case clinical cohort and, using silhouette-optimized DBSCAN clustering, resolved four subtypes (GBM_RTK, IDH/H3_comut, GBM_G34, DMG_K27M) that mapped onto DKFZ methylation classes and differed in overall survival (log-rank P = .001). The novel IDH/H3_comut subtype — globally hypermethylated, G-CIMP-high and enriched for NPC-like tumor cells — showed improved survival that persisted after adjustment for clinical covariates (HR 0.149, 95% CI 0.035–0.631). In a subset of co-mutant tumors, single-cell targeted SNV sequencing and multiplex IHC revealed that IDH1-R132H and H3F3A-K27M cells occupy spatially distinct compartments with divergent pseudotime trajectories, leading the authors to suggest cooperative rather than mutually exclusive clonal evolution (Fu et al., Neuro-Oncol 2026).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ IDH and H3 clones evolve cooperatively within the same tumor（证据止于分区共存；合作演化是作者解释）</li>
+      <li>❌ Methylation profiling redefines WHO classification / should enter clinical practice（无前瞻验证）</li>
+      <li>❌ IDH/H3_comut tumors are sensitive to hypomethylating agents（推理级，无药物数据）</li>
+      <li>❌ IDH inhibitors are contraindicated in comut cases（Discussion 级战略讨论，非数据结论）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：Cancers 特刊克隆演化计算分析投稿 + 甲基化/多组学分型管线 + IHC 验证」为默认目标用途；用途改变时 M 等级需重评。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>GSA subHRA018175（EPIC 49 + scRNA 12 + ChIP 4 + WES 3，公开）— <strong>M2</strong>（可直接复算其 DBSCAN 分型与 scModule——其代码未公开，复算是验证其主张的唯一途径，也是我们方法学对比的数据源）｜S031</li>
+      <li>TCGA H3-altered 交叉集（12 例 EPIC+WES 匹配）— <strong>M3</strong>｜S015</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>DBSCAN + 轮廓系数网格搜索的分型稳健性框架</strong>（eps/minPts 双参数网格 → 最优 k）— <strong>M1</strong>（任何高维组学分型的聚类稳健性报告模板；注意其 silhouette 在 t-SNE 空间计算的口径缺陷，我们版本应在原始空间评估）｜S010</li>
+      <li><strong>scModule 单细胞基因型判定范式</strong>（bulk DEG 模块 → AddModuleScore → 阈值判定）— <strong>M2</strong>（可迁移为 AEBP1 状态的单细胞判定器：如 AEBP1-high 模块 vs AEBP1-low 模块的单细胞分区分析；必须补齐其缺失的验证透明度——指定验证集与错误率，此为其负面清单项）｜S013; S024</li>
+      <li><strong>同一肿瘤双克隆空间验证设计</strong>（单细胞 SNV + WES VAF + 双色 IF/mIHC 原位共定位 + 视野级定量）— <strong>M1</strong>（我们 IHC 队列若做克隆/状态分区验证的直接模板；其 n=2 的教训：样本量先行）｜S024–S025; F005D-I</li>
+      <li><strong>DKFZ 分类器对标 + Sankey 对齐图</strong>（自研分型 ↔ 既有标准分类的一致性呈现）— <strong>M2</strong>（任何新分型主张的"对标既有分类"报告范式）｜S015; F001D/F001F</li>
+      <li>Neftel 四态 + copykat + Monocle2 双轨迹 + cNMF meta-module 管线 — <strong>M2</strong>（标准组合，参数照其 Methods 可复刻）｜S011–S012; S020–S021</li>
+    </ul>
+
+    <h3>实验资产</h3>
+    <ul>
+      <li>抗体组合：H3K27M ab190631（1:400）、IDH1 R132H MA5-44585（1:400）、H3K27me3 CST9733、H3K27ac CST8173、TOP2A/AQP4/DLL1（Abclonal）— <strong>M2</strong>（其 mIHC 面板设计可参考；与我们 AEBP1 IHC 面板叠加可行）｜S007</li>
+      <li>FFPE scRNA 工作流（SeekGene 随机引物单核法，双去交联双反转录）— <strong>M3</strong>（FFPE 单细胞是 IHC 配对样本的潜在延伸，平台依赖）｜S006</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li><strong>「数据级措辞 vs 解释级措辞」分层的活教材</strong>：摘要 "suggesting cooperative" vs Discussion "establishes a bifurcated paradigm" — <strong>M1</strong>（R1 纪律的正面+反面双标本：我们稿件中克隆演化措辞必须停在 compartmentalized coexistence 数据层级；审稿应对时可用此例说明为何我们要保守）｜S001 vs S029</li>
+      <li>四层正交验证组织（分型→机制→状态→空间）— <strong>M1</strong>｜全文</li>
+      <li>反"互斥教条"的叙事开场（challenge the long-held paradigm + 三空白列举）— <strong>M2</strong>｜S003; S029</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>空间分区共存 → "cooperative evolution / synthetic viability"（无时序/系统发育/互作）→ 我们的克隆演化措辞必须停在数据层级（R1 纪律核心案例）｜S029</li>
+      <li>关键演化证据 n=2（单细胞 SNV）→ 克隆主张的样本量底线｜F005D</li>
+      <li>VAF 证据与叙事张力未讨论（Methyl27 等值 VAF）→ 每个病例的数据都要回对主叙事｜F005G</li>
+      <li>代码 "available upon request" → 自研算法必须公开仓库（我们的管线代码按此标准）｜S031</li>
+      <li>Cox 缺年龄/切除程度 → 生存获益主张的协变量清单底线｜F005B</li>
+      <li>silhouette 在 t-SNE 空间计算 → 聚类质量度量口径与聚类输入一致｜S010</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1093/neuonc/noag054">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

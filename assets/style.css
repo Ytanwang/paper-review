@@ -128,6 +128,7 @@ h1 {
   line-height: 1.5;
 }
 
+.grade-a-minus { background: #fdf3d7; color: #8a6a00; }
 .grade-b { background: #eaf1fb; color: #2f5f9e; }
 .grade-b-plus { background: #e7f3ec; color: #1e7a4c; }
 

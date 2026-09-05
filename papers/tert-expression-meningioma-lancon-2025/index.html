@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · TERT 表达-脑膜瘤多机构队列（Lancet Oncol 2025）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Gui et al., Lancet Oncology 2025 — 1241 例多机构脑膜瘤队列：TERT 表达常见（32.0%）而启动子突变罕见（2.9%）；表达者呈中间 PFS（介于 TERT 阴性与突变之间），独立于级别/CDKN2A/B/1p22q/THOR 甲基化（HR 1.85）；THOR 甲基化为互补重激活机制。总评级 A−：统计纪律范本，但'高一个级别'重分类主张基于非显著比较的相似性。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Analysis of TERT association with clinical outcome in meningiomas: a multi-institutional cohort study</h1>
+  <p class="subtitle">Gui C, Wang JZ, Patil V, …… <strong>Nassiri F, Zadeh G</strong>（共同监督）, ICOM. <em>Lancet Oncology</em>, 2025, 26: 1191–1203</p>
+  <p class="meta-line">
+    DOI: 见 <a href="https://www.thelancet.com/oncology">Lancet Oncology 26:1191-203</a> ·
+    审查深度：承重文献/审稿式精读（全流程） ·
+    总评级 <span class="badge grade-a-minus">A−</span> ·
+    <span class="sev sev-p1">P1 × 1</span> <span class="sev sev-p2">P2 × 4</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：Lancet Oncology · 肿瘤学 <strong>1 区 Top</strong> · IF ~50+（顶级肿瘤学期刊；口径：常识级顶刊，查询于 2026-09-05）。期刊光环偏倚提醒：不作为证据评级依据——本篇的高评级来自统计纪律与队列设计本身。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>生物标志物队列研究的统计纪律范本——双队列预设、两套多变量模型、Mahalanobis 匹配、Schoenfeld 检验、BH 校正、ns 亚组诚实报告，全套可直接迁移为生存建模的报告模板。</strong>最强资产：发现/验证双队列复现（中间表型：TERT− 16.0 年 → TERT+ 3.2 年 → TPM 1.6 年）+ 两套多变量 Cox（HR 1.85 与 1.60，第二套纳入全部现行公认标志物）+ 协变量匹配（118 vs 118）。一处 P1："TERT 表达者 PFS 与高一级别 TERT 阴性肿瘤相似"由非显著 log-rank（p=0.59/0.42）支撑，无正式等效性检验——由此推导的 WHO 重分类建议在统计逻辑上有缺口（P1）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（5 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程。双语全文证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，21 个正文块 + 2 图 + 3 表）。<strong>本项目负载</strong>：作为 TCGA/CGGA 生存建模的统计与报告纪律范本入选（方法可迁移性 T1）——双队列结构、协变量清单、匹配设计、报告规范均为我们稿件的方法学对照标准；预计引用于 Methods 设计依据与 Discussion 严谨性表述。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（独立预后标志物）</strong>：TERT 表达在脑膜瘤常见（32.0%）且独立于启动子突变、WHO 级别（3 级再分层）、CDKN2A/B、1p/22q 与 THOR 甲基化关联更短 PFS。</li>
+      <li><strong>LC2（中间表型 + 高一个级别）</strong>：TERT 表达赋予中间水平 PFS（介于 TERT 阴性与启动子突变之间）；按级别分层，表达者的 PFS 与高一级别的 TERT 阴性肿瘤相似——可能支持重分类。</li>
+      <li><strong>LC3（THOR 互补机制）</strong>：TERT 启动子 THOR 区甲基化与表达相关、随级别递增，是独立于启动子突变的互补重激活机制。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：既往 10 年文献聚焦罕见的 TERT 启动子突变（2.9%），表达本身（32%）从未在大规模多机构临床注解队列被系统研究——"表达比突变更有临床产出"是清晰的价值主张。增量：首个多机构 TERT 表达-结局研究 + THOR 区在脑膜瘤的首次表征 + 重分类提议。</li>
+      <li><strong>证据链位置</strong>：横断面表达测量 → 多层生存关联（级别内/匹配/多变量/亚组）→ 机制相关（THOR）。全程关联-预测层，因果明确悬置（作者自陈 bystander effect 未排除）。</li>
+      <li><strong>研究类型</strong>：research article（多机构回顾性队列 + 中央复核 + 外部验证）；发现 380（多伦多）+ 验证 861（8 机构）；Sanger + bulk RNA-seq + Infinium 甲基化阵列。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>："TERT expression predicted earlier disease progression, independent of …" 与数据匹配极好；"might warrant reclassification … to a higher WHO grade" 以 might 限定但依据的相似性检验统计上不正式。最可能发生证据错配的环节：从"级别内差异显著 + 跨级别比较非显著"推出"相当于高一个级别"——后者需要等效性检验框架。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：TERT 表达 = 独立预后标志物）</span>：1241 例双队列（S004/S008）→ 表达 32.0%、突变 2.9%、野生型表达 28.7%（S008/T001）→ 发现队列三组 PFS 分层（TERT− 16.0 y / TERT+ 3.2 y / TPM 1.6 y）（S009/F1B/T002）→ 验证队列复现（NR / 4.0 y / 3.2 y）（S009）→ 级别内 KM 均显著（S010/F1G）→ 协变量匹配 118 vs 118：3.9 vs 8.9 y（S011/F1H）→ 多变量 Cox 两套：HR 1.85 [1.33-2.57] 与 1.60 [1.05-2.43]；连续表达 HR 1.13/1.12（S012/F2A-B）→ 分子亚组 KM（增殖组显著；免疫/NF2-wt/高代谢 ns 诚实报告）（S013/T003）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">闭环优秀</span>——双队列 + 调整 + 匹配 + 亚组的四重验证结构完整。最薄弱环节：验证队列随访仅 3.3 年，长中位（NR）不可检验（见 ERR-04b）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：中间表型 → 高一个级别 → 重分类）</span>：表达随级别递增（χ²/Kruskal-Wallis p<0.0001）→ 野生型 3 级表达水平 ≈ TPM 组（p=0.13）（S010/F1E）→ 级别分层：1 级 TERT+ vs 2 级 TERT− p=0.59；2 级 TERT+ vs 3 级 TERT− p=0.42（S010/F1G）→ "TERT 表达可能支持上调一个级别"（S010/S017）→ Interpretation "might warrant reclassification"
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">统计逻辑缺口</span>——非显著比较（p=0.59/0.42）被解读为"相似"；无等效性/非劣效检验；且两组的样本量（尤其 3 级 TERT− n=17）不足以排除中等差异（见 ERR-03a）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：THOR 互补重激活机制）</span>：启动子甲基化与表达相关（除核心启动子；中位 r=0.247，p<0.0001）（S015）→ 脑膜瘤 vs 硬脑膜（9 例）中 THOR 差异甲基化最大（S015）→ 野生型表达者 THOR 高于突变者与阴性者；突变者 THOR 低（S015）→ THOR 随级别递增（野生型内）；2 级表达伴 THOR 升高 p=0.0033（S015）→ 高 THOR（β≥0.5）者表达更高 p<0.0001；硬脑膜全部低于阈值（S015）→ "启动子突变与启动子甲基化可能是 TERT 重激活的互补过程"（S002/S018）
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">相关级</span>——相关+梯度+对照齐全，但 THOR→表达的因果未验证（无干预/功能实验）；既往研究结论冲突被如实回顾（见 ERR 判定：谨慎使用）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · TERT 表达 = 独立预后标志物</h3>
+    <p><strong>第一性原理层</strong>：构念操作化完备——二分+连续双口径、双队列预设、两套多变量模型、Schoenfeld 假定检验。承重前提①："CPM=0 vs >0" 的二分定义能代表生物学表达状态——零阈值无噪声缓冲，RNA-seq 低表达噪声可能将微量表达计入"阳性"（连续口径部分补偿）。承重前提②：回顾性多机构数据的可比性——各机构临床实践、随访强度不一（发现 6.2 年 vs 验证 3.3 年）。</p>
+    <p><strong>演绎构建层</strong>：独立性主张由两套模型支撑：模型一调整级别（3 级按 TPM/CDKN2A/B 分层——聪明的设计，避免共线性）、1p/22q、THOR；模型二加入 Toronto 分子组。两套 HR（1.85/1.60）方向一致量级相近——稳健性好。匹配分析（Mahalanobis）提供非参数方向佐证。</p>
+    <p><strong>元认知审计层</strong>：选择偏倚（仅纳入有分子数据的样本）作者已承认并以多级别全覆盖设计缓解；未排除 bystander（作者诚实承认）。结论最可能失败的条件：前瞻队列中表达测量的批间变异；或延长随访后 TERT− 组中位 PFS 到达使 HR 估计移动。读者侧自查：本篇是我们的统计报告模板——注意其"主要结局预设定 + 两套模型 + 匹配"的组合在任何单中心数据上不可复制（需要多中心样本量），单中心可学的是其协变量清单与报告结构。</p>
+
+    <h3>LC2 · 中间表型 + 高一个级别</h3>
+    <p><strong>第一性原理层</strong>："中间表型"的操作化清楚（三组 KM + 成对比较）；"高一个级别"的操作化不正式——相似性由非显著 log-rank 断言，无 TOST/等效性边际。承重前提：非显著=可视为相似——在 n=336（1 级）尚可容忍，在 n=56（3 级 TPM 组 n=15）完全不可靠。</p>
+    <p><strong>演绎构建层</strong>：从相似到重分类建议发生在 Interpretation；作者全程用 might warrant 限定，且提供了"表达→增殖通路平行富集但程度较低"的生物学一致性佐证（GSEA）——这是把统计缺口部分补在生物学合理性上的典型做法，可借鉴但不可替代检验。</p>
+    <p><strong>元认知审计层</strong>：多重比较经 BH 校正（KM 与成对 Wilcoxon）；亚组 ns 全部如实报告（免疫/高代谢组不显著——被诚实呈现而非隐藏）。结论最可能失败的条件：3 级样本扩充后 TERT+ vs TPM 出现显著差异（破坏"同级"主张）；或等效性检验显示 TERT+ 与高一级 TERT− 有实质差异。</p>
+
+    <h3>LC3 · THOR 互补重激活机制</h3>
+    <p><strong>第一性原理层</strong>：THOR（cg11625005）以 β=0.5 二分——阈值来源未说明（其他癌症文献移植）；相关系数仅 0.247（弱）。承重前提："启动子甲基化 → 表达"的因果方向——横断面相关+硬脑膜对照+级别梯度，方向合理但未验证；既往脑膜瘤研究结论冲突被如实回顾。</p>
+    <p><strong>演绎构建层</strong>：突变者 THOR 低 + 表达高 → "突变与甲基化互补"的推理自洽；但存在第三解释（TPM 自身造成局部低甲基化探针信号，甲基化阵列在突变位点读数下降——技术性混杂）未讨论。</p>
+    <p><strong>元认知审计层</strong>：9 例硬脑膜对照是重要锚点；THOR 区在其他癌症的先例（引用 8, 24）增强先验合理。结论失败条件：焦磷酸测序/亚硫酸盐独立验证不复现 cg11625005 信号。</p>
+    <p><strong>统计实质</strong>：全套规范（Schoenfeld、BH、两套模型、匹配、事后分析明示 post hoc）；无事前样本量计算（回顾性，已说明）；GSEA FDR<0.25 宽松；未提供敏感度分析对二分阈值。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-03a</span><br>"相似=高一个级别"的等效性逻辑缺口</td>
+          <td>Findings/Results（p=0·59、p=0·42 的相似性表述）; Interpretation（"might warrant reclassification"）; Discussion</td>
+          <td>级别分层比较中非显著 log-rank（1 级 TERT+ vs 2 级 TERT− p=0·59；2 级 TERT+ vs 3 级 TERT− p=0·42）被解读为"PFS 相当于高一个级别"——无 TOST/等效性边际，非显著不等于等效；3 级亚组 n=56（TPM n=15）检验效力不足。缩小主张半径（"PFS 介于其间，重分类值得研究"）即可修复 → 03a</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>TERT 表达二分定义无阈值敏感性</td>
+          <td>Methods（Statistical analysis: "0 TERT counts per million = lack of expression"）</td>
+          <td>表达定义为 CPM&gt;0——零阈值对 RNA-seq 低计数噪声零缓冲，可能高估表达患病率（28.7% 的野生型表达率对阈值选择敏感）；连续口径（log₂ CPM HR 1.13）部分补偿，但作为 primary outcome 的二分定义未做阈值敏感性分析</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>验证队列随访不成熟</td>
+          <td>Table 1（验证队列中位随访 3·3 年 [1·3–3·8]）; Table 2（验证队列 TERT− 中位 NR）</td>
+          <td>验证队列中位随访 3.3 年 vs 发现队列 6.2 年：TERT 阴性组中位 PFS 在验证队列不可估计（NR），长尾结局的"复现"仅对中间-阴性对比成立；跨队列随访强度不均衡削弱复现声明的完备性</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04c</span><br>纳入时间窗内部不一致</td>
+          <td>Abstract 与 Findings（"Jan 1, 2000, and Dec 31, 2024"）vs Methods（"Jan 1, 2000, and Dec 31, 2020"）</td>
+          <td>手术切除时间窗两处口径相差 4 年（2020 vs 2024）——随访至 2024 合理，但入组窗不一致影响队列构成的可复现描述；照实保留并应更正</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>回顾性选择偏倚（作者已承认）</td>
+          <td>Methods（仅纳入有分子/临床数据者）; Discussion 局限</td>
+          <td>仅纳入具可用分子与临床数据的样本——固有选择偏倚；作者以多级别全覆盖设计缓解并明示需要前瞻验证；记录为已承认的残留限制而非未察觉缺陷</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：核心预后主张（独立关联）由四重验证结构支撑；重分类建议本就以 might 限定，降为"值得前瞻研究"后无碍。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>首个多机构 TERT 表达-结局系统研究；从"罕见突变"转向"常见表达"的价值重定向；THOR 区在脑膜瘤首报</td></tr>
+        <tr><td>证据广度</td><td><strong>A</strong></td><td>1241 例双队列 + 全部现行标志物（TPM/CDKN2A/B/1p22q/分子组/THOR）+ GSEA + 融合检测 + 硬脑膜对照</td></tr>
+        <tr><td>因果封闭性</td><td><strong>C+</strong></td><td>关联层研究（因果诚实悬置为 bystander 待定）；无功能实验——但其研究类型本不以因果为承诺</td></tr>
+        <tr><td>反例排除</td><td><strong>A−</strong></td><td>两套 Cox + 级别分层 + 匹配 + 分子亚组 KM 四重稳健性；THOR 与 TPM 互补机制的自洽检验；未做表达阈值敏感性</td></tr>
+        <tr><td>方法稳健性</td><td><strong>A−</strong></td><td>Schoenfeld/BH/两套模型/匹配全套规范；扣分项：零阈值二分、等效性逻辑、时间窗不一致</td></tr>
+        <tr><td>外部效度</td><td><strong>B+</strong></td><td>9 机构 3 国覆盖全部级别；验证队列随访不成熟限制长尾复现；脑膜瘤→胶质瘤的跨病种外推由读者自行判断</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-a-minus">A−</span></strong> —— 距 A 差两件事：表达阈值的预注册与敏感性分析、重分类主张的正式等效性检验（或前瞻分级验证）。作为承重文献使用：全套统计框架正面引用为方法模板；"高一个级别"引用时必须保留其探索性属性。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-03a</span> <span class="sev sev-p1">P1</span>）：根因：非显著比较支撑"相当于高一个级别"。动作：①对"表达者 vs 高一级阴性"做正式等效性检验（TOST，预定边际如 HR&lt;1.3）；②或改述为"PFS 介于其间，支持将 TERT 表达纳入分级评估的前瞻研究"；③在 3 级亚组补功效计算说明非显著结论的不可靠性。效果：重分类主张获得统计资格或降至合理半径。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p2">P2</span>）：动作：对二分定义做阈值敏感性分析（CPM&gt;0 / ≥1 / ≥5 / 分位数切点），报告各阈值下的 HR 与患病率。效果：表达患病率与 HR 对测量定义的稳健性可见。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：验证队列延长随访或以限定随访时间（如 3 年 PFS）对两队列做同口径复现。效果：复现声明在等成熟度下成立。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-04c</span> <span class="sev sev-p2">P2</span>）：动作：统一摘要/Methods/Findings 的入组时间窗表述。效果：队列描述一致性。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p2">P2</span>）：动作：报告"有分子数据 vs 无分子数据"患者的临床特征对比表，量化选择偏倚方向。效果：选择偏倚从定性承认升级为定量评估。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · TERT 表达 = 独立预后标志物</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">TERT expression was detected in 32·0% (193/604) of meningiomas, including 28·7% of wildtype-promoter tumours / TERT expression remained associated with shorter PFS after adjustment for WHO grade (grade 3 stratified by TPM/CDKN2A/B), 1p/22q status and THOR methylation (HR 1·85, 95% CI 1·33–2·57; continuous HR 1·13), and in a second model incorporating Toronto molecular groups (HR 1·60) / covariate-matched cohorts confirmed shorter PFS (3·9 vs 8·9 years, p=0·017)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">TERT expression should be considered in meningioma risk stratification models（作者 Implication 原句；需限定 retrospective, prospective validation pending）；TERT expression defines an intermediate aggressiveness tier（需限定 within this cohort; validation follow-up 3·3 years）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">TERT expression drives/causes meningioma progression（bystander effect 未排除，作者自陈）；TERT expression is a WHO grading criterion（无前瞻验证）</span></div>
+    </div>
+
+    <h3>LC2 · 中间表型 + 高一个级别 + 重分类</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">within each WHO grade, TERT-expressing wildtype-promoter tumours showed shorter PFS than their TERT-negative counterparts (all grades p≤0·0062) / TERT-expressing grade-1 and grade-2 tumours showed PFS that was statistically indistinguishable from TERT-negative tumours one grade higher in log-rank tests</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">TERT expression might warrant reclassification of expressing tumours to a higher grade（作者原句 might warrant；引用必须保留限定并注明等效性未正式检验）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">TERT-expressing grade-1 meningiomas are biologically grade-2 tumours（等效性未检验）；reclassification is supported by the data（只支持"值得研究"）</span></div>
+    </div>
+
+    <h3>LC3 · THOR 互补重激活机制</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">THOR (cg11625005) was the most differentially methylated TERT promoter region between meningiomas and dura controls / TERT promoter methylation correlated with TERT expression (median Pearson r=0·247, p&lt;0·0001) and showed a grade-dependent increase in wildtype-promoter tumours / TPM and THOR methylation appear complementary (TPM tumours show low THOR methylation; WT-expressing tumours high)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">THOR hypermethylation might be a mechanism of TERT reactivation（作者措辞 might；横断面相关，既往脑膜瘤研究结论冲突）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">THOR methylation causes/drives TERT expression（无因果设计）；THOR methylation is a validated clinical biomarker（单 CpG、阈值来源未预注册）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>In a multi-institutional cohort of 1241 resected meningiomas (discovery n=380; validation n=861), Gui et al. showed that TERT mRNA expression — detectable in 32·0% of tumours, far exceeding the 2·9% prevalence of TERT promoter mutations — was associated with shorter progression-free survival independent of WHO grade (with grade-3 tumours stratified by promoter mutation and CDKN2A/B status), chromosome 1p/22q and THOR promoter methylation (multivariable HR 1·85, 95% CI 1·33–2·57; confirmed with Toronto molecular groups in a second model, HR 1·60). TERT-expressing wildtype-promoter tumours showed an intermediate phenotype, with progression-free survival statistically indistinguishable from that of TERT-negative tumours one WHO grade higher, leading the authors to propose that reclassification of TERT-expressing meningiomas merits consideration (Gui et al., Lancet Oncol 2025).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ TERT-expressing meningiomas should be reclassified to a higher WHO grade（等效性未正式检验——只能引"值得考虑"）</li>
+      <li>❌ TERT expression drives aggressive biology（bystander 未排除）</li>
+      <li>❌ THOR methylation is a validated mechanism of TERT reactivation（相关级）</li>
+      <li>❌ Findings replicated in an independent cohort with long-term follow-up（验证队列随访 3.3 年，长尾未检验）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：TCGA/CGGA 生存建模 + Cancers 特刊投稿 + 09-11 一致性审计」为默认目标用途；用途改变时 M 等级需重评。</p>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>ICOM 多机构队列——<strong>M3</strong>（无公共 deposited；仅作设计参照）｜S004</li>
+      <li>RTOG-0539 试验样本（n=100）作为队列成分的先例 — <strong>M3</strong>（临床试验样本入观察队列的合法性参照）｜S004</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>发现/验证双队列结构 + 主要结局预设定</strong>（两个 primary outcomes 明确写在 Methods）— <strong>M1</strong>（我们 TCGA/CGGA 管线的报告模板：发现-验证分工与结局预设的写法直接照搬）｜S004; S006</li>
+      <li><strong>两套多变量模型策略</strong>（模型一：级别+分子标志；模型二：以 Toronto 分子组替换级别——含 3 级按 TPM/CDKN2A/B 分层处理共线性）— <strong>M1</strong>（我们 AEBP1 Cox 的稳健性检验结构：IDH/MGMT 分层 + 分子组替换的敏感性分析范式）｜S007; S012; F002B</li>
+      <li><strong>Mahalanobis 协变量匹配</strong>（118 vs 118，10 个协变量）— <strong>M2</strong>（多变量 Cox 之外的非参数佐证；MatchIt 包可直接实现）｜S007; S011; F001H</li>
+      <li><strong>Schoenfeld 残差比例风险检验 + BH 校正 + post hoc 明示惯例</strong> — <strong>M1</strong>（我们所有生存分析的质控三件套）｜S007</li>
+      <li><strong>亚组 KM 的 ns 诚实报告</strong>（免疫/NF2-wt/高代谢组 P=0.24/0.20/0.77 全部呈现）— <strong>M1</strong>（R2 纪律的正面教材：弱效应亚组不隐藏）｜S013; T003</li>
+      <li>THOR 单 CpG 二分 + 硬脑膜对照 — <strong>M3</strong>（设计可参考；脑膜瘤特有）｜S015</li>
+    </ul>
+
+    <h3>实验资产</h3>
+    <ul>
+      <li>无湿实验——纯临床分子队列研究。</li>
+    </ul>
+
+    <h3>表达资产</h3>
+    <ul>
+      <li><strong>"Research in context" 三段式</strong>（Evidence before / Added value / Implications）— <strong>M1</strong>（Lancet 系列的定位写作框架：我们 Cancers 投稿的 cover letter 与 Introduction 收尾可直接套用其逻辑）｜S002</li>
+      <li><strong>"可能支持重分类"的有边界表述法</strong>（might warrant consideration + 局限段明示需前瞻验证）— <strong>M1</strong>（我们提出任何分级/分类建议时的措辞上限）｜S017; S021</li>
+      <li>Table 2 的分层 PFS 全景表（每组：n/事件/中位 PFS/三类 p 值脚注体系）— <strong>M1</strong>（生存表格的报告范式）｜T002</li>
+      <li>ns 亚组不隐藏 + GSEA 程度差异呼应临床中间性（富集弱→侵袭性弱）— <strong>M2</strong>（统计与生物学互证的写法）｜S013–S014</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>非显著比较当作"相似"（p=0.59/0.42 → 高一个级别）→ 等效性主张必须有等效性检验；我们稿件中任何"相当/相似"结论需 TOST 或明确降级（R2 纪律直接相关）｜S010</li>
+      <li>零阈值二分（CPM>0 即阳性）作为 primary outcome → 二分化的阈值必须预注册并做敏感性分析｜S007</li>
+      <li>摘要与 Methods 的入组时间窗不一致（2024 vs 2020）→ 投稿前全文数字一致性审计（与我们的 09-11 审计同型）｜S001; S004</li>
+      <li>验证队列随访不成熟即称 replicated → 复现声明的随访成熟度条件｜T001–T002</li>
+      <li>GSEA FDR<0.25 宽松阈值未解释 → 多重校正口径的明示底线｜S014</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://www.thelancet.com/oncology">期刊页</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
