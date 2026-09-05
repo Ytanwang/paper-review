@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · 肿瘤外泌体 ENPP1-cGAMP-STING（Adv Sci 2024）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：An et al., Advanced Science 2024 — 多瘤系外泌体携带并富集 ENPP1（表面定位），水解游离与 LL-37 结合型 cGAMP；外泌体对 cGAS-STING 呈双重调控（递送协助正调 + ENPP1 水解负调，Disparity A/B 定量）；人体组织外泌体 ENPP1 高于癌旁、与 CD8/CD4 浸润负相关。总评级 A−：概念增量与对照意识好，P1 在摘要因果动词过载（无干预验证、全文无体内），P2 集中在 n=2 动力学、外泌体 vs 膜 ENPP1 未解耦与小样本回归。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Tumor Exosomal ENPP1 Hydrolyzes cGAMP to Inhibit cGAS-STING Signaling</h1>
+  <p class="subtitle">An Y（一作）, …… Wu L, <strong>Yang C</strong>（杨朝勇）, <strong>Ji T</strong>（季天海，通讯）等 13 人. <em>Advanced Science</em>, 2024, 11(20): 2308131</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1002/advs.202308131">10.1002/advs.202308131</a> ·
+    审查深度：审稿式精读（全流程；Experimental Section 未逐段双化） ·
+    总评级 <span class="badge grade-a-minus">A−</span> ·
+    <span class="sev sev-p1">P1 × 1</span> <span class="sev sev-p2">P2 × 5</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>14.1</strong>（条目 extra 记录）· JCR <strong>Q1</strong> · 中科院 <strong>综合性期刊 1 区 Top</strong>（化学/材料/纳米 1 区）· 查询于 2026-09-05。期刊光环偏倚提醒：不作为证据评级依据。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>ENPP1-STING 轴的"第二形态"论文——把 ENPP1 从肿瘤膜表面扩展到外泌体载体，并用 Disparity A/B 框架首次定量了外泌体的双重调控（协助递送 cGAMP 的正调 vs 表面 ENPP1 水解的负调，随浓度转换方向）；工具切换的对照意识（ENPP1-IN-1 因影响 STING 被换为 STF-1623、GW4869 失败的透明报告）是同类论文少有的好范例。</strong>一处 P1：摘要级"exosomal ENPP1 <strong>inhibited</strong> the immune infiltration of CD8⁺/CD4⁺ T cells"为因果动词——全文无任何体内/干预实验，人体证据为 n=5–7 数据点的小样本回归（R² 0.81–0.95 但无 p 值/混杂校正），"浸润受抑"应为"与浸润负相关"。与 Ruiz 2025 STTT（本队列已审）构成 ENPP1-STING 轴的互证对。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：审稿式精读 → 全流程。双语证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，10 个正文块 + 5 图）。<strong>本项目负载</strong>：高分文献队列 P3（Adv Sci 14.1 / 1 区 Top）；用户 remark = 机制。负载三处：①与 Ruiz 2025 STTT 构成 <strong>ENPP1-STING 轴互证对</strong>（抑制剂端放免协同 × 外泌体端免疫逃逸）——STING 逃逸叙事的双端引用组合；②"外泌体 marker⁺ × T 细胞浸润负相关"的分析与 AEBP1-免疫浸润叙事同构（其小样本回归正是我们 TCGA 大队列+纯度校正的对照面/增量空间）；③Disparity A/B 双向效应分离框架与工具切换对照意识为方法资产。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（身份与酶活）</strong>：多瘤系外泌体普遍携带 ENPP1（表面定位、丰度高于母细胞），并能水解游离与 LL-37 结合型 2′3′-cGAMP。</li>
+      <li><strong>LC2（功能与双重调控）</strong>：外泌体 ENPP1 水解 cGAMP 抑制免疫细胞 cGAS-STING；外泌体同时可协助 cGAMP 递送增强 STING——双重调控随浓度方向转换；LL-37-cGAMP 仅受抑制。</li>
+      <li><strong>LC3（人体关联）</strong>：人乳腺癌/肺癌组织外泌体 ENPP1 高于配对癌旁，且与 CD8⁺/CD4⁺ T 细胞浸润密度负相关。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：膜表面 ENPP1 水解胞外 cGAMP 已确立（ref 5/16/17/18；RBS2418 已入 Phase I）——本文增量：①ENPP1 的外泌体载体形态（非癌种特异地普遍携带且富集）；②外泌体对 cGAMP 的<b>双重角色</b>（此前文献只报抑制/递送单侧）；③LL-37-cGAMP 转运复合物同样被水解（堵住"转运肽增强 STING"策略的外泌体侧漏洞）；④组织外泌体层面的人体验证。</li>
+      <li><strong>证据链位置</strong>：分析化学式机制论文的标准链——鉴定（WB/免疫金/流式）→ 酶活（竞争 ELISA 动力学）→ 功能（报告基因 + 双重调控定量）→ 内源（共培养旁分泌）→ 人源（组织外泌体 + IHC 相关）。</li>
+      <li><strong>研究类型</strong>：research article（机制+分析化学）；7 人瘤系 + 4 鼠瘤系外泌体；THP1-Lucia ISG/RAW-Lucia ISG 报告系统；7+6 例人体组织配对外泌体。<strong>无体内实验</strong>。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：体外主张（LC1/LC2）与数据匹配度高；人体主张（LC3）的动词强度超出数据（相关性被表述为"inhibited"——P1）。最可能发生证据错配的环节：①"inhibited immune infiltration"（干预缺位）；②"tumor exosomal ENPP1 definitely plays a crucial role"（外泌体 vs 膜 ENPP1 相对贡献未解耦，作者同段自陈 open question）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：外泌体 ENPP1 身份与 cGAMP 水解）</span>：差速离心外泌体 + TEM/NTA 表征（~135 nm）（S003/F1A-B）→ 7 人瘤系 + 4 鼠瘤系 WB：外泌体 ENPP1 丰度 &gt; 母细胞（同蛋白量）（S003/F1C; Supp F1A-B）→ 免疫金电镜 + 流式：ENPP1 表面定位（S003/F1D-E）→ 竞争 ELISA 动力学：高 ENPP1 EXOs 4 h 近完全水解 cGAMP；ENPP1-IN-1 阻断；GM 对照无影响（<b>n=2</b>）（S003/F1G）→ LL-37-cGAMP 同被水解（TAT 阴性对照）（<b>n=2</b>）（S003/F1H）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">身份-酶活闭环（体外）</span>——富集+表面定位+抑制剂敏感三证齐备；薄弱环节：动力学 n=2（ERR-04a）；外泌体纯度依赖差速离心（ERR-04c）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：双重调控与旁分泌抑制）</span>：THP1-Lucia ISG 报告：A375 EXOs 协助 cGAMP 增强 ISRE（正调）；+STF-1623 后进一步升高 → 水解负调的存在（S004/F2B）→ 工具链：ENPP1-IN-1 因直接影响 STING 被换为 STF-1623；ADP/脂质体阴性对照（S004/F2B; Supp F2C-G）→ <b>Disparity A/B 定量</b>：低浓度净负调（水解主导）→ 高浓度净正调（递送主导），浓度依赖方向转换（S004/F2C-D）→ A549/MDA-MB-231 复现；SW480（ENPP1 低）抑制不明显；LLC-1/RAW 鼠源复现（S004/F2E; Supp F2H）→ ENPP1-OE EXOs 抑制更强（S004/F2F）→ LL-37-cGAMP：纯抑制无协助（浓度无关）；ENPP1-eGFP EXOs × Cy3-LL-37-cGAMP × CD9 共定位（S005/F3A-D）→ 内源 cGAMP 共培养（HT-DNA THP-1→旁感受）：双重调控 + OE EXOs 抑制率 22.0% vs WT 12.4%；胞外 cGAMP ELISA 直接验证；STING-IN-2 依赖（S006/F4B-E）→ ENPP1-KD 肿瘤细胞复现；GW4869 失败透明报告（直接影响 STING）；顺铂+STF-1623 协同（A549 阴性如实呈现）（S006/F4F-G; Supp F4）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">体外功能闭环 + 概念增量</span>——双重调控的分离定量（Disparity A/B）为本文最有价值的概念输出；薄弱环节：外泌体 vs 膜 ENPP1 相对贡献未解耦（GW4869 失败后无替代，作者自陈 open question，ERR-04b）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3：人体组织外泌体与浸润关联）</span>：5 癌种 IHC：ENPP1 阴性/肿瘤优势/间质优势三模式（S007; Supp F5A）→ 组织外泌体（7 乳腺癌 + 6 肺癌，配对癌旁）：肿瘤 &gt; 癌旁（WB+CD9 归一）（S007/F5A-B）→ 组织外泌体均降解 cGAMP（STF-1623 可阻断）（S007/F5C-D）→ ENPP1 总量与外泌体 ENPP1 均与 CD8⁺/CD4⁺ 浸润负相关：<b>R²=0.95/0.84（乳腺）、0.91/0.81（肺）；每回归 5–7 点、无 p 值/混杂校正</b>（S007/F5E-H）→ TCGA 与文献旁证（Supp F5D-E）
+      <br>闭环状态：<span class="state state-overload" style="background:#fff8e1;color:#b26a00">相关性闭环 / 因果外推缺口</span>——配对癌旁设计与 R² 报告好于同类；但因果动词（inhibited）缺干预支撑（ERR-03b）、回归统计单薄（ERR-05a）、无体内层衔接（ERR-03c）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · 外泌体 ENPP1 身份与酶活</h3>
+    <p><strong>第一性原理层</strong>：操作化依赖差速离心获得的外泌体代表 TME 中的 sEV 群体——120,000 g 沉淀同时含小 EV 与蛋白聚集体/脂蛋白，ENPP1"富集于外泌体"的归属可能部分来自非囊泡组分；免疫金电镜与流式确认了囊泡表面 ENPP1 的存在（正向证据充分），但"外泌体是主要水解载体"的定量归属未做（无密度梯度/SEC 纯度交叉验证）。承重前提：培养细胞外泌体模拟 TME 外泌体——组织外泌体实验（主链 C）部分补足。</p>
+    <p><strong>演绎构建层</strong>：酶活测定的对照设计到位（ENPP1-IN-1 特异阻断 + GM 无关抑制剂对照 + 热失活隐含于抑制对照）；组织外泌体保留"全部 ENPP1⁺ 样本均可降解 cGAMP 且可被 STF-1623 阻断"的功能验证——不止停留在丰度。</p>
+    <p><strong>元认知审计层</strong>：n=2 的动力学拟合（完整水解时点、抑制恢复程度）方差不可评估；结论失败条件：SEC 纯化后 ENPP1 活性随囊泡组分分离流失（则载体归属改变）。</p>
+
+    <h3>LC2 · 双重调控与旁分泌抑制</h3>
+    <p><strong>第一性原理层</strong>：双重调控的分离逻辑（Disparity A = cGAMP vs cGAMP+EXOs+STF-1623 之差=递送协助；Disparity B = EXOs+cGAMP ± STF-1623 之差=水解抑制）是该文最干净的概念贡献——同一处理体系中两个方向相反的效应被算术分离并展示浓度依赖的方向转换。承重前提：STF-1623 完全抑制外泌体 ENPP1 而无其他靶效应——作者用 ENPP1-IN-1 的 STING 干扰发现支撑了工具切换，但 STF-1623 自身的脱靶谱未测。</p>
+    <p><strong>演绎构建层</strong>：多系复现（3 高 ENPP1 系 + 1 低 ENPP1 系 + 鼠源）+ OE 梯度（剂量-响应方向正确）+ LL-37 型的"仅抑制"边界（与游离型对比清晰）+ 内源 cGAMP 共培养（旁分泌生理形态）+ 胞外 cGAMP 直接定量——功能层证据链完整。GW4869 失败的透明报告避免了"外泌体贡献"的虚假确认，但留下解耦缺口（无 Rab27a/b KO 等替代）。</p>
+    <p><strong>元认知审计层</strong>：报告细胞为单核细胞系（THP1）——T 细胞/ NK 的 STING 响应未测；"immune cells"的泛称下仅单核/巨噬谱系有直接证据。结论失败条件：Rab27a/b KO 抑制外泌体分泌后，ENPP1 抑制剂的增敏效应消失（则外泌体 ENPP1 为主要载体）；或不变（则膜 ENPP1 主导，外泌体为次要）。</p>
+
+    <h3>LC3 · 人体组织外泌体与浸润关联</h3>
+    <p><strong>第一性原理层</strong>：关联主张的前提是"外泌体 ENPP1 水平→STING 抑制→T 细胞排斥"的因果链在体内成立——本文只有链的两端（体外酶活+功能 / 人体相关性），中段的体内干预完全缺位；配对癌旁设计控制了个体内背景，但 n=7+6 且每条回归 5–7 点，R² 0.81–0.95 在此 n 下置信区间极宽。</p>
+    <p><strong>演绎构建层</strong>：IHC 计数（5 随机视野/单位面积）+ WB 相对定量（% of control）+ 两种 T 细胞亚群平行——呈现规范；TCGA/文献旁证（ENPP1-免疫负相关、预后）为外部一致性证据。</p>
+    <p><strong>元认知审计层</strong>：混杂未校正（肿瘤分期/总 ENPP1/间质成分——ENPP1 间质优势模式的存在恰恰提示外泌体可能源于基质）；回归无 p 值/CI；因果动词（inhibited）超出数据。结论失败条件：配对扩样+混杂校正后相关性消失或反号。</p>
+    <p><strong>统计实质</strong>：报告细胞实验 n=4（部分 n=18）、水解动力学 <b>n=2</b>、人体回归 n=5–7/模型；ANOVA/t 检验注明；图上报告 R² 但无 p/CI；无随机化问题（无体内）；数据无公共库存入（upon request）。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-03b</span><br>摘要因果动词过载（浸润"inhibited"无干预支撑）</td>
+          <td>Abstract（"tumor exosomal ENPP1 <b>inhibited</b> the immune infiltration of CD8+ T cells and CD4+ T cells"）; Figure 5G-H（n=5–7 点回归，R² 0.81–0.95，无 p 值）</td>
+          <td>"抑制浸润"为因果动词，但全文无任何体内/干预实验（外泌体 ENPP1 阻断→浸润恢复从未被检验），人体证据为 13 例组织的小样本负相关；机制链止于报告细胞的 STING 读出，链中段（STING↓→T 细胞排斥）为文献外推——正确表述为"与浸润负相关"（降动词可修复，属 ERR-03 表述层）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>关键水解动力学 n=2</td>
+          <td>Figure 1G-H（"n = 2 independent experiments"）; Figure 5C-D（组织外泌体水解同样 n=2）</td>
+          <td>核心酶活动力学（4 h 近完全水解的时点、抑制剂恢复幅度）与组织外泌体功能验证均只 2 次独立实验——曲线形态与"完全水解"结论的方差不可评估；报告基因实验（n=4）与共培养（n=6-18）正常，唯独酶活层样本量最薄</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>外泌体 vs 膜 ENPP1 贡献未解耦</td>
+          <td>Discussion（"it is still an open question whether tumor cellular ENPP1 or tumor exosomal ENPP1 has a bigger role"）; Figure S4E（GW4869 因直接影响 STING 不可用）</td>
+          <td>唯一的外泌体消耗工具（GW4869）失败后未尝试替代方案（Rab27a/b 敲除、ER-ShRNA 阻断释放等）——外泌体 ENPP1 与膜 ENPP1 对 TME cGAMP 水解的相对贡献无定量分离；"外泌体 definitely plays a crucial role"的语气与自陈 open question 并存</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>临床回归统计单薄</td>
+          <td>Figure 5G-H（每回归 5–7 点；R² 无 p 值/CI）; Figure 5E-F（IHC 5 随机视野计数）</td>
+          <td>人体核心关联（外泌体 ENPP1×CD8/CD4 浸润）每条回归仅 5–7 数据点、无显著性检验/置信区间、无混杂校正（分期/总 ENPP1/间质成分——ENPP1 间质优势模式的存在本身提示外泌体可能部分源于基质）；x 轴为相对定量（% of control）非绝对浓度</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03c</span><br>无体内实验——逃逸框架止于体外+相关性</td>
+          <td>全文（无动物实验节）; Discussion（"the specific role of tumor-derived exosomes in combination therapy requires further study"；远程系统调节为推测）</td>
+          <td>"肿瘤免疫逃逸"框架的中段验证（体内阻断外泌体 ENPP1→STING 恢复→浸润/预后改变）缺位；外泌体长半衰期/远程转运的系统免疫调节为讨论层推测；与已入临床的 ENPP1 抑制剂叙事衔接时缺体内桥</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04c</span><br>外泌体制备与纯度边界</td>
+          <td>Experimental Section（差速离心 120,000 g；组织源经胶原酶/DNase 消化）; Figure 1A-B（TEM/NTA 表征）</td>
+          <td>未用 SEC/密度梯度交叉纯化——120,000 g 沉淀含非囊泡组分，ENPP1"富集于外泌体"的归属可能被高估；组织外泌体的胶原酶消化可能引入消化伪影与基质来源混杂；外泌体阴性标记物（calnexin/GM130 等）系统报告缺位（仅 CD9/表征三件套）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：标题级主张（外泌体 ENPP1 水解 cGAMP 抑制 cGAS-STING）的体外链条（身份→酶活→报告基因功能→STING 依赖）闭合；P1 降动词后（"与浸润负相关"）标题不受影响。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A−</strong></td><td>ENPP1 外泌体载体形态 + 双重调控的分离定量（Disparity A/B）为概念增量；膜 ENPP1-cGAMP 基座为既有文献（ref 5/16-18）</td></tr>
+        <tr><td>证据广度</td><td><strong>B+</strong></td><td>11 瘤系外泌体 + 双报告细胞系 + LL-37/游离/内源三形态底物 + 13 例人体组织配对外泌体；<b>无体内实验</b>为最大缺口</td></tr>
+        <tr><td>因果封闭性</td><td><strong>B+</strong></td><td>体外链（身份→酶活→功能→STING 依赖）闭合；TME 链中段（STING↓→浸润排斥）无干预验证；外泌体 vs 膜 ENPP1 未解耦</td></tr>
+        <tr><td>反例排除</td><td><strong>A−</strong></td><td>工具切换（ENPP1-IN-1→STF-1623）、ADP/脂质体/TAT/GM 阴性对照、ENPP1-KD/OE 双向梯度、STING-IN-2 依赖、GW4869 失败透明报告——对照意识为同类高配；缺 SEC 纯度交叉</td></tr>
+        <tr><td>方法稳健性</td><td><strong>B</strong></td><td>报告基因/共培养 n=4-18 正常；水解动力学 n=2、人体回归 5-7 点无 p 值；Disparity A/B 框架逻辑清晰；数据无公共库存入</td></tr>
+        <tr><td>外部效度</td><td><strong>B</strong></td><td>人体组织配对设计好但 n 小、未校正混杂；"非癌种特异"基于培养细胞系；远程系统调节为推测；胶质瘤（U251）仅呈现在 Fig 1C 未延伸</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-a-minus">A−</span></strong> —— 距 A 差三件事：任一模型的体内干预实验（外泌体 ENPP1 阻断→STING/浸润恢复）、外泌体 vs 膜 ENPP1 的解耦（Rab27a/b KO）、扩样+校正后的临床回归（p 值/CI）。作为承重文献使用：体外机制链与双重调控框架可整体引用；人体部分一律降为"负相关"；与 Ruiz 2025 配对引用时注意两文均无 GBM 体内数据。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-03b</span> <span class="sev sev-p1">P1</span>）：根因：因果动词缺干预支撑。动作：①短期：摘要/正文动词降级为 "inversely correlated with"；②长期：肿瘤模型中外泌体 ENPP1 阻断（STF-1623 ± Rab27a 过表达外泌体）检测 CD8/CD4 浸润与生长。效果：表述对齐或因果闭合。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p2">P2</span>）：动作：水解动力学扩至 n≥3 并报告拟合参数（k_obs/半衰期）±SD。效果：酶活结论的方差可见。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：Rab27a/b KO 或 CMI 路线阻断外泌体释放后比较 ENPP1 抑制剂的增敏幅度。效果：外泌体 vs 膜贡献的定量分离。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p2">P2</span>）：动作：扩样（≥20/癌种）+ 报告 Pearson r/p 值与 CI + 校正分期/总 ENPP1；外泌体 ENPP1 绝对定量（如指环免疫/邻近连接）。效果：临床关联达到可引用强度。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-03c</span> <span class="sev sev-p2">P2</span>）：动作：同源移植瘤模型验证外泌体 ENPP1 的体内角色（至少一组）。效果：逃逸框架获得体内桥。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-04c</span> <span class="sev sev-p2">P2</span>）：动作：SEC/密度梯度交叉纯化 + 阴性标记物免疫印迹（calnexin/GM130）+ 单囊泡表征。效果：载体归属稳固。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · 外泌体 ENPP1 身份与酶活</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">exosomes from diverse human and murine tumor cell lines carry ENPP1 enriched relative to maternal cells, with surface-localized ENPP1 (immunogold EM, flow cytometry) / tumor exosomal ENPP1 hydrolyzes extracellular 2′3′-cGAMP and LL-37-bound cGAMP, blocked by the ENPP1 inhibitor STF-1623 / tissue-derived exosomes from breast and lung cancers degrade cGAMP in an inhibitor-sensitive manner</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">exosomal ENPP1 is the dominant cGAMP hydrolase in the TME（外泌体 vs 膜贡献未解耦——作者自陈 open question）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">ENPP1 is the only cGAMP hydrolase（"only detectable"为领域快照）；exosomal ENPP1 is cancer-specific（多瘤系普遍——作者自己反对）</span></div>
+    </div>
+
+    <h3>LC2 · 双重调控与旁分泌抑制</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">tumor-derived exosomes exhibit dual regulation of cGAS-STING: they assist free 2′3′-cGAMP to enhance STING activation in reporter cells while exosomal ENPP1 hydrolyzes it, with the net effect switching from inhibition to enhancement at higher exosome concentrations (Disparity A/B) / LL-37-cGAMP responses are only inhibited (no assistance) / exosomal ENPP1 hydrolyzes endogenous cGAMP in bystander-cell co-culture (ENPP1-OE exosomes: 22.0% vs 12.4% inhibition), dependent on host STING</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">exosomes contain unidentified cGAMP transporters（作者假说未鉴定）；dual regulation generalizes to primary immune cells（仅单核/巨噬谱系报告细胞验证）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">exosomal ENPP1 blockade restores antitumor immunity in vivo（无体内数据）；the combination of chemotherapy and ENPP1 inhibitors is validated（仅体外报告基因协同）</span></div>
+    </div>
+
+    <h3>LC3 · 人体关联</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">exosomal ENPP1 levels are higher in tumor than paired paracancer tissue exosomes (7 breast, 6 lung cancers) / tumor exosomal ENPP1 levels inversely correlate with CD8⁺ and CD4⁺ T-cell infiltration densities (R² 0.81–0.95, n=5–7 per regression) / TCGA and prior reports associate ENPP1 with immune exclusion and poor prognosis</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">exosomal ENPP1 drives immune exclusion（相关性——引用时须降为 associated/inversely correlated）；ENPP1⁺ exosomes originate from tumor cells（间质优势模式提示基质来源可能）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">exosomal ENPP1 inhibits T-cell infiltration（因果动词——P1）；exosomal ENPP1 is a validated prognostic biomarker（无生存建模，仅 TCGA 旁证）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>An et al. showed that exosomes secreted by diverse human and murine tumor cells carry surface ENPP1 enriched relative to parental cells, and that these exosomes hydrolyze extracellular 2′3′-cGAMP — both free and bound to the transporter peptide LL-37 — thereby dampening cGAS-STING activation in reporter immune cells; notably, tumor-derived exosomes exhibited dual regulation, assisting free cGAMP delivery at high concentrations while exosomal ENPP1 hydrolyzed it (quantified by a disparity-based framework). In paired human tissue samples, exosomal ENPP1 was enriched in breast and lung tumors relative to paracancer tissue and inversely correlated with CD8⁺/CD4⁺ T-cell infiltration (An et al., Adv Sci 2024).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ exosomal ENPP1 inhibits T-cell infiltration（因果动词，无干预）</li>
+      <li>❌ ENPP1 inhibitors work by blocking exosomal ENPP1（外泌体 vs 膜贡献未解耦）</li>
+      <li>❌ exosomal ENPP1 is a prognostic marker（无生存建模）</li>
+      <li>❌ exosome-assisted cGAMP delivery enhances immunotherapy in patients（体外报告基因证据）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：Cancers 特刊 + 纯度/CNA + IHC + 免疫叙事」为默认目标用途；用途改变时 M 等级需重评。本文与 Ruiz 2025 构成 ENPP1-STING 轴互证对——双端引用组合。</p>
+
+    <h3>叙事接口（ENPP1-STING 互证对——本篇的核心负载）</h3>
+    <ul>
+      <li><strong>ENPP1-STING 轴双端引用组合</strong>：Ruiz 2025 STTT（抑制剂端：ENPP1 阻断+IR 增敏、STING-TBK1 激活、CD8 依赖清除）× 本文（载体端：外泌体 ENPP1 水解 cGAMP 介导逃逸）— <strong>M1</strong>（<strong>Cancers 特刊稿件免疫逃逸段的成对引用</strong>：两文互为机制补全；GBM 语境下与 Bakhoum 谱系共引）｜本文全文 × Ruiz S005-S007</li>
+      <li><strong>"外泌体 marker⁺ × T 细胞浸润负相关"分析同构</strong>— <strong>M1</strong>（其 n=5-7 回归无校正 → 我们 TCGA 大队列 + 纯度/分期校正 + 生存建模即构成方法学增量；写 Discussion 时可作对照面）｜S007; F5G-H</li>
+      <li>state-marker 叙事接口：外泌体长半衰期/远程转运 → 循环信号反映肿瘤-宿主生态通讯而非纯肿瘤固有 — <strong>M2</strong>（AEBP1 非"肿瘤固有标记"定位的又一旁证文献）｜S008</li>
+      <li>U251 胶质瘤外泌体 ENPP1⁺（仅鉴定未延伸）— <strong>M2</strong>（GBM 语境的直接缺口：ENPP1⁺ 外泌体在 GBM TME 的角色可作未来方向/审稿人预答）｜S003; F1C</li>
+    </ul>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>Disparity A/B 双向效应分离框架</strong>（同一体系算术分离方向相反的两个效应）— <strong>M1</strong>（"同一信号多向效应"的定量思路——AEBP1 生态位分析中"肿瘤自主 vs 基质贡献"分离可类比；通用性高）｜S004; F2C-D</li>
+      <li><strong>工具切换的对照意识范本</strong>（ENPP1-IN-1 被发现影响 STING → 换 STF-1623；GW4869 失败透明报告）— <strong>M1</strong>（审稿人预答姿势：工具的通路特异性必须先验证）｜S004; S006</li>
+      <li>报告细胞共培养旁分泌体系（cGAMP 生产细胞 + ISRE 报告旁感受细胞）— <strong>M2</strong>（细胞间通讯的功能学读出）｜S006; F4A</li>
+      <li>组织外泌体配对癌旁设计（7+6 例）— <strong>M2</strong>（配对对照思想好、样本量是反例）｜S007</li>
+    </ul>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>7+6 例乳腺癌/肺癌组织外泌体 WB + IHC — <strong>M3</strong>（数据 upon request、无公共库存入；引用其结论即可）｜S007</li>
+      <li>TCGA ENPP1-免疫关联旁证（Supp F5D）— <strong>M3</strong>（我们自己可复算并加纯度校正——增量点）｜Supp</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>摘要因果动词（inhibited）配相关性数据 → marker-浸润关联一律用 associated/inversely correlated，因果须配干预（P1 活案例）｜Abstract</li>
+      <li>关键动力学 n=2 → 酶活/动力学实验 n≥3 且报告拟合参数｜F1G-H; F5C-D</li>
+      <li>工具失败后止步 → 换替代方案（Rab27a/b）完成解耦而非留下 open question｜S006</li>
+      <li>回归无 p/CI/校正 → 临床关联至少报告统计检验与主要混杂（我们 TCGA 分析的标准已高于此）｜F5G-H</li>
+      <li>数据仅 upon request → 我们稿件承诺代码/中间数据可得性（对照其缺口）｜S010</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-05</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1002/advs.202308131">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
