@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · TrkB 突触靶向瘤腔 siRNA 水凝胶（Nat Biomed Eng 2026）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Li et al., Nature Biomedical Engineering 2026 — 人 GBM 瘤-脑界面突触生态位定义（IF+公共 snRNA+CGGA ssGSEA）→ TrkB/NTRK2 靶点 → 三重响应瘤腔 siRNA 水凝胶（pH 降解/cRGD 靶向/GSH 释放）→ GL261 中位生存 32→67 天 + 4 亚型 PDX 获益 + entrectinib 头对头胜出 → patch-seq 突触解耦 + 行为学保护 + 放化联合（三联 63 天，消除放疗促侵袭）。总评级 A−：从人标本空间靶点到放化联合的全链条 + 随机化/盲法/数据/代码四公开范本；缺口在关键定量 n=3、亚型-电生理不平行、行为学归因解耦不完全。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Targeting tumour–neuron synapses with intracavitary RNA delivery prevents glioblastoma recurrence</h1>
+  <p class="subtitle">Li Z, Hao Z-Z, Zhang Y, Xu N（共同一作 4 人）, …… He Z, Liu S, Guo H, <strong>Mou Y</strong>（牟永高，通讯）等 20 人. <em>Nature Biomedical Engineering</em>, 2026（在线 08-25）</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1038/s41551-026-01757-w">10.1038/s41551-026-01757-w</a> ·
+    审查深度：审稿式精读（全流程；Methods 通读未逐段双化） ·
+    总评级 <span class="badge grade-a-minus">A−</span> ·
+    <span class="sev sev-p1">P1 × 1</span> <span class="sev sev-p2">P2 × 5</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>26.3</strong>（条目 extra 记录）· JCR <strong>Q1</strong> · 中科院 <strong>医学 1 区 Top</strong> · 查询于 2026-09-07。期刊光环偏倚提醒：不作为证据评级依据。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>癌症神经科学×生物材料的全链条范本——从人 en-bloc 标本的空间靶点发现（瘤-脑界面恶性突触生态位 + NTRK2 富集），到三重响应瘤腔 siRNA 水凝胶（pH 降解/cRGD 靶向/GSH 释放），到五对照链的体内疗效（GL261 中位生存 32→67 天、>30% 长期存活；4 亚型 PDX 全获益；entrectinib 头对头：瘤负荷相似但生存 53 vs 28.5 天且无脱靶），到 patch-seq 突触解耦 + 盲法行为学 + 放化联合（三联 63 天 + 消除放疗促侵袭）。</strong>随机化、盲法、patch-seq 数据（E-MTAB-17027）与代码（GitHub+Zenodo）四公开，是本队列已审 20 篇中执行纪律的最好样本。一处 P1：关键纵向瘤负荷定量（Fig 7c）仅 n=3/组，低于其自身生存终点（n=7）与他文标准，"联合优于单药"的疗效排序部分建立在最小重复上。G0927（经典型）电生理无变化但生存获益的不平行未解释（P2）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：审稿式精读 → 全流程。双语证据包见论文目录（<code>paper.md</code> / <code>source_map.json</code>，13 个正文块 + 7 图 + 1 表；Fig5/6 跨页拼接）。<strong>本项目负载</strong>：高分文献队列外新增（用户点名；NBME 26.3/医学1区Top）——与 AEBP1-GBM 项目<strong>同病种同叙事域</strong>，负载四处：①<strong>"瘤-脑界面 = 空间定义的生态位 = 复发源头 = 状态依赖靶区"</strong>的组织逻辑与 AEBP1 界面/间质 state-marker 叙事直接同构；②CGGA ssGSEA 分层分析（TrkB 高低 × 通路富集）——我们 TCGA/CGGA 分析可直接复刻的方法模板；③patch-seq 电生理-转录偶联的"功能-分子"双读出范式；④病灶-症状映射（SCCAN）的人层空间验证框架。</p>
+    <p><strong>承重主张</strong>（拆掉任何一条，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（靶点层）</strong>：人 GBM 的恶性突触结构（Syn1⁺/PSD95⁺ 共定位）与突触基因程序空间富集于瘤-脑界面，且界面瘤细胞 NTRK2/TrkB 高表达（人 IF + 公共 snRNA + CGGA 三源汇聚）。</li>
+      <li><strong>LC2（制剂-疗效层）</strong>：三重响应瘤腔水凝胶（HPAC-siNTRK2@Gel）在术后瘤腔局部沉默残余瘤细胞 TrkB，五对照链下抑制复发并延长生存（GL261 67 vs 32 天；4 亚型 PDX 一致），优于系统 entrectinib 且无其脱靶。</li>
+      <li><strong>LC3（机制层）</strong>：局部 TrkB 沉默降低瘤细胞兴奋性突触输入（sEPSC 幅度/频率）并解耦突触基因程序-电活动关联（patch-seq），界面突触标志空间互嵌减少。</li>
+      <li><strong>LC4（功能-联合层）</strong>：治疗缓解瘤相关焦虑/记忆缺陷（质量效应匹配+盲法）；与放疗协同（消除放疗促侵袭、三联生存最优）。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题与增量</strong>：恶性突触驱动 GBM 进展已确立（Venkatesh/Venkataramani 2019 双 Nature），但系统抑制突触信号神经毒性不可接受（AMPA 拮抗/Trk 抑制剂的剂量限制毒性）；瘤-脑界面的电耦合优势已有临床前报道——本文增量三层：①<strong>人标本层的空间-分子定义</strong>（en-bloc 四区域 IF + snRNA + CGGA 三源汇聚把"界面突触生态位"从模型推到患者，并锁定 NTRK2）；②<strong>空间受限的治疗形态</strong>（首个靶向恶性突触的瘤腔局部疗法——Gliadel 晶片无肿瘤特异性的对照定位）；③<strong>功能层闭环</strong>（认知/情绪获益 + 放疗促侵袭消解——把"神经保护"从安全性指标升格为疗效终点）。</li>
+      <li><strong>证据链位置</strong>：转化医学全纵队——人标本空间表型 → 公共数据分子验证 → 队列 ssGSEA → 材料设计（靶向逻辑逐条对应微环境特征）→ 体外表征 → 同源模型五对照 → 4 亚型 PDX → 临床药头对头 → 电生理-转录机制 → 人行为学映射+鼠行为学 → 放化联合。</li>
+      <li><strong>研究类型</strong>：research article（材料+机制+行为）；人 en-bloc 标本 n=6 + lesion-symptom 队列 n=16（含 WHO III 级）+ GL261（C57BL/6）+ 4 株 PDX（NSG）+ patch-seq（12 鼠 71 细胞）。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：摘要主张与数据匹配度高且自我节制（"prevents recurrence"限于临床前语境）。最可能发生证据错配的环节：①Fig 7c 瘤负荷 n=3 支撑的联合疗效排序（ERR-04a）；②G0927 电生理阴性但生存获益——"pervasive vulnerability"的口径在经典型上缺电生理平行（ERR-05a）；③行为学获益的归因（作者已自陈解耦不完全）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（LC1：界面突触生态位 + NTRK2 靶点）</span>：en-bloc 标本（n=6，病理医师 H&E 划界）四区域多重 IF → Syn1/PSD95 强度与共定位点在瘤-脑界面 &gt; 坏死核心（点数 &lt; 远皮层但点大小相当）（S003/F1a-f）→ 浸润缘对照（Syn1/PSD95 反而低于瘤实质与远皮层——Supp F3 边界诚实）→ 公共 snRNA（Wang 2024，RM01–RM04）：PTB 瘤细胞上调突触结构/钙通道/谷氨酸受体 + NTRK2（S003/F1g）→ CGGA ssGSEA：TrkB 高表达组一致富集三类突触程序（NLGN3/TSP1/CHRM3/AMPAR 分层中 TrkB 层最稳）（S003; Ext Data 1）→ 85% 复发邻瘤腔的文献事实 → 靶区-靶点锁定（S003/F1h-i 设计示意）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">三源汇聚闭环（关联层）</span>——人 IF（结构）+ snRNA（分子）+ CGGA（队列）证据方向一致；"界面点数低于远皮层"的如实报告反而强化"肿瘤相关突触≠生理突触"的区分。最薄弱环节：snRNA 为公共数据 4 例（RM01–RM04）非本文新鲜本；NTRK2 界面表达未在本文标本蛋白层直接验证（IF 组套无 TrkB）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（LC2：制剂 → 体内疗效 → 头对头）</span>：HPAA（二硫键超支化）→ PEG → cRGD = HPAC（NMR/DLS ~150 nm/zeta/GPC-GSH 降解/凝胶阻滞 20:1）（S004/F2a-g）→ 毒性 &lt; PEI-25k；转染（含血清）&gt; HPAA/LNP/PEI；siNTRK2×3 变体敲低 TrkB/pTrkB/pERK（S004/F2h-n）→ 患者原代 GBM 摄取/解离 vs 星形胶质细胞阴性（S004/F2o-p; Ext Data 2）→ OHA/CMC 希夫碱凝胶：10 s 成胶/可注/自愈/剪切变薄/pH 6.0–6.9 降解（S005/F3）→ 围腔神经炎症不加重（GFAP/IBA-1，3/7/28 天）（S005/F3m-o）→ MRI 引导 GL261 切除 + 瘤腔给药 6 组（随机化，n=10 生存）：HPAC-siNTRK2@Gel 67 天 vs PBS 32 天，>30% &gt;90 天；五对照全部劣于全配置（去靶向 HPAA-siNTRK2@Gel / 游离 HPAC-siNTRK2 / 空 Gel / Negsi@Gel）（S006/F4a-d）→ MRI 体积 + TUNEL↑ + Ki67↓（S006/F4e-j）→ 4 亚型 PDX（G0147/GSC2/G0927/GSC1203）生存全延长（S006/F4k-m; Ext Data 6）→ <b>头对头 entrectinib</b>（120 mg/kg×15 天）：瘤负荷相似、生存 53 vs 28.5 天、对侧皮层 TrkB 下调+肝酶+运动协调损伤（Gel 组无）（S006; Ext Data 9）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">配置归因闭环</span>——五对照链把"凝胶驻留/cRGD 靶向/siRNA 序列"三个配置要素逐一解耦；entrectinib 头对头同时提供了临床药对照与"局部优于系统"的机制诠释。最薄弱环节：Fig 7c 类型的纵向 BLI 定量 n=3（见 ERR-04a）；GSC 各亚型单一模型（作者自陈）。
+    </div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（LC3+LC4：突触解耦 + 行为保护 + 放化联合）</span>：GL261 恶性突触先行验证（evoked EPSC + 超结构 + 界面 pTrkB 富集）（Ext Data 7）→ patch-seq（12 鼠 71 细胞/37 RNA）：治疗组 sEPSC 幅度/频率双降 + NTRK2/突触基因同步下调 + PBS 组电-基因正相关被治疗解耦（S007/F5a-j）→ 亚型：G0147 频率降/幅度升；GSC2 双降；<b>G0927 无变化</b>；GSC1203 仅频率（S007/F5k-n; Ext Data 8）→ 界面 IF 空间互嵌减少（S007/F5o-p）→ 人层：16 例 lesion-symptom mapping（SCCAN）——MoCA/HAMD 体素优先在外周瘤区（S008/F6a-e）→ 鼠行为学（盲法 + MRI 功能损伤体积组间匹配）：OFT/EPM 焦虑↓（仅全配置）、FST/TST 无差、Y-maze/MWM 记忆↑、运动无差（S008/F6f-r）→ G0147 PDX 8 组放化联合：三联 63 天最优（G7 TMZ+RT 40；G6 RT+Gel 47）；TMZ+Gel≈Gel（无叠加）诚实报告；<b>RT 促侵袭（脱落簇↑）被 Gel 消除</b>；Ki67/cCasp3 重叠↑；界面突触标志共降（S009/F7）→ G0927 复现 RT+Gel &gt; RT（Supp F9）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">机制-功能-联合三层闭环</span>——patch-seq 的电-基因双读出与解耦设计、行为学的质量效应匹配+盲法、放疗协同的侵袭读出，配置均高于领域惯例。最薄弱环节：行为学获益的瘤负荷/神经保护归因未完全解耦（作者自陈）；TMZ 无叠加无解释；RT 协同的微管假说未直接验证。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · 界面突触生态位与 NTRK2</h3>
+    <p><strong>第一性原理层</strong>：操作化以"Syn1⁺/PSD95⁺ 共定位点"代理突触样结构——超结构（Ext Data 7g 电镜）在鼠模型补位但人标本无电镜级验证；"putative excitatory synapses"的自我限定准确。承重前提：界面 Nestin⁺ 细胞与突触标志的空间邻近代表功能性肿瘤-神经元突触——人层止于空间共定位，功能证据全在鼠模型（Venkatesh 谱系先例+本文 Ext Data 7 承接）。</p>
+    <p><strong>演绎构建层</strong>：三源汇聚（IF/snRNA/CGGA）的靶点选择逻辑规范——空间（界面）+分子（NTRK2）+药理可行性（TrkB 已知可抑）三重过滤；CGGA 的五基因分层（TrkB/NLGN3/TSP1/CHRM3/AMPAR）中 TrkB 效应最一致，为选择提供队列级理由而非单纯文献引用。</p>
+    <p><strong>元认知审计层</strong>：snRNA 仅 4 例（RM01–RM04）且为公共数据——分子层样本量小但与本文 IF 标本（n=6）+CGGA（数百例）互补；结论失败条件：独立队列界面 NTRK2 不富集，或 TrkB 高表达与突触程序的相关为混杂（未做纯度/细胞组成校正——单细胞层面混杂小，但 CGGA bulk 层未校正）。</p>
+
+    <h3>LC2 · 制剂-疗效-头对头</h3>
+    <p><strong>第一性原理层</strong>：三重响应各自对应微环境特征（酸性 pH/αvβ3/胞内 GSH）——设计-环境映射清晰；αvβ3 在残余 GBM 细胞的表达为文献引用（本文未在模型中原位验证，P2 小缺口）。疗效主张的操作化（五对照链）把制剂三要素逐一归因，是本队列已审论文中最完整的配置消融。</p>
+    <p><strong>演绎构建层</strong>：entrectinib 头对头是转化论文少见的自我加压设计——瘤负荷相似（排除药效差）+ 生存差（局部驻留优势）+ 脱靶谱（对侧 TrkB/肝酶/运动）三层对比；120 mg/kg×15 天为临床相关剂量方案（(entrectinib 标准临床前剂量区间），但给药 15 天 vs 凝胶单次驻留的暴露时长不等价——生存差的解释混入"治疗时长"因素（P2）。</p>
+    <p><strong>元认知审计层</strong>：siRNA 序列脱靶未做全转录组级检查（WB 层 pERK 同降支持通路特异性；Negsi 对照排除非特异 siRNA 效应）；免疫激活（siRNA-TLR3/7）未测——但行为/炎症读出阴性间接缓解。结论失败条件：独立实验室 PDX 复现失败或 αvβ3 阴性瘤无效。</p>
+
+    <h3>LC3+LC4 · 突触解耦、行为保护、放化联合</h3>
+    <p><strong>第一性原理层</strong>：patch-seq 把"突触输入强度"（电生理）与"突触程序"（转录）在<strong>同一细胞</strong>内关联——PBS 组的正相关+治疗组解耦是"TrkB 沉默打断电-基因偶联"的最强单证据。承重前提：sEPSC 反映肿瘤-神经元突触而非网络间接效应——evoked 记录（Ext Data 7a-f）支持直接输入。G0927 电生理阴性与生存获益的不平行是"突触解耦介导疗效"的内部张力：TrkB 沉默可能经非突触途径（生存/侵袭）起效——作者以"亚型异质"收尾但未给出替代通路证据（ERR-05a）。</p>
+    <p><strong>演绎构建层</strong>：行为学的三重控制（盲法+质量效应匹配+运动/情绪阴性对照）是认知神经科学标准的严谨配置；人层 lesion-symptom mapping（外周瘤区→认知/情绪）与鼠层界面治疗→行为改善构成跨物种同构论证——但方向为"空间对应"而非"机制因果"。</p>
+    <p><strong>元认知审计层</strong>：放疗促侵袭被消除（F7e-f）是本研究最有转化冲击力的发现之一，其机制（微管网络预防）停留在假说层——未做 TM 电生理/钙成像直接验证；行为学获益与瘤控制的解耦作者诚实标注"remains challenging"。结论失败条件：G0927 类经典型人瘤中 TrkB 沉默无生存获益（则"pervasive vulnerability"收窄）。</p>
+    <p><strong>统计实质</strong>：随机化 ✓、盲法（行为/MRI/coded IDs）✓、样本量未预设+正态未检验（自陈）；GL261 生存 n=10/组、PDX n=7–12、行为 n=14–16、patch-seq 37 细胞（12 鼠）；Fig 7c 瘤负荷 <b>n=3</b>/组（P1 起点）；SCCAN n=16（P=0.05 边缘）；无动物排除+patch-seq QC 预设声明。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>编号</th><th>位置</th><th>根因</th><th>严重度</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="err-tag">ERR-04a</span><br>关键纵向瘤负荷定量 n=3/组</td>
+          <td>Figure 7c（"n = 3 biological replicates per group"，60 天观察）；对照 Figure 4 系列同类读出 n=3</td>
+          <td>联合治疗的核心排序证据（三联最优/RT+Gel&gt;单药/Gel≈TMZ+Gel）中，纵向 BLI 瘤负荷仅 3 生物学重复/组——低于自身生存终点（n=7）与领域标准（n≥5-8）；方差不可评估，组间时序曲线的差异显著性依赖 n=3 的 ANOVA；生存终点虽可靠但瘤负荷曲线是"放疗促侵袭被消除"等机制主张的定量基础（扩样可修复 → ERR-04）</td>
+          <td><span class="sev sev-p1">P1</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05a</span><br>经典型电生理阴性与生存获益不平行</td>
+          <td>Extended Data Fig. 8a,b（G0927 sEPSC 频率/幅度均无显著变化）；Fig. 4l（G0927 生存获益）；Discussion（"consistent therapeutic benefit...despite subtype-associated differences in electrophysiological responses"）</td>
+          <td>G0927（经典型）中 TrkB 沉默延长生存但突触输入无变化——"突触解耦介导疗效"的机制叙事在该亚型缺电生理平行；替代解释（TrkB 经非突触通路：生存/侵袭/转移）未被检验或讨论——"pervasive vulnerability"的口径吞掉了内部不一致（G0147 幅度反升同样未解释）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04b</span><br>entrectinib 头对头的暴露不对等</td>
+          <td>Extended Data Fig. 9（entrectinib 120 mg/kg 灌胃×15 天 vs 凝胶单次瘤腔给药）；Methods（Systemic entrectinib treatment）</td>
+          <td>局部 vs 系统的生存差（53 vs 28.5 天）混合了"给药方式"与"治疗暴露时长"两个变量——entrectinib 15 天停药后无维持，凝胶持续降解释放；瘤负荷相似但生存分化的解释（局部驻留优势）未被暴露匹配的给药设计（如 entrectinib 持续至终点）锁定；脱靶对比（对侧 TrkB/肝酶/运动）不受此影响</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-05b</span><br>行为学获益的归因解耦不完全（作者自陈）</td>
+          <td>Discussion（"fully disentangling tumour-dependent and tumour-independent contributions...remains challenging"）；Fig. 6f-r（功能损伤体积匹配在 d15，行为学终点后瘤进程仍可分化）</td>
+          <td>焦虑/记忆改善的质量效应匹配仅在行为学起始点（d15）——此后各组瘤负荷分化，行为学终点（Y-maze/MWM 在 d17-23）的组间瘤负荷差未被再评估；"神经保护独立于瘤控制"的主张受此时间窗限制（作者的诚实讨论缓解但未消除）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-03c</span><br>人层证据的样本与病谱边界</td>
+          <td>Fig. 1（n=6 en-bloc）；Table 1 + Fig. 6a-e（n=16，含 WHO III 级；SCCAN P=0.05）；Fig. 1g（公共 snRNA 4 例）</td>
+          <td>靶点发现的人标本仅 6 例（IF）+4 例（snRNA，公共）；lesion-symptom 队列 16 例含间变级（非纯 GBM）且 P=0.05 边缘、无多重比较校正声明；NTRK2 界面富集未在本文标本的蛋白层验证（IF 组套无 TrkB）——"人 GBM 界面 NTRK2 高表达"的证据密度低于后续全链条的其余环节</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+        <tr>
+          <td><span class="err-tag">ERR-04c</span><br>αvβ3 靶向假设与 siRNA 层验证缺口</td>
+          <td>Fig. 1i/Fig. 2（cRGD-αvβ3 依据文献 46/47）；Methods（siRNA 序列在 Supp Table 3）</td>
+          <td>cRGD 靶向以"GBM 细胞表达 αvβ3"的文献引用为前提——模型内 αvβ3 表达与 HPAC 结合的宿主细胞谱未原位刻画（仅 GL261 vs 星形胶质细胞的摄取二分）；siRNA 脱靶未做转录组级评估（pERK 通路读出+Negsi 对照部分缓解）；人 GSC 的 NTRK2 蛋白敲低仅间接（鼠 TrkB WB 为主）</td>
+          <td><span class="sev sev-p2">P2</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-faint)">严重度定义：P0 = 不修则标题级主张不能成立；P1 = 削弱关键链条但不推翻全文；P2 = 局部表述/透明度问题。本文无 P0：标题级主张（瘤腔 RNA 递送靶向突触预防复发）由五对照链体内疗效 + 4 亚型 PDX + patch-seq 机制 + entrectinib 头对头支撑；P1 修复（瘤负荷扩样）后疗效排序如保持，标题不变。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+
+    <h3>分维度评级</h3>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>维度</th><th>评级</th><th>判断</th></tr></thead>
+      <tbody>
+        <tr><td>新颖性</td><td><strong>A</strong></td><td>首个靶向恶性突触的瘤腔局部疗法（vs Gliadel 无特异性）；界面生态位的人标本三源定义；放疗促侵袭被突触阻断消解为新现象；行为保护升格为疗效终点</td></tr>
+        <tr><td>证据广度</td><td><strong>A</strong></td><td>人标本（IF/snRNA/CGGA/影像-行为映射）+ 材料全表征 + 同源五对照 + 4 亚型 PDX + 临床药头对头 + patch-seq + 盲法行为学 + 放化联合 8 组——已审 20 篇中最广</td></tr>
+        <tr><td>因果封闭性</td><td><strong>A−</strong></td><td>制剂配置逐一消融 + patch-seq 电-基因解耦 + STING 依赖式的机制链闭合；缺口：经典型电生理不平行、行为归因解耦、RT 协同为假说层</td></tr>
+        <tr><td>反例排除</td><td><strong>A−</strong></td><td>五对照链/星形胶质细胞阴性/LNP+PEI 双平台对照/entrectinib 脱靶谱/浸润缘反向对照/FST-TST 阴性对照——排除体系完备；缺 αvβ3 原位宿主谱与 siRNA 脱靶组级检查</td></tr>
+        <tr><td>方法稳健性</td><td><strong>A−</strong></td><td>随机化+盲法+数据/代码四公开（队列最佳执行纪律）；扣分：样本量未预设+正态未检验（自陈）、Fig 7c n=3、SCCAN n=16 边缘</td></tr>
+        <tr><td>外部效度</td><td><strong>B+</strong></td><td>4 亚型 PDX+免疫健全双平台；但各亚型单一模型（作者自陈）、雄鼠单一性别、CGGA 中国队列单源、"prevents recurrence"限于临床前</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p><strong>总评级：<span class="badge grade-a-minus">A−</span></strong> —— 距 A 差三件事：关键定量的样本量修正（Fig 7c 类 n=3 → ≥6-8）、亚型-机制不平行的研究性回应（经典型替代通路或电生理再评）、独立队列的界面 NTRK2/疗效复现。作为承重文献使用：空间靶点定义、五对照配置消融、patch-seq 解耦设计与放化联合结果可整体引用；"prevents recurrence"一律带临床前限定；经典型的电生理阴性须随引用披露。</p>
+
+    <h3>修复补丁（P1 → P2）</h3>
+    <ul>
+      <li><strong>补丁 #1</strong>（<span class="err-tag">ERR-04a</span> <span class="sev sev-p1">P1</span>）：根因：联合疗效排序的定量基础 n=3。动作：Fig 7c（及 Fig 4 系列同类）扩至 n≥6-8/组的纵向 BLI/MRI；或以混合效应模型重估现有+新增数据。效果：疗效排序的方差可见、主张稳固。</li>
+      <li><strong>补丁 #2</strong>（<span class="err-tag">ERR-05a</span> <span class="sev sev-p2">P2</span>）：动作：G0927 增补转录组/侵袭读出寻找非突介导通路（如 TrkB-PLCγ/侵袭基因）；或对经典型加做 evoked 突触输入与肿瘤微管网络定量，重评"突触依赖"边界。效果："pervasive vulnerability"获得机制分层而非口径统一。</li>
+      <li><strong>补丁 #3</strong>（<span class="err-tag">ERR-04b</span> <span class="sev sev-p2">P2</span>）：动作：entrectinib 持续给药至终点的平行臂（暴露匹配）；或报告两组瘤腔/血药暴露曲线。效果：生存差的"局部驻留"归因锁定。</li>
+      <li><strong>补丁 #4</strong>（<span class="err-tag">ERR-05b</span> <span class="sev sev-p2">P2</span>）：动作：行为学终点当日补 MRI 瘤负荷（回归控制）；或肿瘤-free 长期存活鼠的行为学（完全去瘤负荷层）。效果：神经保护-瘤控制的归因解耦完成。</li>
+      <li><strong>补丁 #5</strong>（<span class="err-tag">ERR-03c</span> <span class="sev sev-p2">P2</span>）：动作：扩大 en-bloc 队列（≥15-20）+ 本标本 NTRK2/TrkB 界面 IF；SCCAN 报告多重比较校正（FDR/置换检验）。效果：靶点层人证据密度对齐全文其余环节。</li>
+      <li><strong>补丁 #6</strong>（<span class="err-tag">ERR-04c</span> <span class="sev sev-p2">P2</span>）：动作：模型内 αvβ3 原位表达谱（IF/流式）与 HPAC 结合的细胞类型分辨率；人 GSC 的 NTRK2 敲低 WB 补充。效果：靶向前提与序列效应闭环。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+
+    <h3>LC1 · 界面突触生态位与靶点</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">synapse-like structures (Synapsin-1⁺/PSD95⁺ co-localized puncta) and synapse-associated gene programmes are enriched at the tumour–brain interface of human GBM specimens (n=6, en-bloc) / peritumoural-brain tumour cells in published snRNA data upregulate synapse, calcium-channel, glutamate-receptor genes and NTRK2 / CGGA high-TrkB tumours enrich synaptic programmes (ssGSEA)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">malignant synapses drive recurrence in patients（人层为空间关联，功能证据在鼠模型）；TrkB is THE synapse target at the interface（CGGA 分层中效应最一致但非唯一）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">interface synapses cause recurrence in patients（因果方向未在人层锁定）；NTRK2 expression is validated at the protein level in human interface tumour cells（本文 IF 组套未含 TrkB）</span></div>
+    </div>
+
+    <h3>LC2 · 制剂与体内疗效</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">intracavitary HPAC–siNTRK2@Gel suppressed postoperative tumour regrowth and prolonged survival across syngeneic and four subtype PDX models (GL261 median 67 vs 32 days, &gt;30% beyond 90 days; all five controls inferior) / in a head-to-head comparison, local gel outlived systemic entrectinib (53 vs 28.5 days) at comparable tumour burden, without contralateral TrkB reduction, liver-enzyme elevation or motor impairment / each configuration element (gel retention, cRGD targeting, siNTRK2 sequence) was required for full efficacy (five-arm decomposition)</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">superior to entrectinib（暴露时长不等等价——限定 at the tested regimens）；prevents recurrence（临床前限定 + n=3 瘤负荷曲线）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">prevents GBM recurrence in patients（无临床数据）；the hydrogel cures GBM（长期存活仅 GL261 部分动物）</span></div>
+    </div>
+
+    <h3>LC3+LC4 · 机制、行为、联合</h3>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">允许</span><span class="verb-body">patch-seq showed reduced sEPSC amplitude/frequency with concordant NTRK2 and synaptic-gene downregulation in recurrent tumour cells, and uncoupled the positive electro-transcriptomic correlation seen in controls / TrkB silencing alleviated tumour-associated anxiety-like behaviour and memory deficits without impairing locomotion (blinded, MRI-matched impairment volumes) / co-administration abrogated radiation-induced increases in detached tumour clusters and triple combination yielded the longest survival (63 days median) in a mesenchymal PDX</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">谨慎</span><span class="verb-body">synapse decoupling mediates the survival benefit（经典型电生理阴性——限定 in electrophysiologically responsive subtypes or via untested non-synaptic routes）；cognitive benefits are tumour-independent（归因解耦不完全，作者自陈）</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">禁用</span><span class="verb-body">TrkB silencing restores cognition independent of tumour control（未解耦）；the gel sensitizes GBM to radiotherapy via blocking tumour microtubes（微管机制为假说）；subtype-universal synaptic dependency（G0927 反例）</span></div>
+    </div>
+
+    <h3>推荐安全引用表述（可直接复制进稿件）</h3>
+    <blockquote>Li et al. defined a synapse-enriched niche at the tumour–brain interface of human glioblastoma (multiplex immunofluorescence of en-bloc specimens, published single-nucleus data and CGGA transcriptomics converging on elevated NTRK2/TrkB in peritumoural tumour cells), and targeted it with an intracavitary, triple-responsive hydrogel releasing siNTRK2 locally after resection. In syngeneic and four-subtype patient-derived orthotopic models, local TrkB silencing suppressed recurrence and extended survival (GL261 median 32→67 days, &gt;30% long-term survivors), outlasting systemic entrectinib at comparable tumour burden without its off-target profile. Patch-seq demonstrated reduced excitatory synaptic input with uncoupling of electro-transcriptomic correlation; blinded behavioural testing showed alleviated anxiety-like behaviour and memory deficits at matched lesion volumes, and radiotherapy combination abrogated radiation-associated invasive growth (Li et al., Nat Biomed Eng 2026).</blockquote>
+
+    <h3>禁用高风险表述</h3>
+    <ul>
+      <li>❌ intracavitary siRNA prevents GBM recurrence in patients（临床前）</li>
+      <li>❌ TrkB blockade is cognitively safe（发育/区域依赖风险为讨论层预测，长期数据缺）</li>
+      <li>❌ synaptic decoupling fully explains the survival benefit（经典型电生理阴性反例）</li>
+      <li>❌ the gel reverses radiotherapy resistance via tumour-microtube disruption（假说未直接验证）</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <p style="font-size:13.5px;color:var(--ink-faint)">M 等级以「AEBP1-GBM 课题：Cancers 特刊 + 纯度/CNA + IHC + 免疫叙事」为默认目标用途；用途改变时 M 等级需重评。本文同病种同叙事域（GBM 界面生态位），负载密度高。</p>
+
+    <h3>方法资产</h3>
+    <ul>
+      <li><strong>"空间分区 + 三源汇聚"的靶点发现框架</strong>（解剖学分区 IF → 公共 snRNA 区域对比 → 队列 ssGSEA 分层验证）— <strong>M1</strong>（<strong>直接迁移到 AEBP1</strong>：瘤-脑界面/间质界面的 AEBP1 空间富集 → 公共 snRNA 区域对比 → TCGA/CGGA ssGSEA 三步同构；我们已有 TCGA/CGGA 管线，只差"界面分区"的 IHC 叙事接口）｜S003; F1</li>
+      <li><strong>CGGA/TCGA ssGSEA 分层呈现</strong>（marker 高低 × 通路富集 violin + 多基因平行分层对比）— <strong>M1</strong>（AEBP1 高低分层的通路 ssGSEA 可直接照搬该呈现格式；其"未做纯度校正"是我们的增量空间——bulk 层混杂控制）｜S003; Ext Data 1</li>
+      <li><strong>五臂配置消融设计</strong>（全配置 vs 去靶向/去凝胶/换序列/游离）— <strong>M1</strong>（任何多组分干预的归因模板——我们的 IHC/计算模块组合主张可类比"配置缺一不可"的论证结构）｜S006; F4</li>
+      <li><strong>patch-seq 电生理-转录偶联 + 解耦分析</strong>（同细胞双模态+相关性解耦作为干预证据）— <strong>M2</strong>（若 AEBP1 走功能层验证的远期接口；"功能-分子偶联被干预解耦"的论证逻辑通用）｜S007; F5</li>
+      <li><strong>lesion-symptom mapping（SCCAN）</strong>（MNI 标准化 + 稀疏 CCA 关联行为评分）— <strong>M2</strong>（如我们有认知/症状数据可复用；亦是其 n=16 边界的教训样本）｜S008; F6a-e</li>
+      <li><strong>行为学三重控制</strong>（盲法 + 质量效应匹配 + 阴性对照行列）— <strong>M2</strong>（神经-肿瘤行为学标准配置，引用其设计规范）｜S008</li>
+      <li>头对头临床药对照（entrectinib）— <strong>M3</strong>（转化叙事的对照姿势参照）｜Ext Data 9</li>
+    </ul>
+
+    <h3>叙事接口（同病种直接入稿）</h3>
+    <ul>
+      <li><strong>"瘤-脑界面 = 空间定义的生态位 = 复发源头 = 状态依赖脆弱性"</strong>的组织逻辑 — <strong>M1</strong>（<strong>与 AEBP1 state-marker 叙事直接同构</strong>：界面/间质微环境定义细胞状态，state marker 富集于界面而非瘤核心——本文 Nestin⁺ 界面富集 + 我们 AEBP1 间质富集可并置引用；R2 纪律的正面支撑文献）｜S003; F1a-f</li>
+      <li><strong>癌症神经科学 × 空间异质性的引用节点</strong>（Venkatesh/Venkataramani 谱系 + 界面电耦合优势 + 85% 复发邻瘤腔）— <strong>M1</strong>（Cancers 特刊克隆进化计算分析稿件中"空间异质性/界面生态位"段落的最新高权重引用）｜S002-S003</li>
+      <li><strong>放疗促侵袭 + 微环境干预消解</strong>— <strong>M2</strong>（GBM 放疗语境的微环境互作叙事——克隆进化稿件讨论治疗压力选择时的引用支撑）｜S009; F7e-f</li>
+      <li>"系统抑制神经毒性 vs 空间受限调控"的取舍论证 — <strong>M2</strong>（靶向治疗叙事的通用权衡段模板）｜S002; S010</li>
+    </ul>
+
+    <h3>数据资产</h3>
+    <ul>
+      <li>E-MTAB-17027（patch-seq 原始数据）— <strong>M3</strong>（突触基因程序的独立再分析源；可提取 NTRK2⁺ 瘤细胞状态签名）｜S012</li>
+      <li>haozhaozhe/MM_Glioma_Gel（GitHub+Zenodo）— <strong>M3</strong>（ssGSEA/SCCAN 管线代码参照）｜S012</li>
+      <li>Wang 2024 Sci Adv snRNA（TC vs PTB）— <strong>M2</strong>（<strong>公共可下载——AEBP1 在 TC/PTB 区域的表达对比可直接在此数据集完成</strong>，与我们的界面叙事对接）｜S003</li>
+    </ul>
+
+    <h3>负面清单（明确不要学）</h3>
+    <ul>
+      <li>关键定量 n=3（Fig 7c）与自身生存 n=7 不匹配 → 主要疗效曲线的重复数对齐次要终点｜F7c</li>
+      <li>亚型不平行以口径统一收尾（"consistent benefit despite..."）→ 内部不一致需研究性回应或机制分层｜Ext Data 8</li>
+      <li>样本量未预设+正态未检验（自陈）→ 我们稿件预注册样本量逻辑并声明分布检验｜Methods</li>
+      <li>CGGA bulk 分层未控纯度/组成 → 我们 ssGSEA 分层配 CPE/ESTIMATE 调整（方法学增量点）｜Ext Data 1</li>
+      <li>lesion-symptom n=16 含 WHO III + P=0.05 无校正 → 人层关联的病谱与统计边界要写明｜Table 1; F6b</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>文献逻辑审查 · v2.1 协议 · 审查日期 2026-09-07</span>
+    <span><a href="../../">← 返回目录</a> · <a href="https://doi.org/10.1038/s41551-026-01757-w">原文 DOI</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
