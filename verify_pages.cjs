@@ -11,6 +11,7 @@ const { chromium } = require('C:/Users/wytfd/.cache/codex-runtimes/codex-primary
   const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
   const targets = [
     ['home', path.join(root, 'index.html')],
+    ['mg-stem', path.join(root, 'papers', 'mg-stem-cell-aging-natcom-2025', 'index.html')],
     ['liao', path.join(root, 'papers', 'liao-2025-fslaser-impressionistic-ir', 'index.html')],
     ['liu', path.join(root, 'papers', 'liu-2025-fslaser-subadd-encryption', 'index.html')],
   ];
@@ -33,7 +34,7 @@ const { chromium } = require('C:/Users/wytfd/.cache/codex-runtimes/codex-primary
       clientWidth: document.documentElement.clientWidth,
       missingImages: [...document.images].filter(x => !x.complete || x.naturalWidth === 0).map(x => x.src),
     }));
-    await page.screenshot({ path: path.join(out, `${name}-desktop.png`), fullPage: name === 'home' });
+    await page.screenshot({ path: path.join(out, `${name}-desktop.png`), fullPage: true });
     report.push({ name, viewport: 'desktop', ...desktop, errors });
     await page.setViewportSize({ width: 390, height: 844 });
     await page.reload({ waitUntil: 'load' });

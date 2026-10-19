@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · 睑板腺干细胞群体与衰老机制（Nat Commun 2025）</title>
+<meta name="description" content="文献逻辑审查（v2.1）：Zhu, Xu et al., Nat Commun 2025 — snRNA-seq + 五线谱系示踪鉴定成年小鼠睑板腺多个自我更新干细胞群体（小导管含面向导管与腺泡的干细胞），Hedgehog 信号双向遗传证据证明其调控基底细胞增殖；衰老支线（Hh 下降/GLI2 乙酰化、HBEGF-EGFR 减弱、神经与胶原丢失）为相关性证据。总评级 B+：Hh 链与示踪链扎实，衰老机制支线因果未闭。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1</span>
+  <h1>Identification of meibomian gland stem cell populations and mechanisms of aging</h1>
+  <p class="subtitle">Xuming Zhu*, Mingang Xu*（共同一作）, … <strong>Carlo Iomini, Sarah E. Millar</strong>（共同通讯）. <em>Nature Communications</em>, 2025, 16(1): 1663</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1038/s41467-025-56907-6">10.1038/s41467-025-56907-6</a> ·
+    审查深度：全流程（审稿式精读） ·
+    总评级 <span class="badge grade-b-plus">B+</span> ·
+    <span class="sev sev-p1">P1 × 3</span> <span class="sev sev-p2">P2 × 3</span>
+  </p>
+  <p class="meta-line">
+    期刊指标：IF <strong>18.1</strong>（5 年 18.9）· 中科院分区 <strong>综合性期刊 1 区 / Top</strong>（升级版；Zotero 条目 extra 字段，2026-10-19 核对，未实时重查）· 仅作期刊光环偏倚提醒，不参与评级
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>干细胞鉴定链与 Hh 调控链达到本领域高标准的证据组织（五线长程示踪 + 双向遗传操作互证），衰老机制链相关性证据优秀但因果未闭。</strong>「五标志物功能鉴定 + 小导管双潜能的直接示踪证据 + Hh 必要性/充分性双向闭环」是高价值产出；三条 P1 全部落在衰老与迁移主张上：ductule→acinus 迁移仅离体观测（ERR-01）、年老组织内 GLI2 乙酰化机制链靠旁证拼接（ERR-02）、HBEGF-EGFR「contributes to」超出本文相关性证据（ERR-03）。引用时干细胞与 Hh 部分可直接引用，衰老部分须降级为伴随改变表述。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（6 条）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程（生态位、闭环、三层探针、ERR、评级、动词、资产）。</p>
+    <p><strong>承重主张</strong>（拆掉它，标题级结论就站不住）：</p>
+    <ul>
+      <li><strong>LC1（干细胞鉴定）</strong>：成年小鼠 MG 的导管与腺泡由多个可自我更新的干细胞群体维持，标志物为 Lrig1/Lgr6/Axin2/Slc1a3/Gli2；小导管（ductule）同时含有面向导管与腺泡的干细胞（双潜能）。</li>
+      <li><strong>LC2（Hh 调控）</strong>：上皮 Hh 信号是 MG 基底/干细胞增殖的关键调控因子——Smo 敲除使增殖下降、腺泡缩小（必要性）；GLI2ΔN 表达或 Ptch1 敲除使基底区扩增并抑制分化（充分性）。</li>
+      <li><strong>LC3（衰老与疾病谱像）</strong>：年老 MG 呈 Hh 活性下降（伴 GLI2 乙酰化关联升高）、HBEGF-EGFR 信号减弱、神经支配与真皮胶原 I 减少——上皮与微环境共同改变的谱像；人 MGC 中 Hh 活性标志与干细胞标志群体扩增。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>问题</strong>：成年 MG 干细胞的分子身份、解剖位置与支持性微环境是什么？其活性受什么信号控制、在衰老中如何改变？</li>
+      <li><strong>证据链位置</strong>：链 1 为<strong>功能性描述层</strong>（长程谱系示踪的功能定义，非分选/移植验证）；链 2 达<strong>因果机制层</strong>（条件性敲除 + gain-of-function 双向遗传 + 独立操作互证）；链 3 为<strong>横断面关联层 + 单点机制锚定</strong>（Hdac1/2 cKO 在年轻鼠复现乙酰化读出，但年老组织内无干预）。</li>
+      <li><strong>增量</strong>：①首个 MG 多标志物功能鉴定（对比 Parfitt 2016 仅 LRC + KRT14 泛标记）；②ductule 双潜能的直接示踪证据 + 离体迁移事件（补上 Velocity 预测与 LRC 证据之间的功能缺口）；③Hh 必要性/充分性双向闭环（此前仅大鼠体外证据 Qu 2021）；④首个年轻 vs 年老 MG 的 snRNA-seq + 空间转录组联合图谱（对比 Wiedemann 2024 的 6 月龄 scRNA-seq，本文含 21 月龄与微环境细胞）。</li>
+      <li><strong>研究类型</strong>：机制型实验研究（遗传操作小鼠）+ 横断面组学比较 + 人肿瘤免疫表型描述——各组分的结论资格不同层，须分层引用。</li>
+      <li><strong>自称贡献 vs 证据匹配度</strong>：标题「stem cell populations」名副其实（示踪闭环）；「mechanisms of aging」在「多机制伴随改变 + Hh 乙酰化单点机制锚定」意义上部分成立——若按因果机制读则超出链 3 证据（作者自己的动词纪律良好：suggest/may/could 贯穿衰老与治疗表述，超载风险主要在二级引用）。</li>
+      <li><strong>最可能错配环节</strong>：摘要「Aging-related … shrinkage <em>may result in part from</em> stem cell exhaustion」的 may 在正文链 3 中被 Fig. 10 模型图的机制化呈现部分吸收——模型图不是证据。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+
+    <div class="chain">
+      <span class="chain-name">主链 A（干细胞鉴定，LC1）</span>：snRNA-seq 34 簇图谱（描述，Fig. 1a，S007）→ 空间转录组验证注释（正交验证，S008）→ 皮脂腺标志物检索 + RNAscope 独立样本（描述+验证，S010–S011）→ 五线 CreERT2 2 天起点定位（S012）→ 90/120 天长程示踪检出自更新+分化子代（功能性体内证据，Fig. 2，S012–S014）→ Gli2+ 小导管细胞后代进入中央导管（单线示踪，S013）+ Velocity 预测（S009）+ 离体活成像迁移事件（动态观测，S015）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">示踪范式内闭环</span>——「标志物群体含多轮自我更新细胞」由五线一致支持；软肋：ductule 双潜能的关键一环（后代入导管）仅 Gli2 单线 N=3；「干细胞」是功能定义，无克隆形成/移植验证；Slc1a3-CreERT2 未标记小导管与启动子活性假设自相缠绕（作者以低启动子活性解释，未直接验证）。</div>
+
+    <div class="chain">
+      <span class="chain-name">主链 B（Hh 调控，LC2）</span>：Hh 组分表达谱 + RNAscope（描述，S016）→ KRT14-CreERT2 Smo cKO：腺泡缩小 + Ki-67+ 基底细胞比例显著下降（必要性遗传证据，Fig. 3，配对 t 检验 p=0.006/0.039，S017）→ Krt5-rtTA tetO-GLI2ΔN 2/4/7 天时间序列：基底扩增并取代 meibocyte（充分性 GOF，Fig. 4，p=6.6E-07/9.3E-08，S018）→ Ptch1 cKO 复现（独立操作互证，S019）→ 激光捕获 bulk RNA-seq + RNAscope/IF：增殖通路上调、分化与脂代谢下调、Lrig1/Lgr6 群扩增（机制读出，Fig. 5，S020）→ 三线双系统示踪：干细胞内 GLI2ΔN 足以驱动克隆扩增（细胞自主性支持，S021）
+      <br>闭环状态：<span class="state state-closed" style="background:#e8f5e9;color:#2e7d32">闭环（双向遗传 + 互证）</span>——本链是全文最强部分；边界：KRT14/Krt5 启动子覆盖多区室，非区室特异性；时间窗内无 MGC 样组织学（作者如实报告并据此限定 MGC 结论）。</div>
+
+    <div class="chain">
+      <span class="chain-name">主链 C（衰老谱像与 MGC，LC3）</span>：年老 vs 年轻 snRNA-seq + CellChat（横断面，S024–S025）→ Gli2+/Ptch1+ 细胞比例下降（测序+RNAscope 双验证，Fig. 7a–e）→ 配体表达不变（排除一层，S026）→ PLA：GLI2-乙酰化赖氨酸关联升高（相关性，Fig. 7h,i）→ Hdac1/2 cKO 年轻鼠复现高乙酰化+Ptch1↓、基质内对照（因果锚定但移位到年轻鼠，S027）→ HDAC1/2 蛋白量不变→推断活性改变（排除法推断，S028）；平行支线：Hbegf↓+p-ERK1/2↓（相关性，S029）、神经导向基因↓+PGP9.5 神经密度↓（描述+定量，S031）、Col1a1/2/3a1↓（S032）→ Fig. 10 多机制模型（组织性假说）；人 MGC 10 例 IF/RNAscope（横断面描述，S022–S023）
+      <br>闭环状态：<span class="state state-overload">因果端开放</span>——每条支线的「伴随改变」均扎实（双验证），但「contributes to 年老增殖下降/退变」无一支线有老年个体内的干预或 rescue；GLI2 乙酰化机制的因果成分靠文献（Coni 2013）+ 年轻鼠 cKO 移位证据拼接；MGC 部分作者自我限定到位（may not be a primary driver）。</div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录（仅承重主张）</h2>
+
+    <h3>LC1 · 干细胞鉴定与 ductule 双潜能</h3>
+    <p><strong>第一性原理层</strong></p>
+    <ul>
+      <li>「干细胞」操作性定义 = 长程示踪下的自我更新 + 产生分化子代（Clevers/Watt 功能定义范式），可证伪（标志物细胞 90/120 天后消失即否证）——构念清晰。</li>
+      <li>承重前提 ①：CreERT2 报告等位基因忠实反映内源启动子活性。Slc1a3-CreERT2 未标记小导管而 snRNA-seq 显示小导管表达 Slc1a3——作者以「低启动子活性」解释但未直接验证；该前提松动时 ductule 双潜能的 Slc1a3 侧坍塌（Gli2/Lrig1 侧不受影响）。</li>
+      <li>承重前提 ②：90/120 天 ≈ 10–13 个 meibocyte 更新周期足以判「自我更新」——对腺泡成立（周期 9 天）；对更新更慢的导管区室，周期数覆盖论证未单独给出。</li>
+    </ul>
+    <p><strong>演绎构建层</strong></p>
+    <ul>
+      <li>「ductule 含双潜能干细胞」的升级路径：Velocity 预测（计算）→ Gli2 示踪后代入导管（单线功能证据）→ 离体迁移（动态事件）。三步均指向同向但各自单薄，合取后仍缺多线交叉（ERR-04）。</li>
+      <li>「bi-potential stem cells」措辞出现于预测句（S009 suggesting）与结论句（S037 indicate）——结论句的证据基础仍是单线示踪，动词 indicate 偏强。</li>
+    </ul>
+    <p><strong>元认知审计层</strong></p>
+    <ul>
+      <li>标志物全部借用皮脂腺/毛囊体系（Lrig1/Lgr6/Axin2/Gli2/Slc1a3）——筛选框架先验地排除了 MG 特有标志物的发现空间；「专一性更新导管/小导管的标志物」作者自己列为未解决问题（S036）。</li>
+      <li>N=3/线/时点为示踪研究常见下限；两性均纳入示踪（2 雄 1 雌）但组学仅雄性——性别×区室的交互不可检。</li>
+    </ul>
+
+    <h3>LC2 · Hh 调控增殖</h3>
+    <p><strong>第一性原理层</strong>：构念（Hh 信号 = Smo 依赖的转录输出）经 Gli1/Ptch1 靶基因读出操作化，清晰可证伪。<strong>演绎构建层</strong>：相关→因果升级点定位准确：必要性在 S017（cKO 表型），充分性在 S018（GOF 表型），互证在 S019（Ptch1 cKO）——升级路径规范；GLI2ΔN 的脱靶风险作者主动以 Ptch1 cKO 控制（S019 明示动机），这是方法自省的亮点。<strong>元认知层</strong>：KRT14-CreERT2 与 Krt5-rtTA 均覆盖腺泡+导管基底及其子代，无法区分「Hh 直接作用于干细胞」与「Hh 作用于 Transit-amplifying 层级」；S021 的双系统示踪部分弥补（干细胞内表达即可扩增）但 GLI2ΔN 表达并不等于 Hh 通路生理激活。统计实质：配对/非配对 t 检验选择恰当（同窝配对 vs 独立样本）、每鼠细胞数下限预设；未报效应量 CI，多重比较限于组学层（DESeq2/edgeR BH 校正）。</p>
+
+    <h3>LC3 · 衰老谱像与 MGC</h3>
+    <p><strong>第一性原理层</strong>：「衰老机制」构念被操作化为 8 周 vs 21 月两时间点的横断面差异——这是「与年龄相关的状态差」，不是「衰老过程」；单点比较无方向性信息（虽生物学先验强）。</p>
+    <p><strong>演绎构建层</strong></p>
+    <ul>
+      <li>GLI2 乙酰化链的因果成分：年老 PLA 升高（相关）+ 年轻鼠 Hdac1/2 cKO 复现（因果但移位）+ 蛋白量不变（排除法）→「年老中 HDAC 活性改变」为推断，无直接活性测量、无老年 rescue（ERR-02）。</li>
+      <li>HBEGF-EGFR 支线：CellChat 预测 + 表达/磷酸读出（相关）+ 文献促增殖功能（外推）→「contributes to 年老增殖下降」（S029）为本文证据 + 文献的合成表述，因果成分全部来自文献（ERR-03）。</li>
+    </ul>
+    <p><strong>元认知审计层</strong></p>
+    <ul>
+      <li>选择偏倚：snRNA-seq/空间组/衰老实验仅雄性（作者自述局限，S043）；MGC 为单中心手术废弃组织（眼睑手术人群，共病谱未知），10 例无临床注释。</li>
+      <li>CellChat 年老组「Hh 通讯不可检出」：年老组核数（8336+7305）与年轻（6676+10734）相当，功效解释弱化但未报告通讯检验功效；Hh 特设 trim=0.001 参数（S053）引入分析者自由度。</li>
+      <li>结论失效条件：若年老 MG 的 Gli2+/Ptch1+ 细胞减少实为细胞群丢失而非转录下调（作者并列保留的两种解释，S025/S039），则乙酰化机制的相对贡献被高估。</li>
+      <li>读者侧自查：NC + 干细胞 + 衰老三重热点标签易诱发光环；链 B 的强度不应迁移给链 C。</li>
+    </ul>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>编号（子型）</th><th>位置</th><th>根因</th><th>严重度</th></tr></thead>
+        <tbody>
+          <tr><td>ERR-01（02）</td><td>S015；Supplementary Figs. S3–S4、Movies S1–S2</td><td>ductule→acinus 迁移仅在离体培养（60 min–15 h）体系观测，无体内直接迁移证据；培养条件本身可能诱导迁移，且 40 天示踪克隆与该迁移事件的因果关系未建立</td><td><span class="sev sev-p1">P1</span></td></tr>
+          <tr><td>ERR-02（02）</td><td>S026–S028；Fig. 7h–m；Fig. 10</td><td>年老 MG 内「GLI2 乙酰化↑→Hh 转录↓」机制链的因果成分由文献（Coni 2013）+ 年轻鼠 Hdac1/2 cKO 移位证据 + 排除法（蛋白量不变）拼接；年老组织内 HDAC 活性未测、无老年干预/rescue；Fig. 10 模型图将其机制化呈现</td><td><span class="sev sev-p1">P1</span></td></tr>
+          <tr><td>ERR-03（03a）</td><td>S029；S041</td><td>「HBEGF-EGFR 轴对稳态重要、其下降 contributes to 年老增殖降低」——本文证据止于 CellChat 预测 + Hbegf/p-ERK1/2 相关性验证，无任何 HBEGF/EGFR 干预；contributes to 的因果成分全部来自体外文献外推</td><td><span class="sev sev-p1">P1</span></td></tr>
+          <tr><td>ERR-04（03b）</td><td>S013；S037</td><td>ductule 双潜能的关键证据（小导管细胞后代进入中央导管）仅 Gli2-CreERT2 单线，Lrig1/Lgr6/Axin2 线无等价报告；N=3/线/时点</td><td><span class="sev sev-p2">P2</span></td></tr>
+          <tr><td>ERR-05（03d）</td><td>S022–S023；Fig. 6</td><td>MGC 10 例（对照 7 例）横断面免疫表型，样本为单中心手术废弃组织、无预后/治疗注释；摘要级「MGC involves expansion of MG stem cells」超出表型描述可支持范围（起源未证）</td><td><span class="sev sev-p2">P2</span></td></tr>
+          <tr><td>ERR-06（04）</td><td>S007 vs S048；S043</td><td>snRNA-seq 小鼠数表述字面矛盾（Results「4+4 只……共 16 只」vs Methods「8+8 只」，按每重复 4 只合并方可自洽）；组学与衰老实验仅雄性（作者自述）；CellChat 年老组 Hh 通讯「不可检出」未报告检验功效</td><td><span class="sev sev-p2">P2</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;color:#666">主标签边界检验：ERR-01/02 换证据类型（体内成像/老年干预）才修复 → 02；ERR-03/05 缩小结论半径（伴随改变/免疫表型）即可修复 → 03；ERR-04 补交叉对照 → 03b；ERR-06 为方法透明度 → 04。</p>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+    <p><strong>总评级：<span class="badge grade-b-plus">B+</span></strong>（证据广、质量高，标题级结论略超数据）</p>
+    <ul>
+      <li>新颖性：高——MG 多标志物功能鉴定 + ductule 双潜能直接证据 + Hh 双向闭环均为首发。</li>
+      <li>证据广度：高——snRNA-seq/空间组/五线示踪/双遗传操作/bulk RNA-seq/PLA/人样本免疫表型。</li>
+      <li>因果封闭性：链 B 闭合；链 A 功能层闭合（示踪范式内）；链 C 开放（相关性 + 单点移位锚定）。</li>
+      <li>反例排除：GLI2ΔN 脱靶（Ptch1 cKO 控制）、PLA 假阳性（基质内对照）处理到位；衰老支线替代解释（细胞丢失 vs 转录下调）作者并列未裁决。</li>
+      <li>方法稳健性：好——版本化流程、配对设计、RRID/货号全录、GEO 三库公开；自我限定动词纪律优于同类。</li>
+      <li>外部效度：受限——组学与衰老仅雄性 C57BL/6 J、单中心；人 MGC 无临床注释。</li>
+    </ul>
+    <p><strong>修复补丁（按 P 级排序）：</strong></p>
+    <ol>
+      <li><strong>ERR-01（P1）</strong>｜根因：迁移证据止于离体｜动作：小导管特异性标记 + 体内长时间窗成像，或 Lrig2⁺/Gli2⁺ 小导管细胞遗传消融后量化腺泡补充速率｜改后效果：迁移主张从 ex vivo 观测升级为体内事件，「ductule 补充腺泡」从假设成为机制。</li>
+      <li><strong>ERR-02（P1）</strong>｜根因：年老组织内乙酰化机制无直接干预｜动作：年老 MG 离体培养中 HDAC 抑制剂处理检测 Ptch1/Gli1 转录救援，或直接测定年轻/年老 MG HDAC 活性｜改后效果：GLI2 乙酰化链在年老语境闭合，Fig. 10 该支线由模型变为机制。</li>
+      <li><strong>ERR-03（P1）</strong>｜根因：HBEGF-EGFR 因果成分来自文献外推｜动作：MG 上皮 Egfr 条件敲除或外源 HBEGF 灌流/敲除后测基底增殖（年轻与年老双组）｜改后效果：「contributes to」获得本文内因果支撑；不改则引用须降级为「伴随改变 + 通路预测」。</li>
+      <li><strong>ERR-04（P2）</strong>｜根因：双潜能单线证据｜动作：Lrig1/Lgr6/Axin2 线补做小导管起始细胞的导管后代分析，或扩大 Gli2 线 N｜改后效果：ductule 双潜能从单线升级为多线复现。</li>
+      <li><strong>ERR-05（P2）</strong>｜根因：MGC 样本无临床注释｜动作：扩样并补充分级/分期/治疗反应/生存注释 + Hh 通路组分测序验证「无突变」表述｜改后效果：MGC 部分可支持临床层引用。</li>
+      <li><strong>ERR-06（P2）</strong>｜根因：表述与功效透明度｜动作：统一小鼠数表述；补雌性 snRNA-seq（作者已列为局限）；报告 CellChat 通讯检验功效与 Hh trim 参数敏感性｜改后效果：组学层可复现性与性别外推边界明确。</li>
+    </ol>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>承重主张</th><th><span class="verb verb-allow">允许</span></th><th><span class="verb verb-caution">谨慎（需限定）</span></th><th><span class="verb verb-ban">禁用</span></th></tr></thead>
+        <tbody>
+          <tr>
+            <td>LC1 干细胞鉴定</td>
+            <td>identify, mark, label, characterize; maintain（示踪意义）</td>
+            <td>self-renewing（限 90/120 天示踪窗、N=3/线）; bi-potential（须加 predicted/或限 Gli2 线证据）</td>
+            <td>purify / isolate stem cells（无功能分选）; the stem cell of the MG（唯一性未证）</td>
+          </tr>
+          <tr>
+            <td>LC2 Hh 调控</td>
+            <td>promote / regulate（proliferation）; required for normal levels of proliferation</td>
+            <td>drive MG homeostasis（须限 adult mouse、epithelial、观察窗）; suppress differentiation（GOF 语境下须注明 GLI2ΔN 非生理调控）</td>
+            <td>drive / cause MGC（作者自认非原发驱动，时间窗内无 MGC）; initiate tumorigenesis</td>
+          </tr>
+          <tr>
+            <td>LC3 衰老与 MGC</td>
+            <td>decrease, attenuate, associate with, accompany, enrich（描述层）</td>
+            <td>may contribute to（须加 in male mice、21-month、in this cohort）; suggest therapeutic approaches</td>
+            <td>cause aging / cause MG dropout; reverse / rejuvenate aged MG（无老年干预）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>迁移判定</strong>：LC1/LC2 可直接引用（小鼠 MG 语境）；LC3 跨到人 MG 衰老/干眼病须降级（种属 + 单性别 + 横断面三重降级）；Hh/EGFR 激活治干眼、SMO 抑制剂治 MGC 只能作背景/展望引用（作者原文即条件句）。</p>
+    <p><strong>安全引用句（可直接复制）：</strong></p>
+    <blockquote>Zhu et al. identified Lrig1-, Lgr6-, Axin2-, Gli2- and Slc1a3-CreERT2 lineages as self-renewing populations that maintain the duct and/or acinus of adult mouse meibomian glands, with Gli2+ ductular cells contributing to both the central duct and the acinus (Nat Commun 16, 1663; 2025).</blockquote>
+    <blockquote>Epithelial Hedgehog signaling regulates basal cell proliferation in adult mouse meibomian glands: inducible Smo deletion reduces acinar and ductal basal proliferation and acinar size, whereas GLI2ΔN expression or Ptch1 deletion expands the basal compartment at the expense of meibocyte differentiation (Zhu et al., 2025).</blockquote>
+    <blockquote>Aged (21-month, male) mouse meibomian glands display reduced numbers of Gli2- and Ptch1-expressing cells, elevated GLI2–acetyl-lysine association, attenuated HBEGF-EGFR signaling, reduced innervation, and loss of dermal collagen I, indicating aging-associated alterations in both epithelium and niche (Zhu et al., 2025).</blockquote>
+    <blockquote>Human meibomian gland carcinoma samples (n = 10) broadly express GLI2, LRIG1 (10/10) and LGR6 (9/10) with widespread proliferation and loss of PLIN2, an immunophenotype consistent with expansion of poorly differentiated MG-marker-positive cells (Zhu et al., 2025).</blockquote>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>资产</th><th>等级</th><th>目标用途</th><th>定位指针</th></tr></thead>
+        <tbody>
+          <tr><td>snRNA-seq 替代 scRNA-seq 处理富脂脆弱组织的策略（以核代全细胞）</td><td>M2</td><td>同类富脂/脆弱组织（脂细胞、角质化组织）单细胞图谱设计</td><td>S006、S048、Fig. 1a；GEO GSE274498</td></tr>
+          <tr><td>谱系示踪 + 离体活成像组合论证（静态长程 + 动态迁移事件）</td><td>M1</td><td>任何需要证明「细胞 A → 区室 B」的实体组织干细胞研究</td><td>S015、Fig. 2、S061（成像参数：SP8、15 min 间隔、&lt;3% 激光）</td></tr>
+          <tr><td>CreERT2 × Krt5-rtTA tetO-GLI2ΔN 时序分离双系统（先标记后激活）</td><td>M2</td><td>癌基因在特定干细胞群内表达的贡献度实验</td><td>S021、C005、Fig. 5n–s</td></tr>
+          <tr><td>GLI2ΔN 时间序列诱导采样（2/4/7 天）捕捉扩增起点</td><td>M2</td><td>GOF 表型的时序采样设计</td><td>S018、Fig. 4a–l</td></tr>
+          <tr><td>PLA 检测转录因子-翻译后修饰邻近 + 基质未敲除作内对照</td><td>M1</td><td>蛋白-修饰/蛋白-蛋白相互在组织原位的半定量</td><td>S026–S027、Fig. 7h–m、S064</td></tr>
+          <tr><td>CellChat 配受体预测 → RNAscope/IF 独立验证两段式闭环</td><td>M2</td><td>组学信号的功能化落地流程</td><td>S025、S029、S053、Fig. 7、Fig. 8</td></tr>
+          <tr><td>空间转录组 + CytoSPACE 整合验证单核注释</td><td>M2</td><td>复杂组织（多上皮+基质）图谱构建</td><td>S008、S055–S056；GEO GSE274497</td></tr>
+          <tr><td>神经-上皮几何定量（每 KRT5⁺ 基底细胞 5 μm 内 PGP9.5⁺ 纤维计数）</td><td>M2</td><td>神经支配密度的可重复定量方案</td><td>Fig. 9g–i、C009（p=1.51E-05，n=4/年龄）</td></tr>
+          <tr><td>数据资产：GSE274496/7/8（snRNA-seq/空间/bulk）全公开</td><td>M1</td><td>睑板/眼睑/皮肤微环境再分析</td><td>S067</td></tr>
+          <tr><td>抗体 + RNAscope 探针货号全清单（含 RRID）</td><td>M1</td><td>MG/皮肤上皮 IF、RNAscope 复现</td><td>S057、S059</td></tr>
+          <tr><td>表达资产：Fig. 1b 解剖示意图与 Fig. 10 机制汇总图的三层呈现；小节标题即证据阶梯的写法</td><td>M3</td><td>组织稳态-衰老类论文的图表组织</td><td>F001、F010</td></tr>
+          <tr><td>负面清单：组学/衰老仅雄性；Fig. 5 图注与 Methods 诱导年龄矛盾（8 周 vs 6 周）；CytoSPACE 引文指向 Cytoscape（R075）；「300 g/min」「10 μM 切片」等单位笔误——借鉴设计时以标准单位为准</td><td>M3</td><td>避免照搬</td><td>S043、C005 vs S063、S056、S048/S055</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>审查协议：科研逻辑审查 v2.1.2 · 材料契约 v2.2 · 审计协议 v1.0（双向全文审计缺口 0，见论文目录 translation_notes.md）· 审查日期 2026-10-19</p>
+    <p>证据包：<em>Nature Communications - 2025 - Zhu - Identification of meibomian gland stem cell populations and mechanisms of aging</em>/（本地，71 双语块 + 10 主图逐字图注 + 79 条逐字参考文献）</p>
+  </footer>
+
+</div>
+</body>
+</html>
