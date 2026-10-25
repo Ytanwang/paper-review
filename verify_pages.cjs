@@ -11,6 +11,7 @@ const { chromium } = require('C:/Users/wytfd/.cache/codex-runtimes/codex-primary
   const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
   const targets = [
     ['home', path.join(root, 'index.html')],
+    ['gait', path.join(root, 'papers', 'gait-retraining-knee-oa-2025', 'index.html')],
     ['mg-stem', path.join(root, 'papers', 'mg-stem-cell-aging-natcom-2025', 'index.html')],
     ['liao', path.join(root, 'papers', 'liao-2025-fslaser-impressionistic-ir', 'index.html')],
     ['liu', path.join(root, 'papers', 'liu-2025-fslaser-subadd-encryption', 'index.html')],
