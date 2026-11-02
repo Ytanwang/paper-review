@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · MYCN-YTHDF1 级联促视网膜母细胞瘤生长（Sci China Life Sci 2023）</title>
+<meta name="description" content="论著逻辑审查（review-protocol v2.1.2）：Luo et al., Sci China Life Sci 2023 — MYCN 转录上调 m6A 阅读蛋白 YTHDF1；YTHDF1 以 m6A 结合依赖方式促 RB 增殖与成瘤（K395A rescue）；MeRIP∩RIP∩转录组三交集筛出 4 个癌基因靶标（CDK5R1 功能验证）。总评级 B+：P1×3（MYCN→YTHDF1→靶→表型级联缺两环 rescue、mRNA 稳定性由丰度推断越位、统计仅 t-test 无多重校正），P2×3。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1.2（论著）</span>
+  <h1>A novel MYCN-YTHDF1 cascade contributes to retinoblastoma tumor growth by eliciting m6A-dependent activation of multiple oncogenes</h1>
+  <p class="subtitle">Luo Y, He M, Yang J（共同一作）, Zhang F, Chen J, Wen X, Fan J, Fan X, <strong>Chai P</strong>, <strong>Jia R</strong>（通讯×3）. <em>Sci China Life Sci</em>, 2023, 66(9): 2138–2151</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1007/s11427-022-2288-4">10.1007/s11427-022-2288-4</a> ·
+    审查深度：承重文献/审稿式精读（全流程） ·
+    体裁：<strong>Research article</strong> ·
+    总评级 <span class="badge grade-b-plus">B+</span> ·
+    <span class="sev sev-p1">P1 × 3</span> <span class="sev sev-p2">P2 × 3</span>（无 P0）
+  </p>
+  <p class="meta-line">
+    期刊指标：Sci China Life Sci · IF 9.6（Zotero extra）/2024 JCR 约 8.0（来源波动）· JCR Q1 · 中科院生物学 1 区（Top，升级版；2024 年版曾有 2 区记录）· 实时查询于 2026-11-02。仅作元认知偏倚提醒，不参与评级。通讯团队（范先群/柴佩韦/贾仁兵，上海九院）为眼肿瘤 m6A 方向持续产出团队（本文引其多篇自引：Chai 2018、Jia 2019、Xu 2022、Yu 2021 等）。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>m6A 阅读蛋白功能研究的范本级 rescue 实验（K395A 突变体回补）——「YTHDF1 以 m6A 结合依赖方式促 RB 成瘤」这一环证据扎实；但标题级「MYCN-YTHDF1 级联经多癌基因激活促瘤」缺两环 rescue 未整体闭合，且「mRNA 稳定性」由丰度变化推断（无半衰期实验）。</strong>能引：MYCN 直接上调 YTHDF1（CUT&Tag+双向干预）；YTHDF1 敲降抑瘤（体外+原位移植）且依赖 m6A 结合（K395A rescue）；YTHDF1 结合 CDK5R1/CNST/RBM15/MAT2A mRNA 并维持其蛋白与翻译（RIP-qPCR+多聚核糖体）。不能直接引：「YTHDF1 增强靶 mRNA 稳定性」（丰度≠稳定性）；「MYCN 经 YTHDF1 级联促瘤」作为已证通路整体；YTHDF1 作为治疗靶点（无药理干预证据）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">论证链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（P1×3 / P2×3）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程。双语全文证据包见论文目录（句子级双语 + 5 图逐字图注 + 79 条逐字 refs；双向审计 A/B 归零——方向 B 抓回 3 条初切漏收的参考文献）。</p>
+    <p><strong>承重主张（删掉任一条，标题级结论即不成立）</strong>：</p>
+    <ul>
+      <li><strong>LC1（转录调控环）</strong>：MYCN 直接转录上调 YTHDF1——相关性（GSE59983/Kooi 队列，R=0.406，P=2.73×10⁻⁴）+ 双向干预（MYCN 敲降↓/过表达↑YTHDF1）+ CUT&amp;Tag 启动子占位（S007–S009；Figure 1）。</li>
+      <li><strong>LC2（功能与 m6A 依赖环）</strong>：YTHDF1 促进 RB 细胞增殖与肿瘤生长，且依赖其 m6A 结合能力——shYTHDF1×2 敲降表型（CCK8/Ki67/软琼脂/原位移植）+ WT mYTHDF1 回补挽救 + K395A（m6A 结合缺陷）回补不挽救（S010–S013；Figure 2–3）。</li>
+      <li><strong>LC3（效应端机制环）</strong>：YTHDF1 经结合靶 mRNA 并增强其「稳定性与翻译」上调多个癌基因——MeRIP∩RIP∩转录组三交集（5,511/1,245/602→24）筛出 RBM15/CDK5R1/MAT2A/CNST，RIP-qPCR 确认结合、敲降后蛋白与 mRNA 丰度降、多聚核糖体占比降、IP-MS 富集翻译调控，CDK5R1 敲降抑增殖（S014–S018；Figure 4–5）。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>科学问题</strong>：MYCN 扩增/激活如何促 RB 进展（既有文献未解）——本文给出「表观转录组阅读蛋白」答案。真实增量：把 MYCN 促瘤与 m6A 阅读蛋白 YTHDF1 连接（首个 MYCN→reader 通路报道于 RB），且机制至 mRNA 稳定/翻译层面。</li>
+      <li><strong>研究类型与层级</strong>：干预性机制研究（遗传操作 loss/gain-of-function + rescue）——机制层为主、辅以 38 例人瘤 IHC 关联（描述层）。作者自称贡献（新机制 + 潜在治疗靶点）与机制层证据基本匹配；治疗端无药理学数据，属展望。</li>
+      <li><strong>最可能证据错配环节</strong>：①「mRNA 稳定性」由总丰度推断（无转录抑制半衰期实验）；②「multiple oncogenes」的激活主张只有 1/4 候选做了功能验证；③级联两端各自成立但中间 rescue 缺失。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、论证链地图</h2>
+    <div class="chain">
+      <span class="chain-name">链 A（MYCN→YTHDF1，转录调控）</span>：公共队列相关（R=0.406，弱-中等，S007/F1A–B）→ MYCN 敲降↓YTHDF1、过表达↑（qPCR+WB 双向干预，S008/F1C–D、FS1B–C）→ CUT&amp;Tag 启动子占位（S008/F1E）→ 3 株 RB 细胞 YTHDF1 上调（S009/F1F–G）→ 38 例 IHC 与高危因素相关、总生存更短「趋势」（S009/F1H、FS1E）
+      <br>状态：<span class="state state-closed">基本闭环</span>——干预+占位+临床相关三层。薄弱：R=0.406 效应弱（解释力 ~16%）；CUT&amp;Tag 未见输入对照/结合峰统计细节（图内信息）；「direct target」由占位+响应推定，无启动子报告基因直接验证。
+    </div>
+    <div class="chain">
+      <span class="chain-name">链 B（YTHDF1 功能与 m6A 依赖，最强链）</span>：shYTHDF1×2（验证 FS2）→ 增殖↓/Ki67↓/克隆形成↓（2 株，S010/F2A–C）→ 原位移植瘤：眼球均重↓+H&amp;E 瘤负荷↓（2 株系×5–6 鼠，S011/F2D–I）→ WT mYTHDF1 回补挽救（S012/F3A–E）→ K395A 回补不挽救（S012–S013/F3A–E）
+      <br>状态：<span class="state state-closed">闭环</span>——loss-of-function + 体内 + rescue + 结合缺陷突变体，证据等级完整（该领域少见的标准配置）。薄弱：rescue 仅 WERI-Rb-1 单株；K395A 单点突变未排除蛋白折叠/稳定性受累的替代解释（无表达量-normalized 活性或热稳定数据，但回补表达量已 WB 确认等量，部分缓解）。
+    </div>
+    <div class="chain">
+      <span class="chain-name">链 C（YTHDF1→多癌基因，效应端）</span>：MeRIP-seq（1,245 升高，3′UTR/RRACH 自证，S014/F4A–E）→ RIP-seq 5,511 → 三重交集 24（S015/F4F）→ 聚焦 4 个已确立癌基因（S016）→ RIP-qPCR 结合 ✓ + IF-FISH 共定位（CDK5R1）✓ + 敲降后 4 靶蛋白/mRNA 丰度↓（F5B–C）→ 多聚核糖体占比↓（F5D）→ IP-MS 408 蛋白富集翻译 GO（FS4E）→ CDK5R1 敲降抑增殖/克隆（F5F–G）+ IHC 高危相关（FS5）
+      <br>状态：<span class="state state-overload">至「YTHDF1 维持 4 靶表达/翻译」闭环；至「靶基因介导促瘤」断裂</span>——CDK5R1 只有必要性（敲降表型）无充分性/介导性 rescue（YTHDF1 敲降 + CDK5R1 回补能否救表型未做，作者以「at least partially」自认）；RBM15 同为两株共同靶标但无功能验证；「稳定性」由丰度推断（无 actinomycin D/4sU 半衰期实验）。
+    </div>
+    <div class="chain">
+      <span class="chain-name">整链（MYCN→YTHDF1→靶→表型）</span>：链 A + 链 B + 链 C 拼接
+      <br>状态：<span class="state state-broken">级联未整体闭合</span>——缺两环 rescue：①MYCN 敲降 + YTHDF1 回补（证明 MYCN 的表型经 YTHDF1）；②YTHDF1 敲降 + CDK5R1 回补（证明 YTHDF1 的表型经靶基因）。各环独立证据强，但「cascade」作为整体通路未在一次实验中贯通。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录</h2>
+    <h3>LC1 · MYCN 直接上调 YTHDF1</h3>
+    <p><strong>第一性原理层</strong>：构念清晰（转录因子→靶基因）；可操作（qPCR/WB/CUT&amp;Tag）。承重前提：GSE59983 队列的 YTHDF1-MYCN 相关反映因果上游——仅相关（R=0.406）不排除共同驱动（如 RB1 失活同时上调两者）。移除该前提则 LC1 仍有干预+占位支撑，不坍塌。</p>
+    <p><strong>元认知审计层</strong>：Figure 1A 图注中 METTL3 与 MYCN 的 reporter 同标 242026_at（必有一错；Affy 该探针通常对应 MYCN）——Panel A 中「METTL3 与 MYCN 相关」的可信度存疑（或为自相关伪影），但不影响 Panel B 的 YTHDF1 结论。结论失败条件：若 YTHDF1 启动子占位是 MYCN 的间接结合（经 MAX 二聚体搭档的 ChIP 假阳性）——CUT&amp;Tag 单抗体无敲降对照，无法排除。</p>
+    <h3>LC2 · m6A 结合依赖的促瘤功能</h3>
+    <p><strong>第一性原理层</strong>：K395A rescue 设计直接可证伪（若 K395A 也能挽救则 m6A 结合不必要）——实验结构优良。底层假设：K395A 仅损失 m6A 结合而蛋白其他功能（定位/相分离/互作）完整——单点突变无法完全保证，未见结构验证之外的功能面检查（AlphaFold 模型仅预测性展示）。</p>
+    <p><strong>演绎构建层</strong>：从「K395A 不挽救」到「m6A 结合能力必需」的推理成立；无相关→因果的越级句。</p>
+    <h3>LC3 · 多癌基因效应端</h3>
+    <p><strong>第一性原理层</strong>：三交集筛选构念可操作，但 24 基中验证 4 个已确立癌基因存在确认偏倚（选已知者验证——若 24 个中多数无功能则「multiple oncogenes」半径缩水）。</p>
+    <p><strong>演绎构建层</strong>：「YTHDF1 is required for the <em>stability</em> of these mRNAs」（S017）——证据为敲降后总 mRNA 丰度降；丰度降可能来自转录降而非降解加速，稳定性主张需转录抑制后半衰期实验（换证据类型才能修）。这是全文最明确的证据类型错配。</p>
+    <p><strong>元认知审计层</strong>：统计仅 Student's t-test（S031）——多组/时程数据无多重校正；38 例 IHC 组间比较方法未报；Methods 声明 KM 用于「mice 生存」但结果无鼠生存曲线（KM 实际语境疑为 Figure S1E 人瘤总生存，声明与用途错位）。失败条件：若 CDK5R1 回补不能挽救 YTHDF1 敲降表型，则「多癌基因介导」缩为「YTHDF1 自身功能+靶标伴随变化」。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>编号（子型）</th><th>位置</th><th>根因</th><th>严重度</th></tr></thead>
+        <tbody>
+          <tr><td>ERR-02</td><td>标题「MYCN-YTHDF1 cascade」；S006/S019 级联总结；Figure 5H 模型图</td><td>级联整体未闭合：缺 MYCN 敲降+YTHDF1 回补、YTHDF1 敲降+CDK5R1 回补两环 rescue；「cascade」作为已证通路出售，实际是三段独立证据的拼接</td><td><span class="sev sev-p1">P1</span></td></tr>
+          <tr><td>ERR-03（03a）</td><td>S017「YTHDF1 is required for the stability of these mRNAs」；摘要「enhancing mRNA stability」</td><td>mRNA 稳定性由敲降后总丰度下降推断——丰度≠稳定性（未做转录抑制/4sU 标记半衰期实验）；强度超出证据类型（缩半径即可修：改「维持 mRNA 丰度」）</td><td><span class="sev sev-p1">P1</span></td></tr>
+          <tr><td>ERR-04</td><td>S031 Statistical analysis；各图多组比较</td><td>仅 Student's t-test + Pearson；多组/时程（CCK8 时程、3 细胞系、多器官读值）无多重校正；38 例 IHC 组间检验与生存分析（FS1E）统计方法未报/未给效应量；Methods 声明 KM 用于鼠生存但结果无鼠生存数据（声明与用途错位）</td><td><span class="sev sev-p1">P1</span></td></tr>
+          <tr><td>ERR-05</td><td>S016 三交集后验证选择</td><td>24 个交集中选择性验证 4 个已确立癌基因（确认偏倚）；RBM15 为两株共同靶标却无功能验证——「multiple oncogenes」的半径依赖未验证多数靶标的功能</td><td><span class="sev sev-p2">P2</span></td></tr>
+          <tr><td>ERR-05</td><td>C001 图注（Figure 1A）</td><td>METTL3 与 MYCN 的 reporter 探针同标 242026_at（自相矛盾，必有一错）——Panel A 的 METTL3-MYCN 相关性可疑（或为自相关），图注数字未复核；不影响 YTHDF1 主结论但损害 Figure 1A 可信度</td><td><span class="sev sev-p2">P2</span></td></tr>
+          <tr><td>ERR-04</td><td>S009/Figure 1H；FS1E</td><td>38 例小样本的临床关联：高危因素「significant correlation」未报检验方法与效应量；总生存仅「tended to be shorter」（趋势性表述已属克制，但样本量下检验力不足需明示）</td><td><span class="sev sev-p2">P2</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+    <p>总评级 <span class="badge grade-b-plus">B+</span>（证据广、质量高，但标题级结论略超数据）。分维：新颖性 <strong>A-</strong>（首个 MYCN→m6A reader 通路于 RB）；证据广度 <strong>A-</strong>（相关性+干预+体内+rescue+三重组学）；因果封闭性 <strong>B</strong>（级联两环 rescue 缺、稳定性未直证）；反例排除 <strong>B</strong>（K395A 替代解释部分排除；交集选择偏倚未处理）；方法稳健性 <strong>B</strong>（统计单薄、CUT&amp;Tag 无对照细节）；外部效度 <strong>B+</strong>（2 株细胞+原位模型+38 例人瘤，缺独立队列验证）。</p>
+    <ul>
+      <li><strong>补丁 1（ERR-02，P1）</strong>：补 MYCN 敲降 + shRNA 抗性 YTHDF1 回补 rescue；补 YTHDF1 敲降 + CDK5R1 回补 rescue。改后效果：级联从「三段拼接」变为「单实验贯通」，标题「cascade」成立，评级可升至 A-。</li>
+      <li><strong>补丁 2（ERR-03a，P1）</strong>：补 actinomycin D（或 4sU-pulse-chase）半衰期实验；在此之前所有「stability」表述（摘要/S006/S017/S021）降级为「mRNA 丰度/水平」。改后效果：机制主张与证据类型匹配。</li>
+      <li><strong>补丁 3（ERR-04，P1）</strong>：多组比较改 ANOVA+事后检验或标注 t-test 未校正的局限；补充 FS1E 的 KM 统计（log-rank P 与 HR）与 1H 的检验方法；Methods 的 KM 声明与实际用途对齐。改后效果：统计透明度恢复。</li>
+      <li><strong>补丁 4（ERR-05 选择偏倚，P2）</strong>：对 24 个交集靶标做 pooled 敲降或 Reporter 篮查，或明示「在已验证的 4 个候选中」的限定半径。</li>
+      <li><strong>补丁 5（ERR-05 探针号，P2）</strong>：核对 GSE59983 平台注释修正 METTL3 或 MYCN 的 reporter 编号，并复核 Panel A 相关性。</li>
+      <li><strong>补丁 6（ERR-04 临床端，P2）</strong>：38 例分析补统计方法与效应量；引用本文临床相关时限定「单中心 38 例」。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">LC1 允许</span><span class="verb-body">上调、直接靶基因（有 CUT&amp;Tag+双向干预）：「MYCN 在转录水平直接上调 YTHDF1（CUT&amp;Tag 示启动子占位；MYCN 敲降/过表达双向改变 YTHDF1 表达）」。</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">LC1 谨慎</span><span class="verb-body">相关性表述给 R 值与队列（R=0.406，GSE59983）；「MYCN aberrantly activated in ~50% of RB」须挂 Liu 2021 限定。</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">LC1 禁用</span><span class="verb-body">「MYCN 经 YTHDF1 驱动 RB」（级联未闭合）。</span></div>
+      <div class="verb-row"><span class="verb-label verb-allow">LC2 允许</span><span class="verb-body">促进、依赖（m6A binding-dependent）：「YTHDF1 促进 RB 细胞增殖与原位移植瘤生长，且该功能依赖其 m6A 结合能力（K395A 回补失效）」。</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">LC2 谨慎</span><span class="verb-body">rescue 结论标注单细胞系（WERI-Rb-1）；「essential/indispensable」可保留（rescue 支撑）。</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">LC2 禁用</span><span class="verb-body">「YTHDF1 是 RB 的治疗靶点」（无药理干预；作者原文也仅「potentially … target … awaits characterization」）。</span></div>
+      <div class="verb-row"><span class="verb-label verb-allow">LC3 允许</span><span class="verb-body">结合、维持丰度、促进翻译：「YTHDF1 结合 CDK5R1 等 mRNA 并维持其丰度与多聚核糖体占位（RIP-qPCR+蔗糖梯度）」；「CDK5R1 敲降抑制 RB 细胞增殖」。</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">LC3 谨慎</span><span class="verb-body">「stability」一律降为「mRNA 水平/丰度」；「multiple oncogenes」限定「已验证的 4 个候选中」；CDK5R1 介导加「可能至少部分（作者自认）」。</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">LC3 禁用</span><span class="verb-body">「YTHDF1 通过稳定多癌基因 mRNA 激活其表达从而致癌」（稳定性未直证+介导 rescue 缺）。</span></div>
+    </div>
+    <p><strong>安全引用句（可直接复制）</strong>：</p>
+    <blockquote>在视网膜母细胞瘤中，MYCN 在转录水平直接上调 m6A 阅读蛋白 YTHDF1（CUT&amp;Tag 示 MYCN 占位 YTHDF1 启动子；MYCN 敲降/过表达分别降低/升高 YTHDF1 表达），且 YTHDF1 高表达与高危病理特征相关（单中心 38 例 IHC；Luo 等，2023）。</blockquote>
+    <blockquote>YTHDF1 敲降在体外与原位异种移植模型中抑制视网膜母细胞瘤细胞增殖与肿瘤生长；野生型 mYTHDF1 回补可挽救而 m6A 结合缺陷突变体 K395A 不能，表明该促瘤功能依赖 YTHDF1 的 m6A 结合能力（Luo 等，2023）。</blockquote>
+    <blockquote>YTHDF1 结合 CDK5R1、CNST、RBM15 与 MAT2A 的 mRNA 并维持其蛋白与翻译水平（RIP-qPCR 与多聚核糖体分析）；其中 CDK5R1 敲降抑制 RB 细胞增殖，提示其可能至少部分介导 YTHDF1 的促瘤功能（Luo 等，2023）。</blockquote>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <ul>
+      <li><strong>M1（方法范式）</strong>：阅读蛋白 m6A 结合依赖性检验的 rescue 设计（内源敲降 + 抗 shRNA 同源回补 WT vs K395A）——可整体迁移至任何 m6A/阅读蛋白功能研究。指针：S012–S013；Figure 3。</li>
+      <li><strong>M1（实验模型）</strong>：RB 原位玻璃体注射异种移植（3×10⁴ 细胞/3 μL、5 周龄雌性 BALB/c 裸鼠左眼、8 周读值、5–6 鼠/组、眼均重+H&amp;E 读值）——眼内瘤体内模型 SOP。指针：S030；Figure 2D–I。</li>
+      <li><strong>M1（数据资产）</strong>：NODE OEP000103/OEP003732（RNA-seq/YTHDF1-RIP-seq/MYCN CUT&amp;Tag/m6A-meRIP-seq 原始数据，公开）；GSE59983（Kooi 2015 队列，相关性分析入口）。指针：S033；S007。</li>
+      <li><strong>M2（分析流程）</strong>：MeRIP ∩ RIP ∩ 转录组三交集靶点筛选（含 RRACH/3′UTR 质控）——可迁移的阅读蛋白靶点发现流程；多糖体分级 + IP-MS 互作组验证组合。指针：S014–S017；Figure 4。</li>
+      <li><strong>M2（表达资产）</strong>：Figure 5H 机制模型图（MYCN→YTHDF1→mRNA 稳定/翻译→癌基因）——同类叙事的组织模板（引用时注意其中「stabilizing」措辞按补丁 2 降级）。</li>
+      <li><strong>M3（负面清单）</strong>：①不照搬「丰度降=稳定性降」的推断句式；②多组数据 t-test 无校正的统计法；③图注探针号未复核（242026_at 双用）的透明度疏漏；④三交集后只验证已知癌基因的选择偏倚。</li>
+    </ul>
+  </section>
+
+  <footer style="margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--ink-faint);font-size:13px">
+    审查协议：review-protocol v2.1.2（论著）· 审查日期：2026-11-02 · 材料包：论文目录（句子级双语全文 + 5 图逐字图注 + 79 条逐字参考文献；双向审计 A/B 归零，方向 B 抓回 3 条漏收 refs）· 期刊指标查询于 2026-11-02
+  </footer>
+
+</div>
+</body>
+</html>
