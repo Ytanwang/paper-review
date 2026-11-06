@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审查报告 · 手持智能手机便携生物力学实验室（npj Digital Medicine 2026）</title>
+<meta name="description" content="论著逻辑审查（review-protocol v2.1.2）：Peiffer et al., npj Digital Medicine 2026 — PBL 单手持手机视频拟合可微生物力学模型；三级验证（OMC 对照→MMMC 临床人群→真实门诊 vs 临床评分）；中位绝对误差 2.5–3.3°、GDI 三性齐备（ICC₂ₖ=0.96、与 10MWT r=0.82、术后响应）。总评级 B+：P1×2（摘要「&lt;3°」与正文神经组 3.32° 的表述矛盾；单试次无质量自检指标），P2×4。">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="../../">← 返回报告目录</a>
+
+  <span class="site-tag">文献逻辑审查 · v2.1.2（论著）· 运动建模批次增补篇</span>
+  <h1>Portable biomechanics laboratory enables clinically accessible movement analysis from a handheld smartphone</h1>
+  <p class="subtitle">Peiffer JD, Shah K, Djuraskovic I, Anarwala S, Abdou K, Patel R, Jayabalan P, Pennicooke B, <strong>Cotton RJ</strong>（通讯）. <em>npj Digital Medicine</em>, 2026, 9:692</p>
+  <p class="meta-line">
+    DOI: <a href="https://doi.org/10.1038/s41746-026-02825-w">10.1038/s41746-026-02825-w</a> ·
+    审查深度：承重文献/审稿式精读（全流程） ·
+    体裁：<strong>Research article</strong>（方法学验证）·
+    总评级 <span class="badge grade-b-plus">B+</span> ·
+    <span class="sev sev-p1">P1 × 2</span> <span class="sev sev-p2">P2 × 4</span>（无 P0）
+  </p>
+  <p class="meta-line">
+    期刊指标：npj Digital Medicine · IF 18.0（Zotero 条目记录；5 年 19.7）· JCR Q1 · 中科院医学 1 区 Top（升级版）—— 实时查询于 2026-11-04 因搜索限流未完成，交付时以上为条目记录值，建议引用前补核。仅作偏倚提醒。通讯团队（Cotton，Shirley Ryan AbilityLab）为该方向持续产出团队（本文自引 24–27/36–38/41/45–46/49 等）。
+  </p>
+
+  <div class="verdict-box">
+    <p style="margin-bottom:6px"><strong>一句话结论</strong></p>
+    <p style="margin-bottom:0"><strong>测量学验证论文的范本——「准确性→可靠性→构念效度→响应性」四级验证链完整、自我限定透明；单手持手机（中位绝对误差 2.5–3.3°）已达多视角系统量级的精度，GDI 三性齐备且对手术干预响应。</strong>能引：各人群误差（Table 1，注明人群口径）、GDI 效度相关（10MWT r=0.82 / BBS 0.62 / mJOA 0.47）、ICC 数字、方位-精度策略（矢状角矢状位拍）。不能直接引：摘要的「&lt;3° across patients」（神经损伤组实为 3.32°，须按人群口径引用）；任何「单例试次可靠」的表述（重尾误差+拟合残差与误差相关性仅 0.35/0.24，无质量自检）；OpenCap 对比数字（作者自认非直接比较）。本篇主测量为无标记视频，光学动捕仅作对照金标准——课程「以光学动捕为主要测量方法」的选文要求下需注意适配风险（见 s8）。</p>
+  </div>
+
+  <nav class="toc" style="margin-top:32px">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#s0">负载分流与承重主张</a></li>
+      <li><a href="#s1">生态位鉴定</a></li>
+      <li><a href="#s2">测量效度链地图</a></li>
+      <li><a href="#s3">三层探针记录</a></li>
+      <li><a href="#s4">ERR 清单（P1×2 / P2×4）</a></li>
+      <li><a href="#s5">评级与修复补丁</a></li>
+      <li><a href="#s6">动词校准与安全引用</a></li>
+      <li><a href="#s7">资产回收</a></li>
+      <li><a href="#s8">课程汇报适配模块</a></li>
+    </ol>
+  </nav>
+
+  <section id="s0">
+    <h2>〇、负载分流与承重主张</h2>
+    <p><strong>审查目的</strong>：承重文献/审稿式精读 → 全流程。双语全文证据包见论文目录（107 块句子级双语 + 5 图逐字图注 + 2 表 + 69 条逐字 refs；双向审计归零——方向 B 在 EN 预检轮抓回 Methods 整段重构事故并全量重写，见 translation_notes）。</p>
+    <p><strong>承重主张</strong>：</p>
+    <ul>
+      <li><strong>LC1（准确性）</strong>：单手持手机拟合的关节角与 OMC/MMMC 高度一致——中位绝对误差：MMMC 手持 2.79° / 静态单视 2.95° / OMC（BML-MoVi）2.75°；临床人群分层 2.51–3.32°（S007–S009；Table 1；Fig. 2–3）。</li>
+      <li><strong>LC2（测量三性）</strong>：PBL 衍生步态指标可重复、有效、响应——GDI 单步 ICC₂ 0.84 / 多步 ICC₂ₖ 0.96；与 10MWT r=0.82、BBS r=0.62、mJOA r=0.47；CM 术后（n=17）GDI/DST 显著变化（效应量 0.44/−0.52）而 mJOA 不变（S011–S012；Fig. 4；Table 2）。</li>
+      <li><strong>LC3（临床可行性）</strong>：在真实门诊（KOA/CM 诊室走廊）可低负担部署——74 例院内记录 + 总 1021 段视频、无需特殊着装/灯光/标定（S010、S026；摘要）。</li>
+    </ul>
+  </section>
+
+  <section id="s1">
+    <h2>一、生态位鉴定</h2>
+    <ul>
+      <li><strong>科学问题</strong>：单手持手机视频能否产出临床可用的生物力学测量——填补 OpenCap（2–3 三脚架）与临床小房间/窄走廊现实之间的缺口。真实增量：①首个在多病理人群+真实门诊验证的单目生物力学管线；②隐式函数（MLP）+ 可微正运动学 + 双层优化的方法组合；③代码/误差数据开源。</li>
+      <li><strong>研究类型</strong>：方法学验证研究（测量学评估：准确性/可靠性/效度/响应性），非因果机制研究——审查主轴用测量效度链而非因果闭环。</li>
+      <li><strong>最可能证据错配环节</strong>：①摘要数字口径（「&lt;3° across patients」vs 神经组 3.32°）；②「准确性」在临床人群是 vs MMMC 而非 vs OMC；③「prospective clinical deployment」的队列严谨性。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <h2>二、测量效度链地图</h2>
+    <div class="chain">
+      <span class="chain-name">链 1（准确性）</span>：BML-MoVi OMC 对照（29 例健康步行子集，静态 iPhone）：中位绝对误差 2.75° / RTE 2.41 cm（S008）→ MMMC 临床人群（109 例同步记录）：手持 2.79° / 静态 2.95°；分层神经 3.32° &gt; LLPU 2.97° &gt; 对照 2.51°（S008）→ 方位-精度结构（矢状角矢状位最准，p&lt;0.005；膝屈差 1.02°）（S009）
+      <br>状态：<span class="state state-closed">与多视角/光学系统一致性成立</span>——薄弱：OMC 对照仅健康人群（作者自认）；重尾误差（部分试次 &gt;10°）。
+    </div>
+    <div class="chain">
+      <span class="chain-name">链 2（可靠性）</span>：&gt;13,500 步 × 222 人 → GDI 单步 ICC₂ 0.84 → 多步平均 ICC₂ₖ 0.96；步频/DST 单步较低（0.58/0.41）平均后 0.88/0.78（S011）
+      <br>状态：<span class="state state-closed">成立</span>——时空参数单步可靠性低由时相变异解释（作者归因合理）。
+    </div>
+    <div class="chain">
+      <span class="chain-name">链 3（构念效度）</span>：已知差异组分离（BBS 跌倒风险分层、经股&lt;经胫假肢）（S011/Fig. 4b,d）→ 外部锚相关（10MWT r=0.82、BBS r=0.62、mJOA r=0.47/mJOA-LE r=0.48）（S011/Fig. 4c,e）
+      <br>状态：<span class="state state-closed">成立</span>——注意「已知差异组」的定义依赖临床量表自身效度（轻度循环论证，由 10MWT/BBS 连续量相关缓解）。
+    </div>
+    <div class="chain">
+      <span class="chain-name">链 4（响应性）</span>：CM 术前术后（n=17）→ GDI/DST Wilcoxon p&lt;0.05（效应量 0.44/−0.52）而 mJOA/mJOA-LE 不显著（0.24/0.22）→ SPM1D：初始摆动期（步态周期 64–68%）膝屈曲术后增加（S012）
+      <br>状态：<span class="state state-closed">成立但样本小</span>——n=17、多指标未报多重比较；「捕捉到自报量表未反映的变化」为作者限定级解释（两测量构念不同，作者明示）。
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2>三、三层探针记录</h2>
+    <h3>LC1 · 精度主张</h3>
+    <p><strong>第一性原理层</strong>：中位绝对误差 定义透明（试次内中位数→试次间中位数；nIQR 归一）并给出关节自由度清单与 OpenCap 口径差异（S027）——构念可操作。承重前提：「MMMC 可作临床人群的准确性参照」——多条独立文献支持（引文 14–23），且作者明示 OMC/MMMC 相对双平面透视均非真金标准（标记放置变异+软组织伪影，S015）——诚实度高。</p>
+    <p><strong>元认知审计层</strong>：重尾误差（&gt;10° 试次存在）且拟合残差与关节角误差相关性弱（0.35/0.24，S016）——系统当前无法在单试次层面自检失败；作者主动把「subject-level 临床决策」留给未来（自我限定）。结论失败条件：若 OMC 差异在病理步态（非 BML-MoVi 的日常动作）中系统性放大，临床人群精度主张需重新标定。</p>
+    <h3>LC2 · 三性主张</h3>
+    <p><strong>演绎构建层</strong>：效度→响应的每步均可检验且已检验；无相关→因果越位（GDI 与 mJOA 相关未被表述为因果）。GDI 参照分布（9008 正常步）与 0–100 标度交代清楚（S028）。</p>
+    <p><strong>元认知审计层</strong>：BBS 跌倒风险二分阈值（≤50/≤40）引自文献（67/68）而非本队列优化 ✓；响应性多指标（GDI/DST/步频×2 量表）的显著性未报 Bonferroni/FDR——n=17 下 I 类错误风险需在引用时注意。</p>
+    <h3>LC3 · 可行性主张</h3>
+    <p><strong>第一性原理层</strong>：「易实施」为定性陈述（无量化实施指标：拍摄时长/失败率/拒拍率）；1021 段视频总数来自摘要，分 clinic 的实施细节未量化——主张成立但证据层级为描述性。误差归因（辅具/假肢关键点检测弱，0.46–0.81°）有引文旁证但未在本数据内直接验证（无辅具分层回归）。</p>
+  </section>
+
+  <section id="s4">
+    <h2>四、ERR 清单</h2>
+    <div class="table-scroll" style="max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch">
+      <table>
+        <thead><tr><th>编号（子型）</th><th>位置</th><th>根因</th><th>严重度</th></tr></thead>
+        <tbody>
+          <tr><td>ERR-03（03a）</td><td>摘要「finding joint-angle errors &lt; 3°across patients with neurological injury, …」vs S008/Table 1：神经损伤组 中位绝对误差 3.32°</td><td>摘要级数字表述与正文表格值矛盾——「&lt;3° across patients」可读作全部人群 &lt;3°，实际仅总体混合 中位绝对误差 2.79° 达标、神经组超标；引用本文精度必须写明人群口径</td><td><span class="sev sev-p1">P1</span></td></tr>
+          <tr><td>ERR-05</td><td>S016（重尾误差、残差-误差弱相关 0.35/0.24）</td><td>单试次无质量自检指标：拟合残差不能预测关节角误差，重尾失败试次无法被系统识别——「clinically accessible」平台在单例层面的可靠性缺口（作者自认并限定 population-level）</td><td><span class="sev sev-p1">P1</span></td></tr>
+          <tr><td>ERR-03（03b）</td><td>S015（作者自认）</td><td>OMC 金标准对照仅健康对照（BML-MoVi 29 例步行子集）；临床人群准确性实为 vs MMMC——临床病理步态下的「vs 光学真值」缺直接证据（MMMC 旁证充分+作者透明承认）</td><td><span class="sev sev-p2">P2</span></td></tr>
+          <tr><td>ERR-04</td><td>S012 响应性分析</td><td>n=17 单臂术前术后；多指标（GDI/DST/步频×2 量表+SPM1D）显著性未报多重比较校正；效应量 CI 宽（GDI 0.44 [−0.02, 0.76] 跨零）</td><td><span class="sev sev-p2">P2</span></td></tr>
+          <tr><td>ERR-03（03d）</td><td>S017 OpenCap 对比</td><td>「comparable MAE 4.32 (2.06)° vs 4.1°」非同人群/任务/关节集的直接比较（作者自认 "not a direct comparison"）——对标表述只能作量级参考</td><td><span class="sev sev-p2">P2</span></td></tr>
+          <tr><td>ERR-05</td><td>S025（数据采集）</td><td>跟随拍摄方位非标准化（mostly frontal but partially oblique）且方位-精度耦合已知——临床数据采集规程依赖操作者判断（作者给出的方位策略是缓解而非规范）</td><td><span class="sev sev-p2">P2</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s5">
+    <h2>五、评级与修复补丁</h2>
+    <p>总评级 <span class="badge grade-b-plus">B+</span>（证据广、质量高，但标题级结论略超数据）。分维：新颖性 <strong>A-</strong>（首个多病理人群+真实门诊验证的单目生物力学管线，方法组合有原创性）；证据广度 <strong>A-</strong>（3 数据集、20.7 h、&gt;13,500 步、4 级验证链）；因果封闭性 <strong>不适用</strong>（测量学论文，改评内部效度：<strong>B+</strong>——OMC 缺口+单试次自检缺口）；反例排除 <strong>B+</strong>（重尾误差透明展示但无机制处理）；方法稳健性 <strong>B+</strong>（统计口径透明；响应性多重比较未报）；外部效度 <strong>B+</strong>（真实门诊部署强；结果外推到「任何诊室」依赖操作者培训未评估）。</p>
+    <ul>
+      <li><strong>补丁 1（ERR-03a，P1）</strong>：摘要改为「median joint-angle errors of 2.5–3.3° across populations（neurological injury 3.32°）」或「&lt;3° overall, up to 3.32° in neurological populations」。用户引用时一律带人群口径。</li>
+      <li><strong>补丁 2（ERR-05，P1）</strong>：开发单试次置信估计（作者已有校准 CI 方法 24/46 可迁移）；在补齐前所有用途限定「多步平均、组级分析」。</li>
+      <li><strong>补丁 3（03b，P2）</strong>：补病理人群的 OMC 直接对照（哪怕小样本锥体束征/偏瘫步态）；引用本文精度时注明「临床人群为 vs MMMC」。</li>
+      <li><strong>补丁 4（ERR-04，P2）</strong>：响应性报告 Bonferroni/FDR 校正与每指标功效；扩样本。</li>
+      <li><strong>补丁 5（03d，P2）</strong>：与 OpenCap 做同人群同任务头对头；引用时写「量级相当（非直接比较）」。</li>
+      <li><strong>补丁 6（ERR-05，P2）</strong>：给出采集 SOP（方位选择按目标关节平面）；评估操作者间变异。</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <h2>六、动词校准与安全引用</h2>
+    <div class="verb-block">
+      <div class="verb-row"><span class="verb-label verb-allow">LC1 允许</span><span class="verb-body">一致、达到（精度量级）：「单手持手机拟合的关节角与多视角/光学系统高度一致（中位绝对误差 2.5–3.3°，按人群分层）」「与 OpenCap 量级相当（非直接比较）」。</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">LC1 谨慎</span><span class="verb-body">「&lt;3°」必须带人群口径（总体 2.79°；神经损伤组 3.32°）；「first clinically validated」限定为「首个在多病理人群验证的单目生物力学方法（作者主张）」。</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">LC1 禁用</span><span class="verb-body">「 smartphone 步态分析已达到光学金标准精度」（临床人群无 OMC 直接对照；OMC/MMMC 本身非真金标准）。</span></div>
+      <div class="verb-row"><span class="verb-label verb-allow">LC2 允许</span><span class="verb-body">可重复、有效、响应：「GDI 多步平均 ICC₂ₖ=0.96」「GDI 与 10MWT 相关 r=0.82」「术后 GDI/DST 显著变化（n=17，Wilcoxon p&lt;0.05）」。</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">LC2 谨慎</span><span class="verb-body">「捕捉到自报量表未反映的术后变化」须带「可能（作者推论）」与构念不同的限定；单步级指标（ICC 0.41–0.84）不引作可靠。</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">LC2 禁用</span><span class="verb-body">「GDI 优于 mJOA」（构念不同不可比）；任何单例试次诊断级表述。</span></div>
+      <div class="verb-row"><span class="verb-label verb-allow">LC3 允许</span><span class="verb-body">「在门诊走廊低负担采集（无需着装/灯光/标定），74 例院内记录/共 1021 段视频」。</span></div>
+      <div class="verb-row"><span class="verb-label verb-caution">LC3 谨慎</span><span class="verb-body">「prospective」按部署描述理解（非干预队列）；实施可行性无量化指标。</span></div>
+      <div class="verb-row"><span class="verb-label verb-ban">LC3 禁用</span><span class="verb-body">「可替代临床步态分析实验室」（无动力学测量；单例可靠性未立）。</span></div>
+    </div>
+    <p><strong>安全引用句（可直接复制）</strong>：</p>
+    <blockquote>单手持智能手机视频经可微生物力学模型拟合后，关节角与多视角无标记系统的中位绝对误差为 2.79°（混合临床人群；神经损伤亚组 3.32°、假肢使用者 2.97°、对照 2.51°），与静态光学捕捉对照（健康人群）的 2.75° 量级一致（Peiffer 等，2026）。</blockquote>
+    <blockquote>该系统衍生的步态偏差指数（GDI）在 222 人 &gt;13,500 步中多步平均可重复性达 ICC₂ₖ=0.96，与 10 米步行测试相关 r=0.82、与 Berg 平衡量表 r=0.62、与 mJOA r=0.47；颈椎脊髓病术后（n=17）GDI 与双支撑期显著变化（效应量 0.44/−0.52），同期患者自报 mJOA 未显著变化（Peiffer 等，2026）。</blockquote>
+    <blockquote>拍摄方位与精度耦合：矢状面关节角在矢状位拍摄下误差最低、额状面角在额状位最低（各比较 p&lt;0.005，膝屈曲差 1.02°），为数据采集提供了可操作的方位选择策略（Peiffer 等，2026）。</blockquote>
+  </section>
+
+  <section id="s7">
+    <h2>七、资产回收</h2>
+    <ul>
+      <li><strong>M1（代码/数据）</strong>：MonocularBiomechanics 全管线开源（github.com/IntelligentSensingAndRehabilitation/MonocularBiomechanics；zenodo 20501958）；MMMC 逐关节角误差数据集（zenodo 20450570）——可复现/复用的完整资产。指针：S029。</li>
+      <li><strong>M1（方法范式）</strong>：测量学四级验证链设计（准确性→可靠性→构念效度→响应性）——任何新测量工具临床转化的评估模板；known-groups + 外部锚（10MWT/BBS）+ 干预响应的组合。指针：S007–S012。</li>
+      <li><strong>M2（方法）</strong>：隐式函数（MLP 时间编码）+ 可微正运动学 + 双层优化（试次级运动学+会话级体格参数）的单目拟合管线——可迁移到其他运动分析场景；方位-精度分析框架（视角分类 front/back/ipsi/contra）。指针：S021–S023、S027。</li>
+      <li><strong>M2（表达资产）</strong>：Fig. 5 管线总览图（采集→关键点→隐式表示→损失→优化）与 Fig. 1 三级验证设计图——方法学论文的组织模板。</li>
+      <li><strong>M3（负面清单）</strong>：①摘要数字不带人群口径的写法；②残差当质量指标的误导（残差-误差弱相关）；③非同口径系统的 MAE 直接对标；④多指标显著性无多重比较。</li>
+    </ul>
+  </section>
+
+  <section id="s8">
+    <h2>八、课程汇报适配模块（「人体运动建模与分析」）</h2>
+    <h3>8.1 选题适配预警（关键）</h3>
+    <p>课程要求「以<strong>光学动作捕捉为主要测量方法</strong>」的 SCI 论文——本篇的<strong>主测量是无标记视频（单目手机+可微模型拟合）</strong>，光学动捕（BML-MoVi 的 OMC 真值）只充当验证对照，且仅覆盖健康对照的步行子集（29 例）。与 Uhlrich（双侧 cameras+测力台）、Kotsifaki（14 台 Vicon+测力+EMG）、Lerner（10 台 Vicon）相比，<strong>本篇不满足「光学动捕为主要测量」的字面要求</strong>——若作课程汇报文有被质疑风险。合理用法：作为「测量技术演进」的对照讲（第二讲坐标系/标记系统 vs 无标记）、或在 Uhlrich/Kotsifaki 汇报中作为「下一代方向」引出，而非主汇报文。</p>
+    <h3>8.2 汇报主问题</h3>
+    <p>「能不能用一部手机替代动捕实验室做临床步态分析？」——本文的回答：运动学层面接近可行（~3°、三性齐备），动力学层面尚不可行（无 GRF/力矩，引文 45 为方向）。</p>
+    <h3>8.3 数据链（对照课件主线）</h3>
+    <p>手机 RGB 视频（30 Hz，Samsung S8/S20）+ IMU 姿态 → PosePipe（DeepSort 行人跟踪 + MeTRAbs-ACAE 2D/3D 关键点，87 个 BML-MoVi 虚拟标记）→ 隐式函数 f<sub>ϕ</sub>(t)→θ(t)（40 关节角）+ 共享体格参数 β → 可微正运动学 x=M(θ,β)（MuJoCo/MJX）→ 三项损失（3D 关键点 Huber/2D 重投影/手机姿态）联合优化 → 关节角轨迹 → GDI/DST/步频。课件对照：第二讲（关节角定义、坐标系/参考系 S022、软组织伪影 S015 直接点名）、第三讲（本文无逆动力学——恰好用作「运动学 vs 动力学边界」的教学反例）。</p>
+    <h3>8.4 关键图建议</h3>
+    <p>Fig. 5（管线总览，讲方法）→ Fig. 3a/b（轨迹对比+误差分布，讲精度）→ Fig. 4b/c/e（GDI 效度，讲临床价值）→ Table 1/2 备查。</p>
+    <h3>8.5 贡献/局限映射（两人分工素材）</h3>
+    <p><strong>蓝方（贡献）</strong>：①单手持+移动机位（vs OpenCap 三脚架）适配真实诊室；②四级验证链+多病理人群；③GDI 三性齐备且对手术响应；④全开源。<strong>红方（局限）</strong>：①摘要「&lt;3°」与神经组 3.32° 口径矛盾；②OMC 真值仅健康人群（临床人群是 vs MMMC）；③单试次无质量自检（残差不预测误差）；④无动力学（GRF/力矩缺位）；⑤响应性 n=17 无多重比较；⑥非实时（单试次拟合 ~1 min GPU）。</p>
+    <h3>8.6 12 分钟分配建议</h3>
+    <p>2 min 背景（动捕门槛→OpenCap→单目缺口）→ 3 min 方法（Fig. 5 管线+隐式函数直观解释）→ 4 min 验证（Table 1 精度+Fig. 3 方位效应+Table 2 三性）→ 2 min 局限（红方主打口径矛盾与单试次自检缺口）→ 1 min 展望（动力学扩展、居家监测）。</p>
+  </section>
+
+  <footer style="margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--ink-faint);font-size:13px">
+    审查协议：review-protocol v2.1.2（论著·测量学验证）· 审查日期：2026-11-04～06 · 材料包：论文目录（107 块句子级双语 + 5 图 2 表逐字 + 69 条逐字 refs；双向审计 A/B 归零——EN 预检轮方向 B 抓回 Methods 整段重构事故并从 stream 全量重写）· 期刊指标为 Zotero 条目记录值（实时查询因限流待补）
+  </footer>
+
+</div>
+</body>
+</html>
